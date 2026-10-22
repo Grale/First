@@ -1,0 +1,308 @@
+[
+  {
+    "model_key": "U3425WE",
+    "review_score": 8.6,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "SHI distributor spec table (U3425WE)",
+        "url": "https://eu.shi.com/product/47821450/Dell-UltraSharp-U3425WE",
+        "score": "n/a",
+        "verdict": "120 Hz over DisplayPort and Thunderbolt 4, 100 Hz over HDMI; KVM, 90 W power delivery, RJ-45, 150 mm height adjustment"
+      },
+      {
+        "source": "Dell Eye Comfort monitor page (programme and tiers)",
+        "url": "https://www.dell.com/en-uk/lp/dell-eye-comfort-monitors",
+        "score": "n/a",
+        "verdict": "Dell's Eye Comfort range page; the five-star tier requires at least 120 Hz, the four-star tier above 75 Hz and the three-star tier above 60 Hz"
+      },
+      {
+        "source": "TUV Rheinland Eye Comfort certification brochure",
+        "url": "https://www.tuv.com/content-media-files/master-content/services/products/1553-tuv-rheinland-eye-comfort-certification/tuv-rheinland-eye-comfort-certification_brochure_2023v2.pdf",
+        "score": "n/a",
+        "verdict": "Explains the 1-5 star scale: 15 test categories across image quality, ambient light management and eye care; five stars overall requires five stars in every category"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "Documented as the first 34-inch monitor with a five-star TUV Rheinland Eye Comfort rating",
+      "IPS Black at a claimed 2000:1, roughly double a normal IPS",
+      "Thunderbolt 4 with 90 W delivery, KVM and Ethernet: one cable to a laptop"
+    ],
+    "cons": [
+      "120 Hz only over DisplayPort and Thunderbolt; HDMI is 100 Hz",
+      "About 300 cd/m2 maximum brightness and no DisplayHDR tier found",
+      "Everything here is a claim; no lab measurement was available"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": null,
+      "text_clarity": "IPS RGB stripe subpixels; no fringing, which is the point of choosing it over OLED for text"
+    },
+    "use_verdict": "The best fit for the stated requirements on this list: the only entry that satisfies the five-star eye-comfort ask, and it docks a laptop over one cable.",
+    "notes": "The five-star claim comes from Dell's own product copy as quoted in retailer listings, supported by TUV Rheinland's brochure for how the scale works and Dell's range page for the tier thresholds. It was not confirmed in TUV's Certipedia certificate database, which is the authoritative register and could not be reached from the session this was researched in. That single claim is worth two of the work profile's bands (eye comfort 11 points, and it is why this model leads), so it is the first thing to verify independently."
+  },
+  {
+    "model_key": "PA348CGV",
+    "review_score": 8.4,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Asus technical specification page (PA348CGV)",
+        "url": "https://www.asus.com/displays-desktops/monitors/proart/proart-display-pa348cgv/techspec/",
+        "score": "n/a",
+        "verdict": "120 Hz maximum, 100% sRGB and 98% DCI-P3, 90 W USB-C, 0-115 mm height adjustment, no pivot"
+      },
+      {
+        "source": "TechRadar review",
+        "url": "https://www.techradar.com/reviews/asus-proart-pa348cgv",
+        "score": "n/a",
+        "verdict": "Covers 98% of DCI-P3; lacks portrait rotation"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "98% DCI-P3 with a maker-stated colour accuracy focus",
+      "90 W USB-C power delivery at 120 Hz",
+      "Height, tilt and swivel over 115 mm"
+    ],
+    "cons": [
+      "1000:1 native contrast, the weakest on this list",
+      "No pivot to portrait",
+      "Curvature radius not stated by any source consulted"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": null,
+      "text_clarity": "IPS RGB stripe subpixels; no fringing"
+    },
+    "use_verdict": "A colour-work monitor that docks: strong gamut, 120 Hz, 90 W, but ordinary contrast and no KVM confirmed.",
+    "notes": "Sourced from Asus's own spec page plus one review. The TechRadar review was listed in search results but not opened, so its verdict here is limited to the two points the result summary stated. No measured figures."
+  },
+  {
+    "model_key": "34GP83A",
+    "review_score": 8.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "DisplayNinja review (34GP83A)",
+        "url": "https://www.displayninja.com/lg-34gp83a-review/",
+        "score": "n/a",
+        "verdict": "3440x1440 Nano IPS, 144 Hz with 160 Hz overclock, FreeSync Premium and G-Sync Compatible"
+      },
+      {
+        "source": "Blur Busters launch coverage",
+        "url": "https://blurbusters.com/?p=25802",
+        "score": "n/a",
+        "verdict": "Covers the 144 Hz UltraGear launch and the 1 ms GtG claim"
+      },
+      {
+        "source": "MonitorNerds spec table",
+        "url": "https://monitornerds.com/lg-34gp83a-b-review/",
+        "score": "n/a",
+        "verdict": "350 cd/m2 typical and 440 cd/m2 peak, 1000:1 static, height and tilt but no swivel or pivot"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "98% DCI-P3 on a Nano IPS panel",
+      "Dual-certified: FreeSync Premium and G-Sync Compatible",
+      "Widely stocked and usually the cheapest 144 Hz+ IPS at this size"
+    ],
+    "cons": [
+      "No USB-C and no KVM: a video-only monitor",
+      "DisplayHDR 400, which certifies very little",
+      "Response quoted as 1 ms but given as MPRT by one source and GtG by another"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": 440,
+      "text_clarity": "Nano IPS RGB stripe subpixels; no fringing"
+    },
+    "use_verdict": "Fine to work on and nothing more: no docking, no KVM, and the eye-comfort and USB-C bands both score zero.",
+    "notes": "Peak brightness is a spec-table figure, not a measurement. The refresh conflict matters and is resolved conservatively: 144 Hz native is recorded because the sources that separate native from overclock say 160 Hz is an overclock, even though some spec tables simply print 160 Hz."
+  },
+  {
+    "model_key": "34GN850",
+    "review_score": 8.1,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "DisplayNinja review (34GN850)",
+        "url": "https://www.displayninja.com/lg-34gn850-review/",
+        "score": "n/a",
+        "verdict": "States the 34GN850 has specifications identical to the 34GP83A, differing only in rear logo and OSD layout, while often costing more"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "Same panel as the 34GP83A",
+      "Dual-certified FreeSync Premium and G-Sync Compatible"
+    ],
+    "cons": [
+      "Usually priced above the identical 34GP83A",
+      "No USB-C, no KVM",
+      "Every figure is carried from the sibling, not checked here"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": 440,
+      "text_clarity": "Nano IPS RGB stripe subpixels; no fringing"
+    },
+    "use_verdict": "Only worth buying if a shop prices it below the 34GP83A, which is the same monitor.",
+    "notes": "Carried wholesale from the 34GP83A on the strength of one review's statement that the two are identical. Confidence is low because no spec sheet for this model was consulted at all. Its reason for being on the watchlist is price comparison, not specification."
+  },
+  {
+    "model_key": "M34WQ",
+    "review_score": 7.8,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "MonitorNerds review (M34WQ)",
+        "url": "https://monitornerds.com/gigabyte-m34wq-review/",
+        "score": "n/a",
+        "verdict": "Flat 34-inch IPS at 144 Hz, 130 mm height adjustment with tilt and swivel, KVM switching one keyboard and mouse between computers"
+      },
+      {
+        "source": "Guru3D launch coverage",
+        "url": "https://www.guru3d.com/news-story/gigabyte-34-inch-m34wq-gaming-monitor-with-ultra-wide-gaming-lcd-uwq-hd-resolution.html",
+        "score": "n/a",
+        "verdict": "Launch of the flat 3440x1440 144 Hz M34WQ"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "Flat panel, which suits spreadsheets and straight lines",
+      "KVM confirmed by review",
+      "130 mm height adjustment with tilt and swivel"
+    ],
+    "cons": [
+      "USB-C power delivery wattage not documented anywhere consulted",
+      "No DisplayHDR certification, only 'HDR' in marketing copy",
+      "1000:1 native contrast"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": 400,
+      "text_clarity": "IPS RGB stripe subpixels; no fringing. Flat panel avoids the slight line curvature of the 1800-1900R entries"
+    },
+    "use_verdict": "The cheap flat option with a KVM. The unknown USB-C wattage is the gap: if it is 15 W it docks nothing.",
+    "notes": "One retailer table listed a 16:9 aspect ratio and 350 nits, contradicting the 21:9 and 400 nits given elsewhere; that listing is treated as an error. The USB-C port is confirmed to exist but no wattage was found, so the field is unknown and the work profile gives it the neutral 2 points rather than the 12 a 90 W port would earn."
+  },
+  {
+    "model_key": "AG344UXM",
+    "review_score": 8.3,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TFTCentral panel announcement",
+        "url": "https://tftcentral.co.uk/news/aoc-agon-ag344uxm-with-34-flat-ultrawide-panel-170hz-and-1152-zone-mini-led-backlight",
+        "score": "n/a",
+        "verdict": "1,152-zone Mini LED backlight, DisplayHDR 1000, 99% DCI-P3, 10-bit; lists 600 cd/m2 brightness"
+      },
+      {
+        "source": "MonitorNerds review (AG344UXM)",
+        "url": "https://monitornerds.com/aoc-agon-pro-ag344uxm-review/",
+        "score": "n/a",
+        "verdict": "Solid heavy metal stand with tilt, swivel and height adjustment; no pivot; lists 1000 cd/m2 peak"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "1,152-zone Mini LED: real local dimming without OLED's text or burn-in trade-offs",
+      "DisplayHDR 1000 with 99% DCI-P3",
+      "Flat panel, 90 W USB-C, 170 Hz"
+    ],
+    "cons": [
+      "Brightness claims conflict: 600 cd/m2 at TFTCentral against 1000 cd/m2 peak in retailer tables",
+      "1000:1 native panel contrast before the backlight dims",
+      "KVM not documented either way"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": null,
+      "text_clarity": "IPS RGB stripe subpixels; no fringing"
+    },
+    "use_verdict": "The interesting compromise: OLED-like HDR punch on an IPS panel that renders text properly, and it docks at 90 W.",
+    "notes": "peak_nits is deliberately left null rather than set to either disputed figure; the disagreement is recorded as a deduction in _fit_penalties instead, which is the honest way to mark down a spec sheet that cannot be reconciled. No lab measurements were available for this model."
+  },
+  {
+    "model_key": "Y34WZ-30",
+    "review_score": 8.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Lenovo PSREF specification sheet",
+        "url": "https://psref.lenovo.com/syspool/Sys/PDF/Lenovo_Monitors/Lenovo_Legion_Y34wz_30/Lenovo_Legion_Y34wz_30_Spec.pdf",
+        "score": "n/a",
+        "verdict": "Mini-LED backlight with 384 local dimming zones, 1500R curve, 165 Hz with overclock to 180 Hz described as lab data that may cause display irregularities, 720 cd/m2 typical and 1200 cd/m2 peak"
+      },
+      {
+        "source": "ComputerBase launch coverage",
+        "url": "https://www.computerbase.de/2023-03/lenovo-neue-gaming-monitore-mit-breitbild-und-viel-hertz/",
+        "score": "n/a",
+        "verdict": "Reports up to 140 W over the USB-C port; launch price 1,399 EUR, October 2023"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "384-zone Mini LED with 720 cd/m2 typical brightness, the brightest sustained figure here",
+      "140 W USB-C power delivery and a 2.5 Gb Ethernet port",
+      "DisplayHDR 1000"
+    ],
+    "cons": [
+      "VA panel behind the Mini LED backlight: off-axis colour and gamma shift at desk distance",
+      "180 Hz is an overclock Lenovo itself warns about",
+      "140 W figure rests on secondary sources, not Lenovo's own text"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": 1200,
+      "text_clarity": "VA subpixels render text acceptably but the 1500R curve plus VA off-axis shift is visible across a 34-inch width at desk distance"
+    },
+    "use_verdict": "The brightest panel here and the one whose panel type fights the use case: a VA at arm's length shows its corners.",
+    "notes": "Confidence is low because the authoritative source is a PDF whose retrieved text was truncated before the USB-C wattage, so the headline docking figure is second-hand. Brightness figures are Lenovo's claims. The VA deduction in _fit_penalties is a judgement about panel type at desk distance, not a review finding about this specific unit."
+  }
+]

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Watchlist · Monitor Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Watchlist <span class="muted small">{{ wl.models|length }} models · {{ wl.rejected|length }} rejected</span></h1>
+  {% if problems %}
+  <div class="notice bad"><strong>Problems:</strong><ul>{% for p in problems %}<li>{{ p }}</li>{% endfor %}</ul></div>
+  {% endif %}
+  <table>
+    <thead><tr><th class="left">Model</th><th class="left">Panel</th><th>Hz</th><th>Resolution</th><th>USB-C</th><th>KVM</th><th>TÜV</th><th class="left">Aliases</th><th class="left">Source</th><th></th></tr></thead>
+    <tbody>
+    {% for m in wl.models|sort(attribute='model_key')|sort(attribute='brand')|sort(attribute='priority', reverse=true) %}
+      <tr class="{{ 'disabled' if not m.enabled }}">
+        <td class="left"><a href="{{ url_for('model_page', model_key=m.model_key) }}">{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }}</a><div class="muted small">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %}{% if not m.enabled %} · disabled{% endif %}</div></td>
+        <td class="left small">{{ m.panel }}</td>
+        <td>{{ m.specs.hz or '?' }}</td>
+        <td class="small">{{ m.resolution_label }}</td>
+        <td class="small">{{ (m.specs.usb_c_pd_w ~ ' W') if m.specs.usb_c_pd_w else ('?' if m.specs.usb_c_pd_w is none else '✗') }}</td>
+        <td>{{ '✓' if m.specs.kvm else ('?' if m.specs.kvm is none else '✗') }}</td>
+        <td>{{ (m.specs.tuv_eye_comfort_stars ~ '★') if m.specs.tuv_eye_comfort_stars else '?' }}</td>
+        <td class="left small">{{ m.aliases|join(', ') }}</td>
+        <td class="left small">{% if m.source_url %}<a href="{{ m.source_url }}" target="_blank" rel="noopener">{{ m.source_url.split('/')[2] }}</a>{% else %}<span class="bad">missing</span>{% endif %}</td>
+        <td class="nowrap">
+          <a class="btn small" href="{{ url_for('watchlist_page', edit=m.model_key) }}">Edit</a>
+          <form class="inline" method="post" action="{{ url_for('watchlist_reject', model_key=m.model_key) }}" onsubmit="return confirm('Move {{ m.model_key }} to rejected?')"><input type="hidden" name="reason" value="rejected from UI"><button class="btn small" type="submit">Reject</button></form>
+          <form class="inline" method="post" action="{{ url_for('watchlist_delete', model_key=m.model_key) }}" onsubmit="return confirm('Delete {{ m.model_key }}?')"><button class="btn small danger" type="submit">Delete</button></form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="card" id="form">
+  <h2>{{ 'Edit ' + edit.model_key if edit else 'Add a model' }}</h2>
+  <form method="post" action="{{ url_for('watchlist_save') }}" class="form-grid">
+    <input type="hidden" name="original_key" value="{{ edit.model_key if edit else '' }}">
+    <label>Brand <input name="brand" required value="{{ edit.brand if edit else prefill.brand }}"></label>
+    <label>Model key <input name="model_key" required placeholder="U3425WE" value="{{ edit.model_key if edit else prefill.model_key }}"></label>
+    <label>Family <input name="family" placeholder="UltraSharp 34" value="{{ edit.family if edit else '' }}"></label>
+    <label>Year <input name="year" type="number" min="2015" max="2035" value="{{ edit.year or '' if edit else '' }}"></label>
+    <label>Panel <input name="panel" placeholder="IPS Black / QD-OLED / Mini LED IPS" value="{{ edit.panel if edit else '' }}"></label>
+    <label>Size (inches) <input name="size_inch" type="number" step="0.1" min="10" max="60" value="{{ edit.size_inch or '' if edit else '' }}"></label>
+    <label>Native Hz <input name="hz" type="number" min="24" max="500" value="{{ edit.specs.hz or '' if edit else '' }}"></label>
+    <label>Width (px) <input name="width" type="number" min="640" max="7680" value="{{ edit.specs.width or '' if edit else '' }}"></label>
+    <label>Height (px) <input name="height" type="number" min="480" max="4320" value="{{ edit.specs.height or '' if edit else '' }}"></label>
+    <label>USB-C power delivery (W) <input name="usb_c_pd_w" type="number" min="0" max="240" value="{{ edit.specs.usb_c_pd_w if edit and edit.specs.usb_c_pd_w is not none else '' }}"></label>
+    <label>Quoted response (ms GtG) <input name="response_ms" type="number" step="0.01" min="0" max="50" value="{{ edit.specs.response_ms if edit and edit.specs.response_ms is not none else '' }}"></label>
+    <label>Curvature <input name="curvature" placeholder="1900R / 800R / flat" value="{{ edit.specs.curvature if edit else '' }}"></label>
+    <label>HDR tier <input name="hdr" placeholder="DisplayHDR True Black 400" value="{{ edit.specs.hdr if edit else '' }}"></label>
+    <label>DisplayPort version <input name="dp_version" placeholder="1.4" value="{{ edit.specs.dp_version if edit else '' }}"></label>
+    <label>Static contrast (x:1) <input name="contrast" type="number" min="0" value="{{ edit.specs.contrast if edit and edit.specs.contrast is not none else '' }}"></label>
+    <label>sRGB % <input name="srgb_pct" type="number" min="0" max="100" value="{{ edit.specs.srgb_pct if edit and edit.specs.srgb_pct is not none else '' }}"></label>
+    <label>DCI-P3 % <input name="dci_p3_pct" type="number" min="0" max="100" value="{{ edit.specs.dci_p3_pct if edit and edit.specs.dci_p3_pct is not none else '' }}"></label>
+    <label>TÜV Eye Comfort stars (blank = unverified, 0 = none found) <input name="tuv_eye_comfort_stars" type="number" min="0" max="5" value="{{ edit.specs.tuv_eye_comfort_stars if edit and edit.specs.tuv_eye_comfort_stars is not none else '' }}"></label>
+    <label>VRR branding <input name="vrr_brand" placeholder="G-Sync Compatible, FreeSync Premium Pro" value="{{ edit.specs.vrr_brand if edit else '' }}"></label>
+    <label>OLED burn-in warranty (years) <input name="burn_in_warranty_years" type="number" min="0" max="10" value="{{ edit.specs.burn_in_warranty_years if edit and edit.specs.burn_in_warranty_years is not none else '' }}"></label>
+{% macro tristate(name, label, value) %}
+    <label>{{ label }}
+      <select name="{{ name }}">
+        <option value="" {{ 'selected' if value is none }}>unverified</option>
+        <option value="1" {{ 'selected' if value is true }}>yes</option>
+        <option value="0" {{ 'selected' if value is false }}>no</option>
+      </select></label>
+{% endmacro %}
+    {{ tristate('kvm', 'Built-in KVM', edit.specs.kvm if edit else none) }}
+    {{ tristate('height_adjust', 'Height-adjustable stand', edit.specs.height_adjust if edit else none) }}
+    {{ tristate('vrr', 'VRR', edit.specs.vrr if edit else none) }}
+    <label class="check"><input type="checkbox" name="priority" {{ 'checked' if edit and edit.priority }}> Priority (⭐)</label>
+    <label class="check"><input type="checkbox" name="enabled" {{ 'checked' if (not edit) or edit.enabled }}> Enabled</label>
+    <label class="wide">Spec source URL <input name="source_url" type="url" placeholder="https://www.dell.com/… or an RTINGS/TFTCentral review" value="{{ edit.source_url if edit else '' }}"></label>
+    <label class="wide">Aliases (comma separated; what shop titles contain) <input name="aliases" value="{{ edit.aliases|join(', ') if edit else prefill.aliases }}"></label>
+    <label class="wide">Notes <input name="notes" value="{{ edit.notes if edit else prefill.notes }}"></label>
+    <div class="wide"><button class="btn primary" type="submit">Save</button> {% if edit %}<a class="btn" href="{{ url_for('watchlist_page') }}">Cancel</a>{% endif %}</div>
+  </form>
+  <p class="muted small">A model is only watched when it clears the floor on the Settings page: native Hz, resolution, and
+    whichever of the stand, USB-C and KVM you made hard requirements. Leave a field blank where you have not verified it
+    rather than guessing: blank scores a neutral band, while a wrong number moves the ranking. Keep the spec source so
+    the choice can be checked later.</p>
+</section>
+
+<section class="card">
+  <h2>Rejected <span class="muted small">(checked and excluded, so Discover ignores them)</span></h2>
+  <table>
+    <thead><tr><th class="left">Model</th><th class="left">Reason</th><th class="left">Source</th><th></th></tr></thead>
+    <tbody>
+    {% for r in wl.rejected %}
+      <tr><td class="left">{{ r.brand }} {{ r.model_key }}</td><td class="left small">{{ r.reason }}</td>
+        <td class="left small">{% if r.source_url %}<a href="{{ r.source_url }}" target="_blank" rel="noopener">{{ r.source_url.split('/')[2] }}</a>{% endif %}</td>
+        <td><form class="inline" method="post" action="{{ url_for('watchlist_unreject', model_key=r.model_key) }}"><button class="btn small" type="submit">Re-add</button></form></td></tr>
+    {% else %}<tr><td colspan="4" class="muted">Nothing rejected.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

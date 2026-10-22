@@ -1,0 +1,81 @@
+{
+  "ui": {
+    "host": "127.0.0.1",
+    "port": 8765
+  },
+  "schedule": {
+    "interval_hours": 3,
+    "first_run_delay_minutes": 2
+  },
+  "criteria": {
+    "sizes": [
+      34
+    ],
+    "panels": [
+      "oled",
+      "miniled",
+      "ips"
+    ],
+    "min_hz": 100,
+    "min_width": 3440,
+    "min_height": 1440,
+    "require_height_adjust": true,
+    "require_usb_c_pd_w": 0,
+    "require_kvm": false,
+    "require_vrr": false
+  },
+  "rules": {
+    "cross_shop_pct": 10,
+    "list_discount_pct": 20,
+    "back_in_stock": true,
+    "dedupe_days": 7
+  },
+  "notify": {
+    "toast": true,
+    "ntfy": {
+      "enabled": true,
+      "server": "https://ntfy.sh",
+      "topic": "monitor-deals-cy-34-e6d9ab80da"
+    }
+  },
+  "shops": {
+    "electroline": true,
+    "scandia": true,
+    "megaelectric": true,
+    "stephanis": true,
+    "public": true,
+    "kotsovolos": true
+  },
+  "fetch": {
+    "timeout_s": 40,
+    "pause_s": 1.0,
+    "playwright": "auto"
+  },
+  "price_range": {
+    "min": 250,
+    "max": 1800
+  },
+  "scoring": {
+    "fit_weight": 0.5,
+    "review_weight": 0.5,
+    "profile": "work"
+  },
+  "shops_config": {
+    "electroline": {
+      "category_url": ""
+    },
+    "scandia": {
+      "catalog_path": ""
+    },
+    "megaelectric": {
+      "catalog_path": ""
+    },
+    "stephanis": {
+      "category_url": ""
+    },
+    "public": {
+      "findbar_token": ""
+    },
+    "kotsovolos": {}
+  }
+}

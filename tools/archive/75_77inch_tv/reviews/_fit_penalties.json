@@ -1,0 +1,135 @@
+{
+  "_about": "Deductions from the fit score for findings in reviews that clash with the buyer's criteria (75/77-inch OLED or Mini LED, picture quality first: real local dimming, high brightness, native 100 Hz or more). Points are negative. Shown in the fit breakdown on the Ranking and model pages.",
+  "75QNED83B": [
+    {
+      "reason": "likely edge-lit despite the Mini LED label (third-party spec listings, 2025 predecessor tier)",
+      "points": -8
+    }
+  ],
+  "75QNED87A": [
+    {
+      "reason": "edge-lit per John Lewis and the RTINGS-tested US sibling; heavy haloing",
+      "points": -8
+    }
+  ],
+  "75QNED87B": [
+    {
+      "reason": "backlight type unverified; the predecessor tier was edge-lit",
+      "points": -4
+    }
+  ],
+  "75QNED8M": [
+    {
+      "reason": "dimming tier unspecified; the 2026 QNED85 sibling is listed as edge-lit",
+      "points": -4
+    }
+  ],
+  "75M80H": [
+    {
+      "reason": "no local dimming at all on the 65-inch (RTINGS)",
+      "points": -12
+    }
+  ],
+  "75QN70F": [
+    {
+      "reason": "local dimming largely ineffective (RTINGS, 65-inch)",
+      "points": -8
+    }
+  ],
+  "75LS03F": [
+    {
+      "reason": "edge-lit Mini LED and extra lag through the wireless One Connect box",
+      "points": -10
+    }
+  ],
+  "75LS03HW": [
+    {
+      "reason": "edge-lit with few zones and 32 ms+ lag through the wireless box",
+      "points": -8
+    }
+  ],
+  "75W95A": [
+    {
+      "reason": "local dimming switches off when VRR is on (RTINGS)",
+      "points": -8
+    }
+  ],
+  "75W95B": [
+    {
+      "reason": "local dimming switches off when VRR is on (choose.tv)",
+      "points": -8
+    }
+  ],
+  "75UR9S": [
+    {
+      "reason": "input lag above 30 ms with local dimming on in one lab test",
+      "points": -3
+    }
+  ],
+  "75P8L": [
+    {
+      "reason": "only about 60 to 72 dimming zones and 450 nits on the 65-inch: near-absent local dimming (What Hi-Fi, AVPasion)",
+      "points": -10
+    }
+  ],
+  "75RM7L": [
+    {
+      "reason": "some datasheets list a 100 Hz native panel with 144 Hz only in game mode; unverified",
+      "points": -4
+    }
+  ],
+  "75QNED866RE": [
+    {
+      "reason": "IPS-type panel with about 180 zones: low contrast and haloing",
+      "points": -6
+    }
+  ],
+  "75U8HQ": [
+    {
+      "reason": "European units use an IPS panel with 160 to 180 zones (What Hi-Fi: poor backlighting)",
+      "points": -6
+    }
+  ],
+  "75U8Q": [
+    {
+      "reason": "sources disagree on whether the 75-inch uses a VA or an ADS-Pro (IPS-type) panel, which would cost contrast",
+      "points": -3
+    }
+  ],
+  "XIAOMI TV S MINI LED 75": [
+    {
+      "reason": "owners report VRR resetting after power-off on PS5",
+      "points": -3
+    }
+  ],
+  "77S90D": [
+    {
+      "reason": "panel supplier varies by size and the 77-inch is reported as W-OLED rather than QD-OLED",
+      "points": -3
+    }
+  ],
+  "XR77A80L": [
+    {
+      "reason": "only two full HDMI 2.1 inputs and a dim panel by current standards",
+      "points": -3
+    }
+  ],
+  "77OLED909": [
+    {
+      "reason": "two HDMI 2.1 inputs only",
+      "points": -2
+    }
+  ],
+  "77OLED809": [
+    {
+      "reason": "two HDMI 2.1 inputs only",
+      "points": -2
+    }
+  ],
+  "XR77A95L": [
+    {
+      "reason": "two HDMI 2.1 inputs on European units, one shared with eARC",
+      "points": -2
+    }
+  ]
+}

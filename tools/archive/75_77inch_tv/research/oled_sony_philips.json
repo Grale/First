@@ -1,0 +1,82 @@
+[
+  {
+    "brand": "Sony",
+    "model_key": "XR77A80L",
+    "family": "A80L",
+    "year": 2023,
+    "backlight": "OLED (W-OLED)",
+    "hz": 100,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.sony-mea.com/en/electronics/support/televisions-projectors-oled-tvs-android-/xr-77a80l/specifications",
+    "aliases": [
+      "A80L",
+      "XR77A80L",
+      "XR 77A80L",
+      "77A80L",
+      "XR77A80LAEP"
+    ],
+    "notes": "Sony spec page for the XR-77A80L: 100 Hz panel rate quoted, four HDMI with VRR on HDMI 3 and 4 only, so two full HDMI 2.1 inputs. Some retailer sheets claim 120 Hz."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "XR77A95L",
+    "family": "A95L",
+    "year": 2023,
+    "backlight": "QD-OLED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.sony.co.uk/electronics/support/televisions-projectors-oled-tvs-android-/xr-77a95l/specifications",
+    "aliases": [
+      "A95L",
+      "XR77A95L",
+      "XR 77A95L",
+      "77A95L",
+      "XR77A95LAEP"
+    ],
+    "notes": "Sony UK spec page for the XR-77A95L: 100/120 Hz panel, two HDMI 2.1 plus two HDMI 2.0 on European units. 2023 QD-OLED flagship."
+  },
+  {
+    "brand": "Philips",
+    "model_key": "77OLED809",
+    "family": "OLED809",
+    "year": 2024,
+    "backlight": "OLED EX (Ambilight)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.displayspecifications.com/en/model/3dfb39a0",
+    "aliases": [
+      "OLED809",
+      "77OLED809",
+      "77OLED809/12"
+    ],
+    "notes": "displayspecifications entry for the 77OLED809/12: OLED EX panel, 48-144 Hz VRR range, HDMI 2.1 with FreeSync and G-Sync compatibility, Ambilight, Google TV."
+  },
+  {
+    "brand": "Philips",
+    "model_key": "77OLED909",
+    "family": "OLED909",
+    "year": 2024,
+    "backlight": "OLED META (MLA, Ambilight)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.richersounds.com/philips-77oled909/",
+    "aliases": [
+      "OLED909",
+      "77OLED909",
+      "77OLED909/12"
+    ],
+    "notes": "Retailer listing for the 77OLED909: MLA OLED, 120 Hz native with 4K 144 Hz support, four HDMI of which two are 2.1, Bowers & Wilkins sound. Measured about 1,400 nits peak in reviews of the series; listed as discontinued at that retailer, so it may only appear as clearance stock."
+  }
+]

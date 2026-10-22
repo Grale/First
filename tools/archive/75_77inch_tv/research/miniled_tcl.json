@@ -1,0 +1,185 @@
+[
+  {
+    "brand": "TCL",
+    "model_key": "75C7K",
+    "family": "C7K",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.displayspecifications.com/en/model/034240ac",
+    "aliases": [
+      "C7K",
+      "75C7K"
+    ],
+    "notes": "displayspecifications entry for the 75-inch C7K (74.5-inch HVA Mini LED panel, 48-144 Hz). Zone counts differ by source: TCL's global page says up to 2,048 while an Australian spec sheet for the 75-inch says 1,248. Four HDMI, two of them full 2.1."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C8K",
+    "family": "C8K",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.displayspecifications.com/en/model/e78f42e5",
+    "aliases": [
+      "C8K",
+      "75C8K"
+    ],
+    "notes": "displayspecifications entry for the 75-inch C8K (74.5-inch HVA Mini LED, 48-144 Hz). TCL's global page claims up to 3,840 zones and 4,500 nits for the series."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C6K",
+    "family": "C6K",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65c6k-uk",
+    "aliases": [
+      "C6K",
+      "75C6K"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C9K",
+    "family": "C9K",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/eu/en/tvs/c9k",
+    "aliases": [
+      "C9K",
+      "75C9K"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C7L",
+    "family": "C7L",
+    "year": 2026,
+    "backlight": "SQD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65c7l",
+    "aliases": [
+      "C7L",
+      "75C7L"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C8L",
+    "family": "C8L",
+    "year": 2026,
+    "backlight": "SQD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65c8l",
+    "aliases": [
+      "C8L",
+      "75C8L"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75Q7D PRO",
+    "family": "Q7D Pro",
+    "year": 2026,
+    "backlight": "SQD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/eu/en/tvs/65q7d-pro",
+    "aliases": [
+      "75Q7D PRO",
+      "75Q7D-PRO",
+      "75Q7DPRO",
+      "Q7D PRO",
+      "Q7D-PRO"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75RM7L",
+    "family": "RM7L",
+    "year": 2026,
+    "backlight": "RGB-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65rm7l",
+    "aliases": [
+      "RM7L",
+      "75RM7L"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75Q6C",
+    "family": "Q6C",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/de/de/tvs/65q6c",
+    "aliases": [
+      "Q6C",
+      "75Q6C"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75P8L",
+    "family": "P8L",
+    "year": 2026,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65p8l",
+    "aliases": [
+      "P8L",
+      "75P8L"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. The 65-inch measured only about 60-72 dimming zones and 450 nits: a Mini LED label with near-absent local dimming."
+  }
+]
