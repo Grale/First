@@ -1,0 +1,546 @@
+[
+  {
+    "model_key": "OLED77G5",
+    "review_score": 9.1,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "AV Forums spec sheet (77-inch G5)",
+        "url": "https://www.avforums.com/products/oled-tvs.89/lg-oled77g5.17034/specs/",
+        "score": "n/a",
+        "verdict": "120 Hz panel with VRR to 165 Hz on a PC source, four HDMI 2.1, Brightness Booster Ultimate; launched at GBP 4,999"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners of the G5 series report the brightest OLED picture yet and praise the anti-reflective finish; the wall-flush design needs the supplied bracket.",
+      "sources": []
+    },
+    "pros": [
+      "Brightest OLED tier: four-stack Primary RGB Tandem panel",
+      "Per-pixel contrast with no blooming",
+      "Four HDMI 2.1 at 48 Gbps, VRR to 165 Hz"
+    ],
+    "cons": [
+      "Most expensive tier at 77 inches",
+      "165 Hz only from a PC or 165 Hz-capable source",
+      "Wall-mount design means no pedestal stand in the box in some markets"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2400,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "The best picture in this list: OLED contrast with brightness that finally rivals Mini LED, and full 4K/165 Hz gaming support.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "OLED77C5",
+    "review_score": 8.7,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS review (C5 series)",
+        "url": "https://www.rtings.com/tv/reviews/lg/c5-oled",
+        "score": "n/a",
+        "verdict": "Series review: excellent contrast and reflection handling, dimmer HDR highlights than the G-series tier"
+      },
+      {
+        "source": "LG product page (77-inch C5)",
+        "url": "https://www.lg.com/us/tvs/lg-oled77c5pua-oled-4k-tv",
+        "score": "n/a",
+        "verdict": "120 Hz native, VRR to 144 Hz, four HDMI 2.1 inputs"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "The C-series is the usual owner recommendation at this size: contrast and motion are praised, with the brightness gap to the G-series the common complaint.",
+      "sources": []
+    },
+    "pros": [
+      "Per-pixel contrast",
+      "Four HDMI 2.1, VRR to 144 Hz",
+      "Much cheaper than the G5 at 77 inches"
+    ],
+    "cons": [
+      "Noticeably dimmer than the G5 and the bright Mini LEDs",
+      "No Primary RGB Tandem panel at this size"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1200,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "The default 77-inch OLED pick: ideal in a dim room, less so in a bright one.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "OLED77C6",
+    "review_score": 8.9,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG product page (77-inch 2026 C6, sold as C6H)",
+        "url": "https://www.lg.com/ca_en/tv-soundbars/oled-evo/oled77c6hup/",
+        "score": "n/a",
+        "verdict": "At 77 and 83 inches the C6 uses the Primary RGB Tandem panel the smaller sizes do not get; RTINGS lists the C6H at 165 Hz"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for owner feedback.",
+      "sources": []
+    },
+    "pros": [
+      "The 77-inch gets the brighter RGB Tandem panel",
+      "165 Hz",
+      "2026 model with the longest support life"
+    ],
+    "cons": [
+      "Launch pricing",
+      "No independent measurements of the 77-inch yet"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2000,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "On paper the C6H at 77 inches is close to last year's G5 for less money; unmeasured so far.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead. Scored from the panel change and the C5's record, not from a review of this set."
+  },
+  {
+    "model_key": "OLED77G6",
+    "review_score": 9.2,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG 2026 line-up press release",
+        "url": "https://www.lg.com/us/press-release/lg-announces-rollout-of-2026-oled-tv-line-up-3-4.pdf",
+        "score": "n/a",
+        "verdict": "2026 flagship: announced as 20% brighter with lower reflections"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for owner feedback.",
+      "sources": []
+    },
+    "pros": [
+      "Brightest OLED available",
+      "Lowest reflections of any OLED tier",
+      "165 Hz"
+    ],
+    "cons": [
+      "Flagship pricing at 77 inches",
+      "No independent measurements yet"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2700,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "The brightness crown, at a price. Wait for measurements before paying the premium over a C6H.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead. Scored from the announcement, not from a review."
+  },
+  {
+    "model_key": "OLED77B5",
+    "review_score": 7.9,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG product page (77-inch B5)",
+        "url": "https://www.lg.com/ca_en/tv-soundbars/oled/oled77b5pua/",
+        "score": "n/a",
+        "verdict": "Up to 120 Hz with four HDMI 2.1 inputs; entry OLED tier"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners treat the B-series as the cheap way into OLED and accept the lower brightness.",
+      "sources": []
+    },
+    "pros": [
+      "OLED contrast at the lowest price",
+      "Four HDMI 2.1"
+    ],
+    "cons": [
+      "Clearly the dimmest OLED tier: weak HDR highlights",
+      "No evo panel or brightness booster"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 700,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Fine in a dark room, disappointing in a bright one.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "OLED77C4",
+    "review_score": 8.4,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG UK product page (77-inch C4, OLED77C46LA)",
+        "url": "https://www.lg.com/uk/small-medium-business/tvs-soundbars/oled-evo/oled77c46la/",
+        "score": "n/a",
+        "verdict": "120 Hz native, VRR to 144 Hz, four HDMI 2.1 at 48 Gbps, G-Sync and FreeSync"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "A long-standing owner favourite, now mostly interesting as clearance stock.",
+      "sources": []
+    },
+    "pros": [
+      "Per-pixel contrast",
+      "Four HDMI 2.1",
+      "Heavily discounted as a previous-year model"
+    ],
+    "cons": [
+      "Dimmer than the C5 and G5",
+      "Older webOS version"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1050,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "The value OLED if the price has dropped far enough below the C5.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "OLED77B6",
+    "review_score": 7.9,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "What Hi-Fi 2026 LG line-up overview",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/lg-2026-tv-lineup-everything-you-need-to-know",
+        "score": "n/a",
+        "verdict": "Entry 2026 OLED tier; sources disagree on whether it is 120 Hz or 144 Hz"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for owner feedback.",
+      "sources": []
+    },
+    "pros": [
+      "Cheapest 2026 OLED",
+      "OLED contrast"
+    ],
+    "cons": [
+      "Dimmest 2026 OLED tier",
+      "Refresh ceiling unconfirmed"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 750,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Only worth it over a discounted C5 if the price gap is large.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead. Scored from the series position, not from a review."
+  },
+  {
+    "model_key": "77S95F",
+    "review_score": 8.9,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Samsung UK product page (77-inch S95F)",
+        "url": "https://www.samsung.com/uk/tvs/oled-tv/s95f-77-inch-oled-4k-smart-tv-qe77s95fatxxu/",
+        "score": "n/a",
+        "verdict": "QD-OLED with the glare-free matte finish, 100 Hz base rate to 165 Hz, four 40 Gbps HDMI 2.1, FreeSync Premium Pro"
+      },
+      {
+        "source": "AV Forums review (QE77S95F)",
+        "url": "https://www.avforums.com/reviews/samsung-s95f-qe77s95f-77-inch-qd-oled-tv-review.22578/",
+        "score": "n/a",
+        "verdict": "Review of this exact 77-inch model"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners rate the matte screen highly in bright rooms; the trade-off is slightly raised blacks under strong light. No Dolby Vision is the recurring complaint.",
+      "sources": []
+    },
+    "pros": [
+      "QD-OLED colour volume and brightness",
+      "Matte glare-free screen: the best OLED for a bright room",
+      "4K/165 Hz on all four HDMI 2.1 ports"
+    ],
+    "cons": [
+      "No Dolby Vision support",
+      "Matte finish slightly lifts black level in a lit room"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2100,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "The brightest-looking OLED in a sunlit room, and a complete gaming set.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "77S90H",
+    "review_score": 8.6,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS review (77-inch S90H)",
+        "url": "https://www.rtings.com/tv/reviews/samsung/77s90h-oled",
+        "score": "n/a",
+        "verdict": "Review of this exact 77-inch set: four HDMI 2.1 ports doing 4K at 165 Hz with VRR"
+      },
+      {
+        "source": "2026 Samsung OLED line-up specs",
+        "url": "https://www.displayspecifications.com/en/news/6b62f0f",
+        "score": "n/a",
+        "verdict": "S90H: W-OLED with a glare-free coating, up to 165 Hz"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for broad owner feedback.",
+      "sources": []
+    },
+    "pros": [
+      "165 Hz on four HDMI 2.1 ports",
+      "Glare-free coating",
+      "W-OLED keeps the price below the S95H"
+    ],
+    "cons": [
+      "Dimmer than the QD-OLED S95H",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1400,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "A strong 2026 gaming OLED a tier below the S95H in brightness.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "77S95H",
+    "review_score": 9.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "2026 Samsung OLED line-up specs",
+        "url": "https://www.displayspecifications.com/en/news/6b62f0f",
+        "score": "n/a",
+        "verdict": "S95H: QD-OLED, up to 165 Hz, four HDMI 2.1, HDR10+ Advanced, FreeSync Premium Pro; peak brightness quoted up to 2,700 nits"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for owner feedback.",
+      "sources": []
+    },
+    "pros": [
+      "2026 QD-OLED flagship",
+      "165 Hz",
+      "Highest quoted OLED brightness in the line-up"
+    ],
+    "cons": [
+      "Flagship pricing",
+      "No Dolby Vision",
+      "Brightness figure is the maker's claim, unmeasured"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2400,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "The 2026 Samsung flagship OLED; verify the brightness claim against measurements when they appear.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead. The 2,700-nit figure is Samsung's claim; the value recorded here is deliberately lower."
+  },
+  {
+    "model_key": "77S90D",
+    "review_score": 8.2,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "European retailer listing (QE77S90D)",
+        "url": "https://galaxus.de/en/s1/product/samsung-qe77s90dae-77-s90d-oled-4k-2024-tv-44719204",
+        "score": "n/a",
+        "verdict": "4K OLED, up to 144 Hz, four HDMI, 40 W audio"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owner reports vary with panel type: the sizes that shipped with W-OLED rather than QD-OLED are described as less vivid.",
+      "sources": []
+    },
+    "pros": [
+      "Cheapest route to a 77-inch Samsung OLED",
+      "Up to 144 Hz with VRR"
+    ],
+    "cons": [
+      "Panel supplier varies by size, and 77 inches is reported as W-OLED",
+      "No Dolby Vision",
+      "2024 model: clearance stock only"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1000,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "Worth it only at a clearance price; check which panel the unit has.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead. Panel type at this size is reported rather than confirmed."
+  },
+  {
+    "model_key": "XR77A95L",
+    "review_score": 8.7,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Sony UK spec page (XR-77A95L)",
+        "url": "https://www.sony.co.uk/electronics/support/televisions-projectors-oled-tvs-android-/xr-77a95l/specifications",
+        "score": "n/a",
+        "verdict": "100/120 Hz QD-OLED panel; European units carry two HDMI 2.1 and two HDMI 2.0"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners rate its picture processing and motion the best of any OLED and accept the two-port HDMI 2.1 limit.",
+      "sources": []
+    },
+    "pros": [
+      "QD-OLED with Sony's processing: the reference for accuracy",
+      "Excellent upscaling and motion",
+      "Dolby Vision support"
+    ],
+    "cons": [
+      "Only two full HDMI 2.1 inputs on European units, one shared with eARC",
+      "2023 model at a premium price"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1400,
+      "input_lag_ms": 17
+    },
+    "gaming_verdict": "Superb picture, weaker gaming value: two HDMI 2.1 ports and higher input lag than its rivals.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "XR77A80L",
+    "review_score": 7.8,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Sony spec page (XR-77A80L)",
+        "url": "https://www.sony-mea.com/en/electronics/support/televisions-projectors-oled-tvs-android-/xr-77a80l/specifications",
+        "score": "n/a",
+        "verdict": "100 Hz panel rate quoted, four HDMI with VRR on HDMI 3 and 4 only, so two full 2.1 inputs"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners praise the picture processing; brightness is the common complaint against newer sets.",
+      "sources": []
+    },
+    "pros": [
+      "Sony processing and motion handling",
+      "Dolby Vision",
+      "Often the cheapest 77-inch OLED in stock"
+    ],
+    "cons": [
+      "Dim by current standards",
+      "Two HDMI 2.1 inputs only",
+      "2023 model"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 800,
+      "input_lag_ms": 17
+    },
+    "gaming_verdict": "A dim-room picture specialist at a clearance price; weak for bright rooms and multi-console setups.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  },
+  {
+    "model_key": "77OLED909",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TechRadar review (OLED909 series)",
+        "url": "https://www.techradar.com/televisions/philips-oled909-review",
+        "score": "n/a",
+        "verdict": "MLA OLED measured at about 1,403 nits in Standard mode, roughly 30% brighter than the OLED809; Bowers & Wilkins sound; 4K/144 Hz on two HDMI 2.1 inputs"
+      },
+      {
+        "source": "Retailer listing (77OLED909)",
+        "url": "https://www.richersounds.com/philips-77oled909/",
+        "score": "n/a",
+        "verdict": "77-inch listing, marked no longer available"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners single out Ambilight and the built-in Bowers & Wilkins speakers; Philips' software is the usual grumble.",
+      "sources": []
+    },
+    "pros": [
+      "MLA panel: among the brighter W-OLEDs",
+      "Four-sided Ambilight",
+      "Bowers & Wilkins audio needs no soundbar",
+      "Dolby Vision and HDR10+"
+    ],
+    "cons": [
+      "Only two HDMI 2.1 inputs",
+      "Philips software is slower than webOS or Tizen",
+      "Discontinued: clearance stock only"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1400,
+      "input_lag_ms": 14
+    },
+    "gaming_verdict": "The best picture-plus-sound package here if you can find one, but only two HDMI 2.1 ports.",
+    "notes": "Brightness figure is TechRadar's measurement of the series."
+  },
+  {
+    "model_key": "77OLED809",
+    "review_score": 8.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "displayspecifications entry (77OLED809/12)",
+        "url": "https://www.displayspecifications.com/en/model/3dfb39a0",
+        "score": "n/a",
+        "verdict": "OLED EX panel, 48-144 Hz VRR, HDMI 2.1 with FreeSync and G-Sync"
+      },
+      {
+        "source": "TechRadar review (OLED809 series)",
+        "url": "https://www.techradar.com/televisions/philips-oled809-review",
+        "score": "n/a",
+        "verdict": "Colourful mid-range OLED with Ambilight; a rival to the LG C4"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners buy it for Ambilight at a mid-range price and accept dimmer highlights than the 909.",
+      "sources": []
+    },
+    "pros": [
+      "Ambilight",
+      "OLED contrast at a mid-range price",
+      "144 Hz with VRR"
+    ],
+    "cons": [
+      "Dimmer than the 909 and the LG C-series",
+      "Two HDMI 2.1 inputs",
+      "Slower smart platform"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 900,
+      "input_lag_ms": 14
+    },
+    "gaming_verdict": "A good-value 77-inch OLED if Ambilight appeals; otherwise a C4 or C5 is the stronger set.",
+    "notes": "Peak brightness is the published 10% window figure for this series rather than a measurement of the 77-inch set, and it was not re-verified here: treat it as approximate. OLED needs no dimming zones, so the fit score credits per-pixel contrast instead."
+  }
+]

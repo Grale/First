@@ -1,0 +1,2895 @@
+[
+  {
+    "model_key": "75U8Q",
+    "review_score": 8.3,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/hisense-u8q-65u8qtuk",
+        "score": "4/5",
+        "verdict": "Strong all-rounder with spectacular brightness and colour and impressive blacks; some backlight distractions; 2048 zones, 3x HDMI 2.1, 4K/165Hz VRR, ~7 ms @120Hz"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/hisense-u8q-test-mini-led-2025/",
+        "score": "Highly recommended; EISA Best Premium Mini LED 2025-26",
+        "verdict": "~3600 nits, 2048 zones, 9 ms 4K120; no HGiG, mild blooming"
+      },
+      {
+        "source": "EFTM (AU variant, same panel)",
+        "url": "https://eftm.com/2025/07/hisense-u8qau-review-impressive-mini-led-picture-in-a-bulky-box-264507",
+        "score": "89%",
+        "verdict": "Stunning picture, great sound, bulky; VIDAA ads and app gaps"
+      },
+      {
+        "source": "RTINGS (US U8QG, different hardware)",
+        "url": "https://www.rtings.com/tv/reviews/hisense/u8qg",
+        "score": "8.4 mixed, 8.3 gaming (US set)",
+        "verdict": "Best Hisense tested; 165Hz, low lag, narrow viewing angle"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Owners and readers praise brightness, contrast and value. Complaints: VIDAA ads and app gaps, only 3 HDMI, occasional blooming or backlight flicker.",
+      "sources": [
+        "https://hdtvpolska.com/hisense-u8q-test-mini-led-2025/",
+        "https://www.which.co.uk/reviews/televisions/hisense-65u8qtuk"
+      ]
+    },
+    "pros": [
+      "2048 dimming zones, very deep blacks for LCD",
+      "3000+ nit highlights",
+      "All 3 HDMI are 48Gbps 2.1, 4K/165Hz VRR, Dolby Vision game mode",
+      "Low input lag (~7 to 9 ms @120Hz)"
+    ],
+    "cons": [
+      "Only 3 HDMI inputs",
+      "No HGiG",
+      "Some backlight distractions",
+      "Narrow VA viewing angle"
+    ],
+    "specs_extra": {
+      "dimming_zones": 2048,
+      "peak_nits": 3600,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "Excellent 120Hz/VRR/HDMI 2.1 gaming TV; all HDMIs full-bandwidth, ~9 ms at 4K120; only the HGiG absence and 3-port count detract.",
+    "notes": "EU U8Q (65U8QTUK) is not the US U8QG. 65in is VA. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U7Q",
+    "review_score": 7.4,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "HDTVPolska (U78Q = U7Q non-Pro)",
+        "url": "https://hdtvpolska.com/hisense-u78q-u7q-test-recenzja-mini-led-2025/",
+        "score": "Highly recommended",
+        "verdict": "Excellent price/quality: 220 zones, ~750 nits, 8 ms 4K120; only 2 HDMI 2.1, no HGiG, dims small highlights"
+      },
+      {
+        "source": "What Hi-Fi (U7Q Pro, context)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/hisense-u7q-pro-65u7qtuk-pro",
+        "score": "4/5 (Pro)",
+        "verdict": "Non-Pro U7Q has 220 zones vs 560, 144Hz vs 165Hz, gaming features on 2 HDMIs vs 4"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Retail buyers rate it very highly for the money (Very.co.uk 4.9/5 from 51 reviews). Few complaints beyond VIDAA app gaps and modest HDR punch.",
+      "sources": [
+        "https://hdtvpolska.com/hisense-u78q-u7q-test-recenzja-mini-led-2025/"
+      ]
+    },
+    "pros": [
+      "Very low input lag (8 ms 4K120)",
+      "Good blacks for the price",
+      "144Hz, VRR, FreeSync Premium, G-Sync, ALLM",
+      "Dolby Vision + HDR10+"
+    ],
+    "cons": [
+      "Only 220 zones and ~750 nits",
+      "Only 2 HDMI 2.1 (one shared with eARC)",
+      "No HGiG; Dolby Vision game mode adds lag",
+      "Dims small HDR highlights"
+    ],
+    "specs_extra": {
+      "dimming_zones": 220,
+      "peak_nits": 750,
+      "input_lag_ms": 8
+    },
+    "gaming_verdict": "Meets the brief with great latency, but modest local dimming and just two 2.1 ports; the U7Q Pro is the better gaming buy if priced close.",
+    "notes": "No RTINGS or What Hi-Fi review of the non-Pro EU U7Q. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U7N",
+    "review_score": 7.5,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/hisense/u7n",
+        "score": "7.5 mixed",
+        "verdict": "Good TV; 384 zones, 144Hz, VRR, low lag, but response-time issue around 100Hz with VRR, black smear at 60Hz"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/reviews/hisense-u7n-65u7n",
+        "score": "4/5",
+        "verdict": "Plucky Mini LED that punches above its weight; some blooming, 2x HDMI 2.1"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/hisense-u7n-review",
+        "score": "positive; ~1400 nits, 5 ms @120",
+        "verdict": "Solid performer; overzealous tone mapping; recommends U8N for a little more"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/hisense-u7n-review-a-budget-mini-led-4k-tv-that-out-performs-its-price",
+        "score": "positive",
+        "verdict": "Budget mini-LED that out-performs its price; needs picture tweaks"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners call it great value (Alza 4.5/5). Recurring gripes: firmware bugs, intrusive VIDAA/Google TV ads, motion blur.",
+      "sources": [
+        "https://m.alza.at/EN/reviews/65-hisense-65u7nq-12377839.htm",
+        "https://hifivision.com/threads/india-hisense-u7n-thoughts-and-reviews-thread.96500"
+      ]
+    },
+    "pros": [
+      "4K/144Hz, VRR, FreeSync Premium, ALLM, DV gaming",
+      "Very low input lag (5 ms @120Hz)",
+      "Bright for the price"
+    ],
+    "cons": [
+      "Only 2 HDMI 2.1",
+      "VRR response-time glitch ~100Hz; black smear at 60Hz",
+      "384 zones: some blooming",
+      "Narrow viewing angle, glare"
+    ],
+    "specs_extra": {
+      "dimming_zones": 384,
+      "peak_nits": 1400,
+      "input_lag_ms": 5
+    },
+    "gaming_verdict": "Competent 120Hz/VRR set with excellent latency, but the VRR quirk and 2-port HDMI 2.1 limit make it a step below the U8N.",
+    "notes": "2024 model, now discontinued. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U8N",
+    "review_score": 8.2,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/hisense/u8n",
+        "score": "8.5 mixed",
+        "verdict": "Great for mixed use and gaming; incredible HDR brightness, deep blacks; narrow viewing angle; minor VRR issue ~100Hz"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/reviews/hisense-u8n-65u8n",
+        "score": "4/5",
+        "verdict": "Good Mini LED; needs careful setup, only 2 HDMI 2.1, average audio"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/hisense-u8n-review",
+        "score": "Recommended",
+        "verdict": "Brighter and better mini-LED at a bargain; 4K144 + DV gaming; 2 HDMI 2.1"
+      },
+      {
+        "source": "hifi.de (U8NQ, 65in)",
+        "url": "https://hifi.de/test/hisense-u8nq-test-213636",
+        "score": "8.9/10",
+        "verdict": "Best Hisense tested; 1600 zones, 2105 nits; weak viewing angle"
+      },
+      {
+        "source": "Reviewed.com",
+        "url": "https://www.reviewed.com/televisions/content/hisense-u8n-mini-led-tv-review",
+        "score": "'Maybe'",
+        "verdict": "3500 nits measured but inconsistent unit-to-unit, firmware-dependent issues"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners love the brightness and value but HDTVPolska readers rate it 3.6/5 and forum posts report flicker or blackouts with the light sensor, haze in dark Dolby Vision scenes and mainboard replacements.",
+      "sources": [
+        "https://hdtvpolska.com/test-hisense-u8nq-mini-led-uled-qled-opinie-recenzja-gdzie-kupic-cena/",
+        "https://www.reviewed.com/televisions/content/hisense-u8n-mini-led-tv-review"
+      ]
+    },
+    "pros": [
+      "1600 zones, 2000 to 3500 nit highlights",
+      "4K/144Hz, VRR, FreeSync Premium Pro, DV gaming",
+      "Deep blacks with minimal blooming"
+    ],
+    "cons": [
+      "Only 2 HDMI 2.1 (one is eARC)",
+      "Minor VRR issue ~100Hz",
+      "Unit/firmware inconsistency reported",
+      "Narrow viewing angle"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1600,
+      "peak_nits": 2105,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Strong 120Hz/VRR gamer with top-tier brightness and dimming; 2-port HDMI 2.1 and the VRR quirk are the only real gaming caveats.",
+    "notes": "65in is VA (the 75in uses ADS). 2024 model; buy only with warranty given QC reports. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U7SE",
+    "review_score": 7.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No professional review yet (2026 launch); retailer spec write-up",
+        "url": "https://en.homecinesolutions.fr/p/32499-hisense-65u7se-2026",
+        "score": "n/a",
+        "verdict": "260 zones, 1400 nits claimed, 144Hz, 4K144 VRR only on HDMI 3/4, 8-bit+FRC, 4 ms claimed lag, slight halo on subtitles"
+      },
+      {
+        "source": "Predecessor context: HDTVPolska U7Q",
+        "url": "https://hdtvpolska.com/hisense-u78q-u7q-test-recenzja-mini-led-2025/",
+        "score": "Highly recommended",
+        "verdict": "U7Q non-Pro delivered 8 ms 4K120, 750 nits, 2 HDMI 2.1"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet. Expect the usual Hisense VIDAA app-gap and ad comments seen on U7Q/U7N.",
+      "sources": [
+        "https://en.homecinesolutions.fr/p/32499-hisense-65u7se-2026"
+      ]
+    },
+    "pros": [
+      "144Hz VRR with FreeSync Premium Pro",
+      "DV + HDR10+",
+      "Cheap entry to the 2026 U7 line"
+    ],
+    "cons": [
+      "Only 260 zones, 8-bit+FRC panel",
+      "Full 4K144 VRR only on 2 of 4 HDMI",
+      "No reviews; claims unverified"
+    ],
+    "specs_extra": {
+      "dimming_zones": 260,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "On paper fits the brief but with budget-grade dimming and two full-bandwidth ports; a step down from the U7S Pro.",
+    "notes": "Low confidence: no reviews; scored from specs plus the U7Q predecessor. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U7SPRO",
+    "review_score": 8.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "choose.tv (65in)",
+        "url": "https://www.choose.tv/de/fernseher/tests/hisense/hisense-u7s-pro_AIJ",
+        "score": "7.7/10",
+        "verdict": "Strong bright-room gaming all-rounder: 960 zones, ~2200 nits, 8 ms 4K120, 4x HDMI 2.1 48Gbps, 165Hz; no proper HGiG, blooming on small highlights"
+      },
+      {
+        "source": "HDTVPolska (85in sibling)",
+        "url": "https://hdtvpolska.com/hisense-u77s-pro-85-test/",
+        "score": "Highly recommended",
+        "verdict": "7.8 ms 4K165; slow pixel response with local dimming on; HGiG broken in tested firmware"
+      },
+      {
+        "source": "RTINGS (US U7SG sibling)",
+        "url": "https://www.rtings.com/tv/reviews/hisense/u7sg",
+        "score": "n/a",
+        "verdict": "Low input lag, great gaming features; narrow viewing angle"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Too new for owner data; U7Q Pro predecessor owners praise value and sound, complain about VIDAA app gaps and home-screen ads.",
+      "sources": [
+        "https://www.netzwelt.de/fernseher/hisense-55u7q-pro-testbericht.html"
+      ]
+    },
+    "pros": [
+      "4 full HDMI 2.1, 4K/165Hz, VRR, DV game mode",
+      "960 zones, 2000 to 3000 nits",
+      "8 ms input lag at 4K120",
+      "Matte anti-reflection coating"
+    ],
+    "cons": [
+      "No working HGiG",
+      "Blooming on small bright objects",
+      "Slower pixel response with local dimming on",
+      "VIDAA app gaps"
+    ],
+    "specs_extra": {
+      "dimming_zones": 960,
+      "peak_nits": 2200,
+      "input_lag_ms": 8
+    },
+    "gaming_verdict": "Very good fit: four 48Gbps ports, 165Hz, VRR, 8 ms lag and strong dimming; best gaming value in the 2026 Hisense line below RGB.",
+    "notes": "Only one 65in instrumented review so far. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75UR8S",
+    "review_score": 8.4,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Expert Reviews (65in)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/hisense-ur8s-review",
+        "score": "4/5",
+        "verdict": "Bright, colourful, accurate; fantastic gaming spec (4x HDMI 2.1, 4K/180Hz); 2615 nits; VIDAA behind rivals"
+      },
+      {
+        "source": "HDTVPolska (65in)",
+        "url": "https://hdtvpolska.com/hisense-ur8s-rgb-mini-led-test/",
+        "score": "Highly recommended",
+        "verdict": "936 zones, ~2500 nits, 10 ms 4K120; inconsistent saturation in complex scenes, small highlights dimmed"
+      },
+      {
+        "source": "AVPasion (65in)",
+        "url": "https://www.avpasion.com/hisense-ur8s-review-smart-tv-rgb-miniled/",
+        "score": "'must-have of 2026'",
+        "verdict": "3800 nits Vivid, ~2200 Filmmaker; local dimming works in Game mode"
+      },
+      {
+        "source": "What Hi-Fi (hands-on)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/hisense-ur8",
+        "score": "early verdict",
+        "verdict": "Rich colours, convincing blacks"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet (launched mid-2026). Early reviewer consensus is strongly positive on value; watch for HomeOS/VIDAA beta bugs.",
+      "sources": [
+        "https://hdtvpolska.com/hisense-ur8s-rgb-mini-led-test/"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K/180Hz, VRR, FreeSync Premium Pro, G-Sync",
+      "10 ms 4K120 input lag; dimming stays on in Game mode",
+      "2500 to 3800 nits, excellent colour",
+      "Matte coating, Devialet audio"
+    ],
+    "cons": [
+      "Small HDR highlights get dimmed",
+      "Colour saturation inconsistent in complex scenes",
+      "Blacks greyer in bright rooms (matte)",
+      "VIDAA/HomeOS behind rivals"
+    ],
+    "specs_extra": {
+      "dimming_zones": 936,
+      "peak_nits": 2500,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Arguably the best gaming fit in this list: four full-bandwidth ports, 180Hz, VRR, low lag with local dimming active.",
+    "notes": "Medium confidence: no long-term or owner data. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75UR9S",
+    "review_score": 8.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/hisense-ur9-65ur9stuk",
+        "score": "4/5",
+        "verdict": "Refined RGB Mini LED that still cannot match OLED; 980 zones, 3x HDMI 2.1, 4K/170Hz; 24.6 ms lag at 60Hz; narrow angles"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/hisense-ur9s-review",
+        "score": "positive, 'a mark off'",
+        "verdict": "~4200 nits with AI Booster; 5.9 ms @120; superb Dolby Vision, but HDR10 colour issues and slight motion softness in games"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/hisense-ur9s-rgb-miniled-test/",
+        "score": "Highly recommended",
+        "verdict": ">3200 nits; could not get lag under 12 ms with dimming off and >30 ms with dimming on; occasional halo"
+      },
+      {
+        "source": "Tom's Guide (US UR9)",
+        "url": "https://www.tomsguide.com/tvs/qled-tvs/hisense-ur9-rgb-mini-led-tv-review",
+        "score": "'very good but falls short'",
+        "verdict": "Extremely colourful, colour-balance issues in some modes"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner data yet. Reviewer consensus: spectacular colour, brightness and sound, but 3 HDMI ports, mixed HDR10 accuracy and conflicting input-lag measurements.",
+      "sources": [
+        "https://hdtvpolska.com/hisense-ur9s-rgb-miniled-test/"
+      ]
+    },
+    "pros": [
+      "3000 to 4200 nit peaks",
+      "4K/170Hz, VRR, DV game mode",
+      "Devialet audio",
+      "Matte coating, premium build"
+    ],
+    "cons": [
+      "Only 3 HDMI 2.1",
+      "Input lag rises sharply with local dimming on",
+      "HDR10 colour issues",
+      "Narrow viewing angle; occasional halo"
+    ],
+    "specs_extra": {
+      "dimming_zones": 980,
+      "peak_nits": 3200,
+      "input_lag_ms": 12
+    },
+    "gaming_verdict": "Fast panel and VRR, but only three 2.1 ports and lag that depends heavily on dimming mode; UR8S or U7S Pro are cleaner gaming picks.",
+    "notes": "Zone count 980 or 1056 depending on source. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75E8S",
+    "review_score": 6.8,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No professional review yet (2026); spec database",
+        "url": "https://www.kitele.com/en/tv-hisense-65e8s",
+        "score": "n/a",
+        "verdict": "VA Mini LED, 512 zones claimed, 144Hz, 2x HDMI 2.1; other listings say ADS panel and 128 to 264 zones"
+      },
+      {
+        "source": "Predecessor context: HDTVPolska E8Q",
+        "url": "https://hdtvpolska.com/hisense-e8q-test-mini-led-144hz-recenzja/",
+        "score": "'best 65in under 4000 zl'",
+        "verdict": "E8Q: 220 zones, 770 nits, 8 to 9 ms 4K120, 2x HDMI 2.1, no HGiG"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews found; retail listings only.",
+      "sources": [
+        "https://www.hisense.es/televisores/miniled/serie-e8-miniled-tv-hisense-65e8s/"
+      ]
+    },
+    "pros": [
+      "Native 144Hz, VRR, ALLM",
+      "DV + HDR10+",
+      "Low price"
+    ],
+    "cons": [
+      "Specs conflict across sources (zones, panel type, HDMI count)",
+      "No reviews",
+      "Likely only 2 HDMI 2.1"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Ticks the boxes on paper but entry-level dimming and possibly an ADS panel make it the weakest gaming pick here.",
+    "notes": "Low confidence; verify panel type before buying. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75W95A",
+    "review_score": 7.4,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://rtings.com/tv/reviews/panasonic/w95a",
+        "score": "7.5 mixed",
+        "verdict": "Very good for mixed use, outstanding contrast; but local dimming and VRR cannot be used simultaneously"
+      },
+      {
+        "source": "Trusted Reviews (55in)",
+        "url": "https://www.trustedreviews.com/reviews/panasonic-tx-55w95a",
+        "score": "4/5",
+        "verdict": "Well-rounded Mini LED, strong value when discounted; modest peak brightness, cluttered Fire TV"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://www.tomsguide.com/tvs/panasonic-w95a-mini-led-tv-review",
+        "score": "positive",
+        "verdict": "Strong HDR and gaming, 144Hz, ~13 ms lag, 2x HDMI 2.1; weak audio"
+      },
+      {
+        "source": "Digital Trends",
+        "url": "https://www.digitaltrends.com/home-theater/panasonic-w95a-mini-led-qled-tv-review-delicious-brightness-and-color/",
+        "score": "Editors' Choice",
+        "verdict": "~1300 nits, excellent blacks and motion; Fire TV frustrations"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners praise accurate colour, motion and value at discount; complaints centre on Fire TV (ads, clutter), limited peak brightness and sound.",
+      "sources": [
+        "https://www.tomsguide.com/tvs/panasonic-w95a-mini-led-tv-review"
+      ]
+    },
+    "pros": [
+      "Accurate colour, excellent motion handling",
+      "Good blacks for its zone count",
+      "144Hz, VRR, FreeSync Premium, G-Sync, ~13 ms lag"
+    ],
+    "cons": [
+      "VRR disables local dimming",
+      "Only 2 HDMI 2.1",
+      "~192 zones, ~1300 nits",
+      "Fire TV OS, weak audio"
+    ],
+    "specs_extra": {
+      "dimming_zones": 192,
+      "peak_nits": 1300,
+      "input_lag_ms": 13
+    },
+    "gaming_verdict": "Fails the brief in one key way: enabling VRR turns off local dimming.",
+    "notes": "2024 model; superseded by the W95B. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75W95B",
+    "review_score": 7.9,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "hifi.de (65in)",
+        "url": "https://hifi.de/test/panasonic-w95b-test-246441",
+        "score": "9.0/10",
+        "verdict": "Big price/performance jump over W95A; 1358 nits, >500 zones, 144Hz VRR on 2 HDMIs; mediocre anti-reflection"
+      },
+      {
+        "source": "choose.tv (65in)",
+        "url": "https://www.choose.tv/uk/tv/reviews/panasonic/panasonic-w95b_AGS/85",
+        "score": "7.5/10",
+        "verdict": "504 zones, 10 to 11 ms 4K120, HGiG, DV game; local dimming does not work in VRR mode; Fire TV app gaps in EU"
+      },
+      {
+        "source": "Expert Reviews (55in)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/panasonic-w95b-review",
+        "score": "positive",
+        "verdict": "Well-priced, well-rounded; only 2 HDMI 2.1, narrow angles"
+      },
+      {
+        "source": "HiFi Report (65in)",
+        "url": "https://www.hifireport.com/panasonic-tv-65w95bgt-review/",
+        "score": "highly recommended",
+        "verdict": "504 zones measured, ~1178 nits, blooming near-invisible"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Early owners like the natural picture and sound; complaints are Fire TV sluggishness and missing apps in Europe, and only two HDMI 2.1.",
+      "sources": [
+        "https://www.testberichte.de/p/panasonic-tests/tv-65w95b-testbericht.html"
+      ]
+    },
+    "pros": [
+      "504 zones, ~1200 to 1400 nits",
+      "144Hz, VRR, HGiG, DV game mode, 10 ms 4K120",
+      "Accurate, natural picture; good sound"
+    ],
+    "cons": [
+      "Local dimming disabled with VRR",
+      "Only 2 HDMI 2.1",
+      "Narrow viewing angle",
+      "Fire TV app gaps in EU"
+    ],
+    "specs_extra": {
+      "dimming_zones": 504,
+      "peak_nits": 1358,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Good latency and features, but the VRR-versus-local-dimming trade-off persists and only two 2.1 ports.",
+    "notes": "65in measured by hifi.de, choose.tv and HiFi Report. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75MLED910",
+    "review_score": 6.9,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No professional review found; launch specs",
+        "url": "https://www.avcesar.com/tv-mini-led-philips-mled910-et-philips-mled950-the-xtra-titan-os-aux-manettes-43980",
+        "score": "n/a",
+        "verdict": "P5 processor, 1000 nits, 144Hz, 4x HDMI 2.1 48Gbps, VRR FreeSync Premium, Ambilight"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews found. Titan OS complaints on sibling Philips sets (slow, app gaps) likely apply.",
+      "sources": [
+        "https://bandaancha.eu/foros/alguien-tiene-titan-os-tv-philips-como-1753798"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 144Hz VRR",
+      "Ambilight",
+      "DV + HDR10+"
+    ],
+    "cons": [
+      "No reviews; zone count unknown",
+      "Lower brightness and colour spec than MLED950",
+      "Titan OS maturity"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1000,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Meets 120Hz/VRR/4x HDMI 2.1 on paper; dimming quality unverified.",
+    "notes": "Low confidence: spec sheet only. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75MLED950",
+    "review_score": 7.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No professional review found; AREA DVD preview",
+        "url": "https://www.areadvd.de/tests/xxl-special-die-neuen-philips-qled-miniled-und-oled-fernseher-fuer-2025-in-der-uebersicht/3/",
+        "score": "n/a",
+        "verdict": "P5 AI Gen7, QD 144Hz panel, 1200 nits, 4x HDMI 2.1 48Gbps, VRR FreeSync Premium Pro, Ambilight Plus"
+      },
+      {
+        "source": "Coolblue",
+        "url": "https://www.coolblue.nl/en/product/962933/philips-ambilight-65-inches-mled950-4k-2025.html",
+        "score": "9.3/10 (4 owner reviews)",
+        "verdict": "Bright picture, good contrast (retailer copy, not a lab test)"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Small-sample owner ratings are high; the usual note that some apps are missing on Titan OS.",
+      "sources": [
+        "https://www.coolblue.nl/en/product/962933/philips-ambilight-65-inches-mled950-4k-2025.html"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1 48Gbps, 144Hz, VRR FreeSync Premium Pro",
+      "Ambilight Plus",
+      "4.1 70W audio"
+    ],
+    "cons": [
+      "No instrumented review; zone count undisclosed",
+      "Titan OS app gaps"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1200,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Full 4-port HDMI 2.1 and 144Hz VRR fit the brief; local-dimming quality is the unknown.",
+    "notes": "Low confidence: no critic test. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75PML9009",
+    "review_score": 7.2,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "StereoIndex",
+        "url": "https://www.stereoindex.com/tech/tv/philips-pml9009-review-the-xtra-that-goes-the-distance/",
+        "score": "9/10 (minor outlet)",
+        "verdict": "Compelling mid-ranger: 75 zones, ~880 nits, 8 ms 4K120, 2x HDMI 2.1 48Gbps, VRR; limited zones, narrow angles"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners like Ambilight and value; complaints about Titan OS casting and missing apps.",
+      "sources": [
+        "https://www.coolblue.nl/en/productreviews/949884"
+      ]
+    },
+    "pros": [
+      "Low input lag (8 ms 4K120)",
+      "Ambilight, DV + HDR10+",
+      "144Hz VRR, G-Sync compatible"
+    ],
+    "cons": [
+      "Only 75 dimming zones",
+      "~880 nits",
+      "Only 2 HDMI 2.1",
+      "Titan OS limitations"
+    ],
+    "specs_extra": {
+      "dimming_zones": 75,
+      "peak_nits": 880,
+      "input_lag_ms": 8
+    },
+    "gaming_verdict": "Latency and VRR are fine, but 75 zones and two 2.1 ports fall short of a good-local-dimming gaming brief.",
+    "notes": "Discontinued at major retailers. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C9K",
+    "review_score": 8.3,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM9K)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm9k",
+        "score": "'great TV overall, great gaming TV'",
+        "verdict": "Incredibly bright, very effective dimming, VRR, low lag; colour mapping issues, vignetting, zone-transition flicker"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/test-tcl-c9k-qd-mini-led-2025-flagowy-telewizor/",
+        "score": "Highly recommended; EISA Best Mini LED Home Cinema TV 2025-26",
+        "verdict": "~4,100 nits, 9 to 10 ms at 4K120; only 2 full HDMI 2.1; dimming algorithm could be better"
+      },
+      {
+        "source": "choose.tv UK",
+        "url": "https://www.choose.tv/uk/tv/reviews/tcl/tcl-c9k_AGC",
+        "score": "7.7/10 overall, 8.8 console gaming",
+        "verdict": "7 ms at 120Hz, VRR 48 to 288Hz, 3,024 zones; brightness management lets it down in films"
+      },
+      {
+        "source": "StereoIndex",
+        "url": "https://www.stereoindex.com/tech/tv/tcl-c9k-review-a-mini-led-powerhouse-with-6000-nits-of-brightness/",
+        "score": "4.5/5",
+        "verdict": "A dazzling Mini LED with true flagship ambitions"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.8,
+      "summary": "Owners praise HDR punch and value. Complaints are software-side: firmware not exploiting all zones, one update that briefly dropped 144Hz to 120Hz, VRR flicker in dark scenes with dimming on High.",
+      "sources": [
+        "https://www.coolblue.be/en/product/961387/tcl-65-inches-qd-mini-led-c9k-4k-2025.html",
+        "https://xdaforums.com/t/tcl-2025-google-tvs-v6c-t6c-p6k-p7k-p8k-c6k-q6c-c7k-q7c-c8k-c9k-x11k.4712660/page-33"
+      ]
+    },
+    "pros": [
+      "~4,000 nits, ~3,000 zones, WHVA panel",
+      "4K144, VRR to 288Hz, ~7 to 10 ms at 120Hz",
+      "All HDR formats, B&O audio"
+    ],
+    "cons": [
+      "Only 2 full HDMI 2.1 (one is eARC)",
+      "Dimming algorithm criticised; VRR flicker in dark scenes",
+      "Firmware maturity issues"
+    ],
+    "specs_extra": {
+      "dimming_zones": 3024,
+      "peak_nits": 4000,
+      "input_lag_ms": 7
+    },
+    "gaming_verdict": "Excellent fit: native 144Hz, VRR, ~7 to 10 ms; set Game Mode local dimming to Low or Medium to avoid flicker.",
+    "notes": "No RTINGS, What Hi-Fi or AVForums lab review of the C9K itself. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "K75XR75M2",
+    "review_score": 7.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/sony/bravia-7-ii",
+        "score": "'great TV for most uses'",
+        "verdict": "Great blacks, ~1,600 to 1,900 nits; motion noticeably blurry in fast action; mediocre reflections; 2x HDMI 2.1"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/sony-bravia-7-ii-review",
+        "score": "4/5",
+        "verdict": "10.4 ms lag, smooth gaming; blooming and weaker viewing angles"
+      },
+      {
+        "source": "AVForums (55in)",
+        "url": "https://www.avforums.com/reviews/sony-bravia-7-ii-k55xr75m2-rgb-mini-led-tv-review.23820/",
+        "score": "7/10",
+        "verdict": "~2,000 nits, ~340 zones (55in), 5.1 ms at 1080p120; poor viewing angles, blooming, trailing in fast games"
+      },
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/reviews/sony-bravia-7-ii",
+        "score": "4.5/5",
+        "verdict": "Strong HDR and PS5 features; 2 HDMI 2.1 a potential deal breaker"
+      },
+      {
+        "source": "What Hi-Fi (55in)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/sony-bravia-7-ii-k55xr75m2",
+        "score": "4/5",
+        "verdict": "Very impressive but cannot rival cheaper OLEDs"
+      }
+    ],
+    "user_sentiment": {
+      "score": 6.8,
+      "summary": "Early enthusiast reaction is mixed: several call it a downgrade from the 2024 Bravia 7 and hard to justify on price; Amazon UK ~4.1/5 from 12.",
+      "sources": [
+        "https://www.avforums.com/threads/discussion-of-our-review-of-sony-bravia-7-ii-k-55xr75m2-rgb-mini-led-tv.2559948/"
+      ]
+    },
+    "pros": [
+      "RGB Mini LED colour, vivid HDR",
+      "Excellent processing",
+      "~10 ms at 60Hz, ~5 ms at 120Hz"
+    ],
+    "cons": [
+      "2 HDMI 2.1, one is eARC",
+      "120Hz cap; HDMI VRR only, no FreeSync",
+      "Motion blur in fast games",
+      "Expensive versus TCL and Hisense"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1600,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Competent but not a gamer's pick: 120Hz cap, two HDMI 2.1 shared with eARC, blur in fast action.",
+    "notes": "Several labs tested the 55in. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "K75XR95M2",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/sony/bravia-9-ii",
+        "score": "'excellent TV for most uses'",
+        "verdict": "3,765 to 4,720 nits, stellar anti-reflection, deep blacks; off-axis degradation, no high-refresh mode, 2 HDMI 2.1"
+      },
+      {
+        "source": "AVForums",
+        "url": "https://www.avforums.com/reviews/sony-bravia-9-ii-k65xr95m2-rgb-mini-led-tv-review.23794/",
+        "score": "9/10 Highly Recommended",
+        "verdict": "Best LCD Sony has made; 1,530 zones, ~4,000 nits, 5.2 ms at 1080p120"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/sony-bravia-9-ii-review",
+        "score": "4/5",
+        "verdict": "OLED-rivalling contrast; brilliant for gaming but 2 HDMI 2.1; very expensive"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/sony-bravia-9-ii-review",
+        "score": "'spectacular success'",
+        "verdict": "~4,400 nits, 1,530 zones; no FreeSync; launch eARC bug"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.0,
+      "summary": "Owners are mostly positive: excellent uniformity, reference colour, matte coating removes reflections. Complaints: only two HDMI 2.1, price, a Game Mode 60Hz motion bug.",
+      "sources": [
+        "https://www.avforums.com/threads/discussion-of-our-review-of-sony-bravia-9-ii-k65xr95m2-rgb-mini-led-tv.2559243/"
+      ]
+    },
+    "pros": [
+      "~4,000+ nits, 1,530 RGB zones, minimal haloing",
+      "Best-in-class anti-reflection and processing",
+      "~5 ms at 120Hz, 4K120 VRR, DV gaming"
+    ],
+    "cons": [
+      "Very expensive",
+      "Only 2 HDMI 2.1; 120Hz cap; no FreeSync",
+      "Off-axis blooming; launch bugs"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1530,
+      "peak_nits": 4200,
+      "input_lag_ms": 5
+    },
+    "gaming_verdict": "Very good for console gaming with superb dimming, but two HDMI 2.1 and no 144Hz make it poor value for high-refresh use.",
+    "notes": "Usually far above the price range. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED866RE",
+    "review_score": 7.1,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "StereoIndex (2022 predecessor 65QNED866QA)",
+        "url": "https://www.stereoindex.com/tech/tv/lg-qned86-review-the-perfect-mid-range-4k-tv/",
+        "score": "positive",
+        "verdict": "IPS-type panel, 180 zones, ~1,130 nits, ~6 ms at 120Hz; haloing with few zones"
+      },
+      {
+        "source": "RTINGS (US sibling QNED85 2022)",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned85",
+        "score": "7.9 mixed",
+        "verdict": "Great gaming experience; decent local dimming only; low IPS contrast"
+      },
+      {
+        "source": "Coolblue",
+        "url": "https://www.coolblue.nl/en/advice/expert-review-of-the-lg-qned866-2023.html",
+        "score": "retailer verdict",
+        "verdict": "Best LG QNED of 2023"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.5,
+      "summary": "Retail reviewers like the colours, bright-room contrast and webOS; complaints are a flimsy stand, weak bass and limited local dimming.",
+      "sources": [
+        "https://m.alza.at/EN/reviews/65-lg-65qned86-7177054.htm"
+      ]
+    },
+    "pros": [
+      "Wide viewing angles, ~1,000+ nits",
+      "~6 ms at 120Hz, VRR, FreeSync, HGiG, 2x HDMI 2.1",
+      "Cheap on clearance"
+    ],
+    "cons": [
+      "IPS-type panel with ~180 zones: low contrast, haloing",
+      "Only 2 HDMI 2.1",
+      "No lab review of this exact model"
+    ],
+    "specs_extra": {
+      "dimming_zones": 180,
+      "peak_nits": 1100,
+      "input_lag_ms": 6
+    },
+    "gaming_verdict": "Responsive, but the IPS panel and ~180 zones fail the good-local-dimming requirement.",
+    "notes": "Inferred from the 2022 and 2023 siblings. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75U8HQ",
+    "review_score": 7.3,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi (UK 65U8HQ)",
+        "url": "https://www.whathifi.com/reviews/hisense-65u8hq",
+        "score": "negative-leaning",
+        "verdict": "Promising spec sheet undone by poor backlighting; the IPS panel causes significant backlight issues"
+      },
+      {
+        "source": "Clubic",
+        "url": "https://www.clubic.com/television-tv/televiseur/test-produit-437421-test-hisense-65u8qh.html",
+        "score": "8/10 (gaming 8)",
+        "verdict": "1,650 nits, 180 zones, 2x HDMI 2.1, FreeSync Premium Pro, 14.8 ms"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/test-recenzja-hisense-u8hq-najlepszy-telewizor-premium-lcd-eisa-2022-2023/5/",
+        "score": "EISA Premium LCD 2022-23",
+        "verdict": "IPS, 160 zones, heavy motion smearing in default modes"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.0,
+      "summary": "EU buyers are enthusiastic about value and brightness; complaints echo reviewers: IPS blooming, weak blacks in dark rooms, motion smearing.",
+      "sources": [
+        "https://m.alza.at/EN/reviews/65-hisense-65u8hq-7355019.htm"
+      ]
+    },
+    "pros": [
+      "Very bright for the money",
+      "2x HDMI 2.1, 4K120, VRR, FreeSync Premium Pro",
+      "Good built-in audio"
+    ],
+    "cons": [
+      "EU version uses an IPS panel with 160 to 180 zones: poor blacks, blooming",
+      "Motion handling flaws",
+      "2022 processing"
+    ],
+    "specs_extra": {
+      "dimming_zones": 180,
+      "peak_nits": 1650,
+      "input_lag_ms": 15
+    },
+    "gaming_verdict": "Feature-complete and responsive, but the IPS backlight undermines HDR gaming contrast; the strong RTINGS score belongs to the different US VA model.",
+    "notes": "Do not use US U8H numbers for the EU U8HQ. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED83B",
+    "review_score": 5.8,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG UK product page (spec only)",
+        "url": "https://www.lg.com/uk/tvs-soundbars/qned-evo/65qned83b6a/",
+        "score": "n/a",
+        "verdict": "Lists a Mini LED backlight, 120Hz native, VRR 144Hz, but names no dimming tier for the 83 series"
+      },
+      {
+        "source": "Kitele spec database",
+        "url": "https://www.kitele.com/en/tv-lg-65qned83b6a",
+        "score": "n/a",
+        "verdict": "Lists the backlight as edge LED with local dimming, so likely the edge-lit tier despite the Mini LED branding"
+      },
+      {
+        "source": "RTINGS (2025 predecessor tier QNED85A)",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned85a",
+        "score": "'mediocre TV for most uses'",
+        "verdict": "Edge-lit: too dim for impactful HDR, poor contrast, local dimming adds a lot of haloing, slow pixel transitions blur games; full 4K120/VRR on 4 ports"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet for the 2026 QNED83B. Owners of the equivalent 2024/2025 tiers praise brightness and gaming features but say the Mini LED label oversells a weak edge dimming system, with corner light leaks and grey blacks.",
+      "sources": [
+        "https://www.pccomponentes.com/opiniones/lg-qned-miniled-65qned87a6b-65-4k-ultra-hd-smart-tv-webos-wifi6-vrr-freesync"
+      ]
+    },
+    "pros": [
+      "120Hz native, 144Hz VRR, FreeSync Premium",
+      "Lowest-priced 2026 QNED evo tier",
+      "webOS 26 with multi-year upgrades"
+    ],
+    "cons": [
+      "Probably edge-lit with few zones: haloing and grey blacks",
+      "Dim HDR highlights on the predecessor tier",
+      "Slow pixel response on the predecessor"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Checks the feature boxes but the likely edge-lit backlight means poor contrast and haloing in dark games; the weakest tier here for good local dimming.",
+    "notes": "No reviews; scored from 2025 predecessor evidence. Backlight type conflicts between LG's Mini LED label and third-party edge-LED listings. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED87A",
+    "review_score": 6.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US sibling QNED85A)",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned85a",
+        "score": "'mediocre'",
+        "verdict": "Edge-lit with local dimming: dim HDR, poor contrast, lots of haloing, slow pixel transitions; 4 HDMI with 4K120/VRR/ALLM"
+      },
+      {
+        "source": "John Lewis listing",
+        "url": "https://www.johnlewis.com/-/p113557490",
+        "score": "4.5/5 (179 retail reviews)",
+        "verdict": "Retailer itself describes the set as edge-lit Mini LED with local dimming"
+      },
+      {
+        "source": "Electronicanto (55in)",
+        "url": "https://electronicanto.net/reviews/lg-qned87-review-qned-evo-mini-led-tv/",
+        "score": "positive",
+        "verdict": "OLED-like LCD with good backlight control, VRR to 120Hz, Dolby Vision gaming; weak built-in audio"
+      },
+      {
+        "source": "choose.tv (2024 predecessor)",
+        "url": "https://www.choose.tv/us/tv/reviews/lg/lg-qned87t6b_ADD",
+        "score": "6.8/10",
+        "verdict": "Edge dimming with 6 zones, contrast 3.3/10, but 5 to 6 ms input lag at 4K120"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "PcComponentes buyers rate it 4.6/5 from 492 ratings for sharp, bright pictures and responsive console gaming; John Lewis 4.5/5. Recurring complaints: corner light leaks, blooming, the Mini LED claim overselling an edge-lit set, weak sound.",
+      "sources": [
+        "https://www.pccomponentes.com/opiniones/lg-qned-miniled-65qned87a6b-65-4k-ultra-hd-smart-tv-webos-wifi6-vrr-freesync",
+        "https://www.johnlewis.com/-/p113557490"
+      ]
+    },
+    "pros": [
+      "120Hz native, 144Hz VRR, 4x HDMI 2.1, Dolby Vision gaming",
+      "Very low input lag on this LG tier",
+      "Bright SDR; strong retail ratings and low price"
+    ],
+    "cons": [
+      "Edge-lit backlight: haloing, grey blacks",
+      "Dim HDR; no HDR10+",
+      "Slow pixel transitions blur fast games; weak speakers"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": 6
+    },
+    "gaming_verdict": "Great connectivity and low lag, but the edge-lit dimming fails the good-local-dimming requirement; dark-scene games will halo and look grey.",
+    "notes": "LG markets it as Mini LED but John Lewis and an engineering report relayed on AVS Forum call it edge-lit. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED87B",
+    "review_score": 6.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "LG UK product page",
+        "url": "https://www.lg.com/uk/tvs-soundbars/qned-evo/65qned87b6a/",
+        "score": "n/a",
+        "verdict": "Mini LED with Precision Dimming, 144Hz VRR, FreeSync Premium, a8 Gen3, webOS 26"
+      },
+      {
+        "source": "DisplaySpecifications",
+        "url": "https://www.displayspecifications.com/en/news/a91afe6",
+        "score": "n/a",
+        "verdict": "Identical to the QNED86B except stand colour; four HDMI 2.1"
+      },
+      {
+        "source": "RTINGS (2025 predecessor tier QNED85A)",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned85a",
+        "score": "'mediocre'",
+        "verdict": "Predecessor tier was edge-lit with heavy haloing and dim HDR"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet (mid-2026 release). 2025 QNED87A owners like the brightness and gaming but complain of corner blooming and misleading Mini LED marketing.",
+      "sources": [
+        "https://www.pccomponentes.com/opiniones/lg-qned-miniled-65qned87a6b-65-4k-ultra-hd-smart-tv-webos-wifi6-vrr-freesync"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 120Hz native / 144Hz VRR",
+      "a8 Gen3, webOS 26, LG Game Optimizer",
+      "LG names Precision Dimming on this tier"
+    ],
+    "cons": [
+      "Zone count undisclosed; predecessor tier was edge-lit",
+      "No reviews or measurements yet",
+      "Likely no HDR10+"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Complete gaming spec on paper with LG's low input lag; dark-scene quality depends on whether the backlight is truly direct Mini LED, which is unverified.",
+    "notes": "Low confidence: no critic or owner coverage yet. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED8M",
+    "review_score": 6.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Elgiganten listing",
+        "url": "https://www.elgiganten.dk/product/tv-lyd-smart-home/tv-tilbehor/tv/lg-65-qned-8m-evo-4k-mini-led-tv-2026/1112298",
+        "score": "not yet rated",
+        "verdict": "QNED MiniLED, 144Hz, three HDMI 2.1"
+      },
+      {
+        "source": "OHHIFI (2026 LG line-up)",
+        "url": "https://www.ohhifi.com/lg-2026-qned-evo-mini-led-a-12999-flagship-and-the-models-that-actually-make-sense/",
+        "score": "n/a",
+        "verdict": "Retail mid tier: 120Hz native, VRR 144Hz, 3 HDMI 2.1; dimming unspecified, usually far fewer zones than the flagship"
+      },
+      {
+        "source": "Coolblue (2026 QNED85 listing)",
+        "url": "https://www.coolblue.be/en/product/977612/lg-mini-led-86-inches-qned85-2026.html",
+        "score": "n/a",
+        "verdict": "Retailer lists the 2026 QNED85 local dimming type as edge-lit"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews for the QNED8M code. Owners of 2025/2026 QNED85-class sets describe bright, colourful pictures but greyer blacks than OLED and weak speakers.",
+      "sources": [
+        "https://www.coolblue.be/en/product/977612/lg-mini-led-86-inches-qned85-2026.html"
+      ]
+    },
+    "pros": [
+      "144Hz VRR, FreeSync, ALLM, webOS 26",
+      "Typically priced below QNED85/86"
+    ],
+    "cons": [
+      "Only three HDMI 2.1",
+      "Dimming tier unspecified, possibly edge-lit",
+      "No reviews or measurements"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Fine for one console, but three HDMI 2.1 ports and unverified, possibly edge-lit dimming make it a weak pick for good local dimming.",
+    "notes": "Retail derivative of the 2026 QNED85/86; confirm the backlight on the exact SKU. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED90T",
+    "review_score": 7.3,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned90t",
+        "score": "8.1 mixed, 8.4 gaming (older test bench)",
+        "verdict": "Effective dimming and very low input lag, but blooming around subtitles, Game Optimizer dims HDR, very slow pixel transitions, poor reflections; ~160 zones, ~1,084 nits"
+      },
+      {
+        "source": "TechRadar (QNED91T)",
+        "url": "https://www.techradar.com/televisions/lg-qned91t-review",
+        "score": "mixed",
+        "verdict": "Feature-rich but suffers from mini-LED blooming in dark scenes; smooth gaming"
+      },
+      {
+        "source": "Expert Reviews (QNED91)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/lg-qned91-review",
+        "score": "n/a",
+        "verdict": "Only 160 zones counted; ~1,400 cd/m2; under 13 ms lag; obvious halos, narrow viewing angles"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/lg-qned91-qned90-65qned91",
+        "score": "n/a",
+        "verdict": "Promising but ultimately mixed results"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners like the bright picture, near-OLED blacks in bright scenes, easy webOS and sale prices. Complaints: eARC audio delays, blooming in bright-on-dark scenes, glare, LG support.",
+      "sources": [
+        "https://forums.whathifi.com/threads/lg-qned91-qned90-65qned91.135288/"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K120, VRR, HGiG, very low input lag",
+      "True direct Mini LED with real local dimming",
+      "Dolby Vision, good upscaling"
+    ],
+    "cons": [
+      "Only ~160 zones: visible blooming",
+      "Very slow pixel transitions",
+      "Poor reflection handling; narrow viewing angle"
+    ],
+    "specs_extra": {
+      "dimming_zones": 160,
+      "peak_nits": 1084,
+      "input_lag_ms": 13
+    },
+    "gaming_verdict": "Full HDMI 2.1 gaming set with low lag, but Game Optimizer loses HDR brightness and slow response blurs motion; competent but dated.",
+    "notes": "EU name QNED91T. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QNED93A",
+    "review_score": 7.9,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS (US QNED92A)",
+        "url": "https://www.rtings.com/tv/reviews/lg/qned92a",
+        "score": "'good TV for most uses'",
+        "verdict": "Deep blacks, good brightness, 144Hz, 4x HDMI 2.1, VRR, very low lag; poor 60Hz motion, haloing, reflections"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/lg-65qned93",
+        "score": "positive",
+        "verdict": "Easily the best LCD TV LG has made; 486 zones, excellent gaming support; weak sound, no HDR10+. Only the 65in uses a VA panel"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/lg-qned93-review",
+        "score": "'A step in the right direction'",
+        "verdict": "1,452 cd/m2 in Game Optimiser; 9.6 ms at 4K60, under 2 ms at 1080p120; 144Hz VRR on 4 HDMI"
+      },
+      {
+        "source": "Stuff",
+        "url": "https://www.stuff.tv/?p=958309",
+        "score": "4/5",
+        "verdict": "Bright, high-contrast, great for gamers"
+      },
+      {
+        "source": "Tom's Guide (QNED92)",
+        "url": "https://tomsguide.com/tvs/lg-qned92-mini-led-tv-review",
+        "score": "negative",
+        "verdict": "Cannot match TCL and Hisense for brightness at the price; poor sound"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.5,
+      "summary": "Owners describe a bright, colourful set with ~500 zones on the 65in VA panel and well-controlled blooming, though halos show on dark greys. Complaints: protruding stand, thin sound, price versus OLED and TCL.",
+      "sources": [
+        "https://www.coolblue.nl/en/productreviews/969336"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, native 144Hz, VRR, Dolby Vision gaming, very low lag",
+      "~486 real Mini LED zones",
+      "~1,450 nits in Game Optimiser"
+    ],
+    "cons": [
+      "Poor 60Hz motion; haloing on dark greys",
+      "Reflections; no HDR10+",
+      "Weak speakers; other sizes use IPS panels"
+    ],
+    "specs_extra": {
+      "dimming_zones": 486,
+      "peak_nits": 1452,
+      "input_lag_ms": 9.6
+    },
+    "gaming_verdict": "Best LG fit here: four full-bandwidth HDMI 2.1, 144Hz VRR, very low lag and genuinely good dimming on the 65in VA panel.",
+    "notes": "US name QNED92A. The only 2025 LG QNED tier with a confirmed direct Mini LED backlight and a large zone count. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "K75XR55",
+    "review_score": 7.4,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US K-65XR50)",
+        "url": "https://www.rtings.com/tv/reviews/sony/bravia-5",
+        "score": "'satisfactory for mixed usage'",
+        "verdict": "Fairly deep blacks and vibrant colour, but mediocre HDR brightness, very slow pixel transitions, HDMI 2.1 on two ports only; a disappointing follow-up to the X90L"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/sony-bravia-5-review",
+        "score": "Best Buy",
+        "verdict": "Best all-round value in Sony's range: ~1,000 cd/m2, ~240 zones, 13.3 ms; 4K120/VRR on two HDMI, no FreeSync"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/sony-bravia-5-k65xr55",
+        "score": "5 stars (per retailer citation)",
+        "verdict": "Excellent value with excellent backlight control; off-axis clouding, fewer gaming features than rivals"
+      },
+      {
+        "source": "Smartprix",
+        "url": "https://www.smartprix.com/bytes/sony-bravia-5-review/",
+        "score": "8.1/10 (gaming 8.5)",
+        "verdict": "384 zones, ~1,000-nit highlights, low lag; blooming in dark rooms"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7,
+      "summary": "Owners praise colour, detail, sound and PS5 auto features. Complaints: fiddly picture tuning, cheap remote, update regressions, lifted blacks in dark rooms.",
+      "sources": [
+        "https://hometechnologyreview.com/2025-sony-bravia-5-mini-led-tv-review-great-bad/"
+      ]
+    },
+    "pros": [
+      "Real Mini LED dimming with well-controlled blooming head-on",
+      "~1,000 nits, excellent processing, 13.3 ms lag, PS5 features",
+      "Best-value Sony Mini LED"
+    ],
+    "cons": [
+      "4K120/VRR only on HDMI 3 and 4; 120Hz max, no FreeSync",
+      "Very slow pixel response",
+      "Narrow viewing angle; no HDR10+"
+    ],
+    "specs_extra": {
+      "dimming_zones": 384,
+      "peak_nits": 1000,
+      "input_lag_ms": 13.3
+    },
+    "gaming_verdict": "Adequate 4K120/VRR console gaming on two ports with good dimming, but the 120Hz cap, no FreeSync and slow motion make it the weakest Sony here for gaming.",
+    "notes": "Zone count disputed (240 versus 384). Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "K75XR70",
+    "review_score": 8.5,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/sony/bravia-7-qled",
+        "score": "8.2 mixed (earlier 8.4)",
+        "verdict": "Very good blacks with minimal blooming, excellent HDR, fantastic upscaling; reflections, slow pixel transitions, higher input lag; HDMI 2.1 on two ports"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/sony-bravia-7-review",
+        "score": "Best Buy",
+        "verdict": "Outstanding backlight control, 1,800 cd/m2; 17.9 ms at 60Hz; 4K120 on two HDMIs only"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/sony-bravia-7-k55xr70",
+        "score": "5 stars ('mid-range marvel')",
+        "verdict": "Much closer to the Bravia 9 than expected; no HDR10+, limited viewing angles"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://tomsguide.com/tvs/sony-bravia-7-tv-review",
+        "score": "positive",
+        "verdict": "Great mid-range value; ~1,400 to 1,500 nits; rather high input lag"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Owners rate it highly for cinema-like HDR, strong dimming and PS5 integration. Complaints: reflections, only two HDMI 2.1, cheap remote, blur in competitive games.",
+      "sources": [
+        "https://galaxus.de/en/s1/product/sony-k-65xr70aep-65-bravia-7-mini-led-4k-2024-tv-45058114",
+        "https://forums.whathifi.com/threads/sony-bravia-7-k55xr70.136975"
+      ]
+    },
+    "pros": [
+      "Excellent local dimming, ~1,800 nits HDR, superb processing",
+      "4K120, HDMI VRR, ALLM, PS5 auto HDR; ~9 to 10 ms at 120Hz",
+      "Good 40W audio"
+    ],
+    "cons": [
+      "4K120/VRR only on HDMI 3 and 4; no FreeSync",
+      "Slow pixel transitions; ~17 ms at 60Hz",
+      "Reflections; narrow viewing angle; no HDR10+"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1800,
+      "input_lag_ms": 17.1
+    },
+    "gaming_verdict": "Strong 4K120/VRR HDR gaming with class-leading dimming, but only two full-bandwidth ports, a 120Hz cap and motion blur; great for single-console HDR gaming.",
+    "notes": "Replaced by the Bravia 7 II; buy only at clearance pricing. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "K75XR90",
+    "review_score": 8.6,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/sony/bravia-9-qled",
+        "score": "'great for mixed usage'; ~9.8 ms 4K120",
+        "verdict": "Amazing blacks with barely any blooming, amazing HDR brightness, exceptional upscaling; slow pixel transitions and higher input lag than rivals; HDMI 2.1 on two ports"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/sony-bravia-9-review",
+        "score": "narrowly missed Best Buy",
+        "verdict": "~3,000 cd/m2, >1,500 zones counted, class-leading blooming suppression; expensive, two full HDMI 2.1, no FreeSync"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/sony-bravia9-review",
+        "score": "positive",
+        "verdict": "Stunning next-gen mini-LED; refined dimming, anti-reflective screen"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://www.tomsguide.com/tvs/sony-bravia-9-tv-review",
+        "score": "Editor's Choice",
+        "verdict": "~2,713 nits, near-OLED blacks; narrow viewing angles"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Owners report near-OLED blacks, minimal blooming, smooth 120Hz PS5 play and superb brightness (Verkkokauppa 4.7/5); a minority find it not worth the price. Complaints: off-axis blooming, wants four HDMI 2.1, sluggish Google TV.",
+      "sources": [
+        "https://www.verkkokauppa.com/fi/product/931054/Sony-75-Bravia-9-4K-QD-Mini-LED-Google-TV/reviews",
+        "https://forum.blu-ray.com/showthread.php?p=22169816"
+      ]
+    },
+    "pros": [
+      "Best local dimming in this list (>1,500 zones), near-OLED blacks",
+      "~2,700 to 3,000 nits; anti-reflective screen; 70W audio",
+      "4K120, HDMI VRR, ALLM, DV gaming; ~10 ms at 120Hz"
+    ],
+    "cons": [
+      "Only HDMI 3 and 4 are full HDMI 2.1; 120Hz max, no FreeSync",
+      "Slow pixel response; ~17 ms at 60Hz",
+      "Expensive; off-axis blooming; no HDR10+"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1500,
+      "peak_nits": 3000,
+      "input_lag_ms": 9.8
+    },
+    "gaming_verdict": "Outstanding HDR gaming picture with the best dimming here and ~10 ms lag at 4K120, but the two-port HDMI 2.1 limit, 120Hz cap and motion blur keep it from being a pure gaming pick.",
+    "notes": "Replaced by the Bravia 9 II. Zone count is a reviewer's manual count. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "XR75X95L",
+    "review_score": 8.4,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS (85in)",
+        "url": "https://www.rtings.com/tv/reviews/sony/x95l",
+        "score": "'amazing TV for pretty much any usage' (older test bench)",
+        "verdict": "Very high contrast, impressive Mini LED dimming, superb reflection handling, low input lag, 4K120/VRR"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/reviews/sony-x95l-xr-65x95l",
+        "score": "5-star verdict",
+        "verdict": "Mini LED and local dimming to outstanding effect; bass-light, no DV gaming, two game-friendly HDMIs"
+      },
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/reviews/sony-xr-65x95l",
+        "score": "5/5",
+        "verdict": "Impressive improvement over its predecessor"
+      },
+      {
+        "source": "Stuff",
+        "url": "https://www.stuff.tv/review/sony-xr-65x95l-review",
+        "score": "5/5",
+        "verdict": "Bigger, brighter, better, but not a complete gaming solution: two HDMI 2.1, ~20 ms at 4K60"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8,
+      "summary": "Owners and European press are very positive about halo-free contrast and processing. Complaints: only two 4K120 inputs, bass-light sound, and it is a 2023 model being cleared out.",
+      "sources": [
+        "https://galaxus.be/en/s1/product/sony-xr-65x95l-65-x95l-mini-led-4k-2023-tv-25194474"
+      ]
+    },
+    "pros": [
+      "Superb Mini LED dimming; ~1,600 nits",
+      "X-Wide Angle and excellent anti-reflection",
+      "4K120, VRR, ALLM, PS5 auto HDR"
+    ],
+    "cons": [
+      "Only HDMI 3 and 4 do 4K120/VRR; no DV gaming",
+      "2023 model; 65in has fewer zones than the 85in tested",
+      "Bass-light audio; heavy"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1589,
+      "input_lag_ms": 17.1
+    },
+    "gaming_verdict": "Very good 4K120/VRR HDR gaming on two ports with strong dimming and wide viewing angle; a solid clearance buy rather than a gaming specialist.",
+    "notes": "RTINGS tested the 85in; the 65in will be somewhat worse. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN80D",
+    "review_score": 7.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn80d-qn80dd-qled",
+        "score": "approx 7.6 mixed / 8.0 gaming (older test bench; numbers now members-only)",
+        "verdict": "Entry Neo QLED: decent all-rounder, fewer dimming zones so more blooming than QN85D/QN90D; full HDMI 2.1 gaming kit"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.5,
+      "summary": "Owners treat it as the cheap way into Samsung mini LED: good brightness and gaming features for the money. Complaints mirror the QN85D's (blooming in dark scenes, VA viewing angles, Tizen ads).",
+      "sources": [
+        "https://www.walmart.com/ip/seort/5385006234"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@120Hz, VRR/FreeSync Premium Pro, ALLM",
+      "Bright SDR for lit rooms",
+      "Cheapest 2024 Neo QLED"
+    ],
+    "cons": [
+      "Few dimming zones: blooming, greyish blacks",
+      "Slow pixel response (motion blur in game mode)",
+      "No Dolby Vision",
+      "Very little critic coverage"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Ticks the 120Hz/VRR/HDMI 2.1 boxes with low lag, but local dimming is the weakest of the 2024 Neo QLEDs; a compromise pick.",
+    "notes": "Low confidence: RTINGS page blocked and no major UK review found; score inferred from its position below the QN85D. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN85D",
+    "review_score": 7.7,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn85d",
+        "score": "approx 7.9 mixed / 8.3 gaming; 'good for mixed usage, decent for gaming'",
+        "verdict": "Good mid-range mini LED; gaming only decent because of blur and modest contrast"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/samsung-qn85d-review",
+        "score": "positive: 'solid mini-LED 4K TV, but there are better-value rivals'",
+        "verdict": "Excellent gaming features, natural detail, good colour; some blooming, average sound, pricier than Hisense U7N/TCL"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.8,
+      "summary": "Retail ratings strong (Walmart 4.6/5); owners praise colour and brightness per pound. Recurring complaints: blooming in dark scenes, narrow VA viewing angle, flimsy stand and remote, Tizen ads, a few early failures.",
+      "sources": [
+        "https://www.walmart.com/ip/seort/5385006234",
+        "https://eu.community.samsung.com/t5/tv/black-shadows-lines-to-new-tv-qn85d/td-p/11588025"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@120Hz, VRR (FreeSync Premium Pro), ALLM",
+      "Natural textures, good colour, bright enough for lit rooms"
+    ],
+    "cons": [
+      "Backlight blooming; blacks go grey in mixed scenes",
+      "Motion blur in fast games",
+      "Average sound",
+      "No Dolby Vision; value beaten by TCL/Hisense"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Competent 4K120/VRR gaming set with low lag, but middling dimming; fine, not a standout.",
+    "notes": "Samsung does not publish zone counts. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN90D",
+    "review_score": 8.4,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn90d",
+        "score": "approx 8.3 mixed / 8.6 gaming; 'great for mixed usage'",
+        "verdict": "Excellent blacks with little blooming, outstanding HDR brightness; loses HDR brightness in Game Mode and slow pixel transitions cause blur"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://www.tomsguide.com/tvs/samsung-qn90d-neo-qled-tested-how-good-is-this-2024-tv",
+        "score": "positive",
+        "verdict": "Very bright, strong gaming, slightly less colour volume than Hisense rival"
+      },
+      {
+        "source": "Coolblue",
+        "url": "https://www.coolblue.be/en/advice/expert-review-of-the-samsung-qn90.html",
+        "score": "8.5/10 customer (69 reviews)",
+        "verdict": "Highly rated by buyers"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.3,
+      "summary": "Very well liked: Walmart 4.6/5 (970), Best Buy 4.7/5 (216). Owners praise brightness, black levels and gaming; complaints are blooming in high-contrast scenes, the dimmer Game Mode, Tizen ads and a wobbly stand.",
+      "sources": [
+        "https://www.walmart.com/ip/5332753679",
+        "https://bestbuy.com/site/reviews/samsung-65-class-qn90d-series-neo-qled-4k-mini-led-smart-tizen-tv-2024/6576428"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@144Hz, VRR/FreeSync Premium Pro, ALLM, very low lag",
+      "Excellent black levels, little blooming for a mini LED",
+      "Outstanding HDR and SDR brightness",
+      "RTINGS rates it slightly better overall than the newer QN90F"
+    ],
+    "cons": [
+      "HDR brightness drops in Game Mode",
+      "Slow pixel transitions: motion blur in games",
+      "Glossy screen reflections",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2000,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Strong 144Hz/VRR/HDMI 2.1 gaming TV with excellent dimming; caveat is dimmer HDR in Game Mode and VA blur. Best value of the 2024 trio.",
+    "notes": "Peak nits ~2000 widely reported; zone count unpublished (~720 for 65in commonly cited). 2024 model, clearance stock. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN95D",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn95d",
+        "score": "approx 8.4 mixed / 8.6 gaming; 'great pairing with modern consoles'",
+        "verdict": "Almost identical to QN90D; slightly better contrast and keeps HDR brightness in Game Mode better"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/reviews/samsung-qn95d-qe65qn95d",
+        "score": "'strong performer with a few frustrating quirks'",
+        "verdict": "Sharp picture, handles dark detail well, excellent gaming specs; blue halo effect at times, poor bass, expensive"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/samsung-qn95d-review",
+        "score": "positive; 2,250 cd/m2 (10%), 9 ms lag, 1,344 zones",
+        "verdict": "Remarkable processing, awesome SDR/HDR, class-leading gaming features; no Dolby Vision"
+      },
+      {
+        "source": "Sound & Vision",
+        "url": "https://www.soundandvision.com/content/samsung-65-qn95d-neo-qled-4k-tv-review",
+        "score": "Top Pick; 1,969 nits, 4.5 ms @1080p120",
+        "verdict": "Particularly solid choice for gamers; glossy reflections, some blooming"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.2,
+      "summary": "Few owner threads (UK/EU-only model); those that exist echo critics: superb brightness, near-OLED blacks, very low lag. Gripes: price versus the near-identical QN90D, reflections, occasional blue halo.",
+      "sources": [
+        "https://www.whathifi.com/reviews/samsung-qn95d-qe65qn95d"
+      ]
+    },
+    "pros": [
+      "1,344 dimming zones, best Samsung 4K dimming of 2024",
+      "4x HDMI 2.1, 4K@144Hz, VRR, ALLM, HGiG, 9 ms lag",
+      "Holds HDR brightness in Game Mode",
+      "Up to ~2,250 nits"
+    ],
+    "cons": [
+      "Expensive; not meaningfully better than QN90D",
+      "Glossy screen reflections",
+      "Occasional blue halo / blooming",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1344,
+      "peak_nits": 2250,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "Best 2024 Samsung 4K for a 144Hz/VRR gaming buyer: most zones, lowest lag, keeps HDR punch in Game Mode; only VA blur and price count against it.",
+    "notes": "RTINGS unit was re-bought after an out-of-spec sample; scores may have shifted. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN95C",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn95c-qled",
+        "score": "approx 8.4 mixed / 8.8 gaming",
+        "verdict": "One of the best gaming LED TVs of 2023: fast, bright, many zones"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/reviews/samsung-qn95c-qa65qn95c",
+        "score": "'Mini LED is much more than a bright room technology'",
+        "verdict": "HDR brightness and black levels praised; no Dolby Vision, some out-of-box backlight flaws"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/samsung-qn95c-review",
+        "score": "positive; 2,150 cd/m2, 10 ms, 1,344 zones",
+        "verdict": "Accomplished flagship; excellent next-gen gaming support"
+      },
+      {
+        "source": "Sound & Vision",
+        "url": "https://www.soundandvision.com/content/samsung-qn95c-4k-neo-qled-tv-review",
+        "score": "Top Pick; 4K144 VRR confirmed on PC",
+        "verdict": "Sublime ultra-premium multi-use TV"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.1,
+      "summary": "Owners rate it highly for brightness, gaming and near-OLED blacks. Launch-era backlight flicker and dirty-screen complaints were partly fixed by firmware; Tizen ads and the missing One Connect box are recurring gripes.",
+      "sources": [
+        "https://www.techradar.com/reviews/samsung-qn95c"
+      ]
+    },
+    "pros": [
+      "1,344 zones, ~2,150 nits",
+      "4x HDMI 2.1, 4K@144Hz, VRR, ALLM, ~10 ms",
+      "Relatively wide viewing angle for VA"
+    ],
+    "cons": [
+      "2023 model: clearance stock and warranty",
+      "No Dolby Vision",
+      "Backlight quirks needing settings tweaks"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1344,
+      "peak_nits": 2150,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Still an excellent 144Hz/VRR gaming set, essentially QN95D performance a generation older; buy only if clearly cheaper than QN90D/QN95D.",
+    "notes": "Discontinued; reviews are from 2023. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN70F",
+    "review_score": 6.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn70f",
+        "score": "'okay' TV (approx 6.5 mixed)",
+        "verdict": "Low contrast and largely ineffective local dimming; motion blur; strengths are SDR brightness and gaming features. Far worse than TCL QM7K at the price"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://www.tomsguide.com/tvs/qled-tvs/samsung-qn70f-neo-qled-tv-review",
+        "score": "'a very average QLED'",
+        "verdict": "Low input lag, good design; weak HDR, poor colour accuracy, no DV"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.0,
+      "summary": "Little owner discussion; buyers who got it discounted like the brightness and 144Hz gaming features. Complaints: washed-out dark scenes and that the Neo QLED badge over-promises for an effectively edge-lit set.",
+      "sources": [
+        "https://www.tomsguide.com/tvs/qled-tvs/samsung-qn70f-neo-qled-tv-review"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 144Hz, VRR, ALLM, low lag",
+      "Bright SDR",
+      "Cheapest 2025 Neo QLED"
+    ],
+    "cons": [
+      "Local dimming largely ineffective",
+      "Weak HDR (~500 nits), poor contrast",
+      "Motion blur",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 500,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Has the 144Hz/VRR/HDMI 2.1 spec sheet and low lag, but fails the good-local-dimming requirement; not recommended.",
+    "notes": "RTINGS confirms 144Hz with HDMI 2.1 bandwidth. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN80F",
+    "review_score": 7.4,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn80f",
+        "score": "'decent' all-rounder (approx 7.0 mixed)",
+        "verdict": "Suits moderately lit rooms; low input lag and wide gaming feature set; visible motion blur; QN90F significantly better"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/test-samsung-qn80f-2025-neo-qled-qd-mini-led-144hz/?showfull=1",
+        "score": "'Very Recommended'; 940 cd/m2 (20% window); 9 ms @120Hz",
+        "verdict": "Full-array mini LED with good blacks, 4x HDMI 2.1 48Gbps, 144Hz, VRR/ALLM; smearing in fast motion"
+      },
+      {
+        "source": "Stereoindex",
+        "url": "https://www.stereoindex.com/tech/tv/samsung-qn80f-review-a-brilliant-mid-range-powerhouse/",
+        "score": "positive; ~1,000 nits, 9.8 ms",
+        "verdict": "Sweet spot of price/performance; blooming around subtitles"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.8,
+      "summary": "Highly rated at Best Buy; owners like 144Hz gaming on all four ports and bright-room performance. Complaints: blooming around subtitles/HUDs, reflective screen, average sound, and that TCL/Hisense give more zones for less.",
+      "sources": [
+        "https://www.bestbuy.com/product/samsung-100-class-qn80f-series-neo-qled-mini-led-4k-uhd-samsungvision-ai-smart-tizen-tv-2025/J3ZYG2FH7Q/sku/10788543/reviews"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@144Hz, VRR (FreeSync Premium Pro / G-Sync compatible), ALLM, ~9 ms",
+      "~1,000 nits HDR peak"
+    ],
+    "cons": [
+      "Few zones (80 to 160 depending on source): blooming",
+      "Motion smearing",
+      "Reflective screen",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 1000,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "Solid 144Hz/VRR budget gaming mini LED with low lag; dimming only adequate, a step below what the buyer wants.",
+    "notes": "Zone count conflicts between sources; left null. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN85F",
+    "review_score": 7.5,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn85f",
+        "score": "approx 7.3 mixed (page not retrievable)",
+        "verdict": "Sits between QN80F and QN90F; brighter than QN80F, still VA blur in game mode"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.0,
+      "summary": "Very small sample: Coolblue DE 8.8/10 (4 ratings). Owners cite bright HDR and gaming responsiveness; no complaint pattern yet beyond Tizen and viewing angle.",
+      "sources": [
+        "https://www.coolblue.de/produkt/964923/samsung-65-neo-qled-qn85f-4k-2025.html"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@144Hz, VRR, ALLM, ~9 ms",
+      "Brighter than QN80F",
+      "Often discounted"
+    ],
+    "cons": [
+      "No major UK review found",
+      "Narrow VA viewing angle",
+      "No Dolby Vision",
+      "Motion blur typical of Samsung VA"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": 9
+    },
+    "gaming_verdict": "Likely a good 144Hz/VRR gaming set, a notch below QN90F in zones and brightness, but evidence is thin.",
+    "notes": "Low confidence: only aggregator and retailer data. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN90F",
+    "review_score": 8.4,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn90f",
+        "score": "'great TV overall' (approx 7.9 mixed, new test bench)",
+        "verdict": "Extremely bright, superb matte reflection handling, very good blacks; black levels and zone transitions worse in Game Mode; HGiG removed by firmware"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/samsung-qn90f-qe65qn90f",
+        "score": "'an outstanding living room TV'",
+        "verdict": "Outstanding backlight control (720 zones on 65in), excellent gaming display, 9.8 ms; no DV, needs tweaking"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/samsung-qn90f-review",
+        "score": "'outstanding mini-LED TV for bright room viewing'",
+        "verdict": "Better picture than QN90D, strong for movies/sports/gaming; no DV, high price"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/samsung-qn90f-review",
+        "score": "positive; ~2,500 cd/m2 (10%), 9.8 ms, 720 zones",
+        "verdict": "Outstanding backlight control, strong gaming (4K120 console / 165Hz PC, FreeSync Premium Pro)"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.0,
+      "summary": "Owners are happy with brightness and the glare-free screen, and PC gamers like 165Hz. Complaints: an AVForums thread on backlight zones pulsing in dark grey content, pixel-defect units at delivery, HGiG removal via firmware, Tizen ads.",
+      "sources": [
+        "https://www.avforums.com/threads/samsung-qn90f.2541217/latest",
+        "https://www.coolblue.be/en/advice/expert-review-samsung-neo-qled-qn90f.html"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@165Hz, VRR, ALLM, 9.8 ms",
+      "720 zones, ~2,500 nits, excellent blacks outside Game Mode",
+      "Matte glare-free screen, best in class for bright rooms",
+      "Holds HDR brightness in Game Mode"
+    ],
+    "cons": [
+      "Slower zone transitions / worse blacks in Game Mode",
+      "Motion blur from VA pixel response",
+      "HGiG removed by firmware",
+      "No Dolby Vision; expensive vs TCL C8K"
+    ],
+    "specs_extra": {
+      "dimming_zones": 720,
+      "peak_nits": 2500,
+      "input_lag_ms": 9.8
+    },
+    "gaming_verdict": "Excellent spec (165Hz, VRR, 4x HDMI 2.1, <10 ms) and bright HDR gaming; the one real flaw is degraded dimming in Game Mode, so dark-room gamers may prefer QN90D/QN95D.",
+    "notes": "Game-mode black-level caveat is RTINGS-specific and may be firmware-dependent. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN80H",
+    "review_score": 7.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn80h",
+        "score": "reviewed May 2026: 'good for most uses'",
+        "verdict": "Mid-range above QN70H; 4x HDMI 2.1, VRR, 4K144, 1080p240 mode. QN90F is much better: brighter, better dimming, less haloing"
+      },
+      {
+        "source": "areadvd.de",
+        "url": "https://www.areadvd.de/news/samsung-praesentiert-die-neuen-neo-qled-serien-qn80h-und-qn70h-fuer-2026/",
+        "score": "launch coverage, EUR 1,899 (65in)",
+        "verdict": "144Hz, VRR/FreeSync Premium; no measured data"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet (2026 launch). Using QN80F owner feedback as proxy: good gaming features and brightness for the money, blooming around bright HUD elements, reflective screen.",
+      "sources": [
+        "https://www.coolblue.nl/en/product/978758/samsung-neo-qled-55-inches-qn80h-2026.html"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@144Hz, VRR, ALLM; 1080p@240Hz mode",
+      "Full-array mini LED",
+      "Latest Tizen with 7-year update promise"
+    ],
+    "cons": [
+      "Only RTINGS has reviewed it so far",
+      "Reuses 2025 NQ4 Gen2 processor",
+      "Fewer zones than QN90F; glossy screen",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Spec sheet fits (144Hz, VRR, 4x HDMI 2.1) and lag is presumably ~10 ms, but dimming is mid-tier; a budget option rather than the best fit.",
+    "notes": "Low confidence: single review, no measurements captured. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75M80H",
+    "review_score": 5.6,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/m80h",
+        "score": "'mediocre' / 'not a good buy for most people'",
+        "verdict": "The Mini LED label is called incredibly misleading: no local dimming; performance near the 2025 Q8F; outclassed by cheaper TCL QM6K / Hisense U65QF. Has HDMI 2.1, 144Hz"
+      },
+      {
+        "source": "Coolblue DE",
+        "url": "https://www.coolblue.de/produkt/981511/samsung-65-zoll-mini-led-m80h-4k-2026.html",
+        "score": "retailer note",
+        "verdict": "Lacks quantum dots: less colourful and bright than Neo QLED"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews found (2026 launch). Expect sentiment similar to Samsung's Q8F series: features and Tizen liked, picture judged flat versus mini LED rivals.",
+      "sources": [
+        "https://www.currys.co.uk/products/samsung-m80h-65-mini-led-4k-vision-ai-smart-tv-2026-ue65m80h-10303347.html"
+      ]
+    },
+    "pros": [
+      "HDMI 2.1, 144Hz, VRR, Tizen feature set",
+      "Cheap"
+    ],
+    "cons": [
+      "No local dimming at all",
+      "No quantum dot: narrower colour",
+      "Poor contrast; outclassed by cheaper TCL/Hisense",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": 0,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Fails the core requirement: no local dimming despite the Mini LED name.",
+    "notes": "dimming_zones 0 reflects RTINGS' finding of no local dimming. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75LS03F",
+    "review_score": 7.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/the-frame-pro-2025",
+        "score": "best for shows/sports in lit rooms; 'isn't a great choice for gamers'",
+        "verdict": "Wireless One Connect adds latency, motion blurry, local dimming ineffective (edge-lit mini LED)"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://tomsguide.com/tvs/samsung-frame-pro-tv-2025-review",
+        "score": "very positive as an art TV",
+        "verdict": "Mini LEDs only in the edge-lighting system; might not be suitable for gaming"
+      },
+      {
+        "source": "Techgoondu",
+        "url": "https://www.techgoondu.com/2025/07/01/samsung-the-frame-pro-2025-review-appealing-design-excellent-images",
+        "score": "positive",
+        "verdict": "Excellent for an art TV; wireless link under 20 ms at 4K144"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.0,
+      "summary": "Buyers love the flush wall mount, matte finish and Art Mode. Gamers and film fans note raised blacks, weak dimming and extra latency through the wireless box; Art Store subscription and Tizen ads draw complaints.",
+      "sources": [
+        "https://www.tomsguide.com/tvs/qled-tvs/samsung-the-frame-vs-the-frame-pro-which-one-is-right-for-your-living-room"
+      ]
+    },
+    "pros": [
+      "Matte anti-reflective screen, flush mount, wireless One Connect",
+      "Supports 4K@144Hz, VRR, ALLM",
+      "Brighter and better contrast than the standard Frame"
+    ],
+    "cons": [
+      "Edge-lit mini LED: local dimming ineffective",
+      "Added input lag via wireless One Connect",
+      "Motion blur",
+      "Premium price for design, not performance; no DV"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Poor fit: VRR/144Hz are present but wireless latency and edge-lit dimming undermine competitive and HDR gaming.",
+    "notes": "Marketed as Neo QLED but not full-array. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75LS03HW",
+    "review_score": 7.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "choose.tv",
+        "url": "https://www.choose.tv/us/tv/reviews/samsung/samsung-the-frame-pro-2026-ls03hw_AJR",
+        "score": "7.3/10 overall; contrast 5.3, gaming features 9.6",
+        "verdict": "Best-executed art TV; edge-lit 24 zones so weak blacks; wireless One Connect lag 32 ms @4K120, 61 to 71 ms @60Hz; HDR 460 to 834 nits"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews yet (2026). Early buyer comments praise the flush mount and glare resistance and criticise Tizen bloat and ads.",
+      "sources": [
+        "https://www.cdw.com/product/samsung-2026-65in-ls03h-frame-pro-tv/9128134"
+      ]
+    },
+    "pros": [
+      "Matte screen, flush wall mount, wireless One Connect included",
+      "VRR, ALLM, 4K@120/144Hz"
+    ],
+    "cons": [
+      "Edge-lit: 24 dimming zones, weak blacks",
+      "High input lag through the wireless box (32 to 71 ms)",
+      "Poor viewing angles",
+      "Art Store subscription; no DV"
+    ],
+    "specs_extra": {
+      "dimming_zones": 24,
+      "peak_nits": 834,
+      "input_lag_ms": 32
+    },
+    "gaming_verdict": "Not suitable: 32 ms+ lag via the wireless box and edge-lit dimming; a decor TV, not a gaming TV.",
+    "notes": "Single-source measurements. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN800C",
+    "review_score": 8.1,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Trusted Reviews (75in)",
+        "url": "https://www.trustedreviews.com/reviews/samsung-qe75qn800c",
+        "score": "positive: 'easily one of Samsung's best 2023 TVs'",
+        "verdict": "Strong blacks, contrast and upscaling; aggressive dimming of small bright objects; little 8K content"
+      },
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn800c-qled",
+        "score": "approx 8.1 mixed / 8.6 gaming",
+        "verdict": "Very good gaming TV: 4K144 VRR, 8K60, low lag"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.9,
+      "summary": "Owners praise sharpness, brightness and the One Connect box; complaints are aggressive dimming on small highlights, thin 8K content, and support on a discontinued model.",
+      "sources": [
+        "https://www.coolblue.nl/en/advice/expert-review-of-the-samsung-8k-qn800c-neo-qled-tv.html"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@144Hz, 8K@60Hz, VRR, ALLM, One Connect",
+      "Strong blacks and upscaling",
+      "Good clearance discounts"
+    ],
+    "cons": [
+      "Discontinued 2023 model",
+      "Aggressive dimming of small bright objects",
+      "8K adds cost with no gaming benefit",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Capable 144Hz/VRR gaming set, but the 8K premium buys nothing for games; only worth it on deep clearance.",
+    "notes": "65in-specific reviews scarce. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN800D",
+    "review_score": 8.1,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/samsung-qn800d-review",
+        "score": "'an impressive 8K TV that proves they still have a place'",
+        "verdict": "Excellent gaming (4K@165Hz, 8K@60, VRR/FreeSync Premium Pro); cons price, no DV, middling bass"
+      },
+      {
+        "source": "What Hi-Fi (hands-on)",
+        "url": "https://www.whathifi.com/reviews/samsung-qn800d",
+        "score": "no final rating",
+        "verdict": "Deep blacks, crisp detail; little 8K content, underwhelming sound, some flicker in bright areas"
+      },
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn800d-qn800dd-qled",
+        "score": "approx 8.0 mixed / 8.4 gaming",
+        "verdict": "Bright, good blacks; VA blur"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.9,
+      "summary": "Retailer reviews praise sharpness, colour and reduced reflections; buyers complain about scarce 8K content, weak sound and the flagship price versus QN90D/QN95D.",
+      "sources": [
+        "https://www.coolblue.nl/en/product/947078"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@165Hz, 8K@60Hz, VRR, ALLM, One Connect",
+      "Excellent upscaling, deep blacks"
+    ],
+    "cons": [
+      "8K premium unjustified for gaming",
+      "No Dolby Vision",
+      "Middling sound",
+      "Some backlight flicker noted"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": null,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Gaming-wise a QN95D-class performer with 165Hz support; you pay for 8K pixels consoles cannot use.",
+    "notes": "Processor generation disputed between sources. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN900F",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/samsung-qn900f-review",
+        "score": "Editor's Choice: '8K TV good enough to sway 8K cynics'",
+        "verdict": "Sensational picture, outstanding gaming display (4K165 VRR, 4x HDMI 2.1, glare-free screen); no DV, 8K content elusive"
+      },
+      {
+        "source": "Expert Reviews (75in)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/samsung-qn900f-review",
+        "score": "best buy; ~2,400 cd/m2, ~10 ms, 1,446 zones (75in)",
+        "verdict": "Excellent 8K upscaling, outstanding backlight control, cutting-edge connections"
+      },
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn900f-8k",
+        "score": "approx 7.7 mixed (new bench)",
+        "verdict": "Bright, good blacks, 165Hz gaming; HDR accuracy and VA blur caveats"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.2,
+      "summary": "Few owners post; those who do praise the glare-free screen, upscaling and 165Hz PC gaming. Complaints centre on price, lack of 8K content and no Dolby Vision.",
+      "sources": [
+        "https://www.techradar.com/televisions/samsung-qn900f-review"
+      ]
+    },
+    "pros": [
+      "4x HDMI 2.1, 4K@165Hz, VRR, ALLM, HGiG, ~10 ms",
+      "~2,400 nits; 1,446 zones on 75in",
+      "Glare-free matte screen; excellent upscaling"
+    ],
+    "cons": [
+      "8K premium with no gaming payoff",
+      "No Dolby Vision",
+      "Default settings need tweaking",
+      "Native 8K content scarce"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2400,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Top-tier 165Hz/VRR gaming performance with Samsung's best 2025 dimming, but the same money buys a QN90F plus a lot of change.",
+    "notes": "Measurements from the 75in unit. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75QN990F",
+    "review_score": 7.9,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS",
+        "url": "https://www.rtings.com/tv/reviews/samsung/qn990f-8k",
+        "score": "7.8 mixed usage; 'not very accurate in HDR'",
+        "verdict": "Bright flagship 8K; HDR accuracy and wireless-box lag caveats"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://tomsguide.com/tvs/samsung-qn990f-neo-qled-8k-tv-review",
+        "score": "'Almost brilliant'",
+        "verdict": "Exceptional picture, glare-free; signal lag from the wireless box"
+      },
+      {
+        "source": "Sound & Vision (75in)",
+        "url": "https://www.soundandvision.com/node/123132",
+        "score": "positive; 2,000 nits, ~1,800 zones (75in), 33.4 ms lag via wireless One Connect",
+        "verdict": "Wireless One Connect transforms placement; price steep, no DV; direct mini-HDMI 2.1 input bypasses the lag"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.8,
+      "summary": "Early adopters love the cable-free wall install and brightness. Gamers report noticeable lag through the wireless box (must use the TV-side mini-HDMI for serious play), and most question the 8K price.",
+      "sources": [
+        "https://forums.tomsguide.com/threads/samsung-qn990f-neo-qled-8k-tv-review-almost-brilliant.570863"
+      ]
+    },
+    "pros": [
+      "~1,800 zones, 2,000 nits, glare-free screen",
+      "4K@240Hz (PC), VRR, ALLM, HDR10+ Adaptive",
+      "Wireless One Connect with a direct mini-HDMI 2.1 bypass"
+    ],
+    "cons": [
+      "~33 ms input lag through the wireless box",
+      "Very expensive",
+      "HDR accuracy issues; light spill",
+      "No Dolby Vision"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2000,
+      "input_lag_ms": 33
+    },
+    "gaming_verdict": "Only a good gaming TV if the console is cabled directly to the panel's mini-HDMI port; via the wireless box lag is too high.",
+    "notes": "Lag figure is the wireless-box one; wired bypass should be ~4 to 10 ms. Zone/nit figures from the 75in. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C7K",
+    "review_score": 8.4,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM7K, same hardware, different tuning)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm7k",
+        "score": "7.8 mixed, 7.8 gaming",
+        "verdict": "Very bright, fantastic contrast, deep blacks; noticeable blooming, some dirty-screen effect; 2x HDMI 2.1 with 4K144 VRR"
+      },
+      {
+        "source": "What Hi-Fi",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-c7k-65c7k",
+        "score": "5/5, 2025 Award winner",
+        "verdict": "Performance-per-pound champion; only two full-bandwidth HDMI"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/tcl-c7k-review",
+        "score": "4/5",
+        "verdict": "Punchy picture (1,790 nits Filmmaker), minimal blooming, extensive gaming features; uniformity issues, average sound"
+      },
+      {
+        "source": "Expert Reviews (55in)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/tcl-c7k-55c7k-review",
+        "score": "Best Buy",
+        "verdict": "Very bright, exceptional value, 9.5 ms at 4K60"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/tcl-c7k-test-mini-led-144hz/",
+        "score": "EISA Family TV 2025-26",
+        "verdict": "1,008 zones, 10 ms at 4K120; too warm out of the box"
+      },
+      {
+        "source": "hifi.de",
+        "url": "https://hifi.de/test/tcl-tv-c7k-test-234996",
+        "score": "9.0/10",
+        "verdict": "1,936 nits Filmmaker, full 144Hz gaming"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.6,
+      "summary": "Owners are strongly positive on brightness, contrast and value (Amazon.de 4.6/5 from ~660). Complaints: two HDMI 2.1 (one shared with eARC), weak bass, warm out-of-box tuning, uniformity on some panels, Google TV ad banner.",
+      "sources": [
+        "https://www.testberichte.de/p/tcl-tests/65c7k-testbericht.html",
+        "https://www.amazon.de/s?k=TCL+65C7K"
+      ]
+    },
+    "pros": [
+      "1,800 to 2,800 nits with 1,008 zones",
+      "4K144, VRR, ALLM, Dolby Vision game mode, ~10 ms at 120Hz",
+      "Best value in its class per several reviewers"
+    ],
+    "cons": [
+      "Only two full HDMI 2.1 (one is eARC)",
+      "Uniformity or dirty-screen effect on some units",
+      "Blooming in hard scenes; HDR accuracy needs calibration",
+      "Average sound"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1008,
+      "peak_nits": 2800,
+      "input_lag_ms": 10
+    },
+    "gaming_verdict": "Excellent 120/144Hz VRR gaming TV for the money; plan for two HDMI 2.1 devices at most.",
+    "notes": "Superseded by the C7L but heavily discounted. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C8K",
+    "review_score": 8.8,
+    "confidence": "high",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM8K; RTINGS says the review is not valid for the C8K)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm8k",
+        "score": "8.4 mixed, 8.4 gaming; ~5.3 ms at 4K120",
+        "verdict": "Incredibly high contrast, very bright, great for gaming; okay accuracy, some uniformity issues"
+      },
+      {
+        "source": "What Hi-Fi (85in)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-c8k-85c8k",
+        "score": "5/5",
+        "verdict": "Faults were hard to find"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/tcl-c8k-review",
+        "score": "4/5",
+        "verdict": "One of 2025's best mini-LEDs: 3,144 nits Filmmaker, 1,680 zones; only two HDMI 2.1"
+      },
+      {
+        "source": "Expert Reviews (65in)",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/tcl-c8k-review",
+        "score": "5/5 Best Buy",
+        "verdict": "Over 4,000 cd/m2 Standard; outstanding for video and gaming"
+      },
+      {
+        "source": "HDTVPolska",
+        "url": "https://hdtvpolska.com/tcl-c8k-test-qd-miniled-2025/",
+        "score": "EISA Statement TV 2025-26",
+        "verdict": "10 ms at 4K120, 1,680 zones; slight warm tint"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.3,
+      "summary": "Owners praise brightness, local dimming and PS5 gaming. Complaints: two HDMI 2.1 and one USB, older Android base, scattered VRR flicker reports on the US twin, panel-lottery worries, TCL after-sales.",
+      "sources": [
+        "https://www.hifivision.com/threads/tcl-c8k-review-india.101218",
+        "https://www.testberichte.de/p/tcl-tests/65c8k-testbericht.html"
+      ]
+    },
+    "pros": [
+      "3,100 to 4,500 nits, 1,680 zones, best-in-class LCD contrast",
+      "~5 to 7 ms at 120/144Hz, VRR, FreeSync Premium Pro, Dolby Vision gaming",
+      "Wider-angle WHVA panel; B&O 90 W audio"
+    ],
+    "cons": [
+      "Only two HDMI 2.1 (one shared with eARC)",
+      "Factory calibration off; some uniformity issues",
+      "Some blooming on starfields and subtitles"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1680,
+      "peak_nits": 3400,
+      "input_lag_ms": 7
+    },
+    "gaming_verdict": "Top-tier 144Hz VRR gaming for an LCD; the only real gaming limit is the two-port HDMI 2.1 count.",
+    "notes": "Replaced by the 2026 C8L. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C6K",
+    "review_score": 8.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM6K)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm6k",
+        "score": "7.1 mixed",
+        "verdict": "Budget mini-LED with relatively low HDR brightness; unusual 144Hz/VRR feature set at the price"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/tcl-c6k-review",
+        "score": "4/5",
+        "verdict": "Very good value: vibrant colour, good gaming suite, 13.6 ms; black crush, average angles and sound"
+      },
+      {
+        "source": "What Hi-Fi (Q6C, identical hardware)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-q6c-65q6c-uk",
+        "score": "5/5",
+        "verdict": "Ridiculously good value; 242 zones at 65in; clipping of bright highlights"
+      },
+      {
+        "source": "Stuff (65C6K)",
+        "url": "https://stuff.co.za/2025/12/31/tcl-65c6k-tv-review-more-than-you-pay-for/",
+        "score": "8.0/10",
+        "verdict": "Value champ; blooming around bright objects"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.7,
+      "summary": "Owner ratings among the strongest in the group (Amazon.de 4.6/5 from ~1,500; Very.co.uk 4.6/5). Complaints: blooming in dark scenes, black crush, plasticky build, two HDMI 2.1.",
+      "sources": [
+        "https://www.amazon.de/s?k=TCL+65C6K"
+      ]
+    },
+    "pros": [
+      "Native 144Hz, VRR, ALLM, Dolby Vision gaming at a budget price",
+      "Vibrant colour, decent blacks for the money",
+      "Very high owner satisfaction"
+    ],
+    "cons": [
+      "Only ~242 zones at 65in: blooming, black crush",
+      "~700 to 1,000 nits; highlights clip",
+      "Two HDMI 2.1; lightweight build"
+    ],
+    "specs_extra": {
+      "dimming_zones": 242,
+      "peak_nits": 1000,
+      "input_lag_ms": 13
+    },
+    "gaming_verdict": "Full 4K144/VRR feature set, but the zone count is low for a good-local-dimming requirement; a budget pick only.",
+    "notes": "RTINGS figure is for the US QM6K. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75Q6C",
+    "review_score": 8.1,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi (65Q6C-UK)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-q6c-65q6c-uk",
+        "score": "5/5",
+        "verdict": "Absolute steal: 242 zones, 13.1 ms, 2x 48Gbps HDMI 2.1, 4K144 VRR; HDR clipping, lightweight build"
+      },
+      {
+        "source": "netzwelt.de",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-q6c-65q6c-uk",
+        "score": "83/100",
+        "verdict": "Natural colour, strong contrast for the price"
+      },
+      {
+        "source": "RTINGS (US QM6K, same class)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm6k",
+        "score": "7.1 mixed",
+        "verdict": "Low HDR brightness is the main weakness"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.8,
+      "summary": "Amazon.de lists it as top-rated at 4.6/5 from ~1,500. Owners love the value and colour; complaints are blooming, HDR clipping, flimsy build, two HDMI 2.1.",
+      "sources": [
+        "https://www.amazon.co.uk/s?k=TCL+65+inch+QD+Mini+LED+TV"
+      ]
+    },
+    "pros": [
+      "Same 144Hz/VRR gaming package as the C6K at a lower price",
+      "5-star What Hi-Fi review",
+      "Large, happy owner base"
+    ],
+    "cons": [
+      "~242 zones and ~1,000 nits",
+      "Only two HDMI 2.1",
+      "Panel coating can differ from the C6K"
+    ],
+    "specs_extra": {
+      "dimming_zones": 242,
+      "peak_nits": 1000,
+      "input_lag_ms": 13
+    },
+    "gaming_verdict": "Feature-complete 144Hz VRR set, but weak local dimming for a Mini LED gaming buyer.",
+    "notes": "TCL states Q6C equals C6K. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C7L",
+    "review_score": 8.8,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM7L)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm7l",
+        "score": "8.2 overall (second-hand quote)",
+        "verdict": "Excellent local dimming, deep uniform blacks, bright; slow pixel transitions cause motion blur in games, poor HDR accuracy, narrow viewing angle"
+      },
+      {
+        "source": "What Hi-Fi (65C7L)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-c7l-65c7l",
+        "score": "5/5",
+        "verdict": "A premium Mini LED for a mid-range price: 1,152 zones, 13.4 ms; only two full HDMI 2.1, confusing Eco settings"
+      },
+      {
+        "source": "HDTVPolska (65C7L)",
+        "url": "https://hdtvpolska.com/tcl-c7l-test-opinia-czy-warto-kupic-mini-led/",
+        "score": "Recommended",
+        "verdict": "2,700 nits, 8 ms at 120Hz, 1,152 zones; glossy screen, VA angles"
+      },
+      {
+        "source": "AVPasion (65C7L)",
+        "url": "https://www.avpasion.com/tcl-c7l-review-mejor-televisor-sqd-miniled-2026/",
+        "score": "best value SQD-Mini LED of 2026",
+        "verdict": "2,100+ nits, ~5 ms at 144Hz, little blooming, much better factory calibration than the C7K"
+      },
+      {
+        "source": "T3",
+        "url": "https://www.t3.com/tech/tvs/tcl-c7l-review-qm7l",
+        "score": "Platinum Award",
+        "verdict": "Stunning picture at a stunning price; sound nothing special"
+      },
+      {
+        "source": "German press aggregate",
+        "url": "https://www.testit.de/product/ABOnXxDbHkSnMfZAZoQ0.html",
+        "score": "all Good or Very good (CHIP 1.9, COMPUTER BILD 1.8, netzwelt 1.6, hifi.de 9/10)",
+        "verdict": "~2,500 nits, 10 to 13 ms; halos in dark rooms; two fast HDMI ports"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.5,
+      "summary": "Early owners are positive (Amazon UK 4.5/5 from 18; US QM7L owners say it delivers far more than its price), but the sample is small since the mid-2026 launch. Gripes: motion blur in some content, banding on poor sources, 60 W sound.",
+      "sources": [
+        "https://www.amazon.co.uk/s?k=TCL+65+inch+QD+Mini+LED+TV",
+        "https://slickdeals.net/f/19922484-65-tcl-qm7l-series-4k-uhd-hdr-sqd-mini-led-google-smart-tv-2026-900-free-s-h"
+      ]
+    },
+    "pros": [
+      "1,152 zones, 2,100 to 2,800 nits, SQD colour, wider-angle WHVA 2.0",
+      "~5 ms at 144Hz, 8 ms at 120Hz; VRR, FreeSync Premium, ALLM, DV game mode",
+      "Better factory calibration than the C7K",
+      "Universal 5-star, Platinum and Editors' Choice coverage"
+    ],
+    "cons": [
+      "Only two full HDMI 2.1 (one is eARC)",
+      "Motion blur in fast games; poor HDR accuracy (RTINGS)",
+      "Glossy screen; halos in dark rooms",
+      "Mediocre sound"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1152,
+      "peak_nits": 2700,
+      "input_lag_ms": 8
+    },
+    "gaming_verdict": "Excellent 144Hz VRR gaming value with sub-10 ms lag; the HDMI 2.1 port count and motion blur are the only real gaming caveats.",
+    "notes": "RTINGS results are for the US QM7L; owner data still thin. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75C8L",
+    "review_score": 9.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "RTINGS (US twin QM8L)",
+        "url": "https://www.rtings.com/tv/reviews/tcl/qm8l",
+        "score": "verbal verdict: great for most uses",
+        "verdict": "Excellent local dimming, high contrast, very bright, great gaming features and incredibly low lag; slow response in fast games, poor HDR accuracy"
+      },
+      {
+        "source": "What Hi-Fi (65C8L)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-c8l-65c8l",
+        "score": "'dazzling results'",
+        "verdict": "Outstandingly bright and colourful, great gaming (10.1 ms, 4x 48Gbps HDMI 2.1); big price jump from C7L"
+      },
+      {
+        "source": "Expert Reviews",
+        "url": "https://www.expertreviews.co.uk/technology/tvs-home-cinema/tcl-c8l-review",
+        "score": "Best Buy",
+        "verdict": "~3,100 nits Filmmaker, 2,040 zones, four HDMI 2.1, 144Hz, FreeSync Premium Pro"
+      },
+      {
+        "source": "HDTVPolska (65C8L)",
+        "url": "https://hdtvpolska.com/tcl-c8l-test-opinia/",
+        "score": "Highly recommended",
+        "verdict": "4,500 nits peak, 8 ms at 120Hz; mild halo on stars and subtitles"
+      },
+      {
+        "source": "Cybershack",
+        "url": "https://cybershack.com.au/av/tcl-c8l-tcl-c7l-review/",
+        "score": "4.5/5",
+        "verdict": "Visibly better than C7L: less blooming at angles, cleaner upscaling"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.6,
+      "summary": "Amazon.de family listing 4.6/5 (101). Owners cite the four HDMI 2.1 ports and brightness; one thread asks about VRR flicker with high-end GPUs. Sample still small.",
+      "sources": [
+        "https://www.amazon.de/s?k=TCL+65C7L",
+        "https://cybershack.com.au/av/tcl-c8l-tcl-c7l-review/"
+      ]
+    },
+    "pros": [
+      "Four full 48Gbps HDMI 2.1",
+      "2,040 zones, 3,100 to 4,500 nits, SQD wide gamut",
+      "8 ms at 120Hz; VRR, FreeSync Premium Pro, ALLM, HGiG, DV gaming",
+      "WHVA 2.0 angles and B&O 200 W audio"
+    ],
+    "cons": [
+      "Big price jump over the C7L",
+      "Slow response in fast games; poor HDR accuracy pre-calibration",
+      "Mild halo on subtitles; reflections"
+    ],
+    "specs_extra": {
+      "dimming_zones": 2040,
+      "peak_nits": 3600,
+      "input_lag_ms": 8
+    },
+    "gaming_verdict": "The most complete gaming spec in the group: four HDMI 2.1, 144Hz VRR, ~8 ms lag and the best local dimming; only motion smear and price count against it.",
+    "notes": "Launched mid-2026; owner volume still low. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75RM7L",
+    "review_score": 7.7,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No professional review found",
+        "url": "https://hdtvpolska.com/telewizory-rgb-mini-led-samsung-hisense-tcl-ile-kosztuja-ceny/",
+        "score": "n/a",
+        "verdict": "Only pricing and launch coverage exists for TCL's 2026 RGB-Mini LED tier"
+      },
+      {
+        "source": "Retailer specs",
+        "url": "https://www.ldlc.com/en/product/PB00747887.html",
+        "score": "spec sheet only",
+        "verdict": "HVA Pro, up to 2,000 nits, four HDMI 2.1, 144Hz gaming, 5.7 ms claim; zone count conflicting (448 to 1,800)"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner reviews found; street price already falling (EUR 849 to 990 deals versus EUR 1,499 RRP).",
+      "sources": [
+        "https://www.mydealz.de/deals/tcl-65rm7l-rgb-mini-led-65-zoll-tv-4k-smart-tv-google-tv-zum-tiefstpreis-849eur-2838773"
+      ]
+    },
+    "pros": [
+      "RGB-Mini LED with a wide-gamut claim",
+      "Four HDMI 2.1, VRR, ALLM",
+      "Already heavily discounted"
+    ],
+    "cons": [
+      "No independent reviews or measurements",
+      "Some datasheets list a 100Hz native panel with 144Hz gaming",
+      "Zone count unclear; brightness below C7L/C8L"
+    ],
+    "specs_extra": {
+      "dimming_zones": 1344,
+      "peak_nits": 2000,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "On paper OK, but the possible 100Hz native panel and unknown lag make it a gamble until a lab test appears.",
+    "notes": "Low confidence: spec-sheet only. The UK 65Q7D is the same set. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75Q7D PRO",
+    "review_score": 7.9,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No independent review found (only a sponsored PhileWeb piece)",
+        "url": "https://www.phileweb.com/review/article/202605/25/6515.html",
+        "score": "PR article",
+        "verdict": "Positions the Q7D Pro as an entry SQD-Mini LED with Google TV"
+      },
+      {
+        "source": "Notebookcheck / AVPasion launch specs",
+        "url": "https://www.notebookcheck.com/TCL-Q7D-Pro-Deutschland-Preise-des-neuen-SQD-Mini-LED-Fernsehers-geleakt.1285575.0.html",
+        "score": "spec sheet only",
+        "verdict": "HVA 2.0 Pro panel, up to 1,152 zones (a 55in listing says 480), up to 2,000 nits, 144Hz native, 288Hz Game Accelerator; sits between the C6K and C7L"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.4,
+      "summary": "Only early Amazon.de data: the 55in listing shows 4.7/5 from ~100 ratings. No detailed owner reports yet.",
+      "sources": [
+        "https://www.skroutz.gr/s/67313323/tcl-smart-tv-65-4k-uhd-sqd-mini-led-q7d-pro-hdr-2026-65q7d-pro.html"
+      ]
+    },
+    "pros": [
+      "SQD-Mini LED colour and HVA 2.0 Pro panel",
+      "144Hz native with VRR, Game Bar",
+      "Strong early owner rating"
+    ],
+    "cons": [
+      "No lab reviews; 65in zone count unconfirmed (480 or 1,152)",
+      "2,000-nit claim below the C7L",
+      "Onkyo 2.1 audio"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 2000,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Likely a competent 144Hz VRR set on the C7L platform; if the 65in has only 480 zones, dimming is a clear step below the C7L.",
+    "notes": "Low confidence: no reviews yet. If the 65in has 1,152 zones it becomes a near-C7L at a lower price. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75P8L",
+    "review_score": 7.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi (65P8L-UK)",
+        "url": "https://www.whathifi.com/tv-home-cinema/televisions/tcl-p8l-65p8l-uk",
+        "score": "positive ('nails the basics')",
+        "verdict": "Balanced picture, strong gaming for GBP 749; limited brightness, reflective coating, only 72 zones"
+      },
+      {
+        "source": "AVPasion (65P8L)",
+        "url": "https://www.avpasion.com/tcl-p8l-review-la-demostracion-de-como-debe-ser-un-verdadero-miniled-a-precio-de-derribo/",
+        "score": "'a bargain'",
+        "verdict": "True FALD at ~EUR 599, ~5 ms at 144Hz; only ~60 to 64 zones, ~330 nits after calibration"
+      }
+    ],
+    "user_sentiment": {
+      "score": 8.2,
+      "summary": "Very few owner ratings yet (Amazon UK 4.5/5 from 9); buyers call it great value with smooth 144Hz gaming.",
+      "sources": [
+        "https://hkele.com.hk/en/TCL/65P8L"
+      ]
+    },
+    "pros": [
+      "Cheapest 144Hz/VRR set with two HDMI 2.1",
+      "~5 ms at 144Hz",
+      "Dolby Vision, HDR10+"
+    ],
+    "cons": [
+      "Only ~60 to 72 zones",
+      "~330 to 450 nits HDR",
+      "Reflective screen, black crush"
+    ],
+    "specs_extra": {
+      "dimming_zones": 72,
+      "peak_nits": 450,
+      "input_lag_ms": 5
+    },
+    "gaming_verdict": "Excellent lag and 144Hz VRR for the price, but near-absent local dimming and low HDR brightness fail the good-local-dimming brief.",
+    "notes": "Zone count 60 to 72 depending on source. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "XIAOMI TV S MINI LED 75",
+    "review_score": 7.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No major-outlet review found",
+        "url": "https://www.avpasion.com/xiaomi-europa-tv-s-mini-led-2025-alucinante/",
+        "score": "n/a",
+        "verdict": "Launch and deal coverage only"
+      },
+      {
+        "source": "videotesty.pl / Notebookcheck (spec-based)",
+        "url": "https://www.videotesty.pl/produkt/264574/",
+        "score": "no measured score",
+        "verdict": "392 zones, 1,200-nit claim, 144Hz, HDMI 2.1, FreeSync Premium; dimming weaker than TCL but strong price-performance"
+      }
+    ],
+    "user_sentiment": {
+      "score": 7.8,
+      "summary": "PcComponentes owners rate it 4.6/5 (150 ratings) for colour, brightness and PS5 gaming; Amazon.de 4.1/5 (462). Complaints: slow boot, VRR resetting after power-off on PS5, crashes, remote issues.",
+      "sources": [
+        "https://www.pccomponentes.com/opiniones/xiaomi-tv-s-2025-65-qd-mini-led-ultrahd-4k-google-tv"
+      ]
+    },
+    "pros": [
+      "392 zones and 1,200-nit claim at a low price",
+      "144Hz native, VRR, ALLM, FreeSync Premium",
+      "Dolby Vision IQ, AirPlay"
+    ],
+    "cons": [
+      "No independent measurements",
+      "Software bugs including VRR not persisting",
+      "Lower Amazon.de rating than TCL rivals"
+    ],
+    "specs_extra": {
+      "dimming_zones": 392,
+      "peak_nits": 1200,
+      "input_lag_ms": null
+    },
+    "gaming_verdict": "Feature list fits, but the VRR-reset bug and lack of any lab test make it a risk for a VRR-dependent buyer.",
+    "notes": "Low confidence: spec and owner data only. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  },
+  {
+    "model_key": "75MNE8000Z",
+    "review_score": 6.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "No review found anywhere; spec aggregator",
+        "url": "https://www.kitele.com/en/tv-metz-65mne8000z",
+        "score": "n/a",
+        "verdict": "VA Mini LED, 500 nits typical / 800 peak, 12 ms lag, 3x HDMI 2.1, VRR; refresh listed as 120Hz here and 144Hz elsewhere"
+      }
+    ],
+    "user_sentiment": {
+      "score": 6.5,
+      "summary": "No owner reviews for this model; other Metz sets average 3.7 to 4.0/5 on Amazon.de.",
+      "sources": [
+        "https://www.x-kom.pl/p/1532499-telewizor-60-69-metz-65mne8000z-65-miniled-120hz-google-tv-dolby-vision.html"
+      ]
+    },
+    "pros": [
+      "Three HDMI 2.1 with VRR and ALLM",
+      "Dolby Vision, HDR10+, Google TV",
+      "Built-in subwoofer"
+    ],
+    "cons": [
+      "No reviews or measurements",
+      "Refresh conflict and undisclosed zone count",
+      "Likely ~500 to 800 nits real peak"
+    ],
+    "specs_extra": {
+      "dimming_zones": null,
+      "peak_nits": 800,
+      "input_lag_ms": 12
+    },
+    "gaming_verdict": "Unverified; at least 120Hz VRR over HDMI 2.1 on paper, but dimming quality and lag are unknown.",
+    "notes": "Lowest confidence in the set. Evidence is for the 65-inch set of the same series; the measured zones, brightness and lag below were taken on that size. Larger panels usually gain zones and a little brightness."
+  }
+]

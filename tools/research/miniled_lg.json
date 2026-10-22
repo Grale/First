@@ -1,0 +1,145 @@
+[
+  {
+    "brand": "LG",
+    "model_key": "75QNED93A",
+    "family": "QNED93A",
+    "year": 2025,
+    "backlight": "QNED quantum dot Mini LED (Precision Dimming Pro)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/75qned93a6a/",
+    "aliases": [
+      "QNED93",
+      "75QNED93",
+      "75QNED93A",
+      "75QNED93A6A",
+      "QNED93A"
+    ],
+    "notes": "LG UK page for the 75-inch model (75QNED93A6A): Mini LED, 120 Hz native with VRR to 144 Hz, alpha8 AI Gen2. Top QNED evo tier in Europe."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED87A",
+    "family": "QNED87A",
+    "year": 2025,
+    "backlight": "QNED quantum dot Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.displayspecifications.com/en/model/70bc4248",
+    "aliases": [
+      "75QNED87A",
+      "75QNED87A6B",
+      "QNED87A"
+    ],
+    "notes": "displayspecifications entry for the 75-inch 75QNED87A6B: Mini LED, 120 Hz native, 48-144 Hz VRR. Reviews of this tier report an edge-lit dimming system despite the Mini LED label."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED90T",
+    "family": "QNED90T",
+    "year": 2024,
+    "backlight": "QNED quantum dot Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/in/tv-soundbars/qned/65qned90t6a/",
+    "aliases": [
+      "QNED90",
+      "75QNED90",
+      "75QNED90T",
+      "75QNED90T6A",
+      "75QNED90T6B",
+      "QNED90T"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED87B",
+    "family": "QNED87B",
+    "year": 2026,
+    "backlight": "QNED evo quantum dot Mini LED (Precision Dimming)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/es/tv-y-barras-de-sonido/qned-evo/65qned87b6a/",
+    "aliases": [
+      "75QNED87B",
+      "75QNED87B6A",
+      "QNED87B"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED83B",
+    "family": "QNED83B",
+    "year": 2026,
+    "backlight": "QNED evo quantum dot Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 3,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned-evo/65qned83b6a/",
+    "aliases": [
+      "QNED83",
+      "75QNED83",
+      "75QNED83B",
+      "75QNED83B6A",
+      "QNED83B"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. Third-party listings describe this tier as edge-lit despite the Mini LED label."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED8M",
+    "family": "QNED8M",
+    "year": 2026,
+    "backlight": "QNED evo quantum dot Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 3,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/be/televisies-soundbars/qned-evo/65qned8mb6c/",
+    "aliases": [
+      "QNED8M",
+      "75QNED8M",
+      "75QNED8MB6C",
+      "75QNED8MB6A",
+      "QNED8MB",
+      "75QNED8MB"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. Dimming tier unspecified by LG."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED866RE",
+    "family": "QNED866RE",
+    "year": 2023,
+    "backlight": "Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned866re/",
+    "aliases": [
+      "QNED866RE",
+      "QNED866",
+      "75QNED866RE"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. IPS-type panel with few zones on the 65-inch: low contrast and haloing."
+  }
+]

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Settings · TV Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Settings</h1>
+  {% if saved %}<div class="notice ok">Saved. The next check uses the new values.</div>{% endif %}
+  <form method="post" action="{{ url_for('settings_save') }}" class="form-grid">
+    <h2 class="wide">What to watch</h2>
+    <p class="wide muted small">Currently {{ crit.size_label }} {{ crit.panel_label }}, {{ crit.spec_label }}.
+      Changing these changes which shop listings are matched and which watchlist models are checked; after a
+      change, run <strong>Validate</strong> (<code>main.py validate</code>) and rebuild the watchlist if needed.</p>
+    <label>Screen sizes in inches (comma separated; OLED is sold at 77" where Mini LED is 75")
+      <input name="sizes" value="{{ crit.sizes|join(', ') }}"></label>
+    <label>Lowest native refresh rate (Hz) <input name="min_hz" type="number" min="24" max="240" value="{{ crit.min_hz }}"></label>
+    <div class="wide">
+      {% for key, fam in panel_families.items() %}
+      <label class="check"><input type="checkbox" name="panel_{{ key }}" {{ 'checked' if key in crit.panels }}> {{ fam.label }}</label>
+      {% endfor %}
+    </div>
+    <label class="check"><input type="checkbox" name="require_vrr" {{ 'checked' if crit.require_vrr }}> VRR required (otherwise it only earns fit points)</label>
+    <label class="check"><input type="checkbox" name="require_hdmi21" {{ 'checked' if crit.require_hdmi21 }}> HDMI 2.1 required (otherwise it only earns fit points)</label>
+
+    <h2 class="wide">Alert rules</h2>
+    <label>Cross-shop: alert when a shop is at least this % cheaper than the next shop <input name="cross_shop_pct" type="number" step="0.5" min="0" value="{{ cfg.rules.cross_shop_pct }}"></label>
+    <label>List discount: alert when a shop is at least this % below its own list price <input name="list_discount_pct" type="number" step="0.5" min="0" value="{{ cfg.rules.list_discount_pct }}"></label>
+    <label class="check"><input type="checkbox" name="back_in_stock" {{ 'checked' if cfg.rules.back_in_stock }}> Alert when a watched model comes back in stock</label>
+    <label>Do not repeat the same alert for (days) <input name="dedupe_days" type="number" min="0" value="{{ cfg.rules.dedupe_days }}"></label>
+    <label>Ignore prices below € <input name="price_min" type="number" value="{{ cfg.price_range.min }}"></label>
+    <label>Ignore prices above € <input name="price_max" type="number" value="{{ cfg.price_range.max }}"></label>
+
+    <h2 class="wide">Ranking weights</h2>
+    <label>Fit profile
+      <select name="scoring_profile">
+        <option value="picture" {{ 'selected' if cfg.scoring.get('profile', 'picture') == 'picture' }}>Picture quality first (panel, brightness, dimming)</option>
+        <option value="gaming" {{ 'selected' if cfg.scoring.get('profile', 'picture') == 'gaming' }}>Gaming first (refresh, HDMI 2.1, input lag)</option>
+      </select></label>
+    <label>Weight of fit to your criteria (0-1) <input name="fit_weight" type="number" step="0.05" min="0" max="1" value="{{ cfg.scoring.fit_weight }}"></label>
+    <label>Weight of critic and owner reviews (0-1) <input name="review_weight" type="number" step="0.05" min="0" max="1" value="{{ cfg.scoring.review_weight }}"></label>
+
+    <h2 class="wide">Schedule</h2>
+    <label>Check every (hours) <input name="interval_hours" type="number" step="0.5" min="0.5" value="{{ cfg.schedule.interval_hours }}"></label>
+
+    <h2 class="wide">Notifications</h2>
+    <label class="check"><input type="checkbox" name="toast" {{ 'checked' if cfg.notify.toast }}> Windows toast on this laptop</label>
+    <label class="check"><input type="checkbox" name="ntfy_enabled" {{ 'checked' if cfg.notify.ntfy.enabled }}> ntfy push to phone</label>
+    <label>ntfy topic (subscribe to this in the ntfy app) <input name="ntfy_topic" value="{{ cfg.notify.ntfy.topic }}"></label>
+    <label>ntfy server <input name="ntfy_server" value="{{ cfg.notify.ntfy.server }}"></label>
+
+    <h2 class="wide">Shops</h2>
+    {% for s in shops %}
+    <label class="check"><input type="checkbox" name="shop_{{ s }}" {{ 'checked' if cfg.shops.get(s, True) }}> {{ labels.get(s, s) }}</label>
+    {% endfor %}
+    <div class="wide"><button class="btn primary" type="submit">Save</button></div>
+  </form>
+</section>
+{% endblock %}

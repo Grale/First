@@ -1,0 +1,263 @@
+[
+  {
+    "brand": "Sony",
+    "model_key": "K75XR90",
+    "family": "Bravia 9",
+    "year": 2024,
+    "backlight": "QD Mini LED (XR Backlight Master Drive)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.kitele.com/en/tv-sony-k-75xr90-eu",
+    "aliases": [
+      "XR90",
+      "K75XR90",
+      "K 75XR90",
+      "75XR90",
+      "K75XR90PAEP"
+    ],
+    "notes": "European listing for the K-75XR90: Mini LED, 120 Hz native, 2,800-nit peak quoted, four HDMI of which two are full 2.1. Reviewers estimate about 1,920 dimming zones at this size."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "K75XR70",
+    "family": "Bravia 7",
+    "year": 2024,
+    "backlight": "QD Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://e-catalog.com/cmp/135567/bravia-9-k-75xr90-vs-bravia-7-k-75xr70/",
+    "aliases": [
+      "XR70",
+      "K75XR70",
+      "K 75XR70",
+      "75XR70",
+      "K75XR70PAEP"
+    ],
+    "notes": "Spec comparison covering both 75-inch Sony Mini LEDs: 100/120 Hz panel, Mini LED backlight, glossy screen (the Bravia 9 is anti-glare). Two of the four HDMI inputs are full 2.1."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "K75XR55",
+    "family": "Bravia 5",
+    "year": 2025,
+    "backlight": "QD Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.sony.co.uk/bravia/products/bravia-5/spec?locale=en_GB",
+    "aliases": [
+      "XR55",
+      "K75XR55",
+      "K 75XR55",
+      "75XR55",
+      "K75XR55B"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "XR75X95L",
+    "family": "X95L",
+    "year": 2023,
+    "backlight": "QD Mini LED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.sony.co.uk/electronics/support/televisions-projectors-televisions/xr-65x95l/specifications",
+    "aliases": [
+      "X95L",
+      "XR75X95L",
+      "XR 75X95L",
+      "75X95L",
+      "XR75X95LAEP"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "K75XR95M2",
+    "family": "Bravia 9 II",
+    "year": 2026,
+    "backlight": "True RGB (RGB LED backlight)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.flatpanelshd.com/review.php?subaction=showfull&id=1791437146",
+    "aliases": [
+      "XR95M2",
+      "K75XR95M2",
+      "K 75XR95M2",
+      "75XR95M2"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. 2026 RGB-backlight flagship; the 75-inch variant was not confirmed to exist."
+  },
+  {
+    "brand": "Sony",
+    "model_key": "K75XR75M2",
+    "family": "Bravia 7 II",
+    "year": 2026,
+    "backlight": "True RGB (RGB LED backlight)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.flatpanelshd.com/news.php?subaction=showfull&id=1779897602",
+    "aliases": [
+      "XR75M2",
+      "K75XR75M2",
+      "K 75XR75M2",
+      "75XR75M2"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. The 75-inch variant was not confirmed to exist."
+  },
+  {
+    "brand": "Philips",
+    "model_key": "75PML9009",
+    "family": "PML9009",
+    "year": 2024,
+    "backlight": "QD Mini LED (Ambilight)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.documents.philips.com/assets/20240202/7ddf77e53fce46f68530b10a0117feaa.pdf",
+    "aliases": [
+      "PML9009",
+      "75PML9009",
+      "75PML9009/12"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Philips",
+    "model_key": "75MLED910",
+    "family": "MLED910",
+    "year": 2025,
+    "backlight": "QD Mini LED (Ambilight)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.tpvision.com/blog/new-2025-philips-ambilight-tv-range/",
+    "aliases": [
+      "MLED910",
+      "75MLED910",
+      "75MLED910/12"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Philips",
+    "model_key": "75MLED950",
+    "family": "MLED950",
+    "year": 2025,
+    "backlight": "QD Mini LED (Ambilight)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.tpvision.com/blog/new-2025-philips-ambilight-tv-range/",
+    "aliases": [
+      "MLED950",
+      "75MLED950",
+      "75MLED950/12"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Panasonic",
+    "model_key": "75W95B",
+    "family": "W95B",
+    "year": 2025,
+    "backlight": "Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.panasonic.com/uk/consumer/televisions/4K-LED-TV/tv-65w95beb.specs.html",
+    "aliases": [
+      "W95B",
+      "75W95B",
+      "TX-75W95B",
+      "TX75W95B",
+      "75W95BEB"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. Local dimming switches off when VRR is on, per reviews of the 65-inch."
+  },
+  {
+    "brand": "Panasonic",
+    "model_key": "75W95A",
+    "family": "W95A",
+    "year": 2024,
+    "backlight": "Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.panasonic.com/uk/consumer/televisions/4K-LED-TV/tv-65w95aeb.specs.html",
+    "aliases": [
+      "W95A",
+      "75W95A",
+      "TX-75W95A",
+      "TX75W95A",
+      "75W95AEB"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. Local dimming switches off when VRR is on (RTINGS, 65-inch)."
+  },
+  {
+    "brand": "METZ",
+    "model_key": "75MNE8000Z",
+    "family": "MNE8000Z",
+    "year": 2025,
+    "backlight": "QD Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 3,
+    "qualifies": true,
+    "source_url": "https://www.metz-eu.com/products/NEW-MNE8000.html",
+    "aliases": [
+      "MNE8000Z",
+      "75MNE8000Z"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. The 75-inch variant was not confirmed to exist."
+  },
+  {
+    "brand": "Xiaomi",
+    "model_key": "XIAOMI TV S MINI LED 75",
+    "family": "TV S Mini LED",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.mi.com/de/product/xiaomi-tv-s-mini-led-65-2025/specs/",
+    "aliases": [
+      "TV S MINI LED 75",
+      "S MINI LED 75",
+      "Xiaomi TV S Mini LED 75",
+      "Xiaomi S Mini LED 75"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. The 75-inch variant was not confirmed to exist."
+  }
+]

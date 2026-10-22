@@ -1,0 +1,319 @@
+[
+  {
+    "brand": "Samsung",
+    "model_key": "75LS03FA",
+    "family": "The Frame 2025 (non-Pro)",
+    "year": 2025,
+    "backlight": "QLED edge-lit (not Mini LED)",
+    "hz": 100,
+    "vrr": null,
+    "hdmi21": null,
+    "hdmi21_ports": null,
+    "qualifies": false,
+    "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/",
+    "aliases": [
+      "LS03FA",
+      "QE75LS03FA",
+      "QE75LS03FAUXXH",
+      "QE75LS03FAUXXU"
+    ],
+    "notes": "Negative match so the Frame Pro aliases never claim the plain 2025 Frame, which is a QLED without a Mini LED backlight."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "75LS03HA",
+    "family": "The Frame 2026 (non-Pro)",
+    "year": 2026,
+    "backlight": "QLED (not Mini LED)",
+    "hz": null,
+    "vrr": null,
+    "hdmi21": null,
+    "hdmi21_ports": null,
+    "qualifies": false,
+    "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/",
+    "aliases": [
+      "LS03HA",
+      "QE75LS03HA",
+      "QE75LS03HAUXXH"
+    ],
+    "notes": "Negative match for the plain 2026 Frame (non-Pro)."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "75QN70H",
+    "family": "QN70H",
+    "year": 2026,
+    "backlight": "Neo QLED Quantum Mini LED",
+    "hz": 50,
+    "vrr": false,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.samsung.com/hu/tvs/qled-tv/qn70h-65-inch-neo-qled-4k-mini-led-smart-tv-qe65qn70hauxxh/",
+    "aliases": [
+      "QN70H",
+      "75QN70H",
+      "QE75QN70H",
+      "QE75QN70HAUXXH"
+    ],
+    "notes": "50 Hz panel with no HDMI 2.1 on the 65-inch sibling; the entry tier of the 2026 Mini LEDs."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "75M70H",
+    "family": "M70H",
+    "year": 2026,
+    "backlight": "Mini LED (no quantum dot)",
+    "hz": 50,
+    "vrr": false,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.samsung.com/hu/tvs/qled-tv/qn70h-65-inch-neo-qled-4k-mini-led-smart-tv-qe65qn70hauxxh/",
+    "aliases": [
+      "M70H",
+      "75M70H",
+      "UE75M70H",
+      "UE75M70HAUXXH"
+    ],
+    "notes": "50 Hz panel, no HDMI 2.1."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED85T",
+    "family": "QNED85T",
+    "year": 2024,
+    "backlight": "Edge-lit LED (NOT Mini LED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned85t6c/",
+    "aliases": [
+      "QNED85",
+      "75QNED85",
+      "75QNED85T",
+      "75QNED85T6C",
+      "QNED85T"
+    ],
+    "notes": "Edge-lit despite the QNED branding, so it fails the Mini LED or OLED requirement."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED86T",
+    "family": "QNED86T",
+    "year": 2024,
+    "backlight": "Edge-lit LED (NOT Mini LED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned86t6a/",
+    "aliases": [
+      "QNED86",
+      "75QNED86",
+      "75QNED86T",
+      "75QNED86T6A",
+      "QNED86T"
+    ],
+    "notes": "Edge-lit despite the QNED branding."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED87T",
+    "family": "QNED87T",
+    "year": 2024,
+    "backlight": "Edge LED (not Mini LED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned87t6b/",
+    "aliases": [
+      "75QNED87T",
+      "75QNED87T6B",
+      "QNED87T",
+      "QNED87T6B"
+    ],
+    "notes": "Edge-lit despite the QNED branding."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED82A",
+    "family": "QNED82A",
+    "year": 2025,
+    "backlight": "Edge-lit LED (not Mini LED)",
+    "hz": 60,
+    "vrr": true,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned82a6b/",
+    "aliases": [
+      "75QNED82A",
+      "75QNED82A6B",
+      "QNED82A6B",
+      "QNED82A"
+    ],
+    "notes": "60 Hz edge-lit panel with no HDMI 2.1."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED70A",
+    "family": "QNED70A",
+    "year": 2025,
+    "backlight": "Direct LED (not Mini LED)",
+    "hz": 60,
+    "vrr": true,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned70a6a/",
+    "aliases": [
+      "75QNED70A",
+      "75QNED70A6A",
+      "75QNED70",
+      "QNED70",
+      "QNED70A"
+    ],
+    "notes": "60 Hz direct-lit panel with no HDMI 2.1."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED81B",
+    "family": "QNED81B",
+    "year": 2026,
+    "backlight": "QNED Mini LED",
+    "hz": 60,
+    "vrr": false,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned-evo/65qned81b6a/",
+    "aliases": [
+      "QNED81",
+      "75QNED81",
+      "75QNED81B",
+      "75QNED81B6A",
+      "QNED81B"
+    ],
+    "notes": "60 Hz panel with no HDMI 2.1."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED72B",
+    "family": "QNED72B",
+    "year": 2026,
+    "backlight": "QNED Mini LED",
+    "hz": 60,
+    "vrr": false,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/uk/tvs-soundbars/qned-evo/65qned72b6b/",
+    "aliases": [
+      "QNED72",
+      "75QNED72",
+      "75QNED72B",
+      "75QNED72B6B",
+      "QNED72B"
+    ],
+    "notes": "60 Hz panel with no HDMI 2.1."
+  },
+  {
+    "brand": "LG",
+    "model_key": "75QNED826RE",
+    "family": "QNED826RE",
+    "year": 2023,
+    "backlight": "Edge LED (not Mini LED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": false,
+    "source_url": "https://www.lg.com/gr/tileoraseis/lg-65qned826re",
+    "aliases": [
+      "QNED826RE",
+      "QNED826",
+      "75QNED826RE"
+    ],
+    "notes": "Edge-lit despite the QNED branding."
+  },
+  {
+    "brand": "TCL",
+    "model_key": "75C6KS",
+    "family": "C6KS",
+    "year": 2025,
+    "backlight": "QD-Mini LED",
+    "hz": 60,
+    "vrr": null,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.tcl.com/uk/en/tvs/65c6ks-uk",
+    "aliases": [
+      "C6KS",
+      "75C6KS"
+    ],
+    "notes": "60 Hz panel with no HDMI 2.1; also a negative match so the C6K aliases never claim a C6KS listing."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U7QF",
+    "family": "U7QF",
+    "year": 2020,
+    "backlight": "QLED full-array LED (not Mini LED)",
+    "hz": 60,
+    "vrr": false,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.techadvisor.com/article/721851/hisense-u7qf-review.html",
+    "aliases": [
+      "U7QF",
+      "75U7QF"
+    ],
+    "notes": "60 Hz full-array LED, not Mini LED."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75E7NQPRO",
+    "family": "E7NQ Pro",
+    "year": 2024,
+    "backlight": "Direct LED with local dimming (not Mini LED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": false,
+    "source_url": "https://bg.hisense.com/produkti/hisense-televizori/qled-tv/TV-SET-65E7NQ-PRO-HSN/p/000000000020014673",
+    "aliases": [
+      "E7NQPRO",
+      "75E7NQPRO",
+      "75E7NQ PRO",
+      "E7NQ PRO"
+    ],
+    "notes": "Direct-lit QLED, not Mini LED."
+  },
+  {
+    "brand": "Sharp",
+    "model_key": "75JP7265E",
+    "family": "JP72",
+    "year": 2025,
+    "backlight": "Mini LED",
+    "hz": 60,
+    "vrr": null,
+    "hdmi21": false,
+    "hdmi21_ports": 0,
+    "qualifies": false,
+    "source_url": "https://www.sharpconsumer.com/tv/65jp7665e/",
+    "aliases": [
+      "JP7265E",
+      "75JP7265E"
+    ],
+    "notes": "60 Hz panel with no HDMI 2.1."
+  }
+]

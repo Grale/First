@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+prices.db
+prices.db-journal
+logs/
+.pw-profile/
+scheduler/task.xml
+prices.db.bak-*

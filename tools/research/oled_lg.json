@@ -1,0 +1,141 @@
+[
+  {
+    "brand": "LG",
+    "model_key": "OLED77C4",
+    "family": "C4",
+    "year": 2024,
+    "backlight": "OLED evo (W-OLED, Brightness Booster)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/uk/small-medium-business/tvs-soundbars/oled-evo/oled77c46la/",
+    "aliases": [
+      "OLED77C4",
+      "77C4",
+      "OLED77C46LA",
+      "OLED77C44LA"
+    ],
+    "notes": "LG UK page for the 77-inch C4 (OLED77C46LA): 120 Hz native panel, VRR to 144 Hz, four HDMI 2.1 inputs at 48 Gbps, G-Sync and FreeSync."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77C5",
+    "family": "C5",
+    "year": 2025,
+    "backlight": "OLED evo (W-OLED, Brightness Booster)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/us/tvs/lg-oled77c5pua-oled-4k-tv",
+    "aliases": [
+      "OLED77C5",
+      "77C5",
+      "OLED77C54LA",
+      "OLED77C56LA"
+    ],
+    "notes": "LG page for the 77-inch C5: 120 Hz native, VRR to 144 Hz, four HDMI 2.1 inputs. The G5 is the tier that goes to 165 Hz. European suffixes are OLED77C5xLA."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77G5",
+    "family": "G5",
+    "year": 2025,
+    "backlight": "OLED evo (4-stack Primary RGB Tandem, Brightness Booster Ultimate)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.avforums.com/products/oled-tvs.89/lg-oled77g5.17034/specs/",
+    "aliases": [
+      "OLED77G5",
+      "77G5",
+      "OLED77G54LW",
+      "OLED77G56LS"
+    ],
+    "notes": "AV Forums spec sheet for the 77-inch G5: 120 Hz native panel, VRR to 165 Hz (PC or 165 Hz-capable source), four HDMI 2.1 inputs; Dolby Vision to 144 Hz. 2025 flagship brightness tier."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77B5",
+    "family": "B5",
+    "year": 2025,
+    "backlight": "OLED (W-OLED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/ca_en/tv-soundbars/oled/oled77b5pua/",
+    "aliases": [
+      "OLED77B5",
+      "77B5",
+      "OLED77B53LA",
+      "OLED77B54LA"
+    ],
+    "notes": "LG page for the 77-inch B5: up to 120 Hz native with four HDMI 2.1 inputs. Entry OLED tier, dimmer than the C and G series."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77C6",
+    "family": "C6H",
+    "year": 2026,
+    "backlight": "OLED evo (Primary RGB Tandem on the 77-inch)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/ca_en/tv-soundbars/oled-evo/oled77c6hup/",
+    "aliases": [
+      "OLED77C6",
+      "77C6",
+      "OLED77C6H",
+      "77C6H"
+    ],
+    "notes": "LG page for the 77-inch 2026 C6: at 77 and 83 inches the set is branded C6H and uses the Primary RGB Tandem panel that the smaller C6 sizes do not get. RTINGS lists the C6H at 165 Hz."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77G6",
+    "family": "G6",
+    "year": 2026,
+    "backlight": "OLED evo (Primary RGB Tandem, Brightness Booster Pro)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.lg.com/us/press-release/lg-announces-rollout-of-2026-oled-tv-line-up-3-4.pdf",
+    "aliases": [
+      "OLED77G6",
+      "77G6",
+      "OLED77G65LW",
+      "OLED77G6WUA"
+    ],
+    "notes": "LG 2026 line-up press release. Announced at CES 2026 as 20% brighter with lower reflections; RTINGS lists the G6 at 165 Hz. European suffix not confirmed."
+  },
+  {
+    "brand": "LG",
+    "model_key": "OLED77B6",
+    "family": "B6",
+    "year": 2026,
+    "backlight": "OLED (W-OLED)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.whathifi.com/tv-home-cinema/televisions/lg-2026-tv-lineup-everything-you-need-to-know",
+    "aliases": [
+      "OLED77B6",
+      "77B6",
+      "OLED77B65LW"
+    ],
+    "notes": "2026 line-up overview. Sources disagree on the B6's refresh ceiling (RTINGS lists 120 Hz, Centre Hi-Fi says 144 Hz gaming); recorded as a 120 Hz panel. European suffix not confirmed."
+  }
+]

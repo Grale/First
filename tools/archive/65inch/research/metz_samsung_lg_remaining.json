@@ -1,0 +1,263 @@
+[
+ {
+  "brand": "METZ",
+  "model_key": "65MNH7000Z",
+  "family": "MNH7000Z",
+  "year": 2026,
+  "backlight": "QD Mini LED",
+  "hz": null,
+  "vrr": null,
+  "hdmi21": null,
+  "hdmi21_ports": null,
+  "qualifies": false,
+  "source_url": "https://it.metz-eu.com/products/3846.html",
+  "aliases": [
+   "65MNH7000",
+   "MNH7000",
+   "MNH7000Z"
+  ],
+  "notes": "Metz EU pages confirm QD-MiniLED + Google TV but publish no refresh/HDMI/VRR data. kitele.com lists 144 Hz, 3x HDMI 2.1, VRR (unverified). Verify before enabling."
+ },
+ {
+  "brand": "METZ",
+  "model_key": "65MNE9000Z",
+  "family": "MNE9000Z",
+  "year": 2024,
+  "backlight": "Mini LED per metz-eu.com; METZ blue datasheet says Direct LED",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": null,
+  "hdmi21_ports": null,
+  "qualifies": false,
+  "source_url": "https://www.metz-eu.com/products/mne9000-mini-led-tv.html",
+  "aliases": [
+   "65MNE9000",
+   "MNE9000",
+   "MNE9000Z"
+  ],
+  "notes": "EU fiche: default refresh 100 Hz class; metz-eu.com says 120Hz panel + VRR; datasheet lists 3 HDMI with no HDMI version and no 4K120 claim, so HDMI 2.1 unconfirmed. Backlight conflict between Metz sites."
+ },
+ {
+  "brand": "METZ",
+  "model_key": "65MNE8000Z",
+  "family": "MNE8000Z",
+  "year": 2025,
+  "backlight": "QD Mini LED",
+  "hz": 144,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 3,
+  "qualifies": true,
+  "source_url": "https://www.metz-eu.com/products/NEW-MNE8000.html",
+  "aliases": [
+   "65MNE8000",
+   "MNE8000",
+   "MNE8000Z"
+  ],
+  "notes": "Official page: QD-MiniLED, 144Hz refresh, HDMI 2.1 x3, 4K@120Hz gameplay, FreeSync Premium, ALLM. Some retailers describe the panel as 100/120 Hz with 144 Hz game mode."
+ },
+ {
+  "brand": "LG",
+  "model_key": "65QNED82A",
+  "family": "QNED82",
+  "year": 2025,
+  "backlight": "Edge-lit LED (not Mini LED)",
+  "hz": 60,
+  "vrr": true,
+  "hdmi21": false,
+  "hdmi21_ports": 0,
+  "qualifies": false,
+  "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned82a6b/",
+  "aliases": [
+   "65QNED82A6B",
+   "QNED82A6B",
+   "QNED82A"
+  ],
+  "notes": "LG UK spec: Backlight Edge, 60Hz Native, VRR up to 60Hz, HDMI 3 (eARC, ALLM), no 4K120. The 2026 QNED82B is a different model."
+ },
+ {
+  "brand": "LG",
+  "model_key": "65QNED70A",
+  "family": "QNED70",
+  "year": 2025,
+  "backlight": "Direct LED (not Mini LED)",
+  "hz": 60,
+  "vrr": true,
+  "hdmi21": false,
+  "hdmi21_ports": 0,
+  "qualifies": false,
+  "source_url": "https://www.lg.com/uk/tvs-soundbars/qned/65qned70a6a/",
+  "aliases": [
+   "65QNED70A6A",
+   "QNED70A6A",
+   "65QNED70",
+   "QNED70",
+   "QNED70A"
+  ],
+  "notes": "LG UK spec: Backlight Direct, 60Hz Native, VRR up to 60Hz, HDMI 3 (eARC, ALLM), no 4K120."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN70F",
+  "family": "QN70F",
+  "year": 2025,
+  "backlight": "Neo QLED Mini LED",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 4,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/uk/tvs/qled-tv/qn70f-65-inch-neo-qled-4k-mini-led-smart-tv-qe65qn70fauxxu/",
+  "aliases": [
+   "QN70F",
+   "QE65QN70F",
+   "QE65QN70FA",
+   "QE65QN70FAUXXH"
+  ],
+  "notes": "Samsung UK: 100Hz (Up to 144Hz) EU label, HDMI 4 with 4K 144Hz on all, VRR Yes, FreeSync Premium Pro, ALLM."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65LS03F",
+  "family": "The Frame Pro 2025 (LS03F)",
+  "year": 2025,
+  "backlight": "Neo QLED Mini LED",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 5,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/ls03fw-65-inch-the-frame-pro-neo-qled-4k-vision-ai-smart-tv-black-qe65ls03fwuxxu/",
+  "aliases": [
+   "LS03FW",
+   "65LS03FW",
+   "QE65LS03F",
+   "QE65LS03FW",
+   "QE65LS03FWUXXH",
+   "Frame Pro LS03F",
+   "QE65SL03FW"
+  ],
+  "notes": "Samsung UK: 100Hz (Up to 144Hz), Neo QLED Mini LED, 5 HDMI on the Wireless One Connect box with 4K 144Hz on all, VRR Yes, FreeSync Premium Pro. The non-Pro QE65LS03FA is a plain QLED and must not match."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65LS03HW",
+  "family": "The Frame Pro 2026 (LS03HW)",
+  "year": 2026,
+  "backlight": "Neo QLED Mini LED",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 5,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/ls03hw-65-inch-the-frame-pro-qe65ls03hwuxxu/",
+  "aliases": [
+   "LS03HW",
+   "LS03H",
+   "QE65LS03HW",
+   "QE65LS03HWUXXH",
+   "Frame Pro LS03HW"
+  ],
+  "notes": "Samsung UK: 144 Hz VRR (100 Hz Native) EU label, Neo QLED, 5 HDMI via Wireless One Connect with 4K 144 Hz on all, VRR Yes, FreeSync Premium Pro."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN95C",
+  "family": "QN95C",
+  "year": 2023,
+  "backlight": "Neo QLED Mini LED",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 4,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/ie/business/tvs/qled-tv/qn95c-65-inch-neo-qled-4k-smart-tv-qe65qn95catxxu/",
+  "aliases": [
+   "QN95C",
+   "QE65QN95C",
+   "QE65QN95CA",
+   "QE65QN95CATXXH"
+  ],
+  "notes": "Samsung IE: 100Hz (Up to 144Hz), 4K 144Hz on all four HDMI, FreeSync Premium Pro (= VRR), ALLM."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN800C",
+  "family": "QN800C (8K)",
+  "year": 2023,
+  "backlight": "Neo QLED Mini LED (8K)",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 4,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/ie/business/tvs/qled-tv/qn800c-65-inch-neo-qled-8k-smart-tv-qe65qn800ctxxu/",
+  "aliases": [
+   "QN800C",
+   "QE65QN800C",
+   "QE65QN800CT",
+   "QE65QN800CTXXH"
+  ],
+  "notes": "Samsung IE: 100Hz EU label, 4K 120Hz on all four HDMI via One Connect, FreeSync Premium Pro, ALLM. 8K set."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN800D",
+  "family": "QN800D (8K)",
+  "year": 2024,
+  "backlight": "Neo QLED Mini LED (8K)",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 4,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/gr/c/p/QE65QN800DTXXH/",
+  "aliases": [
+   "QN800D",
+   "QE65QN800D",
+   "QE65QN800DT",
+   "QE65QN800DTXXH"
+  ],
+  "notes": "Samsung GR page for the XXH SKU: 100Hz (Up to 4K 165Hz), HDMI 4 with 8K 60Hz / 4K 165Hz on all, VRR Yes, FreeSync Premium Pro. 8K set."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN900F",
+  "family": "QN900F (8K)",
+  "year": 2025,
+  "backlight": "Neo QLED Mini LED (8K)",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 4,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/uk/tvs/qled-tv/qn900f-65-inch-neo-qled-8k-mini-led-smart-tv-qe65qn900ftxxu/",
+  "aliases": [
+   "QN900F",
+   "QE65QN900F",
+   "QE65QN900FT",
+   "QE65QN900FTXXH"
+  ],
+  "notes": "Samsung UK: 100Hz (Up to 4K 165Hz), HDMI 4 with 8K 60Hz / 4K 165Hz on all, VRR Yes, FreeSync Premium Pro. 8K set."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65QN990F",
+  "family": "QN990F (8K)",
+  "year": 2025,
+  "backlight": "Neo QLED Mini LED (8K)",
+  "hz": 120,
+  "vrr": true,
+  "hdmi21": true,
+  "hdmi21_ports": 5,
+  "qualifies": true,
+  "source_url": "https://www.samsung.com/uk/tvs/qled-tv/qn990f-65-inch-neo-qled-8k-mini-led-smart-tv-qe65qn990ftxxu/",
+  "aliases": [
+   "QN990F",
+   "QE65QN990F",
+   "QE65QN990FT",
+   "QE65QN990FTXXH"
+  ],
+  "notes": "Samsung UK: 100Hz (Up to 4K 240Hz), 5 HDMI via Wireless One Connect with 8K 120Hz / 4K 240Hz, VRR Yes, FreeSync Premium Pro. 8K flagship, usually above the price range."
+ }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "brand": "Samsung",
+    "model_key": "77S90D",
+    "family": "S90D",
+    "year": 2024,
+    "backlight": "OLED (W-OLED panel at 77 inches)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://galaxus.de/en/s1/product/samsung-qe77s90dae-77-s90d-oled-4k-2024-tv-44719204",
+    "aliases": [
+      "S90D",
+      "77S90D",
+      "QE77S90D",
+      "QE77S90DAE",
+      "QE77S90DAEXXU",
+      "QN77S90D"
+    ],
+    "notes": "European retailer listing for the QE77S90D: 4K OLED, up to 144 Hz, four HDMI. Samsung mixed panel suppliers across S90D sizes and the larger sizes are widely reported as W-OLED rather than QD-OLED; recorded as a 120 Hz panel with a 144 Hz ceiling."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "77S95F",
+    "family": "S95F",
+    "year": 2025,
+    "backlight": "QD-OLED (OLED Glare Free)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.samsung.com/uk/tvs/oled-tv/s95f-77-inch-oled-4k-smart-tv-qe77s95fatxxu/",
+    "aliases": [
+      "S95F",
+      "77S95F",
+      "QE77S95F",
+      "QE77S95FAT",
+      "QE77S95FATXXU",
+      "QE77S95FATXXH"
+    ],
+    "notes": "Samsung UK page for the 77-inch S95F: QD-OLED, 100 Hz base rate with Motion Xcelerator to 165 Hz, four 40 Gbps HDMI 2.1 inputs, FreeSync Premium Pro, NQ4 AI Gen3."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "77S90H",
+    "family": "S90H",
+    "year": 2026,
+    "backlight": "OLED (W-OLED, glare-free matte)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.rtings.com/tv/reviews/samsung/77s90h-oled",
+    "aliases": [
+      "S90H",
+      "77S90H",
+      "QE77S90H",
+      "QE77S90HAT",
+      "QN77S90H"
+    ],
+    "notes": "RTINGS review of the 77-inch 2026 S90H: four HDMI 2.1 ports doing 4K at 165 Hz, VRR, NQ4 AI Gen3."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "77S95H",
+    "family": "S95H",
+    "year": 2026,
+    "backlight": "QD-OLED",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.displayspecifications.com/en/news/6b62f0f",
+    "aliases": [
+      "S95H",
+      "77S95H",
+      "QE77S95H",
+      "QE77S95HAT"
+    ],
+    "notes": "2026 OLED line-up specs: QD-OLED, up to 165 Hz, four HDMI 2.1, HDR10+ Advanced, FreeSync Premium Pro; 77 inches is one of the four sizes. Peak brightness quoted at up to 2,700 nits (maker's claim)."
+  }
+]
