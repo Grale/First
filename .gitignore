@@ -7,3 +7,5 @@ logs/
 .pw-profile/
 scheduler/task.xml
 prices.db.bak-*
+tools/artifact/expected_scores.json
+tools/artifact/parity_result.json

@@ -283,6 +283,30 @@ Three bugs were found by writing these: the Greek accent fold, the `UHD` veto, a
 watchlist form when a numeric field was absent from the POST (`str(None).strip()` is truthy, so
 `int(None)` was reached).
 
+## The browsable ranking page
+
+`tools/artifact/ranking.html` is a standalone page holding the watch list, the scoring and the evidence,
+with no prices — the shop scrapers cannot run in a browser. It has the profile switch, a specs-versus-
+reviews slider and a multiplier for every individual component, so you can ask "what if docking mattered
+twice as much" and watch the order change. Opening a row shows where each point came from, the full
+specification with every unverified field marked as unverified, and the critic sources behind the review
+score.
+
+The scoring is ported to JavaScript in `tools/artifact/scoring.mjs`, and the page and the parity test
+import that same file, so what is tested is what the page runs:
+
+```bash
+.venv\Scripts\python.exe tools\artifact\export_scores.py > tools\artifact\expected_scores.json
+node tools\artifact\parity.mjs      # JS vs Python, every model, both profiles, a grid of weights
+.venv\Scripts\python.exe tools\artifact\build_page.py   # inject the current watchlist into the page
+```
+
+**1,410 comparisons, all matching** — the fit total and every individual component for all 11 models
+under both profiles, the pixel density, the review score, the overall score across eleven fit/review
+weightings, and the resulting rank order. `build_page.py` refuses to rebuild the page if parity reports
+a mismatch, so the published page cannot drift from the bot. Rerun all three after changing
+`watchlist.json` or either scoring file.
+
 ## Command line
 
 ```bash
