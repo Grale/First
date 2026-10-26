@@ -47,6 +47,9 @@ _ACCESSORY = (
     # neighbouring product categories that are not monitors
     "SMART TV", "TELEVISION", "ΤΗΛΕΟΡΑΣΗ", "PROJECTOR", "ΠΡΟΒΟΛΕΑΣ", "TABLET", "SMARTPHONE",
     "LAPTOP", "NOTEBOOK", "DESKTOP PC", "ALL IN ONE PC", "MINI PC", "PRINTER", "ΕΚΤΥΠΩΤΗΣ",
+    # phones and their accessories. "Galaxy A34" carries a bare 34 exactly as a monitor SKU does, and
+    # Public answers a search for "Samsung 34" with a page of screen protectors for one.
+    "GALAXY", "ΠΡΟΣΤΑΤΕΥΤΙΚΟ", "TEMPERED GLASS", "ΤΖΑΜΙ", "SCREEN GLASS", "SILIC", "PHONE CASE",
     # white goods. The two search-driven shops answer "<brand> 34" with the whole catalogue, and a
     # fridge model code carries a bare 34 as readably as a monitor's does ("RB34C600ESA"), so the
     # product category is the only thing that separates them.

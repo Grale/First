@@ -22,6 +22,7 @@ from monbot import rules, watchlist as watchlist_mod  # noqa: E402
 from monbot.engine import match_items                # noqa: E402
 from monbot.match import is_accessory, looks_like_candidate, normalize  # noqa: E402
 from monbot.models import Item, Offer                # noqa: E402
+from monbot.shops.base import parse_price            # noqa: E402
 
 CFG = {
     "criteria": {"sizes": [34], "panels": ["oled", "miniled", "ips"], "min_hz": 100,
@@ -122,6 +123,8 @@ def test_real_shop_titles() -> None:
         ("NEFF U1ACE2AG3B 71 Lt / 34 Lt Graphite Grey Εντοιχιζόμενος Φούρνος Άνω Πάγκου", False),
         ("SAMSUNG RB34C600ESA/EF Full No Frost 344 Lt Ασημί Ψυγειοκαταψύκτης", False),
         ("SAMSUNG RB34C672DSA/EF No Frost 344 Lt Ασημί Ψυγειοκαταψύκτης", False),
+        ("Προστατευτικό οθόνης Samsung Galaxy A34 - Samsung 2pcs", False),
+        ("Redshield Silic Lace A34 5G Black", False),
         ('PC Monitor 34" SAMSUNG Curved Odyssey G8 G85SB LS34BG850SUXEN Ultra WQHD', True),
         ('PC Monitor 34" SAMSUNG Curved ViewFinity S6 S65VC LS34C652VAUXEN UWQHD VA LED black', True),
         ('AOC CU34G4 Curved Gaming PC Monitor, 34"', True),
@@ -140,6 +143,30 @@ def test_real_shop_titles() -> None:
     # a unit-qualified number is a measurement of something else, never a screen size
     check(not crit.has_size(normalize("Φούρνος 71 Lt / 34 Lt")), "'34 Lt' was read as a 34-inch size")
     check(crit.has_size(normalize('Monitor 34" UWQHD')), "a real 34-inch title stopped matching")
+
+
+# --------------------------------------------------------------------------------------------------
+# 2c. the price parser
+# --------------------------------------------------------------------------------------------------
+def test_prices() -> None:
+    """Every shop writes money differently, and one of them writes it with a single decimal digit.
+
+    Kotsovolos returns its selling price as "1099.0". Reading only two-digit decimals as decimals
+    turned that into 10990 - ten times too high, which pushed every price from that shop past the
+    1,800 EUR cap, so the shop matched nothing and looked merely empty rather than broken. The cap
+    hid the bug instead of catching it, which is why these cases are pinned here.
+    """
+    cases = {
+        "1099.0": 1099.0, "899.0": 899.0, "139.9": 139.9,           # one decimal digit
+        "1099.00": 1099.0, "139.90": 139.9, "1,099.00": 1099.0,     # two
+        "1.099,00": 1099.0, "1.199,00 €": 1199.0, "697 ,99€": 697.99, "€1, 199.00": 1199.0,
+        "1.099": 1099.0, "1099": 1099.0,                            # thousands separator, no decimal
+        "1.09": 1.09, "10.990,00": 10990.0,
+    }
+    for text, want in cases.items():
+        got = parse_price(text)
+        check(got == want, f"parse_price({text!r}) = {got}, expected {want}")
+    check(parse_price("") is None and parse_price("free") is None, "empty price text should be None")
 
 
 # --------------------------------------------------------------------------------------------------
@@ -276,6 +303,7 @@ def main() -> int:
     test_digit_boundaries()
     test_accessories()
     test_real_shop_titles()
+    test_prices()
     test_match_items()
     test_rules()
     print(f"{checks - len(failures)}/{checks} checks passed")

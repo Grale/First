@@ -5,6 +5,7 @@
   python main.py report
   python main.py discover [--shop NAME ...]
   python main.py check-shops [--shop NAME ...]   confirm each shop's monitor category is reachable
+  python main.py compare [--min-shops N]         cross-shop price comparison for every monitor at this size
   python main.py test-notify
   python main.py install-task | uninstall-task | task-status | task-run | task-restart
   python main.py validate              check watchlist.json
@@ -96,6 +97,61 @@ def cmd_discover(args) -> int:
             total += 1
             _print(f"  €{(it.price or 0):>9,.2f}  {it.title[:100]}  {it.url}")
     _print(f"\n{total} titles not on the watchlist")
+    return 0
+
+
+def cmd_compare(args) -> int:
+    """Price the same monitor across every shop that carries it, watched or not."""
+    from monbot.compare import group_items
+    from monbot.engine import shop_labels
+    from monbot.fetch import Fetcher
+    from monbot.shops import SHOPS
+    cfg = config_mod.load()
+    crit = criteria_mod.from_config(cfg)
+    wl = watchlist_mod.load()
+    models = wl.watched(crit)
+    fetch_cfg = cfg.get("fetch", {})
+    fetcher = Fetcher(timeout=float(fetch_cfg.get("timeout_s", 40)), pause=float(fetch_cfg.get("pause_s", 1.0)),
+                      playwright_mode=fetch_cfg.get("playwright", "auto"))
+    items, failed = [], []
+    try:
+        for name, cls in SHOPS.items():
+            if not cfg.get("shops", {}).get(name, True):
+                continue
+            _print("  ", f"scanning {cls.label}…")
+            try:
+                items.extend(cls(fetcher).fetch_items(models))
+            except Exception as e:
+                failed.append(f"{name} ({type(e).__name__})")
+    finally:
+        fetcher.close()
+
+    groups = group_items(items, models, crit, wl.rejected)
+    multi = [g for g in groups if len(g.ranked) >= args.min_shops]
+    labels = shop_labels()
+
+    _print(f"\n{crit.label}: {len(groups)} distinct products across {len(SHOPS) - len(failed)} shops"
+           + (f"; failed: {', '.join(failed)}" if failed else ""))
+    _print(f"{len(multi)} sold by {args.min_shops} or more shops\n")
+    def row(g) -> str:
+        lo = g.cheapest
+        star = "*" if g.confident else " "
+        name = g.label if len(g.label) <= 36 else g.label[:35] + "\u2026"
+        cheapest = f"{labels.get(lo.shop, lo.shop)} EUR {lo.price:,.2f}"
+        spread = f"+{g.spread_pct:.0f}%" if g.spread_pct else ("same" if g.spread_pct == 0 else "")
+        others = ", ".join(f"{labels.get(o.shop, o.shop)} EUR {o.price:,.0f}" for o in g.ranked[1:])
+        return f"{star} {name:<37}{cheapest:<27}{spread:>6}  {others}"
+
+    _print(f"  {'product':<37}{'cheapest':<27}{'spread':>6}  other shops")
+    _print("  " + "-" * 94)
+    for g in multi:
+        _print(row(g))
+    single = [g for g in groups if len(g.ranked) == 1]
+    if single and args.min_shops > 1:
+        _print(f"\nsold by one shop only ({len(single)}):")
+        for g in sorted(single, key=lambda x: x.cheapest.price):
+            _print(row(g))
+    _print("\n* identified by the watchlist matcher; the rest are grouped by model code, which is a heuristic.")
     return 0
 
 
@@ -205,6 +261,10 @@ def main(argv=None) -> int:
     s = sub.add_parser("check-shops", help="confirm each shop's monitor category is reachable and parses")
     s.add_argument("--shop", action="append", choices=list(SHOPS))
     s.set_defaults(fn=cmd_check_shops)
+
+    s = sub.add_parser("compare", help="cross-shop price comparison for every monitor at this size")
+    s.add_argument("--min-shops", type=int, default=2, help="only show products sold by at least N shops")
+    s.set_defaults(fn=cmd_compare)
 
     s = sub.add_parser("test-notify", help="send a test toast and ntfy push")
     s.set_defaults(fn=cmd_test_notify)

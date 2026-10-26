@@ -72,18 +72,25 @@ def find_category_links(html: str, base_url: str, must_match: re.Pattern) -> lis
 
 
 def parse_price(text: Optional[str]) -> Optional[float]:
-    """'€1, 199.00' -> 1199.0 ; '697 ,99€' -> 697.99 ; '1.199,00 €' -> 1199.0"""
+    """'€1, 199.00' -> 1199.0 ; '697 ,99€' -> 697.99 ; '1.199,00 €' -> 1199.0 ; '1099.0' -> 1099.0
+
+    The last '.' or ',' is the decimal separator when one or two digits follow it to the end, and a
+    thousands separator otherwise ('1.099' is 1099, '1.09' is 1.09).
+
+    One decimal digit has to count. Kotsovolos's API returns its selling price as "1099.0", and
+    treating only two-digit decimals as decimals turned that into 10990 - every price from that shop
+    came out ten times too high, which pushed them all past the price cap so the shop silently matched
+    nothing at all. A parser that is wrong by a factor of ten is worse than one that fails outright.
+    """
     if not text:
         return None
     m = _PRICE_RE.search(text.replace("\xa0", " "))
     if not m:
         return None
     s = re.sub(r"\s+", "", m.group(1))
-    # decide decimal separator: the last of '.' or ',' followed by exactly 2 digits
-    if re.search(r"[.,]\d{2}$", s):
-        dec = s[-3]
-        s = s[:-3].replace(".", "").replace(",", "") + "." + s[-2:]
-        _ = dec
+    dec = re.search(r"[.,](\d{1,2})$", s)
+    if dec:
+        s = s[:dec.start()].replace(".", "").replace(",", "") + "." + dec.group(1)
     else:
         s = s.replace(".", "").replace(",", "")
     try:
