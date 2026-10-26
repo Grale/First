@@ -303,27 +303,35 @@ from Discover; and an oven measured in litres ("71 Lt / 34 Lt") offered as a 34-
 
 ## The browsable ranking page
 
-`tools/artifact/ranking.html` is a standalone page holding the watch list, the scoring and the evidence,
-with no prices — the shop scrapers cannot run in a browser. It has the profile switch, a specs-versus-
-reviews slider and a multiplier for every individual component, so you can ask "what if docking mattered
-twice as much" and watch the order change. Opening a row shows where each point came from, the full
-specification with every unverified field marked as unverified, and the critic sources behind the review
-score.
+`tools/artifact/ranking.html` is a standalone page holding the watch list, the scoring, the evidence
+and a dated cross-shop price snapshot. It has the profile switch, a specs-versus-reviews slider and a
+multiplier for every individual component, so you can ask "what if docking mattered twice as much" and
+watch the order change. Opening a row shows where each point came from, what every shop charges, the
+full specification with each unverified field marked as unverified, and the critic sources behind the
+review score. A second table lists every 34-inch monitor the six shops carry, watched or not, with the
+spread between the cheapest and the dearest.
+
+Prices there are frozen at the moment the snapshot was taken and stamped with it, and the page says so
+in its own banner. The scrapers cannot run in a browser, so the dashboard on the laptop stays the only
+live answer; `main.py compare` is the live version of that second table.
 
 The scoring is ported to JavaScript in `tools/artifact/scoring.mjs`, and the page and the parity test
 import that same file, so what is tested is what the page runs:
 
 ```bash
+.venv\Scripts\python.exe tools\artifact\export_prices.py        # live scan -> dated price snapshot
 .venv\Scripts\python.exe tools\artifact\export_scores.py > tools\artifact\expected_scores.json
-node tools\artifact\parity.mjs      # JS vs Python, every model, both profiles, a grid of weights
-.venv\Scripts\python.exe tools\artifact\build_page.py   # inject the current watchlist into the page
+node tools\artifact\parity.mjs      # JS vs Python: models, profiles, weights, value
+.venv\Scripts\python.exe tools\artifact\build_page.py           # inject watchlist + prices into the page
 ```
 
-**1,410 comparisons, all matching** — the fit total and every individual component for all 11 models
+`export_prices.py --from-db` reuses the last stored run instead of scanning the shops again.
+
+**1,800 comparisons, all matching** — the fit total and every individual component for all 12 models
 under both profiles, the pixel density, the review score, the overall score across eleven fit/review
-weightings, and the resulting rank order. `build_page.py` refuses to rebuild the page if parity reports
-a mismatch, so the published page cannot drift from the bot. Rerun all three after changing
-`watchlist.json` or either scoring file.
+weightings, the value-per-€1,000 figure against the real price snapshot, and the resulting rank order.
+`build_page.py` refuses to rebuild the page if parity reports a mismatch, so the published page cannot
+drift from the bot. Rerun all four after changing `watchlist.json` or either scoring file.
 
 ## Command line
 
@@ -333,6 +341,7 @@ a mismatch, so the published page cannot drift from the bot. Rerun all three aft
 .venv\Scripts\python.exe main.py report                  # current prices per model and shop
 .venv\Scripts\python.exe main.py discover                # titles that fit the criteria but are not watched
 .venv\Scripts\python.exe main.py check-shops             # is each shop's monitor category reachable and parsing?
+.venv\Scripts\python.exe main.py compare                 # cross-shop price comparison, every monitor at this size
 .venv\Scripts\python.exe main.py test-notify             # test toast + ntfy push
 .venv\Scripts\python.exe main.py validate                # active criteria + check watchlist.json
 .venv\Scripts\python.exe main.py serve --open            # dashboard + background checks
