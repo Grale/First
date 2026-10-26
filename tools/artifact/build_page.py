@@ -24,6 +24,8 @@ def main() -> int:
     criteria = json.loads((ROOT / "config.json").read_text(encoding="utf-8")).get("criteria", {})
     parity_file = HERE / "parity_result.json"
     parity = json.loads(parity_file.read_text(encoding="utf-8")) if parity_file.exists() else {}
+    prices_file = HERE / "prices.json"
+    prices = json.loads(prices_file.read_text(encoding="utf-8")) if prices_file.exists() else {}
     if parity.get("failures"):
         print(f"refusing to build: parity reports {parity['failures']} mismatch(es); "
               "fix scoring.mjs first", file=sys.stderr)
@@ -34,6 +36,7 @@ def main() -> int:
         "models": watchlist.get("models", []),
         "rejected": watchlist.get("rejected", []),
         "parity": parity,
+        "prices": prices,
     }
     page = HERE / "ranking.html"
     html = page.read_text(encoding="utf-8")
@@ -45,7 +48,8 @@ def main() -> int:
         return 1
     page.write_text(new_html, encoding="utf-8")
     print(f"ranking.html rebuilt: {len(payload['models'])} models, "
-          f"{len(payload['rejected'])} rejected, {parity.get('comparisons', '?')} parity comparisons, "
+          f"{len(payload['rejected'])} rejected, {len(prices.get('groups', []))} priced products "
+          f"as of {prices.get('as_of', 'never')}, {parity.get('comparisons', '?')} parity comparisons, "
           f"{len(new_html) / 1024:.0f} KB")
     return 0
 

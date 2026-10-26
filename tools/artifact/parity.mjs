@@ -62,13 +62,15 @@ for (const exp of expectedFile.expected) {
     eq(parts[k], exp.parts[k], `${label} component ${k}`);
   }
 
-  // the overall score across the weight grid
+  // the overall score across the weight grid, and the value score against the real price snapshot
+  const bestPrices = expectedFile.best_prices || {};
   for (const row of exp.overalls) {
     const cfg = { scoring: { fit_weight: row.fit_weight, review_weight: row.review_weight, profile: exp.profile } };
-    const sc = scoreModel(m, cfg);
+    const sc = scoreModel(m, cfg, bestPrices[exp.model_key] || null);
     eq(sc.overall, row.overall, `${label} overall @ fit ${row.fit_weight}/review ${row.review_weight}`);
     eq(sc.fit, row.fit, `${label} rounded fit @ ${row.fit_weight}`);
     eq(sc.review, row.review, `${label} review @ ${row.fit_weight}`);
+    eq(sc.value, row.value, `${label} value @ ${row.fit_weight}`);
     checks += 1;
     if (sc.has_review !== row.has_review) {
       failures.push(`${label} has_review: JS ${sc.has_review} vs Python ${row.has_review}`);
