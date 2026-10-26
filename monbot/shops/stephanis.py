@@ -28,26 +28,33 @@ class Stephanis(Shop):
     base_url = "https://www.stephanis.com.cy"
     start_tier = 1
 
-    def category_template(self) -> str:
-        """Full category URL with `{page}`, paging query string included."""
-        pinned = (shop_config(self.name).get("category_url") or "").strip()
-        url = pinned
-        if not url:
-            html = self.f.get(HOME_URL, start_tier=self.start_tier)
-            links = find_category_links(html, self.base_url, _PRODUCTS_HREF)
-            if not links:
-                raise RuntimeError(
-                    "Stephanis: no monitor category found in the site menu. Open stephanis.com.cy, go to the "
-                    "monitors category, and put its URL in config.json under "
-                    '"shops_config": {"stephanis": {"category_url": "..."}}')
-            links.sort(key=lambda u: -u.count("/"))
-            url = links[0]
-            self.log.info("stephanis: using discovered category %s", url)
+    def _with_paging(self, url: str) -> str:
         if "{page}" in url:
             return url
         parts = urlsplit(url)
         query = PAGING if not parts.query else f"{parts.query}&{PAGING}"
         return urlunsplit((parts.scheme, parts.netloc, parts.path, query, parts.fragment))
+
+    def category_templates(self) -> list[str]:
+        """Every PC-monitor category to read, as URLs with `{page}` and the paging query appended.
+
+        Stephanis keeps a second PC-monitor aisle under last-pieces, which is clearance stock and so
+        worth more to a deal bot than the main listing. Both are read and merged.
+        """
+        pinned = shop_config(self.name).get("category_url") or ""
+        if isinstance(pinned, str):
+            pinned = [pinned] if pinned.strip() else []
+        urls = [u.strip() for u in pinned if u.strip()]
+        if not urls:
+            html = self.f.get(HOME_URL, start_tier=self.start_tier)
+            urls = find_category_links(html, self.base_url, _PRODUCTS_HREF)
+            if not urls:
+                raise RuntimeError(
+                    "Stephanis: no monitor category found in the site menu. Open stephanis.com.cy, go to the "
+                    "monitors category, and put its URL in config.json under "
+                    '"shops_config": {"stephanis": {"category_url": "..."}}')
+            self.log.info("stephanis: reading %d discovered categories: %s", len(urls), ", ".join(urls))
+        return [self._with_paging(u) for u in urls]
 
     def _parse(self, html: str) -> list[Item]:
         soup = BeautifulSoup(html, "lxml")
@@ -75,22 +82,26 @@ class Stephanis(Shop):
         return items
 
     def fetch_items(self, models: list[Model]) -> list[Item]:
-        template = self.category_template()
         items: list[Item] = []
         seen: set[str] = set()
-        for page in range(1, MAX_PAGES + 1):
-            url = template.format(page=page)
-            html = self.f.get(url, start_tier=self.start_tier)
-            page_items = self._parse(html)
-            if page == 1 and not page_items:
-                raise RuntimeError(
-                    f"Stephanis: no product cards on {url}. Either the layout changed or this is not the "
-                    'monitor category; pin it in config.json under "shops_config".stephanis.category_url')
-            new = [i for i in page_items if i.url not in seen]
-            for i in new:
-                seen.add(i.url)
-            items.extend(new)
-            if len(page_items) < 100 or not new:
-                break
-        self.log.info("stephanis: %d products on %d pages", len(items), page)
+        empty: list[str] = []
+        for template in self.category_templates():
+            for page in range(1, MAX_PAGES + 1):
+                url = template.format(page=page)
+                html = self.f.get(url, start_tier=self.start_tier)
+                page_items = self._parse(html)
+                if page == 1 and not page_items:
+                    empty.append(url)
+                fresh = [i for i in page_items if i.url not in seen]
+                for i in fresh:
+                    seen.add(i.url)
+                items.extend(fresh)
+                if len(page_items) < 100 or not fresh:
+                    break
+        if not items:
+            raise RuntimeError(
+                f"Stephanis: no product cards on {', '.join(empty) or 'any discovered category'}. Either the "
+                'layout changed or these are not monitor categories; pin one in config.json under '
+                '"shops_config".stephanis.category_url')
+        self.log.info("stephanis: %d distinct products across categories", len(items))
         return items

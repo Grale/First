@@ -47,6 +47,13 @@ _ACCESSORY = (
     # neighbouring product categories that are not monitors
     "SMART TV", "TELEVISION", "ΤΗΛΕΟΡΑΣΗ", "PROJECTOR", "ΠΡΟΒΟΛΕΑΣ", "TABLET", "SMARTPHONE",
     "LAPTOP", "NOTEBOOK", "DESKTOP PC", "ALL IN ONE PC", "MINI PC", "PRINTER", "ΕΚΤΥΠΩΤΗΣ",
+    # white goods. The two search-driven shops answer "<brand> 34" with the whole catalogue, and a
+    # fridge model code carries a bare 34 as readably as a monitor's does ("RB34C600ESA"), so the
+    # product category is the only thing that separates them.
+    "ΦΟΥΡΝΟΣ", "ΦΟΥΡΝΟΙ", "ΚΟΥΖΙΝΑ", "ΕΣΤΙΑ", "ΕΣΤΙΕΣ", "ΑΠΟΡΡΟΦΗΤΗΡΑΣ", "ΜΙΚΡΟΚΥΜΑΤΩΝ",
+    "ΨΥΓΕΙΟ", "ΚΑΤΑΨΥΚΤΗΣ", "ΠΛΥΝΤΗΡΙΟ", "ΣΤΕΓΝΩΤΗΡΙΟ", "ΚΛΙΜΑΤΙΣΤΙΚΟ", "ΣΚΟΥΠΑ", "ΚΑΦΕΤΙΕΡΑ",
+    "OVEN", "COOKER", "HOB", "EXTRACTOR HOOD", "MICROWAVE", "FRIDGE", "REFRIGERATOR", "FREEZER",
+    "WASHING MACHINE", "DISHWASHER", "TUMBLE DRYER", "AIR CONDITIONER", "VACUUM CLEANER",
 )
 
 

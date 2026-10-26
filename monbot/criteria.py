@@ -89,6 +89,12 @@ PRODUCT_TERMS = ("Monitor", "Οθόνη", "Ultrawide")
 # Marketing resolution names, for the listings that give a name and never a pixel count. Longest first
 # so UWQHD is read before QHD could be found inside it.
 RESOLUTION_NAMES: tuple[tuple[str, tuple[int, int]], ...] = (
+    # Samsung sells 3440x1440 as "Ultra WQHD" and LG as "UWQHD". Both have to be read before the bare
+    # "WQHD" inside them, or a 34-inch ultrawide is taken for a 2560x1440 panel and drops below the
+    # resolution floor - which silently hid every Samsung ultrawide from the discovery scan.
+    ("ULTRA WQHD", (3440, 1440)),
+    ("ULTRA WIDE QHD", (3440, 1440)),
+    ("ULTRA WFHD", (2560, 1080)),
     ("5K2K", (5120, 2160)),
     ("UWQHD", (3440, 1440)),
     ("UWFHD", (2560, 1080)),
@@ -109,6 +115,14 @@ _RES_NAME_MAP = dict(RESOLUTION_NAMES)
 # monitor sizes in their own right (21, 32, 16), so they are stripped before any size test: without this
 # every 21:9 ultrawide would read as naming a 21-inch panel, and a 32:9 superultrawide as a 32-inch one.
 _ASPECT_RE = re.compile(r"(?<![0-9])(21 9|32 9|16 9|16 10|4 3|5 4|21 10)(?![0-9])")
+
+# A number carrying a unit is a measurement of something else. Shops that answer searches return the
+# whole catalogue for "34", and an oven listed as "71 Lt / 34 Lt" was read as a 34-inch panel until
+# this was added. Inches and centimetres are deliberately absent: those ARE sizes, and the centimetre
+# form is read separately by sizes_from_cm, which runs before this strips anything.
+_UNIT_RE = re.compile(
+    r"(?<![0-9])\d+(?: \d+)? (LT|L|ML|KG|GR|G|GB|TB|MB|KWH|KW|W|V|A|HZ|MM|M|DB|RPM|BAR|LM|LUMEN|"
+    r"ΛΙΤΡΑ|ΛΤ|ΚΙΛΑ)(?![A-Z0-9])")
 
 
 @lru_cache(maxsize=32)
@@ -147,8 +161,11 @@ def _other_panel_re(panels: tuple[str, ...]) -> Optional[re.Pattern]:
 
 
 def strip_aspect(norm_title: str) -> str:
-    """The title with aspect-ratio pairs blanked out, so they cannot be read as sizes."""
-    return _ASPECT_RE.sub(" ", norm_title)
+    """The title with aspect-ratio pairs and unit-qualified numbers blanked out.
+
+    Both would otherwise be read as screen sizes: "21:9" as a 21-inch panel, "34 Lt" as a 34-inch one.
+    """
+    return _UNIT_RE.sub(" ", _ASPECT_RE.sub(" ", norm_title))
 
 
 def resolution_px_in_title(norm_title: str) -> Optional[tuple[int, int]]:
@@ -176,8 +193,7 @@ def resolution_in_title(norm_title: str) -> Optional[tuple[int, int]]:
     px = resolution_px_in_title(norm_title)
     if px:
         found.append(px)
-    m = _RES_NAME_RE.search(norm_title)
-    if m:
+    for m in _RES_NAME_RE.finditer(norm_title):
         found.append(_RES_NAME_MAP[m.group(0)])
     return max(found, key=lambda wh: wh[0] * wh[1]) if found else None
 

@@ -106,6 +106,43 @@ def test_accessories() -> None:
 
 
 # --------------------------------------------------------------------------------------------------
+# 2b. titles taken verbatim from a live run against the six shops
+# --------------------------------------------------------------------------------------------------
+def test_real_shop_titles() -> None:
+    """Regression cases from the first live run. Each one was a bug.
+
+    The three white goods came back from Public's own search for "Samsung 34" and were offered as
+    34-inch candidates: an oven measured in litres ("71 Lt / 34 Lt") and two fridges whose model codes
+    carry a bare 34 exactly as readably as a monitor's does. The Samsung monitors are the other half of
+    the same lesson: "Ultra WQHD" is Samsung's name for 3440x1440, and reading it as the plain "WQHD"
+    inside it put every Samsung ultrawide below the resolution floor and out of the discovery scan.
+    """
+    crit = criteria_mod.from_config(CFG)
+    cases = [
+        ("NEFF U1ACE2AG3B 71 Lt / 34 Lt Graphite Grey Εντοιχιζόμενος Φούρνος Άνω Πάγκου", False),
+        ("SAMSUNG RB34C600ESA/EF Full No Frost 344 Lt Ασημί Ψυγειοκαταψύκτης", False),
+        ("SAMSUNG RB34C672DSA/EF No Frost 344 Lt Ασημί Ψυγειοκαταψύκτης", False),
+        ('PC Monitor 34" SAMSUNG Curved Odyssey G8 G85SB LS34BG850SUXEN Ultra WQHD', True),
+        ('PC Monitor 34" SAMSUNG Curved ViewFinity S6 S65VC LS34C652VAUXEN UWQHD VA LED black', True),
+        ('AOC CU34G4 Curved Gaming PC Monitor, 34"', True),
+        ('PC Monitor 34" LORGAR Curved 34MP1 VA Mini-LED UWQHD LRG-34MP1W180C-GY black/grey', True),
+        ('PC Monitor 34" ACER Curved Nitro ED340CURX0bmiipx UM.CE0EE.010 UWQHD VA black', True),
+        ('SAMSUNG LS34DG850SUXDU Curved Gaming PC Monitor, 34"', True),
+        ('PC Monitor 27" SAMSUNG WQHD 2560x1440', False),
+    ]
+    for title, want in cases:
+        check(looks_like_candidate(title, crit) is want,
+              f"live title read wrong (wanted candidate={want}): {title[:70]!r}")
+
+    # "Ultra WQHD" must read as 3440x1440, not as the 2560x1440 of the "WQHD" inside it
+    check(criteria_mod.resolution_in_title(normalize('34" Ultra WQHD')) == (3440, 1440),
+          "'Ultra WQHD' was not read as 3440x1440")
+    # a unit-qualified number is a measurement of something else, never a screen size
+    check(not crit.has_size(normalize("Φούρνος 71 Lt / 34 Lt")), "'34 Lt' was read as a 34-inch size")
+    check(crit.has_size(normalize('Monitor 34" UWQHD')), "a real 34-inch title stopped matching")
+
+
+# --------------------------------------------------------------------------------------------------
 # 3. matching, Discover and the price cap, through engine.match_items
 # --------------------------------------------------------------------------------------------------
 def test_match_items() -> None:
@@ -231,6 +268,7 @@ def test_rules() -> None:
 def main() -> int:
     test_digit_boundaries()
     test_accessories()
+    test_real_shop_titles()
     test_match_items()
     test_rules()
     print(f"{checks - len(failures)}/{checks} checks passed")

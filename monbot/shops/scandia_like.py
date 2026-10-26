@@ -22,11 +22,13 @@ _PAGE_TAIL = re.compile(r"-(\d+)\.html$")
 class ScandiaLike(Shop):
     start_tier = 1
 
-    def catalog_path(self) -> str:
-        """Path template for the monitor catalog, with `{page}` where the page number goes."""
-        pinned = (shop_config(self.name).get("catalog_path") or "").strip()
+    def catalog_paths(self) -> list[str]:
+        """Path templates for every PC-monitor catalog, with `{page}` where the page number goes."""
+        pinned = shop_config(self.name).get("catalog_path") or ""
+        if isinstance(pinned, str):
+            pinned = [pinned] if pinned.strip() else []
         if pinned:
-            return pinned if "{page}" in pinned else _PAGE_TAIL.sub("-{page}.html", pinned)
+            return [p if "{page}" in p else _PAGE_TAIL.sub("-{page}.html", p.strip()) for p in pinned]
         html = self.f.get(self.base_url + "/", start_tier=self.start_tier)
         links = find_category_links(html, self.base_url, _CATALOG_HREF)
         if not links:
@@ -34,10 +36,12 @@ class ScandiaLike(Shop):
                 f"{self.label}: no monitor catalog link found in the site menu. Open {self.base_url}, go to "
                 f'the monitors catalog, and put its path in config.json under "shops_config": '
                 f'{{"{self.name}": {{"catalog_path": "/catalog/Monitors-<id>-{{page}}.html"}}}}')
-        path = links[0][len(self.base_url):] if links[0].startswith(self.base_url) else links[0]
-        template = _PAGE_TAIL.sub("-{page}.html", path)
-        self.log.info("%s: using discovered catalog %s", self.name, template)
-        return template
+        out = []
+        for link in links:
+            path = link[len(self.base_url):] if link.startswith(self.base_url) else link
+            out.append(_PAGE_TAIL.sub("-{page}.html", path))
+        self.log.info("%s: reading %d discovered catalogs: %s", self.name, len(out), ", ".join(out))
+        return out
 
     def _parse_cards(self, html: str) -> list[Item]:
         soup = BeautifulSoup(html, "lxml")
@@ -75,30 +79,35 @@ class ScandiaLike(Shop):
         return items
 
     def fetch_items(self, models: list[Model]) -> list[Item]:
-        path = self.catalog_path()
         items: list[Item] = []
         seen_urls: set[str] = set()
-        first_page_urls: set[str] = set()
-        for page in range(1, MAX_PAGES + 1):
-            url = self.base_url + path.format(page=page)
-            html = self.f.get(url, start_tier=self.start_tier)
-            page_items = self._parse_cards(html)
-            urls = {i.url for i in page_items}
-            if page == 1:
-                first_page_urls = urls
-                if not page_items:
-                    raise RuntimeError(
-                        f"{self.label}: no product cards on {url}. Either the layout changed or this is not "
-                        f'the monitor catalog; pin it in config.json under "shops_config".{self.name}.catalog_path')
-            elif not page_items or urls == first_page_urls or urls <= seen_urls:
-                break  # catalog wraps around to page 1 after the last page
-            for it in page_items:
-                if it.url not in seen_urls:
-                    seen_urls.add(it.url)
-                    items.append(it)
-            if len(page_items) < 20:
-                break
-        self.log.info("%s: %d products on %d catalog pages", self.name, len(items), page)
+        empty: list[str] = []
+        for path in self.catalog_paths():
+            first_page_urls: set[str] = set()
+            for page in range(1, MAX_PAGES + 1):
+                url = self.base_url + path.format(page=page)
+                html = self.f.get(url, start_tier=self.start_tier)
+                page_items = self._parse_cards(html)
+                urls = {i.url for i in page_items}
+                if page == 1:
+                    first_page_urls = urls
+                    if not page_items:
+                        empty.append(url)
+                        break
+                elif not page_items or urls == first_page_urls or urls <= seen_urls:
+                    break  # catalog wraps around to page 1 after the last page
+                for it in page_items:
+                    if it.url not in seen_urls:
+                        seen_urls.add(it.url)
+                        items.append(it)
+                if len(page_items) < 20:
+                    break
+        if not items:
+            raise RuntimeError(
+                f"{self.label}: no product cards on {', '.join(empty) or 'any discovered catalog'}. Either the "
+                f'layout changed or these are not monitor catalogs; pin one in config.json under '
+                f'"shops_config".{self.name}.catalog_path')
+        self.log.info("%s: %d distinct products across catalogs", self.name, len(items))
         return items
 
 
