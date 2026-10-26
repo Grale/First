@@ -198,7 +198,14 @@ def test_match_items() -> None:
     check(not any(o.shop_sku == "KO-2" for o in offers), "MAG 341CQP was claimed by MPG341CQPX")
     check("KO-2" in disco, "MAG 341CQP should reach Discover as an unknown product")
     check(not any(o.shop_sku == "PU-3" for o in offers), "AW3423DW was claimed by AW3423DWF")
-    check(not any(o.shop_sku == "SC-2" for o in offers), "G85SD was claimed by the G85SB entry")
+    # The G85SD is now on the watch list too, so the test is no longer "it must not match" but the
+    # sharper one: the two Samsungs are one character apart in the model code and must not claim each
+    # other's listings. They are priced hundreds of euros apart, so a swap here would alert on fiction.
+    sc2 = [o for o in offers if o.shop_sku == "SC-2"]
+    check(len(sc2) == 1 and sc2[0].model_key == "LS34DG850",
+          f"the G85SD listing matched {[o.model_key for o in sc2]}, expected LS34DG850")
+    check(not any(o.shop_sku == "SC-1" and o.model_key == "LS34DG850" for o in offers),
+          "the G85SB listing was claimed by the G85SD entry")
     check("EL-3" not in disco and "ME-2" not in disco, "an accessory reached Discover")
     check(not any(o.shop_sku in ("EL-3", "ME-2") for o in offers), "an accessory produced an offer")
     check(not any(o.shop_sku == "ST-3" for o in offers),

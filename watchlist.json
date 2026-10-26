@@ -971,6 +971,98 @@
           }
         ]
       }
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "LS34DG850",
+      "family": "Odyssey OLED G8 (G85SD)",
+      "year": 2024,
+      "panel": "QD-OLED",
+      "size_inch": 34,
+      "specs": {
+        "hz": 175,
+        "width": 3440,
+        "height": 1440,
+        "response_ms": 0.03,
+        "usb_c_pd_w": 0,
+        "kvm": null,
+        "height_adjust": true,
+        "curvature": "1800R",
+        "dp_version": "1.4",
+        "hdr": "HDR10",
+        "srgb_pct": null,
+        "dci_p3_pct": 99,
+        "contrast": null,
+        "tuv_eye_comfort_stars": null,
+        "vrr": true,
+        "vrr_brand": "G-Sync Compatible, FreeSync Premium Pro",
+        "burn_in_warranty_years": null
+      },
+      "source_url": "https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/",
+      "aliases": [
+        "S34DG850",
+        "G85SD",
+        "LS34DG850SUXDU",
+        "LS34DG850SUXEN"
+      ],
+      "priority": false,
+      "notes": "Checked at this exact model against a full spec table read in its entirety, not a search snippet: QD-OLED 1800R, 3440x1440 at 110 PPI, 175 Hz, 0.03 ms, 250 nits, 99% DCI-P3, 10-bit, anti-reflective finish, 120 mm height adjustment with -2/+20 tilt, FreeSync Premium Pro and G-Sync both listed. It is 175 Hz, NOT the 240 Hz often repeated - that was worth checking, because 240 Hz would have been worth four more points under the gaming profile. USB-C is a verified absence rather than an unknown: the connector list is complete (1x DP 1.4, 2x HDMI 2.1, 2x USB 3.0, 1x USB 3.0 type B) and holds no Type-C, so this cannot dock a laptop. KVM is left unknown; the upstream USB-B is the hardware a KVM would use but no source consulted says it has one. The HDR field records what the source states, 'Certificado HDR: HDR10'. Its sibling G85SB carries DisplayHDR True Black 400 and this model very likely does too, but it was not confirmed, so the HDR band here is probably understated by four points rather than overstated. Added because the live Discover scan found it stocked in Cyprus at 899 EUR and 1,399 EUR in two shops on the same day.",
+      "enabled": true,
+      "review": {
+        "model_key": "LS34DG850",
+        "review_score": 8.5,
+        "confidence": "low",
+        "critic": [
+          {
+            "source": "Geektopia full specification table (Odyssey OLED G8 G85SD)",
+            "url": "https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/",
+            "score": "n/a",
+            "verdict": "QD-OLED 1800R at 3440x1440 and 175 Hz, 0.03 ms, 250 nits, 99% DCI-P3, anti-reflective finish, 120 mm height adjustment, no USB-C"
+          }
+        ],
+        "user_sentiment": {
+          "score": null,
+          "summary": "No owner-sentiment source consulted.",
+          "sources": []
+        },
+        "pros": [
+          "Anti-reflective matte finish, the main change from the G85SB",
+          "99% DCI-P3 with QD-OLED contrast",
+          "Both FreeSync Premium Pro and G-Sync listed",
+          "Found stocked in Cyprus at two shops with a 500 EUR spread between them"
+        ],
+        "cons": [
+          "No USB-C at all: cannot dock a laptop, confirmed from the full connector list",
+          "175 Hz, not the 240 Hz often claimed for it",
+          "QD-OLED subpixel layout fringes text",
+          "250 nits typical"
+        ],
+        "specs_extra": {
+          "measured_response_ms": null,
+          "measured_contrast": null,
+          "measured_dci_p3_pct": null,
+          "peak_nits": null,
+          "text_clarity": "QD-OLED triangular subpixel layout fringes text; the matte coating also softens it slightly versus the glossy G85SB"
+        },
+        "use_verdict": "A gaming panel with no docking at all. On the work profile it scores below every IPS here; it is on the list because Cyprus shops disagree about its price by 500 EUR.",
+        "notes": "Confidence is low: one full specification table, no lab review and no owner evidence. The score is carried from the G85SB, which RTINGS measured, on the basis that the panel and refresh are the same and the finish differs.",
+        "fit_penalties": [
+          {
+            "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+            "points": -5,
+            "profiles": [
+              "work"
+            ]
+          },
+          {
+            "reason": "no USB-C at all, confirmed from the full connector list: no docking and no KVM path",
+            "points": -3,
+            "profiles": [
+              "work"
+            ]
+          }
+        ]
+      }
     }
   ],
   "rejected": [

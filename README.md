@@ -15,26 +15,37 @@ dashboard and the Windows scheduled task are unchanged; what it watches and how 
 Python package was renamed `tvbot` → `monbot`, and the 75/77-inch TV research is kept under
 `tools/archive/75_77inch_tv/`.
 
-## Read this first: what could not be verified here
+## Read this first: what is verified and what is not
 
-This retarget was done in a cloud session whose network policy refused outbound connections to every
-Cyprus shop domain and to rtings.com, lg.com, dell.com and displayspecifications.com (HTTP 403 on
-CONNECT). Two consequences, both of which need ten minutes on your laptop:
+All six shops have now been run for real and all six answer. An earlier round of this work was done in
+a session whose network policy refused every Cyprus shop, so the adapters shipped unverified; that is
+no longer the case, and the notes below say exactly where the line now falls.
 
-1. **The six monitor category URLs are not confirmed.** I could not open a single shop, so rather than
-   invent URLs that return 200 and hold the wrong products, each listing shop now finds its monitor
-   category in the shop's own menu, and `shops_config` in `config.json` lets you pin it. **Run
-   `python main.py check-shops` first.** It fetches each shop and prints how many products came back
-   and how many fit the criteria. Any shop reporting 0 or an error needs its category pinned; the
-   error message says exactly which config key to set.
-2. **Every spec came from search results, not from pages I opened.** No entry cites a page I read in
-   full. Each entry's `notes` says how far it was verified and which source type it came from -
-   maker's spec sheet, lab review, or retailer spec table - and fields that no source stated are left
-   `null` rather than filled in. The one claim worth checking yourself is the Dell U3425WE's five-star
-   TÜV rating, because it is why that model ranks first (see below).
+**Verified against the live shops.** The six adapters, the category discovery, the matcher and the
+alert rules were run end to end. Item counts on the day: Electroline 72, Scandia 3, MegaElectric 3,
+Stephanis 281, Public 45, Kotsovolos 111. A dry run matched the watch list, surfaced thirteen unknown
+34-inch monitors for Discover, and fired a real cross-shop alert — the Samsung G85SD at €899 in
+Electroline against €1,099 at Public and €1,399 at Stephanis, an 18% gap on one afternoon. Run
+`python main.py check-shops` whenever a shop changes its site; it prints what each one returned and
+names the `shops_config` key to pin if one goes wrong.
 
-Nothing else is blocked: the matcher, the scoring, the rules, the dashboard and the watchlist are all
-tested and working, and `tests/` reproduces that in two commands.
+**Still only claims, not measurements.** Every specification came from a maker's spec sheet, a lab
+review, a retailer spec table or a full specification page — each entry's `notes` says which, and
+which fields were carried from a sibling. No entry carries a figure measured by this project, and
+fields no source stated are `null` rather than guessed. Two worth your own check:
+
+* **The Dell U3425WE's five-star TÜV Eye Comfort rating**, because it is why that model ranks first. It
+  comes from Dell's own copy as quoted in distributor listings and was never confirmed in TÜV's
+  Certipedia register, which is the authoritative one.
+* **The Samsung G85SD's HDR tier.** Its spec page states HDR10; its sibling G85SB carries DisplayHDR
+  True Black 400 and this model very likely does too. The entry records the lower figure, so its score
+  is probably understated by four points rather than overstated.
+
+**The watch list is researched from the global market, not from Cyprus stock.** Of the twelve models,
+only two were found in any Cyprus shop on the day of the live run. The bot still works — it found and
+priced both, and alerted on one — but most of what it watches is not sold here, and most of what the
+shops do sell is VA, which your criteria exclude. Discover is the tool for closing that gap: it is
+currently holding eleven unresearched 34-inch monitors.
 
 ## Daily use
 
@@ -159,11 +170,11 @@ the same as "failed".
 
 ## The watch list
 
-`watchlist.json` is the only thing that decides which monitors are watched: **11 models** with review
-evidence for all 11, plus **4 checked and rejected**. That is far short of the TV build's 74, and the
+`watchlist.json` is the only thing that decides which monitors are watched: **12 models** with review
+evidence for all 12, plus **4 checked and rejected**. That is far short of the TV build's 74, and the
 shortfall is deliberate — the prompt's own rule was that a model you cannot verify is left out for
-Discover to surface rather than entered on a guess, and with no shop or spec site reachable, 11 is what
-the evidence supported.
+Discover to surface rather than entered on a guess, and 12 is what
+the evidence supports. Eleven more are waiting in Discover, found by the live run.
 
 | Watched | Panel | Why it is here |
 |---|---|---|
@@ -175,6 +186,7 @@ the evidence supported.
 | Dell AW3423DWF | QD-OLED | Cheapest QD-OLED, three-year burn-in cover |
 | LG 34GS95QE | WOLED | 240 Hz, True Black 400, 800R; no USB-C at all |
 | Samsung LS34BG850 | QD-OLED | 175 Hz QD-OLED; RTINGS measured the stand |
+| Samsung LS34DG850 | QD-OLED | The G85SD. Added because the live scan found it in three Cyprus shops at €899, €1,099 and €1,399 |
 | Gigabyte M34WQ | IPS | Flat, 144 Hz, KVM, cheap; USB-C wattage undocumented |
 | LG 34GP83A | Nano IPS | The usual cheapest 144 Hz+ IPS at this size |
 | LG 34GN850 | Nano IPS | Same panel as the 34GP83A, usually priced higher — there to catch it when it is not |
@@ -193,6 +205,8 @@ research.
 
 How each entry was verified, and what the levels mean:
 
+* **Full specification page read in its entirety** — Samsung LS34DG850 (the only entry whose source
+  page was opened and read rather than summarised).
 * **Maker's own spec sheet** — Asus PA348CGV, Asus PA34VCNV, MSI MPG341CQPX, Lenovo Y34WZ-30 (PSREF).
   The strongest source for claims and no source at all for measurements.
 * **Lab review or measurement** — Samsung LS34BG850 (RTINGS measured the stand), AOC AG344UXM
@@ -268,7 +282,7 @@ The things in the TV codebase that would have failed quietly:
 
 ```bash
 .venv\Scripts\python.exe main.py validate       # active criteria + every watchlist entry that falls short
-.venv\Scripts\python.exe tests\test_titles.py   # 52 checks: matching, Discover, accessories, alert rules
+.venv\Scripts\python.exe tests\test_titles.py   # 65 checks: matching, Discover, accessories, alert rules
 .venv\Scripts\python.exe tests\test_web.py      # 35 checks: every page 200, settings round-trip
 .venv\Scripts\python.exe main.py check-shops    # the one that needs your laptop: are the six categories right?
 ```
@@ -281,7 +295,11 @@ rules fire with the right percentages. `tests/test_web.py` runs against throwawa
 
 Three bugs were found by writing these: the Greek accent fold, the `UHD` veto, and a crash in the
 watchlist form when a numeric field was absent from the POST (`str(None).strip()` is truthy, so
-`int(None)` was reached).
+`int(None)` was reached). Four more were found by running the shops for real, and every one is now a
+regression case in `test_titles.py`: category discovery matching blood-pressure monitors, DJ monitors
+and monitor brackets; Electroline's gaming monitors being dropped because the menu only exposes
+subcategories; "Ultra WQHD" read as the 2560×1440 "WQHD" inside it, which hid every Samsung ultrawide
+from Discover; and an oven measured in litres ("71 Lt / 34 Lt") offered as a 34-inch candidate.
 
 ## The browsable ranking page
 

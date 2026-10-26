@@ -178,5 +178,44 @@
     },
     "use_verdict": "Bought for games, tolerated for work. No docking, and the text trade-off applies.",
     "notes": "Confidence is low rather than medium on purpose: this entry rests entirely on retailer listings, because neither Dell's product page nor any lab review of this model could be opened from the session it was researched in. The burn-in cover is stated plainly by one large retailer and vaguely by others, so confirm it with the Cyprus seller before treating it as a reason to buy."
+  },
+  {
+    "model_key": "LS34DG850",
+    "review_score": 8.5,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Geektopia full specification table (Odyssey OLED G8 G85SD)",
+        "url": "https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/",
+        "score": "n/a",
+        "verdict": "QD-OLED 1800R at 3440x1440 and 175 Hz, 0.03 ms, 250 nits, 99% DCI-P3, anti-reflective finish, 120 mm height adjustment, no USB-C"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "No owner-sentiment source consulted.",
+      "sources": []
+    },
+    "pros": [
+      "Anti-reflective matte finish, the main change from the G85SB",
+      "99% DCI-P3 with QD-OLED contrast",
+      "Both FreeSync Premium Pro and G-Sync listed",
+      "Found stocked in Cyprus at two shops with a 500 EUR spread between them"
+    ],
+    "cons": [
+      "No USB-C at all: cannot dock a laptop, confirmed from the full connector list",
+      "175 Hz, not the 240 Hz often claimed for it",
+      "QD-OLED subpixel layout fringes text",
+      "250 nits typical"
+    ],
+    "specs_extra": {
+      "measured_response_ms": null,
+      "measured_contrast": null,
+      "measured_dci_p3_pct": null,
+      "peak_nits": null,
+      "text_clarity": "QD-OLED triangular subpixel layout fringes text; the matte coating also softens it slightly versus the glossy G85SB"
+    },
+    "use_verdict": "A gaming panel with no docking at all. On the work profile it scores below every IPS here; it is on the list because Cyprus shops disagree about its price by 500 EUR.",
+    "notes": "Confidence is low: one full specification table, no lab review and no owner evidence. The score is carried from the G85SB, which RTINGS measured, on the basis that the panel and refresh are the same and the finish differs."
   }
 ]

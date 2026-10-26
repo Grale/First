@@ -110,5 +110,21 @@
         "work"
       ]
     }
+  ],
+  "LS34DG850": [
+    {
+      "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+      "points": -5,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "no USB-C at all, confirmed from the full connector list: no docking and no KVM path",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
   ]
 }

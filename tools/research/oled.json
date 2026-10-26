@@ -129,5 +129,40 @@
       "AW3423DWF"
     ],
     "notes": "Checked at this exact model, but from retailer spec tables rather than dell.com, which could not be opened from this session. 165 Hz is the DisplayPort figure; HDMI is capped at 100 Hz. The three-year burn-in cover is stated plainly in one large retailer's listing and more vaguely as 'three-year service coverage' in others, so treat the cover as probable rather than certain and confirm with the Cyprus seller. 'AW3423' is deliberately not an alias: the AW3423DW is a different monitor (G-Sync module, 175 Hz) and a shared prefix would let this entry claim its listings. A DW in a shop will therefore appear in Discover rather than being silently priced as a DWF."
+  },
+  {
+    "brand": "Samsung",
+    "model_key": "LS34DG850",
+    "family": "Odyssey OLED G8 (G85SD)",
+    "year": 2024,
+    "panel": "QD-OLED",
+    "size_inch": 34,
+    "hz": 175,
+    "width": 3440,
+    "height": 1440,
+    "response_ms": 0.03,
+    "usb_c_pd_w": 0,
+    "kvm": null,
+    "height_adjust": true,
+    "curvature": "1800R",
+    "dp_version": "1.4",
+    "hdr": "HDR10",
+    "srgb_pct": null,
+    "dci_p3_pct": 99,
+    "contrast": null,
+    "tuv_eye_comfort_stars": null,
+    "vrr": true,
+    "vrr_brand": "G-Sync Compatible, FreeSync Premium Pro",
+    "burn_in_warranty_years": null,
+    "qualifies": true,
+    "source_url": "https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/",
+    "aliases": [
+      "LS34DG850",
+      "S34DG850",
+      "G85SD",
+      "LS34DG850SUXDU",
+      "LS34DG850SUXEN"
+    ],
+    "notes": "Checked at this exact model against a full spec table read in its entirety, not a search snippet: QD-OLED 1800R, 3440x1440 at 110 PPI, 175 Hz, 0.03 ms, 250 nits, 99% DCI-P3, 10-bit, anti-reflective finish, 120 mm height adjustment with -2/+20 tilt, FreeSync Premium Pro and G-Sync both listed. It is 175 Hz, NOT the 240 Hz often repeated - that was worth checking, because 240 Hz would have been worth four more points under the gaming profile. USB-C is a verified absence rather than an unknown: the connector list is complete (1x DP 1.4, 2x HDMI 2.1, 2x USB 3.0, 1x USB 3.0 type B) and holds no Type-C, so this cannot dock a laptop. KVM is left unknown; the upstream USB-B is the hardware a KVM would use but no source consulted says it has one. The HDR field records what the source states, 'Certificado HDR: HDR10'. Its sibling G85SB carries DisplayHDR True Black 400 and this model very likely does too, but it was not confirmed, so the HDR band here is probably understated by four points rather than overstated. Added because the live Discover scan found it stocked in Cyprus at 899 EUR and 1,399 EUR in two shops on the same day."
   }
 ]
