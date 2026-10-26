@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Ranking · Soundbar Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Ranking <span class="muted small">{{ cfg.scoring.profile }} profile</span></h1>
+  <p class="muted small">Overall = {{ (cfg.scoring.fit_weight*100)|round|int }}% fit to your criteria + {{ (cfg.scoring.review_weight*100)|round|int }}% reviews.
+    Cinema fit points: height channels (max 24), wireless rears (20), bass (14), ear-level channels (10), formats (6), connections (6), room calibration (4), model year (8), your named models (8), minus deductions where a review found a clash with the criteria. Value = overall per €1,000 of the cheapest in-stock price. Change the profile and weights on Settings.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>#</th><th class="left">Model</th><th class="left">System</th><th>Overall</th><th>Fit</th><th>Reviews</th><th>Best price</th><th>Value</th><th class="left">Fit breakdown</th><th class="left">Verdict</th></tr></thead>
+    <tbody>
+    {% for g in grid %}{% set m = g.model %}{% set s = g.score %}
+      <tr id="{{ m.model_key }}" class="{{ 'priority' if m.priority }} {{ 'disabled' if not m.enabled }}">
+        <td class="rank">{{ g.rank }}</td>
+        <td class="left"><a href="{{ url_for('model_page', model_key=m.model_key) }}">{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }}</a><div class="muted small">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %}</div></td>
+        <td class="left small">{{ m.specs.layout }}<div class="muted small">{{ conn(m.specs.subwoofer, 'sub') }} · {{ conn(m.specs.rears, 'rears') }}</div></td>
+        <td><strong>{{ s.overall }}</strong><div class="bar" title="{{ s.overall }}/100"><i style="width: {{ s.overall }}%"></i></div></td>
+        <td>{{ s.fit }}</td>
+        <td>{% if s.has_review %}{{ s.review }}<div class="muted small">{{ s.confidence }}</div>{% else %}<span class="muted">none</span>{% endif %}</td>
+        <td>{% if g.best %}{{ g.best.price|price }}<div class="muted small">{{ labels.get(g.best.shop, g.best.shop) }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td>{{ s.value if s.value is not none else '—' }}</td>
+        <td class="left small muted">{% for k, v in s.parts.items() %}{{ k }} {{ v }}{{ ' · ' if not loop.last }}{% endfor %}{% if m.review and m.review.fit_penalties %}<div class="cons">{% for p in m.review.fit_penalties %}{{ p.reason }}{{ '; ' if not loop.last }}{% endfor %}</div>{% endif %}</td>
+        <td class="left small">{{ m.review.cinema_verdict if m.review and m.review.cinema_verdict else '' }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

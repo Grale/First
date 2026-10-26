@@ -1,0 +1,18 @@
+<table>
+  <thead><tr><th class="left">When</th><th class="left">Rule</th><th class="left">Model</th><th class="left">Shop</th><th>Price</th><th class="left">Message</th><th>Sent via</th></tr></thead>
+  <tbody>
+  {% for a in alerts %}
+    <tr>
+      <td class="left small">{{ a.sent_at|dt }}</td>
+      <td class="left"><span class="tag {{ a.rule }}">{{ {'cross_shop': 'cheaper shop', 'list_discount': 'discount', 'back_in_stock': 'restock'}.get(a.rule, a.rule) }}</span></td>
+      <td class="left"><a href="{{ url_for('model_page', model_key=a.model_key) }}">{{ a.model_key }}</a></td>
+      <td class="left">{{ labels.get(a.shop, a.shop) }}</td>
+      <td>{{ a.price|price }}</td>
+      <td class="left"><a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.message }}</a></td>
+      <td class="small muted">{{ a.channels or '—' }}</td>
+    </tr>
+  {% else %}
+    <tr><td colspan="7" class="muted">No alerts yet.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>

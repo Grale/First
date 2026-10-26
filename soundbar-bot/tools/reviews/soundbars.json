@@ -1,0 +1,496 @@
+[
+  {
+    "model_key": "HW-Q990H",
+    "review_score": 9.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/soundbars/i-tested-the-flagship-samsung-hw-q990h-dolby-atmos-soundbar-and-while-it-sticks-to-the-formula-of-its-predecessors-it-still-sets-the-bar-for-soundbars-in-2026",
+        "score": "n/a",
+        "verdict": "Still sets the bar for soundbars in 2026; the same superb Dolby Atmos performance as its predecessor, and a design refresh is overdue"
+      },
+      {
+        "source": "Ecoustics",
+        "url": "https://www.ecoustics.com/reviews/samsung-hw-q990h-soundbar/",
+        "score": "n/a",
+        "verdict": "Reproduced a Dolby Atmos 9.1.6 test sequence with excellent positioning; the best image positioning of the bars tested"
+      },
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/reviews/samsung-hw-q990h",
+        "score": "n/a",
+        "verdict": "Good value at GBP 1,449; the rear speakers manage surprising bass for their size, the build feels less premium than the 2024 Q990D"
+      },
+      {
+        "source": "AVS Forum",
+        "url": "https://www.avsforum.com/threads/samsung-hw-q990h-11-1-4-dolby-atmos-soundbar-review-%E2%80%93-the-soundbar-that-keeps-getting-better.3343396/",
+        "score": "n/a",
+        "verdict": "The compact dual-driver subwoofer gives controlled, meaty bass but will not replace a large standalone sub; premium price, remote has no backlight"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners report a quick setup and a genuinely enveloping bubble of sound from the four-piece set; the recurring complaint is the price and that the design has not moved in three generations.",
+      "sources": []
+    },
+    "pros": [
+      "23 speakers in a 11.1.4 layout: height from the bar and from the rears",
+      "Wireless sub and wireless rears in the box, nothing to cable",
+      "Two HDMI inputs, so a console can sit behind the bar",
+      "Sound Elevation helps dialogue on 85-inch and larger TVs"
+    ],
+    "cons": [
+      "Most expensive bar on this list at list price",
+      "Subwoofer is compact rather than deep",
+      "Barely changed from the Q990F, which is often much cheaper"
+    ],
+    "specs_extra": {
+      "drivers": 23,
+      "sub_driver_in": 8,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Chromecast"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The reference four-piece Atmos system: real height channels front and back, no speaker cables anywhere, and the best object placement reviewers have measured in a soundbar.",
+    "notes": "No single outlet publishes a numeric score for this model, so review_score is a synthesis of four written verdicts rather than a measured figure; confidence is medium for that reason. Peak-power and driver counts come from the reviews, not from a lab."
+  },
+  {
+    "model_key": "HW-Q990F",
+    "review_score": 9.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi?",
+        "url": "https://www.whathifi.com/tv-home-cinema/soundbars/samsung-hw-q990f",
+        "score": "n/a",
+        "verdict": "Samsung's Dolby Atmos-in-a-box system returns with a serious boost to bass"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/soundbars/samsung-hw-q990f-review",
+        "score": "n/a",
+        "verdict": "The flagship 11.1.4 formula, with the subwoofer the biggest step on from the Q990D"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Widely treated as the sweet spot of the range now that the Q990H is out: the same layout at a lower street price.",
+      "sources": []
+    },
+    "pros": [
+      "Same 11.1.4 four-piece layout as the 2026 flagship",
+      "Bass improved over the 2024 Q990D",
+      "Two HDMI inputs"
+    ],
+    "cons": [
+      "Superseded, so stock is uneven across shops",
+      "Rears need a mains socket each"
+    ],
+    "specs_extra": {
+      "drivers": 23,
+      "sub_driver_in": 8,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Chromecast"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The Q990H's performance for less money while shops clear it: watch this one and the H together and buy whichever is cheaper.",
+    "notes": "review_score mirrors the Q990H because the two reviewed almost identically; it is an editorial synthesis, not a published score."
+  },
+  {
+    "model_key": "HW-QS90H",
+    "review_score": 8.3,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Sound Advice",
+        "url": "https://www.sound-advice.online/product-reviews/samsung-hw-qs90h",
+        "score": "n/a",
+        "verdict": "Named best soundbar under GBP 1,000 for 2026; two up-firing channels among the nine in the bar"
+      },
+      {
+        "source": "Tech Steve",
+        "url": "https://techstevehd.com/reviews/samsung-hw-qs90h-hw-qs90h",
+        "score": "n/a",
+        "verdict": "Strong all-in-one, but HDMI passthrough is limited to 4K/60"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Bought by people who do not want a subwoofer box in the room; owners accept less low bass in exchange.",
+      "sources": []
+    },
+    "pros": [
+      "13 speakers and two real up-firing channels in one bar",
+      "Four built-in woofers, so no subwoofer box to place",
+      "Convertible Fit and SpaceFit Sound Pro calibration"
+    ],
+    "cons": [
+      "No subwoofer and no rear speakers, in the box or as a matched kit",
+      "HDMI passthrough caps at 4K/60, below what a 2026 TV and console expect"
+    ],
+    "specs_extra": {
+      "drivers": 13,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Chromecast"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The one-box answer: true height channels and no cables at all, at the cost of the bass and the surround that a four-piece set gives you.",
+    "notes": "Confidence is low: the model is new and the write-ups available are short. The 4K/60 passthrough limit is recorded as a fit penalty."
+  },
+  {
+    "model_key": "HT-A7100",
+    "review_score": 8.0,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Tom's Guide",
+        "url": "https://www.tomsguide.com/audio/soundbars/sony-bravia-theater-bar-7-review",
+        "score": "n/a",
+        "verdict": "Recommending this is a no-brainer: dialogue, bass and Dolby Atmos all land"
+      },
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/soundbars/sony-bravia-theater-bar-7-review",
+        "score": "n/a",
+        "verdict": "One step forward, two steps back; no way to tweak the Bar 7's tuning"
+      },
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/reviews/sony-bravia-theatre-bar-7-sub",
+        "score": "n/a",
+        "verdict": "A strong option, with AI dialogue control when paired with a compatible BRAVIA TV"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Praised for dialogue clarity with Sony TVs; the missing EQ control is the complaint that comes up most.",
+      "sources": []
+    },
+    "pros": [
+      "Two up-firing drivers at a price where they used to be absent",
+      "360 Spatial Sound Mapping places phantom speakers convincingly",
+      "One HDMI 2.1 input plus eARC"
+    ],
+    "cons": [
+      "No EQ adjustment at all",
+      "Subwoofer and rears are extra, which lifts the real price well above the bar's"
+    ],
+    "specs_extra": {
+      "drivers": 9,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Chromecast"],
+      "analogue_in": false,
+      "music_score": 7.0
+    },
+    "cinema_verdict": "Sony's mid-tier with real height drivers; best bought as the kit with the Sub 7, which is how the Cypriot shops list it.",
+    "notes": "Reviews disagree on whether to call it 5.0.2 or 5.1.2 - the difference is whether the subwoofer is counted. The bar alone is 5.0.2."
+  },
+  {
+    "model_key": "BAR 1300MK2",
+    "review_score": 8.8,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/news/jbl-soundbar-lineup",
+        "score": "n/a",
+        "verdict": "An absolute beast of a soundbar: 11.1.4 with six up-firing drivers and detachable wireless rears"
+      },
+      {
+        "source": "What Hi-Fi?",
+        "url": "https://www.whathifi.com/tv-home-cinema/soundbars/jbls-super-powerful-new-dolby-atmos-soundbar-system-has-the-samsung-q990f-in-its-sights",
+        "score": "n/a",
+        "verdict": "Aimed squarely at the Samsung Q990F"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners single out the battery rears: they can be moved for a film and clipped back onto the bar afterwards, which suits a room where permanent rear speakers are not welcome.",
+      "sources": []
+    },
+    "pros": [
+      "11.1.4 with six up-firing drivers",
+      "Rears detach, charge on the bar and run on battery - no mains socket at the back of the room",
+      "Dual 8-inch wireless subwoofer",
+      "Three HDMI inputs"
+    ],
+    "cons": [
+      "The most expensive system here",
+      "Battery rears have to be remembered and recharged",
+      "Quoted peak power differs between JBL's page and the press release"
+    ],
+    "specs_extra": {
+      "sub_driver_in": 8,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Chromecast", "Alexa Multi-Room"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The only four-piece set whose rears need nothing at all behind the sofa, and the only one with three HDMI inputs.",
+    "notes": "No full lab review was available for the MK2 at the time of writing; the score is a synthesis of launch coverage and the MK1's reception."
+  },
+  {
+    "model_key": "ARC ULTRA",
+    "review_score": 8.7,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "TechRadar (Arc Ultra vs Bose Smart Ultra)",
+        "url": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review",
+        "score": "n/a",
+        "verdict": "Reviewers favour the Arc for height effects; 14 drivers against the Bose's 9"
+      },
+      {
+        "source": "HomeTheaterReview comparison",
+        "url": "https://hometheaterreview.com/vs/bose-smart-soundbar-1100-vs-sonos-arc-ultra-dolby-atmos-soundbar-comparison/",
+        "score": "n/a",
+        "verdict": "9.1.4 with four height channels; Sound Motion bass avoids needing a separate subwoofer"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners rate the height effects as the best available from a single bar and like that Sub 4 and Era 300 rears can be added later without cabling; the Sonos app is the usual complaint.",
+      "sources": []
+    },
+    "pros": [
+      "9.1.4 from one bar, four height channels",
+      "Sound Motion woofer gives real bass with no subwoofer box",
+      "Grows into a full surround set, all of it wireless"
+    ],
+    "cons": [
+      "No HDMI input at all - eARC only",
+      "A full set with Sub 4 and two Era 300s costs more than a Q990H",
+      "Depends on the Sonos app and account"
+    ],
+    "specs_extra": {
+      "drivers": 14,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Sonos"],
+      "analogue_in": false,
+      "music_score": 8.5
+    },
+    "cinema_verdict": "The best single bar for height, and the best of this list for music; it needs two more purchases to match a four-piece Samsung set.",
+    "notes": "Specs are taken from reviews and comparison tables rather than a Sonos spec sheet; the driver count (14) is consistent across them."
+  },
+  {
+    "model_key": "SMART ULTRA SOUNDBAR",
+    "review_score": 8.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review",
+        "score": "n/a",
+        "verdict": "A more compact Sonos Arc alternative; two upward-firing drivers among nine speakers"
+      },
+      {
+        "source": "What Hi-Fi? comparison",
+        "url": "https://www.whathifi.com/advice/bose-smart-ultra-soundbar-vs-sonos-arc",
+        "score": "n/a",
+        "verdict": "TrueSpace upmixing is the draw; the Arc is the better Atmos performer"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Liked for dialogue clarity and for fitting under smaller TVs; owners who want bass end up buying a Bass Module.",
+      "sources": []
+    },
+    "pros": [
+      "Two real up-firing dipole drivers in a small cabinet",
+      "TrueSpace upmixes non-Atmos content convincingly",
+      "Bass Module and surrounds are wireless when added"
+    ],
+    "cons": [
+      "Height effects rated below the Sonos Arc Ultra's",
+      "No DTS:X",
+      "No HDMI input"
+    ],
+    "specs_extra": {
+      "drivers": 9,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Spotify Connect", "Chromecast"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The compact true-Atmos bar: right for a small room, expensive once the Bass Module is added.",
+    "notes": "Sources disagree on the channel count (3.0.2 in one comparison, nine speakers including two up-firing in another); recorded here as 5.0.2 on the driver count. Confidence low."
+  },
+  {
+    "model_key": "HESTON 120",
+    "review_score": 8.5,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi?",
+        "url": "https://www.whathifi.com/tv-home-cinema/soundbars/marshall-heston-120-review",
+        "score": "n/a",
+        "verdict": "A stunning Dolby Atmos soundbar with amazing bass for an all-in-one"
+      },
+      {
+        "source": "Trusted Reviews",
+        "url": "https://www.trustedreviews.com/reviews/marshall-heston-120",
+        "score": "n/a",
+        "verdict": "Rock'n'roll styling, and the Atmos holds up"
+      },
+      {
+        "source": "Tom's Guide",
+        "url": "https://tomsguide.com/audio/soundbars/marshall-heston-120-soundbar-review-rock-n-roll-styling-meets-movie-magic",
+        "score": "n/a",
+        "verdict": "Styling meets movie magic"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Bought as much for the look as the sound; owners report it works as a serious music system, helped by the RCA input for a turntable.",
+      "sources": []
+    },
+    "pros": [
+      "5.1.2 with two height channels and bass that reviewers rate without a subwoofer",
+      "RCA input for a turntable, plus Wi-Fi 6 and Bluetooth 5.3",
+      "HDMI input with 4K passthrough as well as eARC"
+    ],
+    "cons": [
+      "No rear speakers in the range at all",
+      "Heston Sub 200 is a separate purchase",
+      "Reviews disagree on driver count and power"
+    ],
+    "specs_extra": {
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Chromecast", "Spotify Connect", "Tidal Connect"],
+      "analogue_in": true,
+      "music_score": 8.5
+    },
+    "cinema_verdict": "The one to pick if the bar has to double as the hi-fi: real height channels, a phono-friendly input and no subwoofer needed to sound full.",
+    "notes": "Scores well on the music profile because of the analogue input and streaming breadth; on the cinema profile it loses to four-piece sets for lack of rears."
+  },
+  {
+    "model_key": "ENCHANT 1100",
+    "review_score": 8.0,
+    "confidence": "low",
+    "critic": [
+      {
+        "source": "Which?",
+        "url": "https://www.which.co.uk/reviews/sound-bars/harman-kardon-enchant-1100",
+        "score": "n/a",
+        "verdict": "5.1.2 with two up-firing drivers; 315 W RMS across eleven drivers"
+      },
+      {
+        "source": "Harman Kardon",
+        "url": "https://global.harmankardon.com/soundbars/ENCHANT-1100.html",
+        "score": "n/a",
+        "verdict": "Manufacturer spec: six racetrack mid-woofers, three tweeters, two 2.75-inch up-firing units"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Little owner feedback at the time of writing.",
+      "sources": []
+    },
+    "pros": [
+      "Eleven drivers including two up-firing, in one bar",
+      "Matching wireless subwoofer and wireless surrounds available",
+      "Dolby Atmos and DTS:X"
+    ],
+    "cons": [
+      "Sub and surrounds both extra",
+      "Thin review coverage",
+      "One comparison table prints the layout as 9.0.2, which does not match the manufacturer"
+    ],
+    "specs_extra": {
+      "drivers": 11,
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Chromecast", "Spotify Connect"],
+      "analogue_in": false,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "A credible single-bar Atmos system that expands wirelessly; priced against the Sonos Arc Ultra, which reviews rate higher.",
+    "notes": "Confidence low: one consumer-group review and the manufacturer's own page."
+  },
+  {
+    "model_key": "FLEXUS CORE 200",
+    "review_score": 8.2,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "What Hi-Fi?",
+        "url": "https://www.whathifi.com/reviews/klipsch-flexus-core-200",
+        "score": "n/a",
+        "verdict": "Convincing Dolby Atmos, powerful bass and an upbeat sound"
+      },
+      {
+        "source": "Sound & Vision",
+        "url": "https://www.soundandvision.com/content/klipsch-flexus-core-200-soundbar-system-review",
+        "score": "n/a",
+        "verdict": "System review: the bar takes up to two wireless subwoofers"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners rate it as the most speaker-like bar at its price; the Flexus add-ons are the reason to choose it over a sealed system.",
+      "sources": []
+    },
+    "pros": [
+      "Real up-firing height drivers at the bottom of the price range",
+      "Takes up to two wireless Flexus subwoofers and wireless surrounds",
+      "Reviewed well on bass for its size"
+    ],
+    "cons": [
+      "Nothing in the box but the bar",
+      "3.1.2 is the shallowest qualifying layout here"
+    ],
+    "specs_extra": {
+      "room_calibration": false,
+      "streaming": ["Bluetooth"],
+      "analogue_in": true,
+      "music_score": 7.5
+    },
+    "cinema_verdict": "The cheapest route to drivers that actually fire at the ceiling, as long as you are willing to add the sub later.",
+    "notes": "Street prices quoted between GBP 449 and USD 575 depending on the outlet."
+  },
+  {
+    "model_key": "S95TR",
+    "review_score": 7.8,
+    "confidence": "medium",
+    "critic": [
+      {
+        "source": "Reviewed.com",
+        "url": "https://www.reviewed.com/home-theater/content/lg-s95tr-soundbar-review",
+        "score": "n/a",
+        "verdict": "Sounds great, but is outshadowed by Samsung and Sonos in height reproduction"
+      },
+      {
+        "source": "LG",
+        "url": "https://www.lg.com/ca_en/tv-soundbars/soundbars/s95tr/",
+        "score": "n/a",
+        "verdict": "Manufacturer spec: nine channels, five upward-facing channels, separate subwoofer and two wireless rears"
+      }
+    ],
+    "user_sentiment": {
+      "score": null,
+      "summary": "Owners pairing it with an LG TV value WOW Orchestra, which plays the TV's own speakers alongside the bar; the rears needing mains power is the common surprise.",
+      "sources": []
+    },
+    "pros": [
+      "Five height channels, more than anything else on the list",
+      "Wireless subwoofer and wireless rears in the box",
+      "WOW Orchestra with LG TVs"
+    ],
+    "cons": [
+      "Height effects rated below Samsung's and Sonos'",
+      "Rears carry audio wirelessly but still need a socket",
+      "2024 model, so stock is thinning"
+    ],
+    "specs_extra": {
+      "room_calibration": true,
+      "streaming": ["AirPlay 2", "Chromecast", "Spotify Connect"],
+      "analogue_in": false,
+      "music_score": 7.0
+    },
+    "cinema_verdict": "The most height channels per euro when it is discounted, with the caveat that reviewers do not rate how it uses them.",
+    "notes": "Weights from the Reviewed.com review: 12.5 lb bar, 9 lb rears, 22.1 lb subwoofer."
+  }
+]

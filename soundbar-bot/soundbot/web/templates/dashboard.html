@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="row between">
+    <h1>Current prices</h1>
+    <div class="muted small">
+      {% if last_run %}Last check #{{ last_run.id }} at {{ last_run.started_at|dt }} — {{ last_run.notes }}{% else %}No check has run yet.{% endif %}
+    </div>
+  </div>
+  {% if shop_runs %}
+  <div class="chips">
+    {% for s in shop_runs %}
+      <span class="chip {{ 'ok' if s.ok else 'bad' }}" title="{{ s.error }}">{{ labels.get(s.shop, s.shop) }}: {{ 'ok' if s.ok else 'failed' }} · {{ s.n_offers }} matched{% if s.tier %} · {{ s.tier }}{% endif %}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="table-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th rowspan="2">#</th>
+        <th class="left" rowspan="2">Model</th>
+        <th rowspan="2">Score</th>
+        <th class="left" rowspan="2">System</th>
+        {% for c, shops_in_c in by_country %}<th colspan="{{ shops_in_c|length }}">{{ countries.get(c, c) }}</th>{% endfor %}
+        <th rowspan="2">Best</th>
+        <th rowspan="2">Lowest ever</th>
+      </tr>
+      <tr>
+        {% for c, shops_in_c in by_country %}{% for s in shops_in_c %}<th>{{ labels.get(s, s) }}</th>{% endfor %}{% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    {% for g in grid %}
+      {% set m = g.model %}
+      <tr class="{{ 'priority' if m.priority }} {{ 'disabled' if not m.enabled }}">
+        <td class="rank">{{ g.rank }}</td>
+        <td class="left">
+          <a href="{{ url_for('model_page', model_key=m.model_key) }}">{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }}</a>
+          <div class="muted small">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %}</div>
+        </td>
+        <td><a href="{{ url_for('ranking_page') }}#{{ m.model_key|urlencode }}" title="fit {{ g.score.fit }} · reviews {{ g.score.review if g.score.has_review else 'none' }}"><strong>{{ g.score.overall }}</strong></a>{% if not g.score.has_review %}<div class="muted small">no reviews</div>{% elif g.score.confidence %}<div class="muted small">{{ g.score.confidence }}</div>{% endif %}</td>
+        <td class="left small">
+          <strong>{{ m.specs.layout }}</strong>
+          <div class="muted small">{{ conn(m.specs.subwoofer, 'sub') }} · {{ conn(m.specs.rears, 'rears') }}</div>
+        </td>
+        {% for c, shops_in_c in by_country %}{% for s in shops_in_c %}
+          {% set cell = g.cells[s] %}
+          <td class="{{ 'best' if cell and g.best and cell.id == g.best.id }}">
+            {% if cell %}
+              <a href="{{ cell.url }}" target="_blank" rel="noopener" title="{{ cell.title }}">{{ cell.price|price or '—' }}</a>
+              {% if cell.list_price %}<div class="muted small strike">{{ cell.list_price|price }}</div>{% endif %}
+              {% if cell.in_stock == 0 %}<div class="tag bad">out of stock</div>{% elif cell.in_stock is none %}<div class="tag">listed</div>{% else %}<div class="tag ok">in stock</div>{% endif %}
+            {% else %}<span class="muted">—</span>{% endif %}
+          </td>
+        {% endfor %}{% endfor %}
+        <td>{% if g.best %}<strong>{{ g.best.price|price }}</strong><div class="muted small">{{ labels.get(g.best.shop, g.best.shop) }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td>{% if g.lowest %}{{ g.lowest.price|price }}<div class="muted small">{{ labels.get(g.lowest.shop, g.lowest.shop) }} · {{ g.lowest.seen_at|dt }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="{{ 6 + shops|length }}" class="muted">The watchlist is empty. Add models on the Watchlist page.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="muted small">Every model here has {{ cfg.criteria.min_height_channels }} or more height channels from drivers that fire at the ceiling, and no speaker cables. Rows are ordered by overall score ({{ (cfg.scoring.fit_weight*100)|round|int }}% fit, {{ (cfg.scoring.review_weight*100)|round|int }}% reviews); see Ranking for the breakdown. Alert rules: a shop ≥{{ cfg.rules.cross_shop_pct }}% below the next-cheapest shop{% if cfg.rules.cross_shop_scope == 'country' %} in the same country{% endif %} · ≥{{ cfg.rules.list_discount_pct }}% off a shop's own list price · back in stock. Checks every {{ cfg.schedule.interval_hours }} h.</p>
+</section>
+{% endblock %}

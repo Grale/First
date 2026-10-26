@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Settings · Soundbar Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Settings</h1>
+  {% if saved %}<div class="notice ok">Saved. The next check uses the new values.</div>{% endif %}
+  <form method="post" action="{{ url_for('settings_save') }}" class="form-grid">
+    <h2 class="wide">What counts as a soundbar worth watching</h2>
+    <p class="wide muted small">Currently: {{ crit.atmos_label }}; {{ crit.wireless_label }}.
+      Changing these changes which shop listings are matched and which watchlist models are checked; after a
+      change run <code>python main.py validate</code> and rebuild the watchlist if needed.</p>
+    <label>Lowest number of height channels <input name="min_height_channels" type="number" min="0" max="8" value="{{ crit.min_height_channels }}"></label>
+    <label>Lowest number of main channels <input name="min_channels" type="number" step="0.1" min="0" max="20" value="{{ crit.min_channels }}"></label>
+    <label class="check"><input type="checkbox" name="require_physical_height" {{ 'checked' if crit.require_physical_height }}> Height must come from real drivers, never from a virtual processor</label>
+    <label class="check"><input type="checkbox" name="require_earc" {{ 'checked' if crit.require_earc }}> HDMI eARC required (needed for lossless TrueHD Atmos)</label>
+    <label class="check"><input type="checkbox" name="no_wired_speakers" {{ 'checked' if crit.no_wired_speakers }}> No speaker cables: reject a wired subwoofer or wired rears</label>
+    <label class="check"><input type="checkbox" name="require_sub_included" {{ 'checked' if crit.require_sub_included }}> Stricter: a wireless subwoofer must be in the box</label>
+    <label class="check"><input type="checkbox" name="require_rears_included" {{ 'checked' if crit.require_rears_included }}> Stricter: wireless rear speakers must be in the box</label>
+    <p class="wide muted small">With the two strict switches off, a single bar whose sub and rears are wireless extras (Sonos Arc Ultra, Sony Bar 9) stays on the list and simply scores below a four-piece set. Turn them on to see only complete wireless systems.</p>
+
+    <h2 class="wide">Alert rules</h2>
+    <label>Cross-shop: alert when a shop is at least this % cheaper than the next shop <input name="cross_shop_pct" type="number" step="0.5" min="0" value="{{ cfg.rules.cross_shop_pct }}"></label>
+    <label>Compare prices
+      <select name="cross_shop_scope">
+        <option value="country" {{ 'selected' if cfg.rules.cross_shop_scope == 'country' }}>within each country (a Greek price is not an offer in Cyprus)</option>
+        <option value="all" {{ 'selected' if cfg.rules.cross_shop_scope == 'all' }}>across every shop</option>
+      </select></label>
+    <label>List discount: alert when a shop is at least this % below its own list price <input name="list_discount_pct" type="number" step="0.5" min="0" value="{{ cfg.rules.list_discount_pct }}"></label>
+    <label class="check"><input type="checkbox" name="back_in_stock" {{ 'checked' if cfg.rules.back_in_stock }}> Alert when a watched model comes back in stock</label>
+    <label>Do not repeat the same alert for (days) <input name="dedupe_days" type="number" min="0" value="{{ cfg.rules.dedupe_days }}"></label>
+    <label>Ignore prices below € <input name="price_min" type="number" value="{{ cfg.price_range.min }}"></label>
+    <label>Ignore prices above € <input name="price_max" type="number" value="{{ cfg.price_range.max }}"></label>
+
+    <h2 class="wide">Ranking weights</h2>
+    <label>Fit profile
+      <select name="scoring_profile">
+        <option value="cinema" {{ 'selected' if cfg.scoring.get('profile', 'cinema') == 'cinema' }}>Cinema first (height channels, rears, bass)</option>
+        <option value="music" {{ 'selected' if cfg.scoring.get('profile', 'cinema') == 'music' }}>Music first (tonal quality, streaming, analogue in)</option>
+      </select></label>
+    <label>Weight of fit to your criteria (0-1) <input name="fit_weight" type="number" step="0.05" min="0" max="1" value="{{ cfg.scoring.fit_weight }}"></label>
+    <label>Weight of critic and owner reviews (0-1) <input name="review_weight" type="number" step="0.05" min="0" max="1" value="{{ cfg.scoring.review_weight }}"></label>
+
+    <h2 class="wide">Schedule</h2>
+    <label>Check every (hours) <input name="interval_hours" type="number" step="0.5" min="0.5" value="{{ cfg.schedule.interval_hours }}"></label>
+
+    <h2 class="wide">Notifications</h2>
+    <label class="check"><input type="checkbox" name="toast" {{ 'checked' if cfg.notify.toast }}> Windows toast on this laptop</label>
+    <label class="check"><input type="checkbox" name="ntfy_enabled" {{ 'checked' if cfg.notify.ntfy.enabled }}> ntfy push to phone</label>
+    <label>ntfy topic (subscribe to this in the ntfy app) <input name="ntfy_topic" value="{{ cfg.notify.ntfy.topic }}"></label>
+    <label>ntfy server <input name="ntfy_server" value="{{ cfg.notify.ntfy.server }}"></label>
+
+    <h2 class="wide">Countries and shops</h2>
+    <div class="wide">
+      {% for code, name in countries.items() %}
+      <label class="check"><input type="checkbox" name="country_{{ code }}" {{ 'checked' if cfg.countries.get(code, True) }}> {{ name }}</label>
+      {% endfor %}
+    </div>
+    {% for s in shops %}
+    <label class="check"><input type="checkbox" name="shop_{{ s }}" {{ 'checked' if cfg.shops.get(s, True) }}> {{ labels.get(s, s) }} <span class="muted small">({{ shop_country(s) }})</span></label>
+    {% endfor %}
+    <div class="wide"><button class="btn primary" type="submit">Save</button></div>
+  </form>
+</section>
+{% endblock %}

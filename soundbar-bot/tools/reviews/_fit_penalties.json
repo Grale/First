@@ -1,0 +1,50 @@
+{
+  "_README": "Deductions applied to the fit score where a review found a clash with the criteria. Keys are model_key; points are negative. Rerun tools/build_watchlist.py after editing.",
+  "HW-QS90H": [
+    {
+      "points": -4,
+      "reason": "HDMI passthrough caps at 4K/60, below the panel and console it will sit between",
+      "source": "https://techstevehd.com/reviews/samsung-hw-qs90h-hw-qs90h"
+    }
+  ],
+  "ARC ULTRA": [
+    {
+      "points": -3,
+      "reason": "no HDMI input at all: eARC only, so nothing can be routed through the bar",
+      "source": "https://hometheaterreview.com/vs/bose-smart-soundbar-1100-vs-sonos-arc-ultra-dolby-atmos-soundbar-comparison/"
+    }
+  ],
+  "SMART ULTRA SOUNDBAR": [
+    {
+      "points": -3,
+      "reason": "no HDMI input, and no DTS:X decoding",
+      "source": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review"
+    },
+    {
+      "points": -2,
+      "reason": "height effects rated below the Sonos Arc Ultra's by reviewers comparing them directly",
+      "source": "https://www.whathifi.com/advice/bose-smart-ultra-soundbar-vs-sonos-arc"
+    }
+  ],
+  "S95TR": [
+    {
+      "points": -4,
+      "reason": "five height channels on paper, but reviewers found the height imaging behind Samsung's and Sonos'",
+      "source": "https://www.reviewed.com/home-theater/content/lg-s95tr-soundbar-review"
+    }
+  ],
+  "HT-A7100": [
+    {
+      "points": -2,
+      "reason": "no EQ adjustment of any kind",
+      "source": "https://www.techradar.com/televisions/soundbars/sony-bravia-theater-bar-7-review"
+    }
+  ],
+  "HW-Q990H": [
+    {
+      "points": -2,
+      "reason": "compact subwoofer: controlled but shallower than a standalone sub, per AVS Forum's measurements",
+      "source": "https://www.avsforum.com/threads/samsung-hw-q990h-11-1-4-dolby-atmos-soundbar-review-%E2%80%93-the-soundbar-that-keeps-getting-better.3343396/"
+    }
+  ]
+}

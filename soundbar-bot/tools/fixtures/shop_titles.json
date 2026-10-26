@@ -1,0 +1,525 @@
+{
+  "_README": "Real product titles captured from the shop category pages on 2026-10-26, with the model each one matched at the time. tools/selftest.py replays them so a change to the matcher or the watchlist cannot quietly stop recognising a listing. expected is the model_key, 'rejected' for a checked-and-rejected model, 'candidate' for a soundbar the discovery scan should report, or 'ignore'.",
+  "shops": {
+    "electroline": [
+      {
+        "title": "BOSE 873973-2100 Soundbar 600, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "BOSE 882963-5140 Smart Ultra Soundbar, Black",
+        "expected": "SMART ULTRA SOUNDBAR"
+      },
+      {
+        "title": "BOSE 892079-0100 Smart Soundbar, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "HARMAN KARDON HKENCH1100BLKEP Enchant 1100 Soundbar, Black",
+        "expected": "ENCHANT 1100"
+      },
+      {
+        "title": "HISENSE AX5100Q Soundbar 5.1 Channels",
+        "expected": "ignore"
+      },
+      {
+        "title": "JBL BAR 21 MKII JBLBAR21DBM2BLKEP Soundbar 2.1, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "JBL BAR 800 JBLBAR800PROBLKEP Soundbar 5.1.2, Black",
+        "expected": "BAR 800"
+      },
+      {
+        "title": "JBL BAR21DBBLKEP Soundbar Bar 2.1, Bluetooth and Wireless Subwoofer, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "JBL Cinema SB595 Soundbar 3.1.2 Channels",
+        "expected": "CINEMA SB595"
+      },
+      {
+        "title": "JBL JBLBAR1000M2BLKEP Bluetooth Soundbar 7.1.4, Black",
+        "expected": "BAR 1000MK2"
+      },
+      {
+        "title": "JBL JBLBAR1300M2BLKEP 1300MK2 11.1.4 Channel Soundbar with Detachable Wireless Surround Speakers and Subwoofer, Black",
+        "expected": "BAR 1300MK2"
+      },
+      {
+        "title": "JBL JBLBAR300M2BLKEP Bar 300MK2 Soundbar, Black",
+        "expected": "rejected"
+      },
+      {
+        "title": "JBL JBLBAR800M2BLKEP Soundbar 7.1, Black",
+        "expected": "rejected"
+      },
+      {
+        "title": "JBL JBLSB550BLKEP Soundbar 3.1 Bluetooth and Wireless Subwoofer, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "JBL JBLSB580BLKEP Cinema Soundbar 32.1 with Bluetooth, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "JBL PartyBox 330 Wireless Portable Speaker with Karaoke, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "KLIPSCH Flexus Core 100 Dolby Atmos Soundbar with Bluetooth 2.1 Channels, Black",
+        "expected": "rejected"
+      },
+      {
+        "title": "KLIPSCH Flexus Core 100 Dolby Atmos Soundbar with Bluetooth 2.1 Channels, Walnut",
+        "expected": "rejected"
+      },
+      {
+        "title": "KLIPSCH Flexus Core 200 Dolby Atmos Soundbar with Bluetooth 3.1.2 Channels, Black",
+        "expected": "FLEXUS CORE 200"
+      },
+      {
+        "title": "KLIPSCH Flexus Core 200 Dolby Atmos Soundbar with Bluetooth 3.1.2 Channels, Walnut",
+        "expected": "FLEXUS CORE 200"
+      },
+      {
+        "title": "LG S20A Soundbar 2.0 Channels, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "LG S30A Soundbar 2.1 Channels, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "LG S60T Sounbar 3.1 Channels, Black",
+        "expected": "ignore"
+      },
+      {
+        "title": "LG S70TR Soundbar 5.1.1 Channels",
+        "expected": "rejected"
+      },
+      {
+        "title": "LG S80TR Home Theater Soundbar with Dolby Atmos 5.1.3 Channels",
+        "expected": "S80TR"
+      },
+      {
+        "title": "LG SC9S Soundbar 3.1.3 Channels",
+        "expected": "SC9S"
+      },
+      {
+        "title": "MARSHALL 1006888 Heston 120 Soundbar 5.1.2 Channels, Black",
+        "expected": "HESTON 120"
+      },
+      {
+        "title": "MARSHALL 1007985 Heston 60 Soundbar 5.1 Channels, Black",
+        "expected": "rejected"
+      },
+      {
+        "title": "MARSHALL 1007988 Heston 60 Soundbar 5.1 Channels, Cream",
+        "expected": "rejected"
+      },
+      {
+        "title": "SAMSUNG HW-B450F/EN Soundbar 2.1 Channels",
+        "expected": "rejected"
+      },
+      {
+        "title": "SAMSUNG HW-B650F/EN Soundbar 3.1 Channels",
+        "expected": "rejected"
+      },
+      {
+        "title": "SAMSUNG HW-Q600H/EN Dolby Soundbar 3.1.2 Channels",
+        "expected": "HW-Q600H"
+      },
+      {
+        "title": "SAMSUNG HW-Q800H/EN Dolby Soundbar 5.1.2 Channels",
+        "expected": "HW-Q800H"
+      },
+      {
+        "title": "SAMSUNG HW-Q930F/EN Soundbar 9.1.4 Channels",
+        "expected": "HW-Q930F"
+      },
+      {
+        "title": "SAMSUNG HW-Q930H/EN Dolby Soundbar 9.1.4 Channels",
+        "expected": "HW-Q930H"
+      },
+      {
+        "title": "SAMSUNG HW-Q990D/EN Wireless Dolby Atmos 11.1.4 Soundbar, Black",
+        "expected": "HW-Q990D"
+      },
+      {
+        "title": "SAMSUNG HW-Q990F/EN Soundbar 11.1.4 Channels",
+        "expected": "HW-Q990F"
+      },
+      {
+        "title": "SAMSUNG HW-Q990H/EN Dolby Soundbar 11.1.4 Channels",
+        "expected": "HW-Q990H"
+      },
+      {
+        "title": "SAMSUNG HW-QS700F/ZF Soundbar 3.1.2 Channels",
+        "expected": "HW-QS700F"
+      },
+      {
+        "title": "SAMSUNG HW-QS90H/EN Dolby Soundbar 7.1.2 Channels",
+        "expected": "HW-QS90H"
+      },
+      {
+        "title": "SONOS ARCG2EU1BLK Ultra Arc Soundbar, Black",
+        "expected": "ARC ULTRA"
+      },
+      {
+        "title": "SONOS BEAMG2EU1 Beam Gen 2 Soundbar, White",
+        "expected": "rejected"
+      },
+      {
+        "title": "SONOS BEAMG2EU1BLK Beam Gen 2 Soundbar, Black",
+        "expected": "rejected"
+      },
+      {
+        "title": "SONY BRAVIA HTA7100KIT.CEL Theatre Bar 7 Soundbar 5.1.2 Channels with Wireless Subwoofer",
+        "expected": "HT-A7100"
+      },
+      {
+        "title": "SONY HTA3000.CEL Soundbar 3.1 ch",
+        "expected": "rejected"
+      },
+      {
+        "title": "SONY HTA7000.CEL Soundbar 7.1.2 Channels",
+        "expected": "HT-A7000"
+      },
+      {
+        "title": "SONY HTA8000.CEL Bravia Theatre Bar  8 Soundbar  5.0.2 Channels",
+        "expected": "HT-A8000"
+      },
+      {
+        "title": "SONY HTA9000.CEL Bravia Theatre Bar 9 Soundbar 7.0.2 Channels",
+        "expected": "HT-A9000"
+      },
+      {
+        "title": "SONY HTAX7.CEL Portable Home Theatre System, Grey",
+        "expected": "ignore"
+      },
+      {
+        "title": "SONY HTB600.CEL Bravia Theatre Bar 6 Sounbar 3.1.2 Channels",
+        "expected": "HT-B600"
+      },
+      {
+        "title": "SONY HTS400.CEL Soundbar 2.1 ch",
+        "expected": "ignore"
+      },
+      {
+        "title": "SONY HTS40R.CEL Soundbar 5.1 ch",
+        "expected": "ignore"
+      },
+      {
+        "title": "SONY HTS60.CEL Bravia Theatre Sound Bar 5.1 Channels",
+        "expected": "rejected"
+      },
+      {
+        "title": "SONY HTSF150.CEL Soundbar with Bluetooth 2.0 Channels, Black",
+        "expected": "ignore"
+      }
+    ],
+    "stephanis": [
+      {
+        "title": "Gaming Soundbar SPEEDLINK Brio SL-810200-BK black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Home cinema SONY Portable Theatre System HT-AX7 HTAX7 2.1 grey",
+        "expected": "ignore"
+      },
+      {
+        "title": "PC Speakers/Soundbar 2.0 CREATIVE Stage Air V2 51MF8395AA000 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar AKAI ASB-6L 2.0 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar BOWERS & WILKINS (B&W) Formation Bar FP39837 3.0 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar BOWERS & WILKINS (B&W) Panorama 3 FP42277 3.1.2 black",
+        "expected": "PANORAMA 3"
+      },
+      {
+        "title": "Soundbar JBL Bar 1000MK2 JBLBAR1000M2BLKEP 7.1.4 black",
+        "expected": "BAR 1000MK2"
+      },
+      {
+        "title": "Soundbar JBL Bar 1300 JBLBAR1300BLKEP 11.1.4 TWS black",
+        "expected": "BAR 1300"
+      },
+      {
+        "title": "Soundbar JBL Bar 1300MK2 JBLBAR1300M2BLKEP 11.1.4 black",
+        "expected": "BAR 1300MK2"
+      },
+      {
+        "title": "Soundbar JBL Bar 2.1 Deep Bass MK2 JBLBAR21DBM2BLKEP black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar JBL Bar 2.1 Deep Bass black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar JBL Bar 300 MK2 JBLBAR300M2BLKEP 5.0 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar JBL Bar 500 JBLBAR500PROBLKEP 5.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar JBL Bar 500MK2 JBLBAR500M2BLKEP 5.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar JBL Bar 800 MK2 JBLBAR800M2BLKEP 7.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar JBL Bar1000 JBLBAR1000PROBLKEP 7.1.4 black",
+        "expected": "BAR 1000"
+      },
+      {
+        "title": "Soundbar JBL Bar51 JBLBAR51BLKEP 5.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar JBL Bar800 JBLBAR800PROBLKEP 5.1.2 μαύρο",
+        "expected": "BAR 800"
+      },
+      {
+        "title": "Soundbar JBL Cinema SB550 3.1 JBLSB550BLKEP black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar JBL Cinema SB580 3.1 JBLSB580BLKEP black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar JBL Cinema SB595 3.1.2 JBLSB595BLKEP black",
+        "expected": "CINEMA SB595"
+      },
+      {
+        "title": "Soundbar JBL SB170 JBLSB170BLKEP 2.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar KENWOOD LS-600BT black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar LG S60T 3.1",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar LG S80QY 3.1.3",
+        "expected": "S80QY"
+      },
+      {
+        "title": "Soundbar LG SC9S 3.1.3 black",
+        "expected": "SC9S"
+      },
+      {
+        "title": "Soundbar LG SN8Y black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar MARSHALL Heston 120 1006888 5.1.2 black",
+        "expected": "HESTON 120"
+      },
+      {
+        "title": "Soundbar MARSHALL Heston 60 1007985 5.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar MARSHALL Heston 60 1007988 5.1 cream",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar MUSE M-1850SBT 2.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar OSIO OSBT-9015 2.0 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SAMSUNG B450F B-series (2025) HW-B450F 2.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar SAMSUNG B650F B-series (2025) HW-B650F 3.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar SAMSUNG HW-Q70T 3.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SAMSUNG Lifestyle Ultra Slim HW-S800B/EN 3.1.2 black",
+        "expected": "HW-S800B"
+      },
+      {
+        "title": "Soundbar SAMSUNG Premium Q-series HW-Q600C/EN (2023) 3.1.2 black",
+        "expected": "HW-Q600C"
+      },
+      {
+        "title": "Soundbar SAMSUNG Premium Q-series HW-Q600F (2025) 3.1.2 black",
+        "expected": "HW-Q600F"
+      },
+      {
+        "title": "Soundbar SAMSUNG Premium Q-series HW-Q930D/EN (2024) 9.1.4 black",
+        "expected": "HW-Q930D"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-Series HW-QS90H/EN (2026) All-in-one Sound True 7.1.2 black",
+        "expected": "HW-QS90H"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q600H/EN (2026) True Sound 3.1.2ch black",
+        "expected": "HW-Q600H"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q800F (2025) 5.1.2 black",
+        "expected": "HW-Q800F"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q800H/EN (2026) True Sound 5.1.2ch black",
+        "expected": "HW-Q800H"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q930F (2025) 9.1.4 black",
+        "expected": "HW-Q930F"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q930H/EN (2026) True Full Surround 9.1.4 black",
+        "expected": "HW-Q930H"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q990F (2025) 11.1.4 black",
+        "expected": "HW-Q990F"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-Q990H/EN (2026) True Full Surround 11.1.4 black",
+        "expected": "HW-Q990H"
+      },
+      {
+        "title": "Soundbar SAMSUNG Q-series HW-QS700F (2025) 3.1.2 black",
+        "expected": "HW-QS700F"
+      },
+      {
+        "title": "Soundbar SAMSUNG S-Series Ultra Slim HW-S700D (2024) 3.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar SAMSUNG S-Series Ultra Slim HW-S800D (2024) 3.1.2 black",
+        "expected": "HW-S800D"
+      },
+      {
+        "title": "Soundbar SENCOR SSB 4460BS 2.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SB107 2.0 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SB110 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SB140 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SBW110 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SBW460 3.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SHARP HT-SBW800V01 5.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SONICGEAR SB-HD2000 2.0 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SONY Bravia Theatre Bar 6 HTB600 3.1.2 black",
+        "expected": "HT-B600"
+      },
+      {
+        "title": "Soundbar SONY Bravia Theatre Bar 7 + Subwoofer HTA7100KIT 5.1.2 black",
+        "expected": "HT-A7100"
+      },
+      {
+        "title": "Soundbar SONY Bravia Theatre Bar 8 HTA8000 5.0.2 black",
+        "expected": "HT-A8000"
+      },
+      {
+        "title": "Soundbar SONY Bravia Theatre System 6 HTS60 5.1 black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar SONY HT-A3000 3.1 HTA3000.CEL black",
+        "expected": "rejected"
+      },
+      {
+        "title": "Soundbar SONY HT-SF150 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SONY HTA7000.CEL 7.1.2 black",
+        "expected": "HT-A7000"
+      },
+      {
+        "title": "Soundbar SONY HTA9000 Bravia Theatre Bar 9 7.0.2 black",
+        "expected": "HT-A9000"
+      },
+      {
+        "title": "Soundbar SONY HTS2000 3.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SONY HTS400 2.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar SONY HTS40R 5.1 HTS40R.CEL black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar ΒOSE Smart Soundbar 5.1 11-892079 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Soundbar ΒOSE Soundbar 500 System Bundle 5.1 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Subwoofer for Home cinema MARSHALL Heston Sub 200 1007992 black",
+        "expected": "ignore"
+      },
+      {
+        "title": "Subwoofer for Home cinema MARSHALL Heston Sub 200 1007995 cream",
+        "expected": "ignore"
+      },
+      {
+        "title": "Subwoofer for Soundbar HARMAN KARDON Citation Sub HKCITATIONSUBGRYEU grey",
+        "expected": "ignore"
+      },
+      {
+        "title": "Wireless Surround Speakers HARMAN KARDON Citation 2.0 HKCITASURRBLKEU black",
+        "expected": "ignore"
+      }
+    ]
+  }
+}

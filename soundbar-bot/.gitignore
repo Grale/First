@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+prices.db
+config.json
+logs/
+.cache/
+.pw-profile/
+scheduler/task.xml

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{{ m.brand }} {{ m.model_key }} · Soundbar Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <div class="row between">
+    <h1>{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }} <span class="muted">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %}</span></h1>
+    <a class="btn" href="{{ url_for('watchlist_page', edit=m.model_key) }}">Edit</a>
+  </div>
+  <div class="specs">
+    <span class="pill">{{ m.specs.layout or 'layout unknown' }}</span>
+    <span class="pill {{ 'ok' if m.specs.height_channels and m.specs.height_type in ('upfiring', 'dedicated') else 'bad' }}">{{ m.specs.height_channels or 0 }} height ch · {{ height_types.get(m.specs.height_type, 'unknown') }}</span>
+    <span class="pill">subwoofer: {{ connections.get(m.specs.subwoofer, 'unknown') }}</span>
+    <span class="pill">rears: {{ connections.get(m.specs.rears, 'unknown') }}</span>
+    <span class="pill {{ 'ok' if m.specs.atmos else 'bad' }}">Dolby Atmos {{ 'yes' if m.specs.atmos else 'no' }}</span>
+    <span class="pill {{ 'ok' if m.specs.dtsx else '' }}">DTS:X {{ 'yes' if m.specs.dtsx else 'no' }}</span>
+    <span class="pill {{ 'ok' if m.specs.earc else 'bad' }}">eARC {{ 'yes' if m.specs.earc else 'no' }}</span>
+    <span class="pill">HDMI in ×{{ m.specs.hdmi_in if m.specs.hdmi_in is not none else '?' }}</span>
+    {% if m.source_url %}<a class="pill link" href="{{ m.source_url }}" target="_blank" rel="noopener">spec source ↗</a>{% endif %}
+  </div>
+  {% if m.notes %}<p class="muted small">{{ m.notes }}</p>{% endif %}
+  <p class="small">Aliases: {{ m.all_aliases()|join(', ') }}</p>
+</section>
+
+<section class="card">
+  <h2>Rank {% if rank %}#{{ rank }} of {{ total }}{% endif %} <span class="muted small">overall {{ score.overall }} · fit {{ score.fit }} · reviews {{ score.review if score.has_review else 'none' }}{% if score.value %} · value {{ score.value }}{% endif %}</span></h2>
+  <div class="bar" style="max-width: 420px"><i style="width: {{ score.overall }}%"></i></div>
+  <p class="small muted">Fit points: {% for k, v in score.parts.items() %}{{ k }} {{ v }}{{ ' · ' if not loop.last }}{% endfor %}</p>
+  {% if m.review and m.review.fit_penalties %}<ul class="cons small">{% for p in m.review.fit_penalties %}<li>{{ p.points }}: {{ p.reason }} {% if p.source %}<a href="{{ p.source }}" target="_blank" rel="noopener">[source]</a>{% endif %}</li>{% endfor %}</ul>{% endif %}
+  {% if m.review %}
+    {% if m.review.cinema_verdict %}<p><strong>Verdict:</strong> {{ m.review.cinema_verdict }}</p>{% endif %}
+    <div class="row" style="align-items: flex-start; gap: 24px; flex-wrap: wrap">
+      {% if m.review.pros %}<ul class="pros small">{% for x in m.review.pros %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+      {% if m.review.cons %}<ul class="cons small">{% for x in m.review.cons %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    {% if m.review.critic %}
+    <table><thead><tr><th class="left">Critic</th><th class="left">Score</th><th class="left">Verdict</th></tr></thead><tbody>
+    {% for c in m.review.critic %}<tr><td class="left"><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.source }}</a></td><td class="left">{{ c.score }}</td><td class="left small">{{ c.verdict }}</td></tr>{% endfor %}
+    </tbody></table>
+    {% endif %}
+    {% if m.review.user_sentiment %}<p class="small"><strong>Owners:</strong> {{ m.review.user_sentiment.summary }} {% for u in m.review.user_sentiment.sources or [] %}<a href="{{ u }}" target="_blank" rel="noopener">[{{ loop.index }}]</a> {% endfor %}</p>{% endif %}
+    {% if m.review.specs_extra %}<p class="small muted">Also recorded: {{ m.review.specs_extra.drivers or '?' }} drivers · subwoofer driver {{ m.review.specs_extra.sub_driver_in or '—' }}" · room calibration {{ 'yes' if m.review.specs_extra.room_calibration else 'no' }} · streaming {{ (m.review.specs_extra.streaming or [])|join(', ') or '—' }}</p>{% endif %}
+    {% if m.review.notes %}<p class="small muted">{{ m.review.notes }}</p>{% endif %}
+  {% else %}<p class="muted small">No review evidence collected yet for this model.</p>{% endif %}
+</section>
+
+<section class="card">
+  <h2>Price history</h2>
+  {% if series %}
+  <canvas id="chart" height="110"></canvas>
+  {% else %}<p class="muted">No price points yet. Run a check first.</p>{% endif %}
+</section>
+
+<section class="card">
+  <h2>Current offers {% if lowest %}<span class="muted small">lowest ever {{ lowest.price|price }} at {{ labels.get(lowest.shop, lowest.shop) }} on {{ lowest.seen_at|dt }}</span>{% endif %}</h2>
+  <table>
+    <thead><tr><th class="left">Shop</th><th class="left">Country</th><th>Price</th><th>List</th><th>Stock</th><th class="left">Title</th><th>Seen</th></tr></thead>
+    <tbody>
+    {% for c in current|sort(attribute='price') %}
+      <tr><td class="left">{{ labels.get(c.shop, c.shop) }}</td><td class="left small muted">{{ countries.get(country_of(c.shop), '') }}</td>
+        <td><strong>{{ c.price|price or '—' }}</strong></td><td class="muted">{{ c.list_price|price }}</td>
+        <td>{% if c.in_stock == 0 %}<span class="tag bad">out</span>{% elif c.in_stock is none %}<span class="tag">listed</span>{% else %}<span class="tag ok">in stock</span>{% endif %}</td>
+        <td class="left"><a href="{{ c.url }}" target="_blank" rel="noopener">{{ c.title }}</a></td><td class="small muted">{{ c.seen_at|dt }}</td></tr>
+    {% else %}<tr><td colspan="7" class="muted">Not found in any enabled shop in the last check.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Alerts for this model</h2>
+  {% include "_alerts_table.html" %}
+</section>
+{% endblock %}
+{% block scripts %}
+{% if series %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const series = {{ series|tojson }};
+const labelsMap = {{ labels|tojson }};
+const colors = ['#2563eb','#16a34a','#dc2626','#9333ea','#ea580c','#0891b2','#4b5563','#be185d','#65a30d'];
+const datasets = Object.entries(series).map(([shop, pts], i) => ({
+  label: labelsMap[shop] || shop, data: pts.map(p => ({x: p.x, y: p.y})), borderColor: colors[i % colors.length],
+  backgroundColor: colors[i % colors.length], stepped: true, pointRadius: 3, tension: 0 }));
+new Chart(document.getElementById('chart'), { type: 'line', data: { datasets },
+  options: { parsing: false, scales: { x: { type: 'category', ticks: { maxTicksLimit: 10, callback: (v, i, t) => { const lbl = datasets.flatMap(d => d.data)[i]; return lbl ? lbl.x.slice(0,10) : ''; } } }, y: { ticks: { callback: v => '€' + v } } },
+  plugins: { tooltip: { callbacks: { title: items => items[0].raw.x, label: it => `${it.dataset.label}: €${it.raw.y}` } } } } });
+</script>
+{% endif %}
+{% endblock %}
