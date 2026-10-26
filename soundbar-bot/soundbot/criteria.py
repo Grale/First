@@ -64,7 +64,9 @@ _BAR_WORDS = ("SOUNDBAR", "SOUND BAR", "SOUNDBARS", "ΣΟΥΝΤΜΠΑΡ", "ΗΧ�
 _COMPONENT_LEAD = re.compile(
     r"^(SUBWOOFER|SUB\b|WIRELESS SUBWOOFER|REAR SPEAKER|REAR SPEAKERS|WIRELESS SURROUND|SURROUND SPEAKER|"
     r"SURROUND SPEAKERS|SPEAKER KIT|ΥΠΟΓΟΥΦΕΡ|ΗΧΕΙΑ SURROUND)")
-# Accessories that are never a soundbar whatever else the title says.
+# What follows one of these in a title is what comes in the box, not what the listing is selling.
+_INCLUDES = re.compile(r"\s(?:ΜΕ|ΚΑΙ|WITH|AND|PLUS|INCL|INCLUDING)\s|[,+&]")
+# Accessories that are never a soundbar, when the title leads with one of them.
 _ACCESSORY = ("BRACKET", "WALL MOUNT", "ΒΑΣΗ ΤΟΙΧΟΥ", "ΒΑΣΗ ", "STAND FOR", "CABLE", "ΚΑΛΩΔΙΟ",
               "REMOTE", "ΤΗΛΕΧΕΙΡΙΣΤΗΡΙΟ", "PC SPEAKERS", "ΗΧΕΙΑ Η/Υ", "SOUNDBAR STAND", "COVER",
               "ΘΗΚΗ", "ADAPTER", "ΑΝΤΑΠΤΟΡΑΣ")
@@ -97,9 +99,15 @@ def is_component_or_accessory(title: str) -> bool:
 
     This is the hard rejection: it holds whatever else the title says, and it is all that the matcher
     needs, because a model code in the title is its own proof that the listing is that soundbar.
+
+    The accessory words are only looked for in the head of the title, before the first "with" or "and".
+    Greek shops list what is in the box in the title itself - "Samsung HW-Q990F Soundbar 11.1.4 …
+    με Ασύρματο Subwoofer και Τηλεχειριστήριο Μαύρο" is a soundbar that comes with a remote, not a
+    remote - so a word found after one of those is a feature, not the thing being sold.
     """
     up = fold(title).strip()
-    if any(k in up for k in _ACCESSORY):
+    head = _INCLUDES.split(up, 1)[0] + " "
+    if any(k in head for k in _ACCESSORY):
         return True
     return bool(_COMPONENT_LEAD.match(up))
 

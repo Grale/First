@@ -557,6 +557,30 @@
       {
         "title": "Ηχομπάρα Hisense AX5125H 5.1.2 Dolby Atmos",
         "expected": "candidate"
+      },
+      {
+        "title": "Samsung HW-Q990F Soundbar 11.1.4 Bluetooth, HDMI & Wi-Fi με Ασύρματο Subwoofer και Τηλεχειριστήριο Μαύρο",
+        "expected": "HW-Q990F"
+      },
+      {
+        "title": "Samsung HW-Q990H Soundbar 11.1.4 με Ασύρματο Subwoofer, Τηλεχειριστήριο και Βάση",
+        "expected": "HW-Q990H"
+      },
+      {
+        "title": "JBL Bar 1300MK2 Soundbar 11.1.4 with Detachable Wireless Surround Speakers and Subwoofer",
+        "expected": "BAR 1300MK2"
+      },
+      {
+        "title": "Τηλεχειριστήριο για Soundbar Samsung HW-Q990F",
+        "expected": "ignore"
+      },
+      {
+        "title": "Samsung Wall Mount Bracket for HW-Q990F Soundbar",
+        "expected": "ignore"
+      },
+      {
+        "title": "Καλώδιο HDMI 2.1 για Soundbar Samsung HW-Q990F",
+        "expected": "ignore"
       }
     ]
   }

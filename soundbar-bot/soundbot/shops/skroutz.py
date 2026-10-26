@@ -25,7 +25,7 @@ snapshot is kept.
 """
 from __future__ import annotations
 import re
-from typing import Iterable, Optional
+from typing import Optional
 from urllib.parse import quote, urljoin, urlsplit
 
 from bs4 import BeautifulSoup
@@ -35,6 +35,7 @@ from ..models import Item
 from ..watchlist import Model
 
 CATEGORY_PATH = "/c/907/soundbars.html"      # override in shops_config.skroutz.category_path
+CATEGORY_PAGES = 6
 SEARCH_PATH = "/search?keyphrase={q}"
 SKU_HREF = re.compile(r"^/s/(\d+)/")
 PRICE_TEXT = re.compile(r"\d[\d.,]*\s*€")
@@ -43,7 +44,9 @@ FORBIDDEN_PREFIXES = ("/api/", "/apiv2/", "/products/show", "/products/compare_s
                       "/suggest", "/autocomplete/", "/personalization/", "/comparelists/", "/cart",
                       "/checkout/", "/users/", "/account/", "/sign_in", "/signup", "/cdn-cgi/")
 FORBIDDEN_SUFFIXES = ("/shops_list", "/price_graph", "/recommendations")
-MAX_CARDS_PER_QUERY = 24
+# A search page leads with sponsored and related strips before the results proper, and a category page
+# lists dozens of products, so the cap has to be well clear of both or the real rows get cut off.
+MAX_CARDS_PER_PAGE = 150
 
 
 class Skroutz(Shop):
@@ -105,7 +108,7 @@ class Skroutz(Shop):
             items[sku] = Item(shop=self.name, title=title, price=price,
                               url=urljoin(self.base_url, href.split("?")[0]),
                               list_price=None, in_stock=None, shop_sku=sku)
-            if len(items) >= MAX_CARDS_PER_QUERY:
+            if len(items) >= MAX_CARDS_PER_PAGE:
                 break
         return list(items.values())
 
@@ -117,23 +120,48 @@ class Skroutz(Shop):
         return items
 
     # ---- Shop interface ----------------------------------------------------
-    def _queries(self, models: Iterable[Model]) -> list[str]:
-        """One query per model: the model key, which is what a Skroutz title carries."""
-        out: list[str] = []
-        for m in models:
-            for term in self.search_terms(m):
-                if term and term not in out:
-                    out.append(term)
-                    break
-        return out
+    @staticmethod
+    def _query_for(m: Model) -> str:
+        """Brand and model together: 'Samsung HW-Q990F', not 'HW-Q990F'.
+
+        A bare part number is not reliably tokenised by the search index, and a query that finds
+        nothing still returns a page full of sponsored and related products, which is how a search per
+        model could come back with hundreds of items and almost no matches.
+        """
+        return f"{m.brand} {m.model_key}".strip()
 
     def fetch_items(self, models: list[Model]) -> list[Item]:
+        """The category listing first, then one search for whatever it did not cover.
+
+        The soundbar category lists every model with its price in a handful of requests, so it is both
+        cheaper and more complete than a search per model; the searches are the fallback for a model
+        filed under another category, or one the category pages did not reach.
+        """
         if not models:
             return self.fetch_all_bars()
+        from ..criteria import active as active_criteria
+        from ..match import best_match
+
         found: dict[str, Item] = {}
+        try:
+            for it in self.fetch_all_bars():
+                found.setdefault(it.shop_sku, it)
+        except Exception as e:
+            self.log.warning(
+                "skroutz: the category listing at %s did not read (%s). Falling back to one search per "
+                'model. If this keeps happening, open Skroutz, click through to Soundbars, and put that '
+                'URL\'s path in config.json under "shops_config": {"skroutz": {"category_path": '
+                '"/c/<id>/<slug>.html"}}', CATEGORY_PATH, e)
+        from_category = len(found)
+
+        crit = active_criteria()
+        covered = {m.model_key for it in found.values()
+                   for m in [best_match(it.title, models, crit)] if m is not None}
+        missing = [m for m in models if m.model_key not in covered]
+
         failures = 0
-        queries = self._queries(models)
-        for q in queries:
+        for m in missing:
+            q = self._query_for(m)
             try:
                 html = self._get(SEARCH_PATH.format(q=quote(q)))
                 for it in self._parse_or_raise(html, f"search for {q}"):
@@ -143,7 +171,8 @@ class Skroutz(Shop):
                 self.log.warning("skroutz search '%s' failed: %s", q, e)
                 if failures >= 3:
                     raise
-        self.log.info("skroutz: %d distinct products from %d model searches", len(found), len(queries))
+        self.log.info("skroutz: %d products (%d from the category listing, %d searches for the "
+                      "%d models it did not cover)", len(found), from_category, len(missing), len(missing))
         return list(found.values())
 
     def fetch_all_bars(self) -> list[Item]:
@@ -151,7 +180,7 @@ class Skroutz(Shop):
         path = (load_config().get("shops_config", {}).get(self.name, {}).get("category_path")
                 or CATEGORY_PATH)
         items: dict[str, Item] = {}
-        for page in range(1, 4):
+        for page in range(1, CATEGORY_PAGES + 1):
             sep = "&" if "?" in path else "?"
             html = self._get(path if page == 1 else f"{path}{sep}page={page}")
             page_items = self._parse_or_raise(html, f"category page {page}")

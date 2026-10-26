@@ -167,7 +167,7 @@ open at once.
 | Kotsovolos CY | CY | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | Ported unchanged from the TV bot. Not re-run here |
 | Public GR | GR | Same findbar.io API as Public CY. The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
 | Kotsovolos GR | GR | Same HCL Commerce APIs as Kotsovolos CY, with the store id read from the storefront and cached | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |
-| Skroutz | GR | One `/search?keyphrase=<model>` query per watched model; the cards are read by following the product links rather than by class name | **Tested against the live shop**: 217 products from 36 searches, titles and prices read correctly |
+| Skroutz | GR | The soundbar category listing first, then one `/search?keyphrase=<brand> <model>` for each model the listing did not cover; cards are read by following the product links rather than by class name | **Reads the live shop**: titles and prices parse correctly. The category id is a guess — if the log says the listing did not read, set `category_path` (below) |
 
 Every shop above turns away a plain HTTP client except Electroline, Scandia, MegaElectric and Stephanis.
 Fetching escalates `requests` → `curl_cffi` (Chrome TLS impersonation) → Playwright Chromium (only if
@@ -192,10 +192,16 @@ starting `eyJ`, and put it in `config.json`:
 {
   "shops_config": {
     "kotsovolos_gr": {"store_id": "10151"},
-    "public_gr": {"findbar_token": "eyJhbGciOi…"}
+    "public_gr": {"findbar_token": "eyJhbGciOi…"},
+    "skroutz": {"category_path": "/c/907/soundbars.html"}
   }
 }
 ```
+
+Skroutz's soundbar category id is the third of these. Click through to Soundbars on Skroutz and copy the
+path out of the address bar. Getting it right matters for speed rather than coverage: with the category
+listing the whole shop is a handful of requests, and without it the adapter falls back to one search per
+watched model, which still works but takes about 40 seconds.
 
 A configured value always wins over the lookup, so this ends the problem rather than working around it
 until the cache expires. Delete the entry later if you want the adapter to go back to finding it itself.
