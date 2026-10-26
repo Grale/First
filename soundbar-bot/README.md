@@ -158,7 +158,7 @@ open at once.
 | Public CY | CY | Its search provider's JSON API (findbar.io) with Public's own front-end token | Ported unchanged from the TV bot, soundbar queries instead of TV ones. Not re-run here |
 | Kotsovolos CY | CY | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | Ported unchanged from the TV bot. Not re-run here |
 | Public GR | GR | Same findbar.io API as Public CY. The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
-| Kotsovolos GR | GR | Same HCL Commerce APIs as Kotsovolos CY, with the store id read from the storefront's `__NEXT_DATA__` and cached | **Written but never run.** Verify with `run-once --shop kotsovolos_gr` |
+| Kotsovolos GR | GR | Same HCL Commerce APIs as Kotsovolos CY, with the store id read from the storefront and cached | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |
 | Skroutz | GR | One `/search?keyphrase=<model>` query per watched model; the cards are read by following the product links rather than by class name | **Written but never run.** Verify with `run-once --shop skroutz` |
 
 Every shop above turns away a plain HTTP client except Electroline, Scandia, MegaElectric and Stephanis.
@@ -171,6 +171,26 @@ Cypriot twins use, but could not be exercised from the machine this was built on
 both refuse. Run each once with `--shop` before trusting the dashboard, and read the error if one fails:
 the adapters raise with the reason (a rejected token, a missing store id, a Skroutz page that parsed to
 nothing) rather than quietly reporting an empty shop.
+
+### If a Greek shop cannot find its own id or token
+
+Kotsovolos GR and Public GR each need one value that belongs to that storefront: an HCL store id and a
+findbar search token. The adapters look for it on the shop's own pages and cache it in `.cache/`, and the
+error says which pages they read and what they found. When the lookup comes up empty, give it the value
+by hand — open the shop in a browser, view source (Ctrl+U), search for `storeId` or for a long string
+starting `eyJ`, and put it in `config.json`:
+
+```json
+{
+  "shops_config": {
+    "kotsovolos_gr": {"store_id": "10151"},
+    "public_gr": {"findbar_token": "eyJhbGciOi…"}
+  }
+}
+```
+
+A configured value always wins over the lookup, so this ends the problem rather than working around it
+until the cache expires. Delete the entry later if you want the adapter to go back to finding it itself.
 
 ### Skroutz, and what this does not do
 

@@ -15,6 +15,7 @@ Product pages need the exact SEO slug, so offers link to the search page for the
 from __future__ import annotations
 import json
 import re
+from collections import Counter
 from urllib.parse import quote
 
 from .base import Shop, parse_price
@@ -26,7 +27,16 @@ from ..paths import CACHE_DIR
 from ..watchlist import Model
 
 NEXT_DATA = re.compile(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', re.S)
-_STORE_RE = re.compile(r'"storeId"\s*:\s*"?(\d{4,6})"?')
+# The store id turns up in several shapes depending on where it is written: as a JSON field in
+# __NEXT_DATA__, as the same field escaped inside a JSON string, and as a query parameter on the links
+# the page builds. Backslashes are optional everywhere so one pattern covers escaped and plain alike.
+_STORE_PATTERNS = (
+    re.compile(r'\\?"store(?:Id|ID)\\?"\s*:\s*\\?"?(\d{4,6})'),
+    re.compile(r'[?&]storeId=(\d{4,6})'),
+    re.compile(r'\\?"(?:currentStoreId|defaultStoreId|catalogStoreId|myStoreId)\\?"\s*:\s*\\?"?(\d{4,6})'),
+)
+# Pages to look on, in order. The search page builds more store-scoped links than the home page does.
+_DISCOVERY_PATHS = ("/", "/SearchDisplay?q=soundbar")
 UNAVAILABLE_KEYS = ("OUT_OF_STOCK", "SOLD_OUT", "NOT_AVAILABLE", "UNAVAILABLE", "DISCONTINUED")
 DETAIL_CHUNK = 15
 
@@ -42,15 +52,32 @@ class KotsovolosLike(Shop):
         return CACHE_DIR / f"{self.name}-store-id.txt"
 
     def _discover_store(self) -> str:
-        html = self.f.get(self.base_url + "/", start_tier=self.start_tier)
-        m = NEXT_DATA.search(html)
-        hay = m.group(1) if m else html
-        found = _STORE_RE.search(hay)
-        if not found:
-            raise RuntimeError(f"{self.name}: no storeId found on {self.base_url} "
-                               f"(set shops_config.{self.name}.store_id)")
-        self.log.info("%s: discovered storeId %s", self.name, found.group(1))
-        return found.group(1)
+        """Read the store id out of the shop's own pages, with enough of a report to act on if it is
+        not there: which pages were read, how big they were, and whether __NEXT_DATA__ was present."""
+        counts: Counter[str] = Counter()
+        seen: list[str] = []
+        for path in _DISCOVERY_PATHS:
+            try:
+                html = self.f.get(self.base_url + path, start_tier=self.start_tier)
+            except Exception as e:
+                seen.append(f"{path}: {type(e).__name__}: {str(e)[:80]}")
+                continue
+            m = NEXT_DATA.search(html)
+            hay = m.group(1) if m else html
+            for pattern in _STORE_PATTERNS:
+                counts.update(pattern.findall(hay))
+            seen.append(f"{path}: {len(html)} bytes, __NEXT_DATA__ {'yes' if m else 'no'}, "
+                        f"{sum(counts.values())} id(s) so far")
+            if counts:
+                break
+        if not counts:
+            raise RuntimeError(
+                f"{self.name}: no storeId on {self.base_url} [{'; '.join(seen)}]. Open the shop in a "
+                f"browser, view source, search for storeId, and put it in config.json under "
+                f'"shops_config": {{"{self.name}": {{"store_id": "…"}}}}')
+        store = counts.most_common(1)[0][0]      # the id the page uses most is the storefront's own
+        self.log.info("%s: discovered storeId %s (candidates %s)", self.name, store, dict(counts))
+        return store
 
     def store_id(self) -> str:
         cfg = load_config()
