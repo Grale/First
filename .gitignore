@@ -9,3 +9,7 @@ scheduler/task.xml
 prices.db.bak-*
 tools/artifact/expected_scores.json
 tools/artifact/parity_result.json
+
+# Backup bundles of this repository, written when a push is blocked. A bundle of the repo must never
+# be committed into it: it would be re-created and re-added on every push failure, growing each time.
+*.bundle
