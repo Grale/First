@@ -15,7 +15,7 @@ DEFAULTS: dict[str, Any] = {
               "cross_shop_scope": "country"},
     "notify": {"toast": True, "ntfy": {"enabled": True, "server": "https://ntfy.sh", "topic": ""}},
     "shops": {"electroline": True, "scandia": True, "megaelectric": True, "stephanis": True,
-              "public_cy": True, "kotsovolos_cy": True,
+              "public_cy": True, "kotsovolos_cy": True, "skroutz_cy": True,
               "skroutz": True, "public_gr": True, "kotsovolos_gr": True},
     "countries": {"CY": True, "GR": True},
     "fetch": {"timeout_s": 40, "pause_s": 1.0, "playwright": "auto"},

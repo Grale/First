@@ -34,8 +34,11 @@ from .base import Shop, parse_price
 from ..models import Item
 from ..watchlist import Model
 
-CATEGORY_PATH = "/c/907/soundbars.html"      # override in shops_config.skroutz.category_path
-CATEGORY_PAGES = 6
+# The soundbar category, confirmed on skroutz.gr. Override per shop in shops_config.<name>.category_path.
+CATEGORY_PATH = "/c/1735/soundbar.html"
+# 358 products in the Greek category at the time of writing, around two dozen to a page. The loop stops
+# early as soon as a page adds nothing new, so this is a ceiling rather than a cost.
+CATEGORY_PAGES = 18
 SEARCH_PATH = "/search?keyphrase={q}"
 SKU_HREF = re.compile(r"^/s/(\d+)/")
 PRICE_TEXT = re.compile(r"\d[\d.,]*\s*€")
@@ -49,11 +52,7 @@ FORBIDDEN_SUFFIXES = ("/shops_list", "/price_graph", "/recommendations")
 MAX_CARDS_PER_PAGE = 150
 
 
-class Skroutz(Shop):
-    name = "skroutz"
-    label = "Skroutz"
-    country = "GR"
-    base_url = "https://www.skroutz.gr"
+class SkroutzLike(Shop):
     start_tier = 2          # Skroutz turns away the plain requests tier
     uses_search = True
 
@@ -63,11 +62,11 @@ class Skroutz(Shop):
         parts = urlsplit(url)
         path = parts.path
         if any(path.startswith(p) for p in FORBIDDEN_PREFIXES):
-            raise ValueError(f"skroutz: {path} is disallowed by robots.txt for every crawler")
+            raise ValueError(f"{path} is disallowed by robots.txt for every crawler")
         if any(path.endswith(s) for s in FORBIDDEN_SUFFIXES):
-            raise ValueError(f"skroutz: {path} is disallowed by robots.txt for every crawler")
+            raise ValueError(f"{path} is disallowed by robots.txt for every crawler")
         if "filter_id=" in (parts.query or ""):
-            raise ValueError("skroutz: filtered category URLs are disallowed by robots.txt")
+            raise ValueError("filtered category URLs are disallowed by robots.txt")
         return url
 
     def _get(self, path: str) -> str:
@@ -113,10 +112,16 @@ class Skroutz(Shop):
         return list(items.values())
 
     def _parse_or_raise(self, html: str, what: str) -> list[Item]:
+        """Parse a page that must hold products. Only for the first page of a listing.
+
+        An empty page is a normal answer everywhere else - the page after the last one of a category,
+        or a search that found nothing - so raising there would turn the end of a listing into a failed
+        shop. It is only evidence of a wrong path or a bot check when it is the first page asked for.
+        """
         items = self._cards(html)
         if not items and 'href="/s/' not in html:
-            raise RuntimeError(f"skroutz: no product links on {what} (layout changed, or the page was "
-                               f"served as a bot check)")
+            raise RuntimeError(f"{self.name}: no product links on {what} (wrong path, changed layout, "
+                               f"or the page was served as a bot check)")
         return items
 
     # ---- Shop interface ----------------------------------------------------
@@ -148,10 +153,10 @@ class Skroutz(Shop):
                 found.setdefault(it.shop_sku, it)
         except Exception as e:
             self.log.warning(
-                "skroutz: the category listing at %s did not read (%s). Falling back to one search per "
+                "%s: the category listing at %s did not read (%s). Falling back to one search per "
                 'model. If this keeps happening, open Skroutz, click through to Soundbars, and put that '
                 'URL\'s path in config.json under "shops_config": {"skroutz": {"category_path": '
-                '"/c/<id>/<slug>.html"}}', CATEGORY_PATH, e)
+                '"/c/<id>/<slug>.html"}}', self.name, self._category_path(), e)
         from_category = len(found)
 
         crit = active_criteria()
@@ -163,31 +168,58 @@ class Skroutz(Shop):
         for m in missing:
             q = self._query_for(m)
             try:
-                html = self._get(SEARCH_PATH.format(q=quote(q)))
-                for it in self._parse_or_raise(html, f"search for {q}"):
+                hits = self._cards(self._get(SEARCH_PATH.format(q=quote(q))))
+                if not hits:
+                    self.log.debug("%s: no results for '%s'", self.name, q)
+                for it in hits:
                     found.setdefault(it.shop_sku, it)
             except Exception as e:
                 failures += 1
-                self.log.warning("skroutz search '%s' failed: %s", q, e)
+                self.log.warning("%s search '%s' failed: %s", self.name, q, e)
                 if failures >= 3:
                     raise
-        self.log.info("skroutz: %d products (%d from the category listing, %d searches for the "
-                      "%d models it did not cover)", len(found), from_category, len(missing), len(missing))
+        self.log.info("%s: %d products (%d from the category listing, %d searches for the models it "
+                      "did not cover)", self.name, len(found), from_category, len(missing))
         return list(found.values())
 
-    def fetch_all_bars(self) -> list[Item]:
+    def _category_path(self) -> str:
         from ..config import load as load_config
-        path = (load_config().get("shops_config", {}).get(self.name, {}).get("category_path")
+        return (load_config().get("shops_config", {}).get(self.name, {}).get("category_path")
                 or CATEGORY_PATH)
+
+    def fetch_all_bars(self) -> list[Item]:
+        path = self._category_path()
         items: dict[str, Item] = {}
         for page in range(1, CATEGORY_PAGES + 1):
             sep = "&" if "?" in path else "?"
             html = self._get(path if page == 1 else f"{path}{sep}page={page}")
-            page_items = self._parse_or_raise(html, f"category page {page}")
+            page_items = (self._parse_or_raise(html, "the category listing") if page == 1
+                          else self._cards(html))
             new = [i for i in page_items if i.shop_sku not in items]
             for it in new:
                 items[it.shop_sku] = it
             if not new:
                 break
-        self.log.info("skroutz: %d products in the soundbar category", len(items))
+        self.log.info("%s: %d products over %d category page(s)", self.name, len(items), page)
         return list(items.values())
+
+
+class Skroutz(SkroutzLike):
+    name = "skroutz"
+    label = "Skroutz GR"
+    country = "GR"
+    base_url = "https://www.skroutz.gr"
+
+
+class SkroutzCy(SkroutzLike):
+    """skroutz.cy - the same catalogue and the same category ids as skroutz.gr, filtered to what can
+    actually be delivered to Cyprus.
+
+    Worth checking alongside the Greek site rather than instead of it: the prices are the two markets'
+    own, and a model that shows on skroutz.gr but not here is one that will not ship to Cyprus, which
+    is as useful to know as a price.
+    """
+    name = "skroutz_cy"
+    label = "Skroutz CY"
+    country = "CY"
+    base_url = "https://www.skroutz.cy"

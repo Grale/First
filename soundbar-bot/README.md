@@ -5,8 +5,8 @@ shop is clearly cheaper than the others, when a shop runs a big discount, or whe
 back in stock. Same shape as the TV bot: starts with the laptop, serves a local dashboard, pushes to your
 phone.
 
-Shops: Electroline, Scandia, MegaElectric, Stephanis, Public CY, Kotsovolos CY (Cyprus) · Skroutz,
-Public GR, Kotsovolos GR (Greece).
+Shops: Electroline, Scandia, MegaElectric, Stephanis, Public CY, Kotsovolos CY, Skroutz CY (Cyprus) ·
+Skroutz GR, Public GR, Kotsovolos GR (Greece).
 
 Ranking is **immersion first**: height channels and wireless rears carry the most weight, with bass,
 ear-level channels, formats and connections as smaller bonuses.
@@ -167,7 +167,8 @@ open at once.
 | Kotsovolos CY | CY | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | Ported unchanged from the TV bot. Not re-run here |
 | Public GR | GR | Same findbar.io API as Public CY. The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
 | Kotsovolos GR | GR | Same HCL Commerce APIs as Kotsovolos CY, with the store id read from the storefront and cached | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |
-| Skroutz | GR | The soundbar category listing first, then one `/search?keyphrase=<brand> <model>` for each model the listing did not cover; cards are read by following the product links rather than by class name | **Reads the live shop**: titles and prices parse correctly. The category id is a guess — if the log says the listing did not read, set `category_path` (below) |
+| Skroutz GR | GR | The soundbar category listing (`/c/1735/soundbar.html`, 358 products) first, then one `/search?keyphrase=<brand> <model>` for each model the listing did not cover; cards are read by following the product links rather than by class name | **Reads the live shop**: titles and prices parse correctly |
+| Skroutz CY | CY | The same adapter against skroutz.cy | Same catalogue and category ids as the Greek site, filtered to what will ship to Cyprus. Not run yet |
 
 Every shop above turns away a plain HTTP client except Electroline, Scandia, MegaElectric and Stephanis.
 Fetching escalates `requests` → `curl_cffi` (Chrome TLS impersonation) → Playwright Chromium (only if
@@ -198,10 +199,10 @@ starting `eyJ`, and put it in `config.json`:
 }
 ```
 
-Skroutz's soundbar category id is the third of these. Click through to Soundbars on Skroutz and copy the
-path out of the address bar. Getting it right matters for speed rather than coverage: with the category
-listing the whole shop is a handful of requests, and without it the adapter falls back to one search per
-watched model, which still works but takes about 40 seconds.
+Skroutz's soundbar category is the third of these, and the confirmed value is already the default, so
+it is only there if Skroutz ever renumbers. Getting it right matters for speed rather than coverage:
+with the category listing the whole shop is a handful of requests, and without it the adapter falls back
+to one search per watched model, which still works but takes about 40 seconds.
 
 A configured value always wins over the lookup, so this ends the problem rather than working around it
 until the cache expires. Delete the entry later if you want the adapter to go back to finding it itself.
@@ -224,6 +225,14 @@ to merchants by email, so it is not an option for a personal watcher.
 Skroutz also has its own price alerts — the bell on any product page. For the Greek side it is worth using
 both: Skroutz's alert is authoritative for Skroutz, and this bot is what compares Skroutz against Public GR,
 Kotsovolos GR and the Cypriot shops in one table.
+
+### The two Skroutz sites
+
+skroutz.cy is the same catalogue as skroutz.gr with the same category ids, filtered to products that can
+be delivered to Cyprus. Both are watched, because the prices are each market's own and the difference
+between the two lists is itself worth knowing: a model on skroutz.gr that never appears on skroutz.cy is
+one that will not ship to Cyprus. Turn either off on the Settings page if you only buy in one country —
+each costs about twenty requests a check.
 
 ### Shops that were considered and left out
 

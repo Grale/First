@@ -143,12 +143,45 @@ def check_offline_parsers(failures: list[str]) -> None:
         if "HT-A9000" not in by_sku["39876543"].title.upper():
             failures.append("skroutz parser did not fall back to the image alt text for the title")
 
+    # The category-first flow, and the empty page that ends a listing rather than failing it.
+    class StubFetcher:
+        timeout = 10
+        tier_used: dict = {}
+
+        def __init__(self):
+            self.asked: list[str] = []
+
+        def _throttle(self):
+            pass
+
+        def close(self):
+            pass
+
+        def get(self, url, start_tier=1, wait_selector=None):
+            self.asked.append(url)
+            if "/c/" in url:
+                return SKROUTZ_PAGE if "page=" not in url else "<ul></ul>"
+            return "<ul></ul>"          # a search that finds nothing
+
+    from soundbot import criteria as crit_mod
+    from soundbot import watchlist as wl_mod
+    crit = crit_mod.active()
+    wl = wl_mod.load()
+    some = [m for m in wl.watched(crit) if m.model_key in ("HW-Q990H", "HT-A9000")]
+    stub = StubFetcher()
+    got = Skroutz(stub).fetch_items(some)
+    if not stub.asked or "/c/" not in stub.asked[0]:
+        failures.append("skroutz asked for a search before the category listing")
+    if len(got) != 2:
+        failures.append(f"skroutz category flow returned {len(got)} items, expected 2")
+
     hits = [b for b in _JWT_RE.findall(PUBLIC_PAGE)
             if (_payload(b).get("data") or {}).get("domain") == PublicGr.domain
             and "search" in ((_payload(b).get("data") or {}).get("scopes") or [])]
     if len(hits) != 1:
         failures.append(f"public token reader found {len(hits)} tokens in a page with one")
-    print(f"  {len(items)} Skroutz cards parsed, {len(hits)} Public token found")
+    print(f"  {len(items)} Skroutz cards parsed, category-first flow in {len(stub.asked)} "
+          f"requests, {len(hits)} Public token found")
 
 
 def main() -> int:

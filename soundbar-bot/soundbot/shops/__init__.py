@@ -7,7 +7,7 @@ from .scandia_like import Scandia, MegaElectric
 from .stephanis import Stephanis
 from .public_like import PublicCy, PublicGr
 from .kotsovolos_like import KotsovolosCy, KotsovolosGr
-from .skroutz import Skroutz
+from .skroutz import Skroutz, SkroutzCy
 
 SHOPS: dict[str, Type[Shop]] = {
     # Cyprus
@@ -17,6 +17,7 @@ SHOPS: dict[str, Type[Shop]] = {
     Stephanis.name: Stephanis,
     PublicCy.name: PublicCy,
     KotsovolosCy.name: KotsovolosCy,
+    SkroutzCy.name: SkroutzCy,
     # Greece
     Skroutz.name: Skroutz,
     PublicGr.name: PublicGr,
