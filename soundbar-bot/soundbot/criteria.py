@@ -25,6 +25,7 @@ Q990H-class four-piece set, which is what the fit score is for.
 """
 from __future__ import annotations
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Optional
 
@@ -53,14 +54,16 @@ PHYSICAL_HEIGHT = ("upfiring", "dedicated")
 # A channel layout as the shops print it: 11.1.4, 5.1.2, 7.0.2, 3.1, 2.0 …
 _LAYOUT_RE = re.compile(r"(?<![0-9.])([0-9]{1,2})\.([0-9])(?:\.([0-9]))?(?![0-9.])")
 
-# Words that say the listing is a soundbar rather than a speaker, a TV or an amplifier.
-_BAR_WORDS = ("SOUNDBAR", "SOUND BAR", "SOUNDBARS", "ΣΟΥΝΤΜΠΑΡ", "ΜΠΑΡΑ ΗΧΟΥ", "THEATRE BAR", "THEATER BAR",
-              "CINEMA BAR", "HOME CINEMA BAR")
+# Words that say the listing is a soundbar rather than a speaker, a TV or an amplifier. Greek shops use
+# their own word for it, and Sony's bars carry "Theatre Bar" in the product name instead. Written
+# without accents because every title is folded before it is tested.
+_BAR_WORDS = ("SOUNDBAR", "SOUND BAR", "SOUNDBARS", "ΣΟΥΝΤΜΠΑΡ", "ΗΧΟΜΠΑΡΑ", "ΜΠΑΡΑ ΗΧΟΥ",
+              "ΜΠΑΡΑ ΗΧΟΥ ΤΗΛΕΟΡΑΣΗΣ", "THEATRE BAR", "THEATER BAR", "CINEMA BAR", "HOME CINEMA BAR")
 # Listings that lead with one of these are a component sold on its own, even when the title also
 # names a soundbar ("Subwoofer for Soundbar HARMAN KARDON Citation Sub").
 _COMPONENT_LEAD = re.compile(
     r"^(SUBWOOFER|SUB\b|WIRELESS SUBWOOFER|REAR SPEAKER|REAR SPEAKERS|WIRELESS SURROUND|SURROUND SPEAKER|"
-    r"SURROUND SPEAKERS|SPEAKER KIT|ΥΠΟΓΟΥΦΕΡ|ΥΠΟΓΟΎΦΕΡ|ΗΧΕΙΑ SURROUND)")
+    r"SURROUND SPEAKERS|SPEAKER KIT|ΥΠΟΓΟΥΦΕΡ|ΗΧΕΙΑ SURROUND)")
 # Accessories that are never a soundbar whatever else the title says.
 _ACCESSORY = ("BRACKET", "WALL MOUNT", "ΒΑΣΗ ΤΟΙΧΟΥ", "ΒΑΣΗ ", "STAND FOR", "CABLE", "ΚΑΛΩΔΙΟ",
               "REMOTE", "ΤΗΛΕΧΕΙΡΙΣΤΗΡΙΟ", "PC SPEAKERS", "ΗΧΕΙΑ Η/Υ", "SOUNDBAR STAND", "COVER",
@@ -79,13 +82,37 @@ def parse_layout(text: str) -> Optional[tuple[int, int, int]]:
     return int(main), int(sub), int(height or 0)
 
 
-def looks_like_soundbar(title: str) -> bool:
-    """The title is a soundbar listing and not a component, an accessory or another product."""
-    up = (title or "").upper()
+def fold(text: str) -> str:
+    """Upper-case and drop accents, so 'Ηχομπάρα' and 'ΗΧΟΜΠΑΡΑ' read the same.
+
+    Greek shops write the accented form and upper-casing keeps the accent (Ηχομπάρα -> ΗΧΟΜΠΆΡΑ), so a
+    plain upper-case comparison misses every Greek title.
+    """
+    s = unicodedata.normalize("NFD", (text or "").upper())
+    return "".join(c for c in s if not unicodedata.combining(c))
+
+
+def is_component_or_accessory(title: str) -> bool:
+    """A subwoofer, a rear-speaker kit, a bracket or a cable rather than a soundbar.
+
+    This is the hard rejection: it holds whatever else the title says, and it is all that the matcher
+    needs, because a model code in the title is its own proof that the listing is that soundbar.
+    """
+    up = fold(title).strip()
     if any(k in up for k in _ACCESSORY):
+        return True
+    return bool(_COMPONENT_LEAD.match(up))
+
+
+def looks_like_soundbar(title: str) -> bool:
+    """The title names a soundbar in so many words.
+
+    Used by the discovery scan, which has no model code to go on and must not report every speaker in
+    the shop. A listing that fails this can still be matched by a watchlist alias.
+    """
+    if is_component_or_accessory(title):
         return False
-    if _COMPONENT_LEAD.match(up.strip()):
-        return False
+    up = fold(title)
     return any(w in up for w in _BAR_WORDS)
 
 

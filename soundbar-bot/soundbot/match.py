@@ -1,6 +1,9 @@
 """Match shop product titles to watchlist models.
 
 Rules:
+- The listing has to not be a component or an accessory; a model code in the title is otherwise proof
+  enough that it is that soundbar, so no "soundbar" word is required to match (Greek shops often print
+  their own word, or none).
 - Title and aliases are normalised to upper-case alphanumerics separated by single spaces.
 - An alias matches when it appears in the title as whole words, or - for aliases of five characters or
   more - embedded in a longer code with no spaces, so "Q990H" matches "HW-Q990H/EN" while a short alias
@@ -9,7 +12,6 @@ Rules:
 - A generation marker has to agree: a title that says MK2 is only ever matched by a model whose own
   aliases say MK2, and a plain title is never matched by an MK2 model. JBL sells the Bar 1000 and the
   Bar 1000MK2 side by side and their codes differ by two characters.
-- The listing has to look like a soundbar rather than a subwoofer, a rear-speaker kit or an accessory.
 - When several models match, the longest matching alias wins. Rejected models take part as negatives,
   so a "JBL Bar 800MK2" listing is claimed by the rejected 800MK2 rather than by the Bar 800.
 
@@ -19,7 +21,7 @@ from __future__ import annotations
 import re
 from typing import Iterable, Optional
 
-from .criteria import Criteria, looks_like_soundbar, parse_layout
+from .criteria import Criteria, is_component_or_accessory, parse_layout
 from .watchlist import Model, Rejected
 
 _NON_ALNUM = re.compile(r"[^A-Z0-9]+")
@@ -68,7 +70,7 @@ def _alias_hits(norm_title: str, alias: str) -> bool:
 
 def is_accessory(title: str) -> bool:
     """A component or accessory sold on its own rather than a soundbar."""
-    return not looks_like_soundbar(title)
+    return is_component_or_accessory(title)
 
 
 def match_aliases(title: str, aliases: Iterable[str], crit: Criteria) -> Optional[str]:

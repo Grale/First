@@ -1,5 +1,5 @@
 {
-  "_README": "Real product titles captured from the shop category pages on 2026-10-26, with the model each one matched at the time. tools/selftest.py replays them so a change to the matcher or the watchlist cannot quietly stop recognising a listing. expected is the model_key, 'rejected' for a checked-and-rejected model, 'candidate' for a soundbar the discovery scan should report, or 'ignore'.",
+  "_README": "Real product titles captured from the shop category pages on 2026-10-26, with the model each one matched at the time. tools/selftest.py replays them so a change to the matcher or the watchlist cannot quietly stop recognising a listing. expected is the model_key, 'rejected' for a checked-and-rejected model, 'candidate' for a soundbar the discovery scan should report, or 'ignore'. The 'greek_forms' group is hand-written rather than captured: Greek shops print their own word for a soundbar and upper-casing keeps the accent, so these guard the accent folding that lets a Greek title be matched at all.",
   "shops": {
     "electroline": [
       {
@@ -519,6 +519,44 @@
       {
         "title": "Wireless Surround Speakers HARMAN KARDON Citation 2.0 HKCITASURRBLKEU black",
         "expected": "ignore"
+      }
+    ],
+    "greek_forms": [
+      {
+        "title": "Samsung HW-Q990F Ηχομπάρα 11.1.4 με Ασύρματο Subwoofer, Μαύρο",
+        "expected": "HW-Q990F"
+      },
+      {
+        "title": "JBL Bar 1300MK2 Ηχομπάρα 11.1.4 με Αποσπώμενα Ηχεία",
+        "expected": "BAR 1300MK2"
+      },
+      {
+        "title": "LG S95TR Μπάρα Ήχου 9.1.5 810W με Ασύρματο Subwoofer",
+        "expected": "S95TR"
+      },
+      {
+        "title": "Sony BRAVIA Theatre Bar 9 - Dolby Atmos Single 7.0.2 με Bluetooth",
+        "expected": "HT-A9000"
+      },
+      {
+        "title": "Sonos Arc Ultra Ηχομπάρα 9.1.4 Μαύρο",
+        "expected": "ARC ULTRA"
+      },
+      {
+        "title": "Υπογούφερ Marshall Heston Sub 200 για Ηχομπάρα",
+        "expected": "ignore"
+      },
+      {
+        "title": "Βάση τοίχου για Soundbar Samsung HW-Q990F",
+        "expected": "ignore"
+      },
+      {
+        "title": "Samsung HW-B650F Ηχομπάρα 3.1",
+        "expected": "rejected"
+      },
+      {
+        "title": "Ηχομπάρα Hisense AX5125H 5.1.2 Dolby Atmos",
+        "expected": "candidate"
       }
     ]
   }

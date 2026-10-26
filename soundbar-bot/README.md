@@ -116,7 +116,13 @@ list and its replacement is not.
   printing a layout. A shop that prints *no* layout and *no* "Atmos" for a bar that does have height
   drivers will be missed — that is what the research files are for.
 * Aliases are the tokens a shop title contains (`Q990H` → `HW-Q990H/EN`, `JBLBAR1300M2` →
-  `JBLBAR1300M2BLKEP`). The matcher prefers the longest matching alias and lets rejected models win ties.
+  `JBLBAR1300M2BLKEP`). A model code in a title is proof enough that the listing is that soundbar, so
+  matching does not require the word "soundbar" anywhere — Greek shops write *Ηχομπάρα* or *Μπάρα Ήχου*,
+  and Sony's bars carry "Theatre Bar" in the product name instead. Titles are folded (upper-cased with
+  accents stripped) before any comparison, because upper-casing Greek keeps the accent and
+  `Ηχομπάρα` would never equal `ΗΧΟΜΠΑΡΑ`. Subwoofers, rear-speaker kits, brackets and cables are still
+  thrown out, in Greek as well as English. The matcher prefers the longest matching alias and lets
+  rejected models win ties.
   Two extra rules keep neighbouring models apart: an alias shorter than five characters has to match as a
   whole word, and a generation marker has to agree, so a title saying MK2 (or a part number saying `M2`)
   is only ever claimed by a model whose own aliases say the same. Models that only share a layout, like the
@@ -131,6 +137,8 @@ list and its replacement is not.
 .venv\Scripts\python.exe main.py run-once --country CY   # or --shop electroline --shop skroutz
 .venv\Scripts\python.exe main.py report                  # current prices per model and shop
 .venv\Scripts\python.exe main.py discover                # soundbars in the shops that are not watched
+.venv\Scripts\python.exe main.py probe --shop skroutz   # what one shop returns, and where each listing is lost
+.venv\Scripts\python.exe main.py probe --shop skroutz --model Q990H   # ...for one model's search
 .venv\Scripts\python.exe main.py test-notify             # test toast + ntfy push
 .venv\Scripts\python.exe main.py validate                # active criteria + check watchlist.json
 .venv\Scripts\python.exe tools\selftest.py               # offline checks, no network
@@ -159,7 +167,7 @@ open at once.
 | Kotsovolos CY | CY | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | Ported unchanged from the TV bot. Not re-run here |
 | Public GR | GR | Same findbar.io API as Public CY. The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
 | Kotsovolos GR | GR | Same HCL Commerce APIs as Kotsovolos CY, with the store id read from the storefront and cached | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |
-| Skroutz | GR | One `/search?keyphrase=<model>` query per watched model; the cards are read by following the product links rather than by class name | **Written but never run.** Verify with `run-once --shop skroutz` |
+| Skroutz | GR | One `/search?keyphrase=<model>` query per watched model; the cards are read by following the product links rather than by class name | **Tested against the live shop**: 217 products from 36 searches, titles and prices read correctly |
 
 Every shop above turns away a plain HTTP client except Electroline, Scandia, MegaElectric and Stephanis.
 Fetching escalates `requests` → `curl_cffi` (Chrome TLS impersonation) → Playwright Chromium (only if

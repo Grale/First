@@ -107,6 +107,76 @@ def cmd_discover(args) -> int:
     return 0
 
 
+def cmd_probe(args) -> int:
+    """Show what one shop returns and where each listing is lost, item by item.
+
+    A shop that reports a lot of items and few matches is doing one of four things, and this says
+    which: returning products that are not soundbars, returning soundbars whose title prints no
+    height channels, returning the right product under a title the aliases do not cover, or pricing
+    it outside the range.
+    """
+    from soundbot.criteria import looks_like_soundbar, parse_layout
+    from soundbot.fetch import Fetcher
+    from soundbot.match import best_match, matches_rejected
+
+    cfg = config_mod.load()
+    crit = criteria_mod.from_config(cfg)
+    wl = watchlist_mod.load()
+    models = wl.watched(crit)
+    if args.model:
+        wanted = [m for m in models if args.model.upper() in m.model_key.upper()]
+        if not wanted:
+            _print(f"no watched model matches {args.model!r}")
+            return 1
+        models = wanted
+    lo = float(cfg["price_range"]["min"])
+    hi = float(cfg["price_range"]["max"])
+
+    fetch_cfg = cfg.get("fetch", {})
+    fetcher = Fetcher(timeout=float(fetch_cfg.get("timeout_s", 40)),
+                      pause=float(fetch_cfg.get("pause_s", 1.0)),
+                      playwright_mode=fetch_cfg.get("playwright", "auto"))
+    shop = SHOPS[args.shop](fetcher)
+    _print(f"probing {shop.label} with {len(models)} model(s)…")
+    try:
+        items = shop.fetch_items(models)
+    finally:
+        fetcher.close()
+
+    def verdict(it) -> str:
+        m = best_match(it.title, models, crit, wl.rejected)
+        if m is not None:
+            if it.price is not None and not (lo <= it.price <= hi):
+                return f"PRICED OUT  would match {m.model_key}, €{it.price:,.2f} outside €{lo:,.0f}-€{hi:,.0f}"
+            return f"MATCH       {m.model_key}"
+        if matches_rejected(it.title, wl.rejected, crit):
+            return "rejected    a checked-and-rejected model"
+        if not looks_like_soundbar(it.title):
+            return "not a bar   no soundbar word in the title, or it reads as a component"
+        layout = parse_layout(it.title)
+        if layout is None:
+            if "ATMOS" in it.title.upper():
+                return "CANDIDATE   claims Atmos, no layout printed"
+            return "no layout   no channel layout and no Atmos claim in the title"
+        if layout[2] < crit.min_height_channels:
+            return f"no height   title prints {layout[0]}.{layout[1]}.{layout[2]}"
+        return f"CANDIDATE   {layout[0]}.{layout[1]}.{layout[2]}, not on the watchlist"
+
+    counts: dict[str, int] = {}
+    _print(f"\n{len(items)} items returned\n")
+    for it in items[:args.limit]:
+        v = verdict(it)
+        counts[v.split()[0]] = counts.get(v.split()[0], 0) + 1
+        _print(f"  {v[:58]:<58} €{(it.price or 0):>8,.2f}  {it.title[:70]}")
+    if len(items) > args.limit:
+        for it in items[args.limit:]:
+            v = verdict(it)
+            counts[v.split()[0]] = counts.get(v.split()[0], 0) + 1
+        _print(f"  … {len(items) - args.limit} more not printed")
+    _print("\nsummary: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
+    return 0
+
+
 def cmd_test_notify(args) -> int:
     from soundbot import notify
     cfg = config_mod.load()
@@ -181,6 +251,12 @@ def main(argv=None) -> int:
     s = sub.add_parser("discover", help="soundbars in the shops that fit the criteria but are not watched")
     add_shop_args(s)
     s.set_defaults(fn=cmd_discover)
+
+    s = sub.add_parser("probe", help="show what one shop returns and where each listing is lost")
+    s.add_argument("--shop", required=True, choices=list(SHOPS))
+    s.add_argument("--model", help="query for this model only (substring of a model key)")
+    s.add_argument("--limit", type=int, default=40, help="how many items to print (default 40)")
+    s.set_defaults(fn=cmd_probe)
 
     s = sub.add_parser("test-notify", help="send a test toast and ntfy push")
     s.set_defaults(fn=cmd_test_notify)
