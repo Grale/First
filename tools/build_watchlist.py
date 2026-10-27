@@ -52,6 +52,14 @@ def reason_for(e: dict, crit) -> str:
     stated = (e.get("reject_reason") or "").strip()
     if stated:
         return stated
+    # Computed problems come first, before anything read out of prose. The notes are a paragraph of
+    # English and a keyword can easily belong to a clause about something else: the ViewFinity S6's
+    # note mentions that its *webcam variant* is discontinued, which once made the whole entry read as
+    # "discontinued" when the real and checkable reason was its VA panel.
+    problems = crit.spec_problems(e.get("hz"), e.get("width"), e.get("height"), e.get("height_adjust"),
+                                 e.get("usb_c_pd_w"), e.get("kvm"), e.get("vrr"), e.get("panel") or "")
+    if problems:
+        return "; ".join(problems)
     panel = (e.get("panel") or "").upper()
     notes = (e.get("notes") or "").lower()
     if any(h in panel for h in _PANEL_HINTS):
@@ -60,10 +68,6 @@ def reason_for(e: dict, crit) -> str:
         return "no European model with this code"
     if "discontinued" in notes:
         return "discontinued, not stocked in Cyprus"
-    problems = crit.spec_problems(e.get("hz"), e.get("width"), e.get("height"), e.get("height_adjust"),
-                                 e.get("usb_c_pd_w"), e.get("kvm"), e.get("vrr"))
-    if problems:
-        return "; ".join(problems)
     return "specs unverified"
 
 
@@ -117,7 +121,7 @@ def main(research_dir: Path) -> None:
                 aliases.append(a)
         qualifies = (crit.specs_qualify(e.get("hz"), e.get("width"), e.get("height"),
                                         e.get("height_adjust"), e.get("usb_c_pd_w"), e.get("kvm"),
-                                        e.get("vrr"))
+                                        e.get("vrr"), e.get("panel") or "")
                      and e.get("qualifies", True) is not False)
         if qualifies:
             models.append({

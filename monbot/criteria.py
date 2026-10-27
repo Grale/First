@@ -160,6 +160,28 @@ def _other_panel_re(panels: tuple[str, ...]) -> Optional[re.Pattern]:
     return re.compile("|".join(parts)) if parts else None
 
 
+def panel_families_named(panel: str) -> set[str]:
+    """Which families a watch-list entry's panel description names.
+
+    A panel description is a short controlled vocabulary written by the researcher ("IPS Black",
+    "Nano IPS", "QD-OLED", "WOLED", "Mini LED VA"), not shop prose, so it is read strictly. That is the
+    opposite of the title test in `panel_ok`, where naming no family at all has to pass because most
+    shop titles name none.
+    """
+    t = fold_greek(panel).replace("-", " ")
+    words = set(re.findall(r"[A-Z0-9]+", t))
+    named: set[str] = set()
+    if "MINI LED" in t or "MINILED" in words:
+        named.add("miniled")
+    if any("OLED" in w for w in words):      # OLED, QD OLED, WOLED
+        named.add("oled")
+    if "IPS" in words:
+        named.add("ips")
+    if "VA" in words or "AMVA" in words:
+        named.add("va")
+    return named
+
+
 def strip_aspect(norm_title: str) -> str:
     """The title with aspect-ratio pairs and unit-qualified numbers blanked out.
 
@@ -242,6 +264,19 @@ class Criteria:
             return True
         return any(s in self.sizes for s in sizes_from_cm(t))
 
+    def has_standalone_size(self, norm_title: str) -> bool:
+        """A wanted size appears as a word of its own, not buried inside a part number.
+
+        "LG OLED evo 42C34 42\"" contains 34 inside the model code and 42 as the actual size. Both
+        readings are legitimate on their own - LS34DG850 really does encode 34 - so the tie is broken
+        by which one stands alone.
+        """
+        t = strip_aspect(norm_title)
+        tokens = set(t.split())
+        if any(str(s) in tokens for s in self.sizes):
+            return True
+        return any(s in self.sizes for s in sizes_from_cm(t))
+
     def names_other_size(self, norm_title: str) -> bool:
         """The title names a size that is not wanted, so it is a different variant."""
         t = strip_aspect(norm_title)
@@ -273,12 +308,33 @@ class Criteria:
         return w >= self.min_width and h >= self.min_height
 
     # ---------------- spec tests ----------------
+    def panel_family_problem(self, panel: str) -> Optional[str]:
+        """Why a panel description falls outside the wanted families, or None.
+
+        A panel that names an unwanted family is rejected even when it also names a wanted one: a
+        Mini LED backlight behind a VA panel is still a VA panel at a desk, and the backlight does not
+        redeem the viewing angles. So "Mini LED VA" fails while "Mini LED IPS" passes.
+        """
+        if not self.panels or "any" in self.panels:
+            return None
+        named = panel_families_named(panel)
+        if not named:
+            return "panel family unverified"
+        unwanted = sorted(named - set(self.panels))
+        if unwanted:
+            labels = ", ".join(PANEL_FAMILIES[u]["label"] for u in unwanted)
+            return f"panel is {labels}, which is not one of the wanted families ({self.panel_label})"
+        return None
+
     def spec_problems(self, hz: Optional[int] = None, width: Optional[int] = None,
                       height: Optional[int] = None, height_adjust: Optional[bool] = None,
                       usb_c_pd_w: Optional[int] = None, kvm: Optional[bool] = None,
-                      vrr: Optional[bool] = None) -> list[str]:
+                      vrr: Optional[bool] = None, panel: str = "") -> list[str]:
         """Why these specs fall short of the floor; empty when they qualify."""
         out: list[str] = []
+        panel_problem = self.panel_family_problem(panel)
+        if panel_problem:
+            out.append(panel_problem)
         if not hz or hz < self.min_hz:
             out.append(f"{hz if hz else 'unknown'} Hz panel, floor is {self.min_hz} Hz")
         if not width or not height:

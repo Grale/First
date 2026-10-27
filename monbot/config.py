@@ -21,11 +21,14 @@ DEFAULTS: dict[str, Any] = {
                      "megaelectric": {"catalog_path": ""}, "stephanis": {"category_url": ""},
                      "public": {"findbar_token": ""}, "kotsovolos": {}},
     # what counts as a monitor worth watching; see monbot/criteria.py
-    "criteria": {"sizes": [34], "panels": ["oled", "miniled", "ips"], "min_hz": 100,
+    "criteria": {"sizes": [34], "panels": ["miniled", "ips"], "min_hz": 100,
                  "min_width": 3440, "min_height": 1440, "require_height_adjust": True,
-                 "require_usb_c_pd_w": 0, "require_kvm": False, "require_vrr": False},
-    # a shop-data-error filter, not a budget: 34-inch monitors run about 250 to 1,800 EUR
-    "price_range": {"min": 250, "max": 1800},
+                 "require_usb_c_pd_w": 65, "require_kvm": False, "require_vrr": False},
+    # A shop-data-error filter, not a budget. The floor was 250 and a real 34-inch AOC at 249 fell
+    # through it, which is the same mistake in the other direction as a cap set too low: the range has
+    # to clear the junk a search returns (ink cartridges at 13 EUR, a phone at 50) without touching a
+    # product anyone actually sells.
+    "price_range": {"min": 150, "max": 1800},
     "scoring": {"fit_weight": 0.5, "review_weight": 0.5, "profile": "work"},
 }
 

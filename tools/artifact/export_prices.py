@@ -44,7 +44,8 @@ def live_items(cfg: dict, models) -> tuple[list[Item], list[str]]:
                 continue
             print(f"  scanning {cls.label}…", file=sys.stderr)
             try:
-                items.extend(cls(fetcher).fetch_items(models))
+                # the broad sweep, not the per-watchlist-model search: see cmd_compare in main.py
+                items.extend(cls(fetcher).fetch_all_products())
             except Exception as e:
                 failed.append(name)
                 print(f"  {name} failed: {type(e).__name__}: {e}", file=sys.stderr)
@@ -72,7 +73,7 @@ def main() -> int:
     models = wl.watched(crit)
 
     items, failed = db_items() if args.from_db else live_items(cfg, models)
-    groups = group_items(items, models, crit, wl.rejected)
+    groups = group_items(items, models, crit, wl.rejected, cfg.get("price_range"))
 
     out = {
         "as_of": datetime.now().isoformat(timespec="minutes"),

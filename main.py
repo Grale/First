@@ -120,13 +120,17 @@ def cmd_compare(args) -> int:
                 continue
             _print("  ", f"scanning {cls.label}…")
             try:
-                items.extend(cls(fetcher).fetch_items(models))
+            # fetch_all_products(), not fetch_items(models): the search-driven shops query once per
+            # watchlist model, so a narrower watch list would silently narrow the market survey too.
+            # Kotsovolos returned 111 products against a twelve-model list and 43 against a three-model
+            # one, for no reason connected to what the shops actually stock.
+                items.extend(cls(fetcher).fetch_all_products())
             except Exception as e:
                 failed.append(f"{name} ({type(e).__name__})")
     finally:
         fetcher.close()
 
-    groups = group_items(items, models, crit, wl.rejected)
+    groups = group_items(items, models, crit, wl.rejected, cfg.get("price_range"))
     multi = [g for g in groups if len(g.ranked) >= args.min_shops]
     labels = shop_labels()
 

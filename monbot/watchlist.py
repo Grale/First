@@ -58,7 +58,8 @@ class Model:
     def meets(self, crit: "Criteria") -> bool:
         """True when the specs clear the floor in the active criteria."""
         s = self.specs
-        return crit.specs_qualify(s.hz, s.width, s.height, s.height_adjust, s.usb_c_pd_w, s.kvm, s.vrr)
+        return crit.specs_qualify(s.hz, s.width, s.height, s.height_adjust, s.usb_c_pd_w,
+                                  s.kvm, s.vrr, self.panel)
 
     @property
     def resolution_label(self) -> str:
@@ -132,7 +133,7 @@ class Watchlist:
                 problems.append(f"{m.model_key}: missing source_url")
             s = m.specs
             for why in crit.spec_problems(s.hz, s.width, s.height, s.height_adjust,
-                                          s.usb_c_pd_w, s.kvm, s.vrr):
+                                          s.usb_c_pd_w, s.kvm, s.vrr, m.panel):
                 problems.append(f"{m.model_key}: {why}")
         return problems
 

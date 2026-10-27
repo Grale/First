@@ -64,11 +64,11 @@ page.
 | Setting | Value | Meaning |
 |---|---|---|
 | `sizes` | `[34]` | 34 inch only. 38 and 39-inch ultrawides sit in the same shop aisle; add them here and they are watched and surfaced by Discover too |
-| `panels` | `["oled", "miniled", "ips"]` | OLED (QD-OLED and WOLED), Mini LED backlights, and IPS. VA is excluded, which is the only reason several otherwise excellent work monitors are in the rejected list |
+| `panels` | `["miniled", "ips"]` | Mini LED backlights and IPS. OLED is excluded for text fringing and burn-in against a static desktop, VA for off-axis shift at desk distance. A panel naming an unwanted family is rejected even when it also names a wanted one, so "Mini LED VA" fails while "Mini LED IPS" passes |
 | `min_hz` | `100` | Native refresh floor. 120 Hz scores higher but 100 Hz still qualifies, so the 100 Hz work-and-dock panels stay in play |
 | `min_width` / `min_height` | `3440` / `1440` | 3440×1440 or better. Excludes the 2560×1080 tier outright; 5120×2160 qualifies and scores higher on density |
 | `require_height_adjust` | `true` | A fixed-height stand does not qualify |
-| `require_usb_c_pd_w` | `0` | USB-C power delivery is **scored, not required**: up to 12 of the work profile's points |
+| `require_usb_c_pd_w` | `65` | Enough to charge a laptop over one cable. 15 W and 18 W ports exist on 34-inch monitors and charge a phone; the floor exists to tell them apart. 90 W still scores higher than 65 |
 | `require_kvm` | `false` | Same - a KVM earns 7 points rather than gating |
 | `require_vrr` | `false` | Same |
 
@@ -96,10 +96,12 @@ Rules live on the Settings page (saved to `config.json`):
 | Back in stock: a model that was out of stock or missing in a shop is available again | on |
 | Same alert not repeated for | 7 days (a lower price re-alerts at once) |
 | Checks every | 3 hours |
-| Prices outside this range are treated as shop data errors | €250 to €1,800 |
+| Prices outside this range are treated as shop data errors | €150 to €1,800 |
 
 The price range is a data-error filter, not a budget. It was €700–9,000 for big TVs; a 34-inch monitor
-priced at €2,400 is a shop mistake, one at €279 is a real cheap VA panel.
+priced at €2,400 is a shop mistake, one at €249 is a real AOC. The floor started at €250 and promptly
+hid that AOC by a single euro, so it is €150: above the ink cartridges and phone cases a search for
+"34" returns, below anything anyone sells as a monitor.
 
 ## Ranking
 

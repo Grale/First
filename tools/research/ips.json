@@ -138,7 +138,7 @@
     "width": 3440,
     "height": 1440,
     "response_ms": 1,
-    "usb_c_pd_w": null,
+    "usb_c_pd_w": 15,
     "kvm": true,
     "height_adjust": true,
     "curvature": "flat",
@@ -156,6 +156,6 @@
     "aliases": [
       "M34WQ"
     ],
-    "notes": "Checked at this exact model against a review and retailer tables. Flat, not curved - it is the successor to a curved VA model, which is worth knowing if the curve matters to you. KVM is confirmed by the review, which describes switching one keyboard and mouse set between computers. The USB-C port is confirmed to exist but no source consulted gave a power-delivery wattage, so it is left unknown rather than entered as the 15 W that is often repeated: on a work profile that field is worth up to 12 points and a wrong number there would move the ranking. The 1 ms figure is MPRT. No DisplayHDR certification was found, only 'HDR' in marketing copy, so the HDR field is empty."
+    "notes": "Checked at this exact model against a review and retailer tables. Flat, not curved - it is the successor to a curved VA model, which is worth knowing if the curve matters to you. KVM is confirmed by the review, which describes switching one keyboard and mouse set between computers. USB-C power delivery is 15 W, which three independent sources agree on (TechPowerUp's spec table and review, MonitorNerds, and a Polish review); one retailer listing says 18 W and two others say the port has no power delivery at all. MonitorNerds puts it plainly: at 15 W a USB-C laptop still needs its own adapter. Whichever of those figures is right, none of them charges a laptop, which is what the 65 W floor exists to catch. The 1 ms figure is MPRT. No DisplayHDR certification was found, only 'HDR' in marketing copy, so the HDR field is empty."
   }
 ]

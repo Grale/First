@@ -12,7 +12,6 @@
       34
     ],
     "panels": [
-      "oled",
       "miniled",
       "ips"
     ],
@@ -20,7 +19,7 @@
     "min_width": 3440,
     "min_height": 1440,
     "require_height_adjust": true,
-    "require_usb_c_pd_w": 0,
+    "require_usb_c_pd_w": 65,
     "require_kvm": false,
     "require_vrr": false
   },
@@ -52,7 +51,7 @@
     "playwright": "auto"
   },
   "price_range": {
-    "min": 250,
+    "min": 150,
     "max": 1800
   },
   "scoring": {

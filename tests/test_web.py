@@ -66,6 +66,7 @@ def main() -> int:
     client = app.test_client()
 
     wl = watchlist_mod.load()
+    check(bool(wl.models), "the watchlist is empty; the dashboard test needs at least one model")
     a_key = wl.models[0].model_key if wl.models else "U3425WE"
 
     # ---- every page answers ----
@@ -122,17 +123,20 @@ def main() -> int:
     check(after["price_range"] == before["price_range"], "an empty form changed the price range")
 
     # ---- the watchlist form keeps "unverified" distinct from "no" ----
-    model = wl.get("LS34BG850")
+    # any watched model whose KVM is genuinely unverified; which models those are depends on the
+    # buyer's criteria, so the test picks one rather than naming it and breaking when they change
+    model = next((m for m in wl.models if m.specs.kvm is None), None)
     if model is not None:
-        check(model.specs.kvm is None, "test fixture changed: LS34BG850 should have an unknown KVM")
         r = client.post("/watchlist/save", data={
-            "model_key": "LS34BG850", "original_key": "LS34BG850", "brand": "Samsung",
-            "panel": "QD-OLED", "size_inch": "34", "hz": "175", "width": "3440", "height": "1440",
+            "model_key": model.model_key, "original_key": model.model_key, "brand": model.brand,
+            "panel": model.panel, "size_inch": str(model.size_inch or 34),
+            "hz": str(model.specs.hz or 120), "width": "3440", "height": "1440",
+            "usb_c_pd_w": str(model.specs.usb_c_pd_w or ""),
             "kvm": "", "height_adjust": "1", "vrr": "1", "enabled": "on",
             "source_url": model.source_url, "aliases": ", ".join(model.aliases),
         })
         check(r.status_code in (302, 303), f"POST /watchlist/save returned {r.status_code}")
-        again = watchlist_mod.load().get("LS34BG850")
+        again = watchlist_mod.load().get(model.model_key)
         check(again is not None and again.specs.kvm is None,
               "an unverified KVM became a definite 'no' after a round-trip through the form")
         check(again is not None and again.specs.height_adjust is True,

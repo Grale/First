@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-26T15:11",
+ "as_of": "2026-10-27T07:56",
  "source": "live scan",
  "shops": {
   "electroline": "Electroline",
@@ -11,13 +11,13 @@
  },
  "failed_shops": [],
  "currency": "EUR",
- "criteria_label": "34\" OLED, Mini LED or IPS",
+ "criteria_label": "34\" Mini LED or IPS",
  "groups": [
   {
    "key": "LS34DG850",
-   "label": "Samsung LS34DG850 (Odyssey OLED G8 (G85SD))",
-   "confident": true,
-   "model_key": "LS34DG850",
+   "label": "LS34DG850SUXDU",
+   "confident": false,
+   "model_key": null,
    "spread_pct": 55.6,
    "offers": [
     {
@@ -32,7 +32,7 @@
      "shop": "kotsovolos",
      "price": 1099.0,
      "list_price": null,
-     "in_stock": true,
+     "in_stock": null,
      "url": "https://www.kotsovolos.cy/SearchDisplay?q=317677&storeId=10161",
      "title": "Samsung LS34DG850SUXDU 34\" UWQHD OLED 175Hz"
     },
@@ -47,29 +47,20 @@
    ]
   },
   {
-   "key": "M3501W",
-   "label": "M3501W",
-   "confident": false,
-   "model_key": null,
-   "spread_pct": null,
-   "offers": [
-    {
-     "shop": "kotsovolos",
-     "price": 49.99,
-     "list_price": null,
-     "in_stock": null,
-     "url": "https://www.kotsovolos.cy/SearchDisplay?q=183193&storeId=10161",
-     "title": "Philips Linea V M3501W/34"
-    }
-   ]
-  },
-  {
    "key": "CU34G4",
    "label": "CU34G4",
    "confident": false,
    "model_key": null,
-   "spread_pct": 0.0,
+   "spread_pct": 20.1,
    "offers": [
+    {
+     "shop": "stephanis",
+     "price": 249.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/408916",
+     "title": "PC Monitor 34\" AOC Curved CU34G4 WLED Fast VA black"
+    },
     {
      "shop": "electroline",
      "price": 299.0,
@@ -77,14 +68,6 @@
      "in_stock": true,
      "url": "https://electroline.cy/en/products/computing/peripherals/pc-monitors/aoc-gaming-monitor-34-curved/",
      "title": "AOC CU34G4 Curved Gaming PC Monitor, 34\""
-    },
-    {
-     "shop": "stephanis",
-     "price": 299.0,
-     "list_price": null,
-     "in_stock": null,
-     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/408916",
-     "title": "PC Monitor 34\" AOC Curved CU34G4 WLED Fast VA black"
     }
    ]
   },
@@ -404,9 +387,9 @@
   },
   {
    "key": "LS34BG850",
-   "label": "Samsung LS34BG850 (Odyssey OLED G8 (G85SB))",
-   "confident": true,
-   "model_key": "LS34BG850",
+   "label": "LS34BG850SUXEN",
+   "confident": false,
+   "model_key": null,
    "spread_pct": null,
    "offers": [
     {
@@ -420,26 +403,56 @@
    ]
   },
   {
-   "key": "MPG341CQPX",
-   "label": "MSI MPG341CQPX (MPG QD-OLED)",
-   "confident": true,
-   "model_key": "MPG341CQPX",
+   "key": "34GS95QE",
+   "label": "34GS95QE",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1199.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=304036&storeId=10161",
+     "title": "LG 34GS95QE-B.OLED 240Hz 34\""
+    }
+   ]
+  },
+  {
+   "key": "AW3423DWF",
+   "label": "AW3423DWF",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1229.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=279470&storeId=10161",
+     "title": "Dell Alienware AW3423DWF QD-OLED 34\""
+    }
+   ]
+  },
+  {
+   "key": "341CQPX",
+   "label": "341CQPX",
+   "confident": false,
+   "model_key": null,
    "spread_pct": null,
    "offers": [
     {
      "shop": "kotsovolos",
      "price": 1399.0,
      "list_price": null,
-     "in_stock": true,
+     "in_stock": null,
      "url": "https://www.kotsovolos.cy/SearchDisplay?q=334334&storeId=10161",
      "title": "MSI MPG 341CQPX 34'' QD-OLED"
     }
    ]
   }
  ],
- "best_prices": {
-  "LS34DG850": 899.0,
-  "LS34BG850": 1199.0,
-  "MPG341CQPX": 1399.0
- }
+ "best_prices": {}
 }

@@ -104,7 +104,7 @@
   ],
   "M34WQ": [
     {
-      "reason": "USB-C power delivery wattage undocumented; if it is the commonly repeated 15 W it docks nothing",
+      "reason": "USB-C delivers 15 W, which charges a phone and not a laptop: no single-cable docking",
       "points": -3,
       "profiles": [
         "work"

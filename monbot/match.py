@@ -156,13 +156,28 @@ def matches_rejected(title: str, negatives: Iterable[Rejected], crit: Criteria) 
     return any(match_aliases(title, [r.model_key, *r.aliases], crit) is not None for r in negatives)
 
 
-def looks_like_candidate(title: str, crit: Criteria) -> bool:
+def looks_like_candidate(title: str, crit: Criteria, check_panel: bool = True) -> bool:
     """Loose filter used by the discovery scan: wanted size, and nothing that rules the title out.
 
     Panel family and resolution are tested exclusively rather than inclusively (see monbot.criteria):
     most monitor listings name neither, and demanding either one would hide the market from Discover.
+
+    `check_panel=False` drops the family test, for the cross-shop price comparison. There the test is
+    not merely loose but incoherent: it filters on what a title happens to mention rather than on what
+    the product is, and shops do not agree about that. Electroline lists the Samsung G85SD without the
+    word OLED while Stephanis and Kotsovolos include it, so excluding OLED made the same monitor
+    appear as a single-shop product at one price and hid the 500 EUR spread across the three. A price
+    comparison has to see every listing of a product or it misreports it. Which panels are wanted is
+    settled on the watch list, where the panel is actually known.
     """
     if is_accessory(title):
         return False
     norm = normalize(title)
-    return crit.has_size(norm) and crit.panel_ok(norm) and crit.resolution_ok(norm)
+    if not (crit.has_size(norm) and crit.resolution_ok(norm)):
+        return False
+    # A title that names a size we do not want is that size, unless a wanted one stands alone beside
+    # it. Without this a 42-inch OLED television listed as "42C34 42\"" reads as a 34-inch monitor,
+    # because its model code happens to end in 34.
+    if crit.names_other_size(norm) and not crit.has_standalone_size(norm):
+        return False
+    return crit.panel_ok(norm) if check_panel else True

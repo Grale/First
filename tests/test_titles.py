@@ -11,6 +11,7 @@ because that mixture is where the matcher breaks. The TV build found an argument
 price-cap-too-low bug exactly here.
 """
 from __future__ import annotations
+import json
 import sys
 from pathlib import Path
 
@@ -137,6 +138,14 @@ def test_real_shop_titles() -> None:
         check(looks_like_candidate(title, crit) is want,
               f"live title read wrong (wanted candidate={want}): {title[:70]!r}")
 
+    # a television whose model code ends in 34, beside the 42 that is its real size
+    check(not looks_like_candidate('LG OLED evo 42C34 42"', crit, check_panel=False),
+          "a 42-inch TV was read as a 34-inch monitor because its model code ends in 34")
+    check(looks_like_candidate('SAMSUNG LS34DG850SUXDU Curved Gaming PC Monitor, 34"', crit, check_panel=False),
+          "a real 34-inch monitor was rejected by the standalone-size rule")
+    check(looks_like_candidate("Xiaomi G34WQi 2026 Curved", crit, check_panel=False),
+          "a terse monitor title with the size only in the code was rejected")
+
     # "Ultra WQHD" must read as 3440x1440, not as the 2560x1440 of the "WQHD" inside it
     check(criteria_mod.resolution_in_title(normalize('34" Ultra WQHD')) == (3440, 1440),
           "'Ultra WQHD' was not read as 3440x1440")
@@ -172,11 +181,46 @@ def test_prices() -> None:
 # --------------------------------------------------------------------------------------------------
 # 3. matching, Discover and the price cap, through engine.match_items
 # --------------------------------------------------------------------------------------------------
+SPEC_KEYS = ("hz", "width", "height", "response_ms", "usb_c_pd_w", "kvm", "height_adjust",
+             "curvature", "dp_version", "hdr", "srgb_pct", "dci_p3_pct", "contrast",
+             "tuv_eye_comfort_stars", "vrr", "vrr_brand", "burn_in_warranty_years")
+
+
+def fixtures(crit):
+    """Models and negatives built from the research files under this test's own criteria.
+
+    Deliberately not watchlist.json. That file is the product of whatever the buyer currently wants,
+    and narrowing those criteria moves models into the rejected list - which silently turned this test
+    into a weaker one than it looks: assertions about which model claims which title kept passing
+    because neither model was on the list any more. The matcher is what is under test here, so its
+    fixtures come from the full research corpus and are qualified against CFG above, which never moves.
+    """
+    models, rejected = [], []
+    for f in sorted((ROOT / "tools" / "research").glob("*.json")):
+        for e in json.loads(f.read_text(encoding="utf-8")):
+            key = e["model_key"].strip().upper()
+            aliases = [a for a in e.get("aliases", []) if a.upper() != key]
+            ok = (crit.specs_qualify(e.get("hz"), e.get("width"), e.get("height"),
+                                     e.get("height_adjust"), e.get("usb_c_pd_w"), e.get("kvm"),
+                                     e.get("vrr"), e.get("panel") or "")
+                  and e.get("qualifies", True) is not False)
+            if ok:
+                models.append(watchlist_mod.model_from_dict({
+                    "brand": e["brand"], "model_key": key, "family": e.get("family") or "",
+                    "panel": e.get("panel") or "", "size_inch": e.get("size_inch"),
+                    "specs": {k: e.get(k) for k in SPEC_KEYS}, "aliases": aliases,
+                    "source_url": e.get("source_url") or "",
+                }))
+            else:
+                rejected.append(watchlist_mod.Rejected(brand=e["brand"], model_key=key,
+                                                       reason="fails the test criteria", aliases=aliases))
+    return models, rejected
+
+
 def test_match_items() -> None:
     crit = criteria_mod.from_config(CFG)
-    wl = watchlist_mod.load()
-    models = wl.watched(crit)
-    check(len(models) >= 8, f"expected a populated watchlist, got {len(models)} watched models")
+    models, negatives = fixtures(crit)
+    check(len(models) >= 8, f"expected a populated fixture set, got {len(models)} models")
 
     items = [
         # --- must match ---
@@ -209,7 +253,7 @@ def test_match_items() -> None:
         item("megaelectric", 'AOC CU34P2A 34" UWFHD 2560x1080 100Hz VA', 279.0, None, True, "ME-3"),
     ]
 
-    offers, unmatched = match_items(items, models, CFG["price_range"], crit, wl.rejected)
+    offers, unmatched = match_items(items, models, CFG["price_range"], crit, negatives)
     matched = {(o.shop, o.model_key) for o in offers}
     disco = {it.shop_sku for it in unmatched}
 
@@ -244,13 +288,13 @@ def test_match_items() -> None:
     # the cap is a data-error filter, so a real product priced inside it must survive
     inside, _ = match_items([item("stephanis", 'AOC AGON PRO AG344UXM 34" Mini LED 3440x1440 170Hz',
                                   1099.0, None, True, "ST-4")],
-                            models, CFG["price_range"], crit, wl.rejected)
+                            models, CFG["price_range"], crit, negatives)
     check([o.model_key for o in inside] == ["AG344UXM"],
           "AG344UXM at 1,099 EUR did not match; the price cap may be too low")
 
     # a list price that is obviously a shop error is dropped rather than used to invent a discount
     bogus, _ = match_items([item("electroline", 'DELL U3425WE 34" 3440x1440 120Hz', 699.0, 9999.0, True, "EL-4")],
-                           models, CFG["price_range"], crit, wl.rejected)
+                           models, CFG["price_range"], crit, negatives)
     check(bogus and bogus[0].list_price is None, "an implausible list price was kept")
 
     return offers
@@ -260,7 +304,8 @@ def test_match_items() -> None:
 # 4. the three alert rules
 # --------------------------------------------------------------------------------------------------
 def test_rules() -> None:
-    wl = watchlist_mod.load()
+    models, _ = fixtures(criteria_mod.from_config(CFG))
+    wl = watchlist_mod.Watchlist(models=models)
     current = [
         # cross-shop: Electroline 20% under Stephanis for the same model
         Offer(shop="electroline", model_key="U3425WE", title="U3425WE", price=699.0,

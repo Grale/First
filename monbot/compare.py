@@ -80,11 +80,24 @@ class Group:
 
 
 def group_items(items: Iterable[Item], models: list[Model], crit: Criteria,
-                rejected: Iterable[Rejected] = ()) -> list[Group]:
-    """Group everything that fits the size criteria by the product it is, cheapest spread first."""
+                rejected: Iterable[Rejected] = (),
+                price_range: Optional[dict] = None) -> list[Group]:
+    """Group everything that fits the size criteria by the product it is, cheapest spread first.
+
+    The price range is the same shop-data-error filter the engine applies. It earns its keep here too:
+    a search for "Epson 34" returns ink cartridges at 13 EUR, which carry a standalone 34 and are not
+    monitors by any test this module can make.
+    """
+    lo = float((price_range or {}).get("min", 0) or 0)
+    hi = float((price_range or {}).get("max", 10 ** 9) or 10 ** 9)
     groups: dict[str, Group] = {}
     for it in items:
-        if not it.price or not looks_like_candidate(it.title, crit):
+        if it.price is not None and not (lo <= it.price <= hi):
+            continue
+        # check_panel=False on purpose: see looks_like_candidate. The comparison must see every
+        # listing of a product, including the shops whose titles name a panel family the buyer has
+        # ruled out, or it reports the wrong number of shops and the wrong spread.
+        if not it.price or not looks_like_candidate(it.title, crit, check_panel=False):
             continue
         m = best_match(it.title, models, crit, rejected)
         if m is not None:

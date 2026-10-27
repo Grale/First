@@ -96,7 +96,12 @@ class Stephanis(Shop):
                 for i in fresh:
                     seen.add(i.url)
                 items.extend(fresh)
-                if len(page_items) < 100 or not fresh:
+                # Stop only when a page adds nothing new. Stopping on a short page instead looks
+                # sensible - the last page is short - but it also ends the walk on any page the shop
+                # happens to return light, and the rest of the catalogue is dropped with no error at
+                # all. That silently cost a product that two shops both stocked, which made the price
+                # comparison show it at one shop and miss the cheaper one.
+                if not fresh:
                     break
         if not items:
             raise RuntimeError(
