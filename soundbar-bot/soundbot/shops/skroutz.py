@@ -237,20 +237,6 @@ class SkroutzLike(Shop):
 
 class Skroutz(SkroutzLike):
     name = "skroutz"
-    label = "Skroutz GR"
+    label = "Skroutz"
     country = "GR"
     base_url = "https://www.skroutz.gr"
-
-
-class SkroutzCy(SkroutzLike):
-    """skroutz.cy - the same catalogue and the same category ids as skroutz.gr, filtered to what can
-    actually be delivered to Cyprus.
-
-    Worth checking alongside the Greek site rather than instead of it: the prices are the two markets'
-    own, and a model that shows on skroutz.gr but not here is one that will not ship to Cyprus, which
-    is as useful to know as a price.
-    """
-    name = "skroutz_cy"
-    label = "Skroutz CY"
-    country = "CY"
-    base_url = "https://www.skroutz.cy"

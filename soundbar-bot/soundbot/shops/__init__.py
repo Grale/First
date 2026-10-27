@@ -3,21 +3,17 @@ from typing import Type
 
 from .base import Shop
 from .electroline import Electroline
-from .scandia_like import Scandia, MegaElectric
+from .scandia_like import Scandia
 from .stephanis import Stephanis
-from .public_like import PublicCy, PublicGr
-from .kotsovolos_like import KotsovolosCy, KotsovolosGr
-from .skroutz import Skroutz, SkroutzCy
+from .public_like import PublicGr
+from .kotsovolos_like import KotsovolosGr
+from .skroutz import Skroutz
 
 SHOPS: dict[str, Type[Shop]] = {
     # Cyprus
     Electroline.name: Electroline,
     Scandia.name: Scandia,
-    MegaElectric.name: MegaElectric,
     Stephanis.name: Stephanis,
-    PublicCy.name: PublicCy,
-    KotsovolosCy.name: KotsovolosCy,
-    SkroutzCy.name: SkroutzCy,
     # Greece
     Skroutz.name: Skroutz,
     PublicGr.name: PublicGr,

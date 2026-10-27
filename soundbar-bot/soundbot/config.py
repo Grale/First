@@ -12,7 +12,7 @@ DEFAULTS: dict[str, Any] = {
     # shops that should be asked less often than the rest: Skroutz is read a page at a time and
     # rate-limits a client that comes back every three hours, and a price watch does not need it to.
     "schedule": {"interval_hours": 3, "first_run_delay_minutes": 2,
-                 "shop_interval_hours": {"skroutz": 12, "skroutz_cy": 12}},
+                 "shop_interval_hours": {"skroutz": 12}},
     # When a shop turns the bot away, stop asking for a while instead of knocking every three hours.
     # The wait doubles for each block in a row and is cleared by the first successful read.
     "backoff": {"enabled": True, "first_hours": 6, "max_hours": 48},
@@ -21,8 +21,7 @@ DEFAULTS: dict[str, Any] = {
               # "all": compare every shop against every other.
               "cross_shop_scope": "country"},
     "notify": {"toast": True, "ntfy": {"enabled": True, "server": "https://ntfy.sh", "topic": ""}},
-    "shops": {"electroline": True, "scandia": True, "megaelectric": True, "stephanis": True,
-              "public_cy": True, "kotsovolos_cy": True, "skroutz_cy": True,
+    "shops": {"electroline": True, "scandia": True, "stephanis": True,
               "skroutz": True, "public_gr": True, "kotsovolos_gr": True},
     "countries": {"CY": True, "GR": True},
     "fetch": {"timeout_s": 40, "pause_s": 1.0, "playwright": "auto"},

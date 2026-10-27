@@ -1,12 +1,11 @@
-"""kotsovolos.cy and kotsovolos.gr - Next.js front end over HCL Commerce, behind Akamai (needs the
-Chrome-TLS tier).
+"""kotsovolos.gr - Next.js front end over HCL Commerce, behind Akamai (needs the Chrome-TLS tier).
 
 search   GET /SearchDisplay?q=<term>&storeId=<id>   -> __NEXT_DATA__.props.pageProps.pageData.productIds
 details  GET /api/ext/getProductDetailsByPartNumbers?partNumbers=[..]&storeId=<id> -> catalogEntryView[]
 stock    GET /api/inventory/product/availability/<singleSKUCatalogEntryID>?...&storeId=<id>
 
-Each storefront has its own store id. The adapter reads it out of the shop's own __NEXT_DATA__ and
-caches it in .cache/; a value in config.json wins:
+The adapter reads the store id out of the shop's own __NEXT_DATA__ and caches it in .cache/; a value in
+config.json wins:
 
     "shops_config": {"kotsovolos_gr": {"store_id": "10151"}}
 
@@ -194,17 +193,9 @@ class KotsovolosLike(Shop):
         return items
 
 
-class KotsovolosCy(KotsovolosLike):
-    name = "kotsovolos_cy"
-    label = "Kotsovolos CY"
-    country = "CY"
-    base_url = "https://www.kotsovolos.cy"
-    default_store = "10161"
-
-
 class KotsovolosGr(KotsovolosLike):
     name = "kotsovolos_gr"
-    label = "Kotsovolos GR"
+    label = "Kotsovolos"
     country = "GR"
     base_url = "https://www.kotsovolos.gr"
     default_store = ""      # discovered from the storefront on the first run

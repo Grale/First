@@ -1,6 +1,6 @@
-"""scandia.cy and megaelectric.cy share one platform: server-rendered catalog pages, 20 cards each.
+"""scandia.cy - server-rendered catalog pages, 20 cards each.
 
-Category 202 is Sound Bars on both sites.
+Category 202 is Sound Bars.
 """
 from __future__ import annotations
 import re
@@ -83,8 +83,3 @@ class Scandia(ScandiaLike):
     label = "Scandia"
     base_url = "https://scandia.cy"
 
-
-class MegaElectric(ScandiaLike):
-    name = "megaelectric"
-    label = "MegaElectric"
-    base_url = "https://megaelectric.cy"

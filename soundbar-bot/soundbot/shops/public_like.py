@@ -1,13 +1,11 @@
-"""public.cy and public.gr - the storefronts are Angular apps behind Akamai, but their search is served
-by findbar.io:
+"""public.gr - the storefront is an Angular app behind Akamai, but its search is served by findbar.io:
 
     POST https://app.findbar.io/api/v1/search?locale=el   (Bearer token = Public's own front-end token)
     body {"query": "...", "filters": [], "initial": false, "page": 1, "size": 36, "sort": "_score", "dir": "desc"}
     -> results.hits[].source {displayName, finalPrice, listPrice, inStock, availability, url, brandName}
 
-Each storefront carries its own token, scoped to that website id, so the adapter reads the token out of
-the shop's own front end and caches it in .cache/. A token given in config.json wins over the discovered
-one:
+The token is scoped to the website id, so the adapter reads it out of the shop's own front end and
+caches it in .cache/. A token given in config.json wins over the discovered one:
 
     "shops_config": {"public_gr": {"findbar_token": "..."}}
 
@@ -173,22 +171,9 @@ class PublicLike(Shop):
         return list(seen.values())
 
 
-class PublicCy(PublicLike):
-    name = "public_cy"
-    label = "Public CY"
-    country = "CY"
-    base_url = "https://www.public.cy"
-    domain = "public.cy"
-    # Public Cyprus' front-end token (scope: search, issued to the public.cy website). The adapter looks
-    # for a fresh one on the storefront if this is ever rejected.
-    default_token = ("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."
-                     "eyJkYXRhIjp7IndlYnNpdGVJZCI6MTUxLCJkb21haW4iOiJwdWJsaWMuY3kiLCJzY29wZXMiOlsic2VhcmNoIl0sIm5hbWUiOiJGcm9udGVuZCJ9LCJpYXQiOjE3OTA5NTAwMTEsImV4cCI6MTg4NTYyMjgxMSwiaXNzIjoiZmluZGJhci5pbyJ9."
-                     "D-WYvYIlX9FK1iFlMK1LAyezYpaKDd9ciuIj-BIx_Ro")
-
-
 class PublicGr(PublicLike):
     name = "public_gr"
-    label = "Public GR"
+    label = "Public"
     country = "GR"
     base_url = "https://www.public.gr"
     domain = "public.gr"

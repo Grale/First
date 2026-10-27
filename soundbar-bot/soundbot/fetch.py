@@ -1,6 +1,6 @@
 """Tiered HTTP fetching.
 
-tier 1  requests          plain HTTP with a browser User-Agent (Electroline, Scandia, MegaElectric, Stephanis)
+tier 1  requests          plain HTTP with a browser User-Agent (Electroline, Scandia, Stephanis)
 tier 2  curl_cffi         Chrome TLS/HTTP2 impersonation, passes Akamai-style bot checks (Public, Kotsovolos, Skroutz)
 tier 3  playwright        real headless Chromium with a persistent profile (only if tier 2 is blocked and
                           playwright is installed)
