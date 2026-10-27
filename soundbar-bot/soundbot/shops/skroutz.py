@@ -25,12 +25,14 @@ snapshot is kept.
 """
 from __future__ import annotations
 import re
+from contextlib import contextmanager
 from typing import Optional
 from urllib.parse import quote, urljoin, urlsplit
 
 from bs4 import BeautifulSoup
 
 from .base import Shop, parse_price
+from ..fetch import FetchError
 from ..models import Item
 from ..watchlist import Model
 
@@ -55,6 +57,19 @@ MAX_CARDS_PER_PAGE = 150
 class SkroutzLike(Shop):
     start_tier = 2          # Skroutz turns away the plain requests tier
     uses_search = True
+    # Skroutz watches how fast a client asks. The shared pause is tuned for shops that serve a whole
+    # category in one request; this one is asked for a page at a time, so it gets a longer one.
+    polite_pause_s = 3.0
+
+    @contextmanager
+    def _politely(self):
+        """Hold the fetcher to this adapter's pause for the duration, then put it back."""
+        was = self.f.pause
+        self.f.pause = max(was, self.polite_pause_s)
+        try:
+            yield
+        finally:
+            self.f.pause = was
 
     # ---- robots ------------------------------------------------------------
     @staticmethod
@@ -147,19 +162,31 @@ class SkroutzLike(Shop):
         from ..criteria import active as active_criteria
         from ..match import best_match
 
+        with self._politely():
+            return self._fetch(models, active_criteria(), best_match)
+
+    def _fetch(self, models: list[Model], crit, best_match) -> list[Item]:
         found: dict[str, Item] = {}
         try:
             for it in self.fetch_all_bars():
                 found.setdefault(it.shop_sku, it)
+        except FetchError as e:
+            # Nothing came back at all. Running 36 searches into a shop that just refused the first
+            # request would dig the hole deeper, so stop here and say what actually fixes it.
+            raise RuntimeError(
+                f"{self.name} is refusing automated requests ({e}). This is the Chrome-TLS tier being "
+                f"turned away, not a parsing problem. Install the browser tier and it will go through:\n"
+                f"    pip install playwright\n"
+                f"    python -m playwright install chromium\n"
+                f"If it was working and has stopped, leave it a few hours before trying again.") from e
         except Exception as e:
             self.log.warning(
                 "%s: the category listing at %s did not read (%s). Falling back to one search per "
                 'model. If this keeps happening, open Skroutz, click through to Soundbars, and put that '
-                'URL\'s path in config.json under "shops_config": {"skroutz": {"category_path": '
-                '"/c/<id>/<slug>.html"}}', self.name, self._category_path(), e)
+                'URL\'s path in config.json under "shops_config": {"%s": {"category_path": '
+                '"/c/<id>/<slug>.html"}}', self.name, self._category_path(), e, self.name)
         from_category = len(found)
 
-        crit = active_criteria()
         covered = {m.model_key for it in found.values()
                    for m in [best_match(it.title, models, crit)] if m is not None}
         missing = [m for m in models if m.model_key not in covered]
@@ -188,6 +215,10 @@ class SkroutzLike(Shop):
                 or CATEGORY_PATH)
 
     def fetch_all_bars(self) -> list[Item]:
+        with self._politely():
+            return self._fetch_category()
+
+    def _fetch_category(self) -> list[Item]:
         path = self._category_path()
         items: dict[str, Item] = {}
         for page in range(1, CATEGORY_PAGES + 1):

@@ -140,6 +140,10 @@ def cmd_probe(args) -> int:
     _print(f"probing {shop.label} with {len(models)} model(s)…")
     try:
         items = shop.fetch_items(models)
+    except Exception as e:
+        # A probe reports; it does not re-raise a wall of traceback at someone who asked a question.
+        _print(f"\n{shop.label} could not be read:\n  {type(e).__name__}: {e}")
+        return 1
     finally:
         fetcher.close()
 

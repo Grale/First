@@ -146,6 +146,7 @@ def check_offline_parsers(failures: list[str]) -> None:
     # The category-first flow, and the empty page that ends a listing rather than failing it.
     class StubFetcher:
         timeout = 10
+        pause = 1.0
         tier_used: dict = {}
 
         def __init__(self):

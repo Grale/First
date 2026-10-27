@@ -171,9 +171,23 @@ open at once.
 | Skroutz CY | CY | The same adapter against skroutz.cy | Same catalogue and category ids as the Greek site, filtered to what will ship to Cyprus. Not run yet |
 
 Every shop above turns away a plain HTTP client except Electroline, Scandia, MegaElectric and Stephanis.
-Fetching escalates `requests` → `curl_cffi` (Chrome TLS impersonation) → Playwright Chromium (only if
-installed). A shop that fails is skipped for that run and its previous snapshot is kept; it never triggers
-alerts from stale data.
+Fetching escalates `requests` → `curl_cffi` (Chrome TLS impersonation) → Playwright Chromium. A shop that
+fails is skipped for that run and its previous snapshot is kept; it never triggers alerts from stale data.
+
+**Install Playwright.** It is a separate step from `requirements.txt` because it pulls down a browser,
+and it is the tier that gets through when a shop starts refusing the Chrome-TLS one — which Skroutz
+does:
+
+```bash
+.venv\Scripts\python.exe -m pip install playwright
+.venv\Scripts\python.exe -m playwright install chromium
+```
+
+Without it the escalation has nowhere to go, and the error says "playwright not installed" where it
+means "this shop wants a real browser". Skroutz is asked for a page at a time rather than a whole
+category in one request, so it gets a 3-second pause between requests instead of the shared 1 second.
+If it was working and starts returning 403, that is rate limiting rather than a broken adapter: leave
+it a few hours, and let the scheduled 3-hour checks do the asking rather than repeated manual runs.
 
 The three Greek adapters were written against the shops' documented behaviour and the structures their
 Cypriot twins use, but could not be exercised from the machine this was built on, which Akamai and Skroutz
@@ -246,6 +260,8 @@ each costs about twenty requests a check.
 ```bash
 py -3.13 -m venv .venv
 .venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m pip install playwright
+.venv\Scripts\python.exe -m playwright install chromium
 .venv\Scripts\python.exe tools\selftest.py
 .venv\Scripts\python.exe main.py validate
 .venv\Scripts\python.exe main.py run-once --dry-run --country CY
