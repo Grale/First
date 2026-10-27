@@ -185,11 +185,54 @@ def check_offline_parsers(failures: list[str]) -> None:
           f"requests, {len(hits)} Public token found")
 
 
+def check_backoff(failures: list[str]) -> None:
+    """A shop that turns us away is left alone, and a successful read clears it."""
+    import tempfile
+    from datetime import datetime, timedelta
+    from soundbot.engine import due_shops
+    from soundbot.store import Store
+
+    db = Path(tempfile.mkdtemp()) / "selftest.db"
+    store = Store(db)
+    cfg = {"backoff": {"enabled": True, "first_hours": 6, "max_hours": 48},
+           "schedule": {"shop_interval_hours": {"skroutz": 12}}}
+    shops = ["electroline", "skroutz"]
+
+    if due_shops(store, cfg, shops)[0] != shops:
+        failures.append("backoff: a shop with no history should be due")
+
+    waits = []
+    for _ in range(4):
+        streak = (store.shop_state("skroutz") or {"block_streak": 0})["block_streak"] or 0
+        waits.append(min(6 * (2 ** streak), 48))
+        store.record_shop_blocked("skroutz", waits[-1], "403")
+    if waits != [6, 12, 24, 48]:
+        failures.append(f"backoff: wait grew {waits}, expected [6, 12, 24, 48]")
+    due, held = due_shops(store, cfg, shops)
+    if due != ["electroline"] or "skroutz" not in held:
+        failures.append(f"backoff: blocked shop was still due ({due})")
+    if due_shops(store, cfg, shops, force=True)[0] != shops:
+        failures.append("backoff: --force should ask anyway")
+
+    store.record_shop_ok("skroutz")
+    if (store.shop_state("skroutz")["block_streak"] or 0) != 0:
+        failures.append("backoff: a successful read should reset the streak")
+    due, held = due_shops(store, cfg, shops)
+    if "skroutz" in due or "every 12" not in held.get("skroutz", ""):
+        failures.append(f"per-shop interval: expected skroutz held by its interval, got {held}")
+    with store.conn() as c:
+        c.execute("UPDATE shop_state SET last_ok_at=? WHERE shop='skroutz'",
+                  ((datetime.now() - timedelta(hours=13)).isoformat(timespec="seconds"),))
+    if "skroutz" not in due_shops(store, cfg, shops)[0]:
+        failures.append("per-shop interval: should be due once the interval has elapsed")
+    print(f"  waits {waits} h, cleared by a successful read, --force overrides")
+
+
 def main() -> int:
     failures: list[str] = []
     for name, fn in (("shop titles", check_titles), ("watchlist", check_watchlist),
                      ("price parsing", check_prices), ("skroutz robots rules", check_robots),
-                     ("offline parsers", check_offline_parsers)):
+                     ("offline parsers", check_offline_parsers), ("backoff and intervals", check_backoff)):
         print(f"{name}:")
         fn(failures)
     if failures:

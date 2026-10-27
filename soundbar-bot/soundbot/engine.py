@@ -3,13 +3,14 @@ from __future__ import annotations
 import logging
 import time
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta
 from typing import Optional
 
 from . import config as config_mod
 from . import criteria as criteria_mod
 from . import watchlist as watchlist_mod
 from . import notify, rules
-from .fetch import Fetcher
+from .fetch import Blocked, Fetcher
 from .criteria import Criteria
 from .match import best_match, looks_like_candidate, matches_rejected
 from .models import Item, Offer, Alert
@@ -28,6 +29,7 @@ class ShopResult:
     tier: str = ""
     error: str = ""
     seconds: float = 0.0
+    blocked: bool = False
 
 
 @dataclass
@@ -39,6 +41,7 @@ class RunResult:
     alerts: list[Alert] = field(default_factory=list)
     sent: list[tuple[Alert, list[str]]] = field(default_factory=list)
     unmatched: list[Item] = field(default_factory=list)
+    held: dict[str, str] = field(default_factory=dict)   # shop -> why it was not asked this run
 
     @property
     def summary(self) -> str:
@@ -47,6 +50,8 @@ class RunResult:
         parts = [f"{len(self.offers)} offers from {len(ok)} shops"]
         if bad:
             parts.append("failed: " + ", ".join(bad))
+        if self.held:
+            parts.append(f"{len(self.held)} left alone")
         parts.append(f"{len(self.alerts)} alerts, {len(self.sent)} sent")
         return "; ".join(parts)
 
@@ -105,8 +110,41 @@ def previous_state(store: Store, before_run: int) -> dict[tuple[str, str], Offer
     return prev
 
 
+def due_shops(store: Store, cfg: dict, wanted: list[str], force: bool = False) -> tuple[list[str], dict[str, str]]:
+    """Split the wanted shops into the ones to ask now and the ones to leave alone, with the reason.
+
+    Two things hold a shop back: a block it gave us recently, and an interval of its own that has not
+    elapsed. `force` ignores both, for when someone is sitting at the keyboard and means it.
+    """
+    if force:
+        return list(wanted), {}
+    now = datetime.now()
+    backoff_on = bool(cfg.get("backoff", {}).get("enabled", True))
+    per_shop = cfg.get("schedule", {}).get("shop_interval_hours", {}) or {}
+    states = store.shop_states()
+    due: list[str] = []
+    held: dict[str, str] = {}
+    for name in wanted:
+        st = states.get(name)
+        until = st["blocked_until"] if st else None
+        if backoff_on and until:
+            when = datetime.fromisoformat(until)
+            if when > now:
+                held[name] = f"turned us away, not asking again before {when:%d %b %H:%M}"
+                continue
+        hours = float(per_shop.get(name) or 0)
+        last_ok = st["last_ok_at"] if st else None
+        if hours and last_ok:
+            next_at = datetime.fromisoformat(last_ok) + timedelta(hours=hours)
+            if next_at > now:
+                held[name] = f"checked every {hours:g} h, next at {next_at:%d %b %H:%M}"
+                continue
+        due.append(name)
+    return due, held
+
+
 def run_check(store: Store, dry_run: bool = False, only_shops: Optional[list[str]] = None,
-              progress=None) -> RunResult:
+              progress=None, force: bool = False) -> RunResult:
     cfg = config_mod.load()
     wl = watchlist_mod.load()
     crit = criteria_mod.from_config(cfg)
@@ -117,7 +155,9 @@ def run_check(store: Store, dry_run: bool = False, only_shops: Optional[list[str
     fetch_cfg = cfg.get("fetch", {})
     fetcher = Fetcher(timeout=float(fetch_cfg.get("timeout_s", 40)), pause=float(fetch_cfg.get("pause_s", 1.0)),
                       playwright_mode=fetch_cfg.get("playwright", "auto"))
-    wanted = only_shops or enabled_shops(cfg)
+    wanted, result.held = due_shops(store, cfg, only_shops or enabled_shops(cfg), force=force)
+    for name, why in result.held.items():
+        log.info("skipping %s: %s", name, why)
     prev = previous_state(store, before_run=run_id)
     try:
         for name, cls in SHOPS.items():
@@ -136,6 +176,19 @@ def run_check(store: Store, dry_run: bool = False, only_shops: Optional[list[str
                 result.offers.extend(offers)
                 result.unmatched.extend(unmatched)
                 log.info("%s: %d items, %d matched", name, len(items), len(offers))
+                store.record_shop_ok(name)
+            except Blocked as e:
+                sr.error = f"{type(e).__name__}: {e}"
+                sr.blocked = True
+                bo = cfg.get("backoff", {})
+                if bo.get("enabled", True):
+                    streak = (store.shop_state(name) or {"block_streak": 0})["block_streak"] or 0
+                    hours = min(float(bo.get("first_hours", 6)) * (2 ** streak),
+                                float(bo.get("max_hours", 48)))
+                    until = store.record_shop_blocked(name, hours, sr.error)
+                    log.warning("%s turned us away; leaving it alone until %s", name, until)
+                else:
+                    log.warning("%s turned us away: %s", name, e)
             except Exception as e:
                 sr.error = f"{type(e).__name__}: {e}"
                 log.exception("%s failed", name)
@@ -168,7 +221,8 @@ def run_check(store: Store, dry_run: bool = False, only_shops: Optional[list[str
     return result
 
 
-def discover(only_shops: Optional[list[str]] = None, progress=None) -> dict[str, list[Item]]:
+def discover(only_shops: Optional[list[str]] = None, progress=None, force: bool = False,
+             store: Optional[Store] = None) -> dict[str, list[Item]]:
     """Soundbar titles that fit the criteria but match no watchlist model."""
     cfg = config_mod.load()
     wl = watchlist_mod.load()
@@ -178,6 +232,10 @@ def discover(only_shops: Optional[list[str]] = None, progress=None) -> dict[str,
     fetcher = Fetcher(timeout=float(fetch_cfg.get("timeout_s", 40)), pause=float(fetch_cfg.get("pause_s", 1.0)),
                       playwright_mode=fetch_cfg.get("playwright", "auto"))
     wanted = only_shops or enabled_shops(cfg)
+    if store is not None:
+        wanted, held = due_shops(store, cfg, wanted, force=force)
+        for name, why in held.items():
+            log.info("skipping %s in discovery: %s", name, why)
     out: dict[str, list[Item]] = {}
     try:
         for name, cls in SHOPS.items():

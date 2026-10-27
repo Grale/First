@@ -57,6 +57,13 @@ CREATE TABLE IF NOT EXISTS alerts (
   channels TEXT DEFAULT ''
 );
 CREATE INDEX IF NOT EXISTS ix_alerts_dedupe ON alerts(dedupe_key, sent_at);
+CREATE TABLE IF NOT EXISTS shop_state (
+  shop TEXT PRIMARY KEY,
+  last_ok_at TEXT,
+  blocked_until TEXT,
+  block_streak INTEGER NOT NULL DEFAULT 0,
+  last_error TEXT DEFAULT ''
+);
 """
 
 
@@ -170,6 +177,34 @@ class Store:
             row = c.execute("SELECT price FROM alerts WHERE rule=? AND shop=? AND model_key=? "
                             "ORDER BY id DESC LIMIT 1", (rule, shop, model_key)).fetchone()
             return float(row[0]) if row and row[0] is not None else None
+
+    # ---- per-shop state ---------------------------------------------------
+    def shop_state(self, shop: str) -> Optional[sqlite3.Row]:
+        with self.conn() as c:
+            return c.execute("SELECT * FROM shop_state WHERE shop=?", (shop,)).fetchone()
+
+    def shop_states(self) -> dict[str, sqlite3.Row]:
+        with self.conn() as c:
+            return {r["shop"]: r for r in c.execute("SELECT * FROM shop_state").fetchall()}
+
+    def record_shop_ok(self, shop: str) -> None:
+        """A successful read clears any block and resets the streak that lengthens the next one."""
+        with self.conn() as c:
+            c.execute("INSERT INTO shop_state(shop, last_ok_at, blocked_until, block_streak, last_error) "
+                      "VALUES (?,?,NULL,0,'') ON CONFLICT(shop) DO UPDATE SET "
+                      "last_ok_at=excluded.last_ok_at, blocked_until=NULL, block_streak=0, last_error=''",
+                      (shop, datetime.now().isoformat(timespec="seconds")))
+
+    def record_shop_blocked(self, shop: str, hours: float, error: str = "") -> datetime:
+        """Mark the shop as not to be asked again until `hours` from now; returns that moment."""
+        until = datetime.now() + timedelta(hours=hours)
+        with self.conn() as c:
+            c.execute("INSERT INTO shop_state(shop, blocked_until, block_streak, last_error) "
+                      "VALUES (?,?,1,?) ON CONFLICT(shop) DO UPDATE SET "
+                      "blocked_until=excluded.blocked_until, block_streak=shop_state.block_streak+1, "
+                      "last_error=excluded.last_error",
+                      (shop, until.isoformat(timespec="seconds"), error[:500]))
+        return until
 
     def add_alert(self, a: Alert, channels: str) -> None:
         with self.conn() as c:

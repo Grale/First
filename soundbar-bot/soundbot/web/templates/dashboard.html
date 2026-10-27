@@ -7,6 +7,13 @@
       {% if last_run %}Last check #{{ last_run.id }} at {{ last_run.started_at|dt }} — {{ last_run.notes }}{% else %}No check has run yet.{% endif %}
     </div>
   </div>
+  {% if held %}
+  <div class="chips">
+    {% for shop, why in held.items() %}
+      <span class="chip" title="A shop that turns the bot away is left alone for a while; one with its own interval is asked less often than the rest.">{{ labels.get(shop, shop) }}: {{ why }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
   {% if shop_runs %}
   <div class="chips">
     {% for s in shop_runs %}

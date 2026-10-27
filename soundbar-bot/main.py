@@ -39,12 +39,14 @@ def cmd_run_once(args) -> int:
     from soundbot.engine import run_check
     store = Store()
     res = run_check(store, dry_run=args.dry_run, only_shops=_only_shops(args),
-                    progress=lambda m: _print("  ", m))
+                    progress=lambda m: _print("  ", m), force=args.force)
     _print(f"\nrun #{res.run_id} {'(dry run) ' if res.dry_run else ''}{res.summary}")
     for s in res.shops:
         flag = "ok " if s.ok else "ERR"
         _print(f"  {flag} {s.shop:<14} items={s.n_items:<4} matched={s.n_offers:<3} "
                f"tier={s.tier or '-':<10} {s.seconds}s {s.error}")
+    for shop, why in res.held.items():
+        _print(f"  --  {shop:<14} {why}")
     if res.offers:
         _print("\nmatched offers:")
         for o in sorted(res.offers, key=lambda x: (x.model_key, x.price or 1e9)):
@@ -96,7 +98,8 @@ def cmd_report(args) -> int:
 
 def cmd_discover(args) -> int:
     from soundbot.engine import discover
-    out = discover(only_shops=_only_shops(args), progress=lambda m: _print("  ", m))
+    out = discover(only_shops=_only_shops(args), progress=lambda m: _print("  ", m),
+                   force=args.force, store=Store())
     total = 0
     for shop, items in out.items():
         _print(f"\n{shop}: {len(items)} soundbars not on the watchlist")
@@ -116,6 +119,7 @@ def cmd_probe(args) -> int:
     it outside the range.
     """
     from soundbot.criteria import looks_like_soundbar, parse_layout
+    from soundbot.engine import due_shops
     from soundbot.fetch import Fetcher
     from soundbot.match import best_match, matches_rejected
 
@@ -136,6 +140,14 @@ def cmd_probe(args) -> int:
     fetcher = Fetcher(timeout=float(fetch_cfg.get("timeout_s", 40)),
                       pause=float(fetch_cfg.get("pause_s", 1.0)),
                       playwright_mode=fetch_cfg.get("playwright", "auto"))
+    store = Store()
+    due, held = due_shops(store, cfg, [args.shop], force=args.force)
+    if not due:
+        _print(f"{SHOPS[args.shop].label}: {held[args.shop]}.\n"
+               f"Probing it now is another request against whatever counted the last ones. "
+               f"Pass --force if you mean to anyway.")
+        return 1
+
     shop = SHOPS[args.shop](fetcher)
     _print(f"probing {shop.label} with {len(models)} model(s)…")
     try:
@@ -198,10 +210,22 @@ def cmd_validate(args) -> int:
     problems = wl.validate(crit)
     _print(f"criteria: {crit.label}")
     _print(f"{len(wl.models)} models ({len(wl.watched(crit))} watched), {len(wl.rejected)} rejected")
+    states = Store().shop_states()
+    per_shop = cfg.get("schedule", {}).get("shop_interval_hours", {}) or {}
     for code, name in COUNTRIES.items():
         on = [s for s in shops_in(code) if cfg["shops"].get(s, True)]
         state = "on" if cfg.get("countries", {}).get(code, True) else "off"
-        _print(f"  {name} ({state}): {', '.join(on) or 'no shops enabled'}")
+        _print(f"  {name} ({state}):")
+        for s in on:
+            st = states.get(s)
+            bits = []
+            if per_shop.get(s):
+                bits.append(f"every {float(per_shop[s]):g} h")
+            if st and st["blocked_until"]:
+                bits.append(f"blocked until {st['blocked_until']}")
+            if st and st["last_ok_at"]:
+                bits.append(f"last ok {st['last_ok_at']}")
+            _print(f"    {s:<16}{'  ·  '.join(bits)}")
     for p in problems:
         _print("  !", p)
     return 1 if problems else 0
@@ -246,6 +270,8 @@ def main(argv=None) -> int:
 
     s = sub.add_parser("run-once", help="run one price check now")
     s.add_argument("--dry-run", action="store_true", help="evaluate rules but send nothing")
+    s.add_argument("--force", action="store_true",
+                   help="ask every shop now, ignoring a block it gave us and its own interval")
     add_shop_args(s)
     s.set_defaults(fn=cmd_run_once)
 
@@ -253,6 +279,7 @@ def main(argv=None) -> int:
     s.set_defaults(fn=cmd_report)
 
     s = sub.add_parser("discover", help="soundbars in the shops that fit the criteria but are not watched")
+    s.add_argument("--force", action="store_true", help="ignore a block a shop gave us, and its interval")
     add_shop_args(s)
     s.set_defaults(fn=cmd_discover)
 
@@ -260,6 +287,7 @@ def main(argv=None) -> int:
     s.add_argument("--shop", required=True, choices=list(SHOPS))
     s.add_argument("--model", help="query for this model only (substring of a model key)")
     s.add_argument("--limit", type=int, default=40, help="how many items to print (default 40)")
+    s.add_argument("--force", action="store_true", help="probe even a shop that is in backoff")
     s.set_defaults(fn=cmd_probe)
 
     s = sub.add_parser("test-notify", help="send a test toast and ntfy push")

@@ -12,7 +12,7 @@ from .. import criteria as criteria_mod
 from .. import notify
 from .. import watchlist as watchlist_mod
 from ..criteria import CONNECTIONS, HEIGHT_TYPES
-from ..engine import discover, enabled_shops, shop_labels
+from ..engine import discover, due_shops, enabled_shops, shop_labels
 from ..models import Specs
 from ..scheduler import Scheduler
 from ..scoring import rank_models, score_model
@@ -25,7 +25,8 @@ HERE = Path(__file__).resolve().parent
 
 
 class DiscoverState:
-    def __init__(self):
+    def __init__(self, store: Store):
+        self.store = store
         self.running = False
         self.result: dict[str, list] = {}
         self.ran_at: str = ""
@@ -43,7 +44,7 @@ class DiscoverState:
 
     def _run(self):
         try:
-            res = discover(progress=lambda m: setattr(self, "progress", m))
+            res = discover(progress=lambda m: setattr(self, "progress", m), store=self.store)
             self.result = {shop: [it.__dict__ for it in items] for shop, items in res.items()}
             self.error = ""
         except Exception as e:
@@ -81,7 +82,7 @@ def _conn(value: str, what: str) -> str:
 def create_app(store: Store, sched: Scheduler) -> Flask:
     app = Flask(__name__, template_folder=str(HERE / "templates"), static_folder=str(HERE / "static"))
     app.config["JSON_AS_ASCII"] = False
-    disc = DiscoverState()
+    disc = DiscoverState(store)
     labels = shop_labels()
 
     app.jinja_env.filters["price"] = _fmt_price
@@ -125,8 +126,9 @@ def create_app(store: Store, sched: Scheduler) -> Flask:
         runs = store.last_runs(1)
         last_run = dict(runs[0]) if runs else None
         shop_runs = [dict(r) for r in store.shop_runs(last_run["id"])] if last_run else []
+        _due, held = due_shops(store, cfg, enabled_shops(cfg))
         return render_template("dashboard.html", cfg=cfg, shops=shops, grid=grid, by_country=by_country,
-                               status=sched.status(), last_run=last_run, shop_runs=shop_runs)
+                               status=sched.status(), last_run=last_run, shop_runs=shop_runs, held=held)
 
     @app.get("/model/<path:model_key>")
     def model_page(model_key):

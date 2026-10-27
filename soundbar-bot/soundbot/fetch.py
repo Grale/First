@@ -161,7 +161,10 @@ class Fetcher:
             except Exception as e:  # curl_cffi / playwright errors
                 log.warning("tier %s error for %s: %s", t, host, e)
                 last = e
-        raise FetchError(f"all tiers failed for {url}: {last}")
+        # Keep the kind of the last failure: a block is a different problem from a timeout, and
+        # the engine backs off a shop that blocks rather than retrying it on the next check.
+        kind = Blocked if isinstance(last, Blocked) else FetchError
+        raise kind(f"all tiers failed for {url}: {last}")
 
     def get_json(self, url: str, start_tier: int = 2):
         import json

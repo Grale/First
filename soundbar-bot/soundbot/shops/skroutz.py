@@ -32,7 +32,7 @@ from urllib.parse import quote, urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 from .base import Shop, parse_price
-from ..fetch import FetchError
+from ..fetch import Blocked, FetchError
 from ..models import Item
 from ..watchlist import Model
 
@@ -173,7 +173,7 @@ class SkroutzLike(Shop):
         except FetchError as e:
             # Nothing came back at all. Running 36 searches into a shop that just refused the first
             # request would dig the hole deeper, so stop here and say what actually fixes it.
-            raise RuntimeError(
+            raise Blocked(
                 f"{self.name} is refusing automated requests ({e}). This is the Chrome-TLS tier being "
                 f"turned away, not a parsing problem. Install the browser tier and it will go through:\n"
                 f"    pip install playwright\n"

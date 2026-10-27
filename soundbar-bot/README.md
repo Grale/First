@@ -59,7 +59,8 @@ Rules live on the Settings page (saved to `config.json`):
 | List discount: a shop's price is at least Y % below its own strikethrough price | 20 % |
 | Back in stock: a model that was out of stock or missing in a shop is available again | on |
 | Same alert not repeated for | 7 days (a lower price re-alerts at once) |
-| Checks every | 3 hours |
+| Checks every | 3 hours, except shops with an interval of their own (Skroutz GR and CY: 12 hours) |
+| A shop that turns the bot away is left alone for | 6 hours, doubling to 48 for each block in a row |
 | Prices outside this range are treated as shop data errors | €200 to €3,500 |
 
 ## Ranking
@@ -239,6 +240,25 @@ to merchants by email, so it is not an option for a personal watcher.
 Skroutz also has its own price alerts — the bell on any product page. For the Greek side it is worth using
 both: Skroutz's alert is authoritative for Skroutz, and this bot is what compares Skroutz against Public GR,
 Kotsovolos GR and the Cypriot shops in one table.
+
+### Being asked to go away, and not arguing
+
+A shop that refuses the bot is not retried on the next tick. The refusal is recorded, that shop is left
+alone for six hours, and the wait doubles — 6, 12, 24, 48 — for each block in a row. The first
+successful read clears it. A blocked shop is skipped rather than failed: its previous snapshot stays on
+the dashboard, and the chips at the top say which shops are being left alone and until when.
+
+Shops can also have an interval of their own, in `schedule.shop_interval_hours`. Skroutz GR and CY are
+set to 12 hours, because they are read a page at a time rather than a category in one request, and a
+price watch does not need them more often than that. Everything else follows the global 3 hours.
+
+`run-once --force` and `discover --force` ignore both, and `probe` refuses a shop in backoff unless you
+pass `--force` — a manual probe is another request against whatever counted the last ones, which is
+usually the opposite of what the situation needs. `main.py validate` prints the state of every shop.
+
+Skroutz started refusing the Chrome-TLS tier after a day of this being developed against it, with 36
+searches a second apart and several manual runs on top. That is what these two settings are for: the
+scheduled rhythm is gentle, and the bot now notices when it has outstayed its welcome.
 
 ### The two Skroutz sites
 
