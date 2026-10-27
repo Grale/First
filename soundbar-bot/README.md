@@ -145,6 +145,12 @@ list and its replacement is not.
 
 ## Command line
 
+Every command below is written with the virtual environment's Python in front, because that is what
+makes it work: `main.py ...` on its own leaves it to the Windows `.py` file association, which on a
+machine that has none pops up "how do you want to open this file", and where there is one runs the
+system Python instead of this folder's. `soundbot.cmd` wraps it if you would rather type
+`soundbot task-restart`.
+
 ```bash
 .venv\Scripts\python.exe main.py run-once --dry-run      # one check, print what would alert, send nothing
 .venv\Scripts\python.exe main.py run-once                # one real check
