@@ -1,0 +1,192 @@
+[
+  {
+    "brand": "Hisense",
+    "model_key": "75U7N",
+    "family": "U7N",
+    "year": 2024,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://bg.hisense.com/produkti/hisense-televizori/uled-miniled-tv/TV-SET-65U7NQ-HSN/p/000000000020013161",
+    "aliases": [
+      "U7N",
+      "75U7N",
+      "75U7NQ",
+      "75U7NQTUK"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U8N",
+    "family": "U8N",
+    "year": 2024,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://uk.hisense.com/products/tv/uled-miniled-tv/TV-SET-65U8NQTUK-HSN/p/000000000020013840",
+    "aliases": [
+      "U8N",
+      "75U8N",
+      "75U8NQ",
+      "75U8NQTUK"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U7Q",
+    "family": "U7Q",
+    "year": 2025,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://www.hisense.es/televisores/miniled/serie-u7q-mini-led-tv-65u7q-65-pulgadas-con-quantum-dot-colour/",
+    "aliases": [
+      "U7Q",
+      "75U7Q",
+      "75U7QTUK"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U8Q",
+    "family": "U8Q",
+    "year": 2025,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 165,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 3,
+    "qualifies": true,
+    "source_url": "https://uk.hisense.com/products/tv/uled-miniled-tv/TV-SET-75U8QTUK-HSN/p/000000000020016191",
+    "aliases": [
+      "U8Q",
+      "75U8Q",
+      "75U8QTUK",
+      "75U8QG"
+    ],
+    "notes": "Hisense UK page for the 75-inch U8Q. Retailer and owner reports for this size give about 2,880 dimming zones and a 5,000-nit peak claim with a 165 Hz native panel; sources disagree on whether the 75-inch uses a VA or an ADS-Pro (IPS-type) panel, which would hurt contrast."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U7SE",
+    "family": "U7SE",
+    "year": 2026,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://cz.hisense.com/produkty/tv/uled-miniled-tv/TV-SET-65U7SE-HSN/p/000000000020018725",
+    "aliases": [
+      "U7SE",
+      "75U7SE"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U7SPRO",
+    "family": "U7S Pro",
+    "year": 2026,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 165,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://cz.hisense.com/produkty/tv/uled-miniled-tv/TV-SET-65U7S-PRO-HSN/p/000000000020019164",
+    "aliases": [
+      "U7SPRO",
+      "75U7SPRO",
+      "75U7S PRO",
+      "U7S PRO"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75E8S",
+    "family": "E8S",
+    "year": 2026,
+    "backlight": "QD Mini LED (ULED)",
+    "hz": 144,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://uk.hisense.com/products/tv/uled-miniled-tv/TV-SET-65E8STUK-HSN/p/000000000020018813",
+    "aliases": [
+      "E8S",
+      "75E8S",
+      "75E8STUK"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75UR8S",
+    "family": "UR8S",
+    "year": 2026,
+    "backlight": "RGB Mini LED",
+    "hz": 180,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 4,
+    "qualifies": true,
+    "source_url": "https://www.ldlc.com/en/product/PB00751933.html",
+    "aliases": [
+      "UR8S",
+      "75UR8S"
+    ],
+    "notes": "European retailer listing for the 75-inch UR8S: RGB Mini LED, 180 Hz panel, Dolby Vision, IMAX Enhanced; sold in France, Belgium, Luxembourg, Spain, Italy and Monaco."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75UR9S",
+    "family": "UR9S",
+    "year": 2026,
+    "backlight": "RGB Mini LED",
+    "hz": 170,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 3,
+    "qualifies": true,
+    "source_url": "https://uk.hisense.com/products/tv/rgb-miniled-tv/TV-SET-65UR9S-HSN/p/000000000020019162",
+    "aliases": [
+      "UR9S",
+      "75UR9S"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked."
+  },
+  {
+    "brand": "Hisense",
+    "model_key": "75U8HQ",
+    "family": "U8HQ",
+    "year": 2022,
+    "backlight": "Mini LED (Mini-LED PRO)",
+    "hz": 120,
+    "vrr": true,
+    "hdmi21": true,
+    "hdmi21_ports": 2,
+    "qualifies": true,
+    "source_url": "https://hisense.es/producto/65u8hq/",
+    "aliases": [
+      "U8HQ",
+      "75U8HQ"
+    ],
+    "notes": "Specs taken from the 65-inch sibling's spec page (same panel family and feature set); the 75-inch variant's own spec sheet was not checked. European units of this generation used an IPS-type panel."
+  }
+]

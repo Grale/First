@@ -1,0 +1,130 @@
+{
+  "_about": "Deductions from the fit score where something found in research clashes with the buyer's criteria (34-inch, OLED/Mini LED/IPS, 3440x1440 or better, 100 Hz or more, height-adjustable, used for work and productivity). Points are negative and are shown in the fit breakdown on the Ranking and model pages. A penalty may carry a \"profiles\" list, in which case it is only charged under those scoring profiles: text fringing is a real cost to someone reading code all day and no cost at all to someone playing a game, so charging it in both would be wrong. Omit \"profiles\" for a flaw that counts everywhere.",
+  "LS34BG850": [
+    {
+      "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+      "points": -5,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "no swivel (RTINGS measurement) and burn-in warranty terms contradictory across sources",
+      "points": -2
+    }
+  ],
+  "MPG341CQPX": [
+    {
+      "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+      "points": -5,
+      "profiles": [
+        "work"
+      ]
+    }
+  ],
+  "AW3423DWF": [
+    {
+      "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+      "points": -5,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "no confirmed USB-C power delivery, so it cannot dock a laptop over one cable",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
+  ],
+  "34GS95QE": [
+    {
+      "reason": "WOLED subpixel layout fringes text, less visibly than QD-OLED but still present",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "800R curve is the most aggressive on the list; straight lines bow noticeably across a spreadsheet",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "no USB-C at all: video-only, no docking and no KVM",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
+  ],
+  "AG344UXM": [
+    {
+      "reason": "brightness claims cannot be reconciled: TFTCentral lists 600 cd/m2 where retailer tables claim 1000 cd/m2 peak, and DisplayHDR 1000 certification implies the higher figure",
+      "points": -3
+    }
+  ],
+  "Y34WZ-30": [
+    {
+      "reason": "VA panel behind the Mini LED backlight: off-axis colour and gamma shift is visible across a 34-inch 1500R panel at desk distance",
+      "points": -6,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "180 Hz is an overclock Lenovo's own sheet warns may cause display irregularities",
+      "points": -2
+    }
+  ],
+  "34GP83A": [
+    {
+      "reason": "no USB-C and no KVM: cannot dock a laptop, which is most of the point of a 34-inch work monitor",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
+  ],
+  "34GN850": [
+    {
+      "reason": "no USB-C and no KVM: cannot dock a laptop, which is most of the point of a 34-inch work monitor",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "every specification is carried from the 34GP83A and none was verified at this model code",
+      "points": -2
+    }
+  ],
+  "M34WQ": [
+    {
+      "reason": "USB-C delivers 15 W, which charges a phone and not a laptop: no single-cable docking",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
+  ],
+  "LS34DG850": [
+    {
+      "reason": "QD-OLED triangular subpixel layout fringes text; a cost for all-day reading, not for games",
+      "points": -5,
+      "profiles": [
+        "work"
+      ]
+    },
+    {
+      "reason": "no USB-C at all, confirmed from the full connector list: no docking and no KVM path",
+      "points": -3,
+      "profiles": [
+        "work"
+      ]
+    }
+  ]
+}

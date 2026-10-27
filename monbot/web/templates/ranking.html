@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Ranking · Monitor Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Ranking</h1>
+  <p class="muted small">Overall = {{ (cfg.scoring.fit_weight*100)|round|int }}% fit to your criteria + {{ (cfg.scoring.review_weight*100)|round|int }}% reviews (critics 70%, owners 30%). Fit points under the <strong>work</strong> profile: panel type (max 13), USB-C power delivery (12), pixel density (11), TÜV Eye Comfort stars (11), KVM (7), contrast (7), colour gamut (5), height-adjustable stand (5), HDR tier (5), refresh (4), model year (5), burn-in cover (3), curvature (2), DisplayPort version (1), measured response (1), your named models (8). The <strong>gaming</strong> profile reweights the same facts around refresh (18), response (14), panel (14) and contrast (10). Minus deductions where research found a clash with your criteria (text fringing on OLED, a VA panel at desk distance, no docking, an unreconcilable brightness claim); a deduction may apply to one profile only. Value = overall per €1,000 of the cheapest in-stock price. Change the weights on Settings.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>#</th><th class="left">Model</th><th>Overall</th><th>Fit</th><th>Reviews</th><th>Best price</th><th>Value</th><th class="left">Fit breakdown</th><th class="left">Verdict</th></tr></thead>
+    <tbody>
+    {% for g in grid %}{% set m = g.model %}{% set s = g.score %}
+      <tr id="{{ m.model_key }}" class="{{ 'priority' if m.priority }} {{ 'disabled' if not m.enabled }}">
+        <td class="rank">{{ g.rank }}</td>
+        <td class="left"><a href="{{ url_for('model_page', model_key=m.model_key) }}">{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }}</a><div class="muted small">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %} · {{ m.backlight }}</div></td>
+        <td><strong>{{ s.overall }}</strong><div class="bar" title="{{ s.overall }}/100"><i style="width: {{ s.overall }}%"></i></div></td>
+        <td>{{ s.fit }}</td>
+        <td>{% if s.has_review %}{{ s.review }}<div class="muted small">{{ s.confidence }}</div>{% else %}<span class="muted">none</span>{% endif %}</td>
+        <td>{% if g.best %}{{ g.best.price|price }}<div class="muted small">{{ labels.get(g.best.shop, g.best.shop) }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td>{{ s.value if s.value is not none else '—' }}</td>
+        <td class="left small muted">{% for k, v in s.parts.items() %}{{ k }} {{ v }}{{ ' · ' if not loop.last }}{% endfor %}{% if m.review and m.review.fit_penalties %}<div class="cons">{% for p in m.review.fit_penalties %}{{ p.reason }}{{ '; ' if not loop.last }}{% endfor %}</div>{% endif %}</td>
+        <td class="left small">{{ m.review.use_verdict if m.review and m.review.use_verdict else '' }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endblock %}

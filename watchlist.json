@@ -1,0 +1,370 @@
+{
+  "models": [
+    {
+      "brand": "AOC",
+      "model_key": "AG344UXM",
+      "family": "AGON PRO",
+      "year": 2022,
+      "panel": "Mini LED IPS",
+      "size_inch": 34,
+      "specs": {
+        "hz": 170,
+        "width": 3440,
+        "height": 1440,
+        "response_ms": 1,
+        "usb_c_pd_w": 90,
+        "kvm": null,
+        "height_adjust": true,
+        "curvature": "flat",
+        "dp_version": "1.4",
+        "hdr": "DisplayHDR 1000",
+        "srgb_pct": null,
+        "dci_p3_pct": 99,
+        "contrast": 1000,
+        "tuv_eye_comfort_stars": null,
+        "vrr": true,
+        "vrr_brand": "FreeSync Premium, G-Sync Compatible",
+        "burn_in_warranty_years": null
+      },
+      "source_url": "https://tftcentral.co.uk/news/aoc-agon-ag344uxm-with-34-flat-ultrawide-panel-170hz-and-1152-zone-mini-led-backlight",
+      "aliases": [
+        "AGON PRO AG344UXM"
+      ],
+      "priority": false,
+      "notes": "Checked at this exact model: 1,152-zone Mini LED backlight on an IPS panel, flat rather than curved, DisplayHDR 1000, 90 W USB-C. The only 34-inch Mini LED IPS on this list, which is why it is here - it is the one way to get real local dimming without OLED's text and burn-in trade-offs. Brightness is the figure to distrust: retailer tables print 1000 cd/m2 peak while TFTCentral lists 600 cd/m2, and the two are not reconciled by anything consulted, so a deduction is recorded in _fit_penalties rather than a number being picked here. The 1000:1 contrast is the native panel ratio before the backlight dims, not what the Mini LED array achieves. KVM not mentioned either way; height adjustment confirmed present by a review but with no travel figure.",
+      "enabled": true,
+      "review": {
+        "model_key": "AG344UXM",
+        "review_score": 8.3,
+        "confidence": "medium",
+        "critic": [
+          {
+            "source": "TFTCentral panel announcement",
+            "url": "https://tftcentral.co.uk/news/aoc-agon-ag344uxm-with-34-flat-ultrawide-panel-170hz-and-1152-zone-mini-led-backlight",
+            "score": "n/a",
+            "verdict": "1,152-zone Mini LED backlight, DisplayHDR 1000, 99% DCI-P3, 10-bit; lists 600 cd/m2 brightness"
+          },
+          {
+            "source": "MonitorNerds review (AG344UXM)",
+            "url": "https://monitornerds.com/aoc-agon-pro-ag344uxm-review/",
+            "score": "n/a",
+            "verdict": "Solid heavy metal stand with tilt, swivel and height adjustment; no pivot; lists 1000 cd/m2 peak"
+          }
+        ],
+        "user_sentiment": {
+          "score": null,
+          "summary": "No owner-sentiment source consulted.",
+          "sources": []
+        },
+        "pros": [
+          "1,152-zone Mini LED: real local dimming without OLED's text or burn-in trade-offs",
+          "DisplayHDR 1000 with 99% DCI-P3",
+          "Flat panel, 90 W USB-C, 170 Hz"
+        ],
+        "cons": [
+          "Brightness claims conflict: 600 cd/m2 at TFTCentral against 1000 cd/m2 peak in retailer tables",
+          "1000:1 native panel contrast before the backlight dims",
+          "KVM not documented either way"
+        ],
+        "specs_extra": {
+          "measured_response_ms": null,
+          "measured_contrast": null,
+          "measured_dci_p3_pct": null,
+          "peak_nits": null,
+          "text_clarity": "IPS RGB stripe subpixels; no fringing"
+        },
+        "use_verdict": "The interesting compromise: OLED-like HDR punch on an IPS panel that renders text properly, and it docks at 90 W.",
+        "notes": "peak_nits is deliberately left null rather than set to either disputed figure; the disagreement is recorded as a deduction in _fit_penalties instead, which is the honest way to mark down a spec sheet that cannot be reconciled. No lab measurements were available for this model.",
+        "fit_penalties": [
+          {
+            "reason": "brightness claims cannot be reconciled: TFTCentral lists 600 cd/m2 where retailer tables claim 1000 cd/m2 peak, and DisplayHDR 1000 certification implies the higher figure",
+            "points": -3
+          }
+        ]
+      }
+    },
+    {
+      "brand": "Asus",
+      "model_key": "PA348CGV",
+      "family": "ProArt Display",
+      "year": null,
+      "panel": "IPS",
+      "size_inch": 34.1,
+      "specs": {
+        "hz": 120,
+        "width": 3440,
+        "height": 1440,
+        "response_ms": 2,
+        "usb_c_pd_w": 90,
+        "kvm": null,
+        "height_adjust": true,
+        "curvature": "",
+        "dp_version": "",
+        "hdr": "HDR10",
+        "srgb_pct": 100,
+        "dci_p3_pct": 98,
+        "contrast": 1000,
+        "tuv_eye_comfort_stars": null,
+        "vrr": true,
+        "vrr_brand": "FreeSync Premium Pro",
+        "burn_in_warranty_years": null
+      },
+      "source_url": "https://www.asus.com/displays-desktops/monitors/proart/proart-display-pa348cgv/techspec/",
+      "aliases": [
+        "ProArt PA348CGV"
+      ],
+      "priority": false,
+      "notes": "Checked at this exact model against Asus's own technical specification page. 120 Hz over DisplayPort and USB-C, 100 Hz over HDMI; FreeSync Premium Pro to 120 Hz. Stand does height, tilt and swivel over 0-115 mm but does not pivot. Curvature is deliberately left empty: no source consulted stated a radius, and this range includes both flat and curved models, so guessing would be worse than the scoring's neutral unknown band. KVM is left unknown for the same reason - the spec page sections I saw did not mention one either way. Launch year not established.",
+      "enabled": true,
+      "review": {
+        "model_key": "PA348CGV",
+        "review_score": 8.4,
+        "confidence": "medium",
+        "critic": [
+          {
+            "source": "Asus technical specification page (PA348CGV)",
+            "url": "https://www.asus.com/displays-desktops/monitors/proart/proart-display-pa348cgv/techspec/",
+            "score": "n/a",
+            "verdict": "120 Hz maximum, 100% sRGB and 98% DCI-P3, 90 W USB-C, 0-115 mm height adjustment, no pivot"
+          },
+          {
+            "source": "TechRadar review",
+            "url": "https://www.techradar.com/reviews/asus-proart-pa348cgv",
+            "score": "n/a",
+            "verdict": "Covers 98% of DCI-P3; lacks portrait rotation"
+          }
+        ],
+        "user_sentiment": {
+          "score": null,
+          "summary": "No owner-sentiment source consulted.",
+          "sources": []
+        },
+        "pros": [
+          "98% DCI-P3 with a maker-stated colour accuracy focus",
+          "90 W USB-C power delivery at 120 Hz",
+          "Height, tilt and swivel over 115 mm"
+        ],
+        "cons": [
+          "1000:1 native contrast, the weakest on this list",
+          "No pivot to portrait",
+          "Curvature radius not stated by any source consulted"
+        ],
+        "specs_extra": {
+          "measured_response_ms": null,
+          "measured_contrast": null,
+          "measured_dci_p3_pct": null,
+          "peak_nits": null,
+          "text_clarity": "IPS RGB stripe subpixels; no fringing"
+        },
+        "use_verdict": "A colour-work monitor that docks: strong gamut, 120 Hz, 90 W, but ordinary contrast and no KVM confirmed.",
+        "notes": "Sourced from Asus's own spec page plus one review. The TechRadar review was listed in search results but not opened, so its verdict here is limited to the two points the result summary stated. No measured figures."
+      }
+    },
+    {
+      "brand": "Dell",
+      "model_key": "U3425WE",
+      "family": "UltraSharp 34 Thunderbolt Hub",
+      "year": 2024,
+      "panel": "IPS Black",
+      "size_inch": 34.14,
+      "specs": {
+        "hz": 120,
+        "width": 3440,
+        "height": 1440,
+        "response_ms": 5,
+        "usb_c_pd_w": 90,
+        "kvm": true,
+        "height_adjust": true,
+        "curvature": "1900R",
+        "dp_version": "",
+        "hdr": "",
+        "srgb_pct": 100,
+        "dci_p3_pct": 98,
+        "contrast": 2000,
+        "tuv_eye_comfort_stars": 5,
+        "vrr": null,
+        "vrr_brand": "",
+        "burn_in_warranty_years": null
+      },
+      "source_url": "https://eu.shi.com/product/47821450/Dell-UltraSharp-U3425WE",
+      "aliases": [
+        "UltraSharp U3425WE"
+      ],
+      "priority": false,
+      "notes": "Checked at this exact model, but from a distributor spec table and Dell's own marketing copy quoted in retailer listings - Dell's product page could not be opened from the session this was researched in, so nothing here comes from dell.com directly. 120 Hz applies to DisplayPort and Thunderbolt 4; HDMI is 100 Hz. The five-star TUV Rheinland Eye Comfort rating is the one claim worth re-checking yourself, because it is the reason this model ranks first: Dell's copy states it was the first 34-inch monitor to earn five stars, and the five-star tier requires at least 120 Hz, which this panel has and the 60 Hz UltraSharp 34s do not. Contrast 2000:1 is the IPS Black figure and is a claim, not a measurement. No DisplayHDR tier was found in any listing, so the HDR field is left empty rather than guessed. VRR is not stated anywhere I saw; left unknown rather than assumed absent.",
+      "enabled": true,
+      "review": {
+        "model_key": "U3425WE",
+        "review_score": 8.6,
+        "confidence": "medium",
+        "critic": [
+          {
+            "source": "SHI distributor spec table (U3425WE)",
+            "url": "https://eu.shi.com/product/47821450/Dell-UltraSharp-U3425WE",
+            "score": "n/a",
+            "verdict": "120 Hz over DisplayPort and Thunderbolt 4, 100 Hz over HDMI; KVM, 90 W power delivery, RJ-45, 150 mm height adjustment"
+          },
+          {
+            "source": "Dell Eye Comfort monitor page (programme and tiers)",
+            "url": "https://www.dell.com/en-uk/lp/dell-eye-comfort-monitors",
+            "score": "n/a",
+            "verdict": "Dell's Eye Comfort range page; the five-star tier requires at least 120 Hz, the four-star tier above 75 Hz and the three-star tier above 60 Hz"
+          },
+          {
+            "source": "TUV Rheinland Eye Comfort certification brochure",
+            "url": "https://www.tuv.com/content-media-files/master-content/services/products/1553-tuv-rheinland-eye-comfort-certification/tuv-rheinland-eye-comfort-certification_brochure_2023v2.pdf",
+            "score": "n/a",
+            "verdict": "Explains the 1-5 star scale: 15 test categories across image quality, ambient light management and eye care; five stars overall requires five stars in every category"
+          }
+        ],
+        "user_sentiment": {
+          "score": null,
+          "summary": "No owner-sentiment source consulted.",
+          "sources": []
+        },
+        "pros": [
+          "Documented as the first 34-inch monitor with a five-star TUV Rheinland Eye Comfort rating",
+          "IPS Black at a claimed 2000:1, roughly double a normal IPS",
+          "Thunderbolt 4 with 90 W delivery, KVM and Ethernet: one cable to a laptop"
+        ],
+        "cons": [
+          "120 Hz only over DisplayPort and Thunderbolt; HDMI is 100 Hz",
+          "About 300 cd/m2 maximum brightness and no DisplayHDR tier found",
+          "Everything here is a claim; no lab measurement was available"
+        ],
+        "specs_extra": {
+          "measured_response_ms": null,
+          "measured_contrast": null,
+          "measured_dci_p3_pct": null,
+          "peak_nits": null,
+          "text_clarity": "IPS RGB stripe subpixels; no fringing, which is the point of choosing it over OLED for text"
+        },
+        "use_verdict": "The best fit for the stated requirements on this list: the only entry that satisfies the five-star eye-comfort ask, and it docks a laptop over one cable.",
+        "notes": "The five-star claim comes from Dell's own product copy as quoted in retailer listings, supported by TUV Rheinland's brochure for how the scale works and Dell's range page for the tier thresholds. It was not confirmed in TUV's Certipedia certificate database, which is the authoritative register and could not be reached from the session this was researched in. That single claim is worth two of the work profile's bands (eye comfort 11 points, and it is why this model leads), so it is the first thing to verify independently."
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "brand": "Asus",
+      "model_key": "PA34VCNV",
+      "reason": "60 Hz panel, floor is 100 Hz; height-adjustable stand unverified",
+      "source_url": "https://www.asus.com/us/displays-desktops/monitors/proart/proart-display-pa34vcnv/techspec/",
+      "aliases": []
+    },
+    {
+      "brand": "Dell",
+      "model_key": "AW3423DWF",
+      "reason": "panel is OLED, which is not one of the wanted families (Mini LED or IPS); USB-C power delivery unverified, floor is 65 W",
+      "source_url": "https://www.cclonline.com/game-aw3423dwf-dell-aw3423dwf-curved-gaming-monitor-34-inch-3440-x-1440-uwqhd-qd-oled-panel-amd-freesync-489785/",
+      "aliases": []
+    },
+    {
+      "brand": "Dell",
+      "model_key": "U3423WE",
+      "reason": "60 Hz panel, floor is 100 Hz",
+      "source_url": "https://www.multitronic.fi/en/products/3801246/dell-ultrasharp-u3423we-34--uwqhd--ips-black-curved-monitor-with-usb-c-hub",
+      "aliases": [
+        "UltraSharp U3423WE"
+      ]
+    },
+    {
+      "brand": "Gigabyte",
+      "model_key": "M34WQ",
+      "reason": "USB-C PD 15 W, floor is 65 W",
+      "source_url": "https://monitornerds.com/gigabyte-m34wq-review/",
+      "aliases": []
+    },
+    {
+      "brand": "LG",
+      "model_key": "34GN850",
+      "reason": "no USB-C power delivery, floor is 65 W",
+      "source_url": "https://www.displayninja.com/lg-34gn850-review/",
+      "aliases": [
+        "34GN850-B"
+      ]
+    },
+    {
+      "brand": "LG",
+      "model_key": "34GP83A",
+      "reason": "no USB-C power delivery, floor is 65 W",
+      "source_url": "https://www.displayninja.com/lg-34gp83a-review/",
+      "aliases": [
+        "34GP83A-B"
+      ]
+    },
+    {
+      "brand": "LG",
+      "model_key": "34GS95QE",
+      "reason": "panel is OLED, which is not one of the wanted families (Mini LED or IPS); no USB-C power delivery, floor is 65 W",
+      "source_url": "https://monitornerds.com/lg-34gs95qe-b-review-premium-240hz-ultrawide-oled-gaming-monitor-editors-choice/",
+      "aliases": [
+        "34GS95QE-B",
+        "34GS95QE-W"
+      ]
+    },
+    {
+      "brand": "Lenovo",
+      "model_key": "Y34WZ-30",
+      "reason": "panel is VA, which is not one of the wanted families (Mini LED or IPS)",
+      "source_url": "https://psref.lenovo.com/syspool/Sys/PDF/Lenovo_Monitors/Lenovo_Legion_Y34wz_30/Lenovo_Legion_Y34wz_30_Spec.pdf",
+      "aliases": [
+        "Y34WZ30",
+        "Legion Y34wz-30"
+      ]
+    },
+    {
+      "brand": "MSI",
+      "model_key": "MPG341CQPX",
+      "reason": "panel is OLED, which is not one of the wanted families (Mini LED or IPS)",
+      "source_url": "https://storage-asset.msi.com/specSheet/sg/monitor/MPG%20341CQPX%20QD-OLED.pdf",
+      "aliases": [
+        "341CQPX",
+        "MAG341CQPXQDOLED"
+      ]
+    },
+    {
+      "brand": "Philips",
+      "model_key": "34B1U5600CH",
+      "reason": "panel is VA, which is not one of the wanted families (Mini LED or IPS); height-adjustable stand unverified",
+      "source_url": "https://www.techradar.com/pro/philips-34b1u5600ch",
+      "aliases": [
+        "34B1U5600"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "LS34BG850",
+      "reason": "panel is OLED, which is not one of the wanted families (Mini LED or IPS); USB-C power delivery unverified, floor is 65 W",
+      "source_url": "https://www.rtings.com/monitor/tools/compare/samsung-odyssey-oled-g85sb-s34bg85-samsung-odyssey-oled-g80sd-s32dg80/34904/63127",
+      "aliases": [
+        "S34BG850",
+        "S34BG85",
+        "G85SB"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "LS34C650",
+      "reason": "panel is VA, which is not one of the wanted families (Mini LED or IPS); height-adjustable stand unverified",
+      "source_url": "https://www.proshop.nl/Scherm/34-Samsung-ViewFinity-S6-S34C650TAU-3440x1440-UWQHD-100Hz-VA-90W-USB-C-KVM-switch/3233991",
+      "aliases": [
+        "S34C650",
+        "S34C650TAU",
+        "S34C650UAN"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "LS34DG850",
+      "reason": "panel is OLED, which is not one of the wanted families (Mini LED or IPS); no USB-C power delivery, floor is 65 W",
+      "source_url": "https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/",
+      "aliases": [
+        "S34DG850",
+        "G85SD",
+        "LS34DG850SUXDU",
+        "LS34DG850SUXEN"
+      ]
+    }
+  ]
+}

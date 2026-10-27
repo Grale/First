@@ -1,0 +1,41 @@
+[
+ {
+  "brand": "Samsung",
+  "model_key": "65LS03FA",
+  "family": "The Frame 2025 (non-Pro)",
+  "year": 2025,
+  "backlight": "QLED edge-lit (not Mini LED)",
+  "hz": 100,
+  "vrr": null,
+  "hdmi21": null,
+  "hdmi21_ports": null,
+  "qualifies": false,
+  "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/",
+  "aliases": [
+   "LS03FA",
+   "QE65LS03FA",
+   "QE65LS03FAUXXH",
+   "QE65LS03FAUXXU"
+  ],
+  "notes": "Negative match so the Frame Pro aliases (LS03F) never claim the plain 2025 Frame, which is a QLED without Mini LED."
+ },
+ {
+  "brand": "Samsung",
+  "model_key": "65LS03HA",
+  "family": "The Frame 2026 (non-Pro)",
+  "year": 2026,
+  "backlight": "QLED (not Mini LED)",
+  "hz": null,
+  "vrr": null,
+  "hdmi21": null,
+  "hdmi21_ports": null,
+  "qualifies": false,
+  "source_url": "https://www.samsung.com/uk/lifestyle-tvs/the-frame/",
+  "aliases": [
+   "LS03HA",
+   "QE65LS03HA",
+   "QE65LS03HAUXXH"
+  ],
+  "notes": "Negative match for the plain 2026 Frame (non-Pro)."
+ }
+]

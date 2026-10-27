@@ -1,0 +1,458 @@
+{
+ "as_of": "2026-10-27T07:56",
+ "source": "live scan",
+ "shops": {
+  "electroline": "Electroline",
+  "scandia": "Scandia",
+  "megaelectric": "MegaElectric",
+  "stephanis": "Stephanis",
+  "public": "Public",
+  "kotsovolos": "Kotsovolos"
+ },
+ "failed_shops": [],
+ "currency": "EUR",
+ "criteria_label": "34\" Mini LED or IPS",
+ "groups": [
+  {
+   "key": "LS34DG850",
+   "label": "LS34DG850SUXDU",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": 55.6,
+   "offers": [
+    {
+     "shop": "electroline",
+     "price": 899.0,
+     "list_price": null,
+     "in_stock": true,
+     "url": "https://electroline.cy/en/products/computing/peripherals/pc-monitors/samsung-ls34dg850suxdu-curved-gaming-pc-monitor-34/",
+     "title": "SAMSUNG LS34DG850SUXDU Curved Gaming PC Monitor, 34\""
+    },
+    {
+     "shop": "kotsovolos",
+     "price": 1099.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=317677&storeId=10161",
+     "title": "Samsung LS34DG850SUXDU 34\" UWQHD OLED 175Hz"
+    },
+    {
+     "shop": "stephanis",
+     "price": 1399.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/401513",
+     "title": "PC Monitor 34\" SAMSUNG Curved Odyssey G8 G85SD LS34DG850SUXDU Ultra WQHD OLED"
+    }
+   ]
+  },
+  {
+   "key": "CU34G4",
+   "label": "CU34G4",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": 20.1,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 249.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/408916",
+     "title": "PC Monitor 34\" AOC Curved CU34G4 WLED Fast VA black"
+    },
+    {
+     "shop": "electroline",
+     "price": 299.0,
+     "list_price": null,
+     "in_stock": true,
+     "url": "https://electroline.cy/en/products/computing/peripherals/pc-monitors/aoc-gaming-monitor-34-curved/",
+     "title": "AOC CU34G4 Curved Gaming PC Monitor, 34\""
+    }
+   ]
+  },
+  {
+   "key": "LS34C500G",
+   "label": "LS34C500GAUXEN",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 299.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/390230",
+     "title": "PC Monitor 34\" SAMSUNG ViewFinity S5 S50GC LS34C500GAUXEN Ultra WQHD LED VA black"
+    }
+   ]
+  },
+  {
+   "key": "XC34UWQHD",
+   "label": "XC34UWQHD",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 319.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/411702",
+     "title": "PC Monitor 34\" ARMAGGEDDON Curved Pixxel+ XTREME Series XC34UWQHD-S180GS-B WQHD IPS LED black"
+    }
+   ]
+  },
+  {
+   "key": "G34WQI",
+   "label": "G34WQI",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 329.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=339429&storeId=10161",
+     "title": "Xiaomi G34WQi 2026 Curved"
+    }
+   ]
+  },
+  {
+   "key": "34MP1W180",
+   "label": "34MP1W180C",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 339.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/407509",
+     "title": "PC Monitor 34\" LORGAR Curved 34MP1 VA Mini-LED UWQHD LRG-34MP1W180C-GY black/grey"
+    }
+   ]
+  },
+  {
+   "key": "ED340CURX",
+   "label": "ED340CURX0BMIIPX",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 349.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/410371",
+     "title": "PC Monitor 34\" ACER Curved Nitro ED340CURX0bmiipx UM.CE0EE.010 UWQHD VA black"
+    }
+   ]
+  },
+  {
+   "key": "LC34G55TW",
+   "label": "LC34G55TWWPXEN",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "electroline",
+     "price": 369.0,
+     "list_price": null,
+     "in_stock": true,
+     "url": "https://electroline.cy/en/products/computing/peripherals/pc-monitors/samsung-lc34g55twwpxen-g55t-odyssey-curved-gaming-pc-monitor-34/",
+     "title": "SAMSUNG LC34G55TWWPXEN G55T Odyssey Curved Gaming PC Monitor, 34\""
+    }
+   ]
+  },
+  {
+   "key": "CU34E4CV",
+   "label": "CU34E4CV",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 399.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/413253",
+     "title": "PC Monitor 34\" AOC Curved CU34E4CV UWQHD VA black"
+    }
+   ]
+  },
+  {
+   "key": "34WP500",
+   "label": "34WP500",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 399.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=276810&storeId=10161",
+     "title": "LG 34WP500 34\" IPS 2K UltraWide"
+    }
+   ]
+  },
+  {
+   "key": "34G630A",
+   "label": "34G630A",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 449.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=336010&storeId=10161",
+     "title": "LG UltraGear 34G630A-B 240H USBC 34\""
+    }
+   ]
+  },
+  {
+   "key": "S3422DWG",
+   "label": "S3422DWG",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 529.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=243626&storeId=10161",
+     "title": "Dell S3422DWG 34” Curved"
+    }
+   ]
+  },
+  {
+   "key": "S3423DWC",
+   "label": "S3423DWC",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 559.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=266619&storeId=10161",
+     "title": "Dell S3423DWC 34 Curved USB-C"
+    }
+   ]
+  },
+  {
+   "key": "34BQ77QC",
+   "label": "34BQ77QC",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 589.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=301205&storeId=10161",
+     "title": "LG 34BQ77QC-B 34\""
+    }
+   ]
+  },
+  {
+   "key": "LS34C652V",
+   "label": "LS34C652VAUXEN",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": 0.0,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 599.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/394499",
+     "title": "PC Monitor 34\" SAMSUNG Curved ViewFinity S6 S65VC LS34C652VAUXEN UWQHD VA LED black"
+    },
+    {
+     "shop": "kotsovolos",
+     "price": 599.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=307532&storeId=10161",
+     "title": "Samsung LS34C652VAUXEN VA 34\" Curved"
+    }
+   ]
+  },
+  {
+   "key": "P3421W",
+   "label": "P3421W",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 609.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=231663&storeId=10161",
+     "title": "Dell P3421W 34\" Curved  USB-C IPS"
+    }
+   ]
+  },
+  {
+   "key": "MAG342CQR",
+   "label": "MAG342CQR",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 699.0,
+     "list_price": 699.99,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=242299&storeId=10161",
+     "title": "MSI Optix MAG342CQR 34'' Curved"
+    }
+   ]
+  },
+  {
+   "key": "AG346UCD",
+   "label": "AG346UCD",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "electroline",
+     "price": 749.0,
+     "list_price": null,
+     "in_stock": true,
+     "url": "https://electroline.cy/en/products/gaming/gaming-pcs/gaming-monitors/aoc-agon-pro-oled-34/",
+     "title": "AOC AG346UCD Gaming PC Monitor, 34\""
+    }
+   ]
+  },
+  {
+   "key": "C3422WE",
+   "label": "C3422WE",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 999.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=226347&storeId=10161",
+     "title": "Dell C3422WE 34’’ ΙPS Curved"
+    }
+   ]
+  },
+  {
+   "key": "U3423WE",
+   "label": "U3423WE",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1109.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=279668&storeId=10161",
+     "title": "Dell UltraSharp U3423WE 34\""
+    }
+   ]
+  },
+  {
+   "key": "LS34BG850",
+   "label": "LS34BG850SUXEN",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "stephanis",
+     "price": 1199.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/386131",
+     "title": "PC Monitor 34\" SAMSUNG Curved dyssey G8 G85SB LS34BG850SUXEN Ultra WQHD OLED"
+    }
+   ]
+  },
+  {
+   "key": "34GS95QE",
+   "label": "34GS95QE",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1199.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=304036&storeId=10161",
+     "title": "LG 34GS95QE-B.OLED 240Hz 34\""
+    }
+   ]
+  },
+  {
+   "key": "AW3423DWF",
+   "label": "AW3423DWF",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1229.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=279470&storeId=10161",
+     "title": "Dell Alienware AW3423DWF QD-OLED 34\""
+    }
+   ]
+  },
+  {
+   "key": "341CQPX",
+   "label": "341CQPX",
+   "confident": false,
+   "model_key": null,
+   "spread_pct": null,
+   "offers": [
+    {
+     "shop": "kotsovolos",
+     "price": 1399.0,
+     "list_price": null,
+     "in_stock": null,
+     "url": "https://www.kotsovolos.cy/SearchDisplay?q=334334&storeId=10161",
+     "title": "MSI MPG 341CQPX 34'' QD-OLED"
+    }
+   ]
+  }
+ ],
+ "best_prices": {}
+}

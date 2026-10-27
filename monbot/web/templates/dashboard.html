@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="row between">
+    <h1>Current prices</h1>
+    <div class="muted small">
+      {% if last_run %}Last check #{{ last_run.id }} at {{ last_run.started_at|dt }} — {{ last_run.notes }}{% else %}No check has run yet.{% endif %}
+    </div>
+  </div>
+  {% if shop_runs %}
+  <div class="chips">
+    {% for s in shop_runs %}
+      <span class="chip {{ 'ok' if s.ok else 'bad' }}" title="{{ s.error }}">{{ labels.get(s.shop, s.shop) }}: {{ 'ok' if s.ok else 'failed' }} · {{ s.n_offers }} matched{% if s.tier %} · {{ s.tier }}{% endif %}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="table-wrap">
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th class="left">Model</th>
+        <th>Score</th>
+        <th class="left">Specs</th>
+        {% for s in shops %}<th>{{ labels.get(s, s) }}</th>{% endfor %}
+        <th>Best</th>
+        <th>Lowest ever</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for g in grid %}
+      {% set m = g.model %}
+      <tr class="{{ 'priority' if m.priority }} {{ 'disabled' if not m.enabled }}">
+        <td class="rank">{{ g.rank }}</td>
+        <td class="left">
+          <a href="{{ url_for('model_page', model_key=m.model_key) }}">{{ '⭐ ' if m.priority }}{{ m.brand }} {{ m.model_key }}</a>
+          <div class="muted small">{{ m.family }}{% if m.year %} · {{ m.year }}{% endif %} · {{ m.panel }}</div>
+        </td>
+        <td><a href="{{ url_for('ranking_page') }}#{{ m.model_key|urlencode }}" title="fit {{ g.score.fit }} · reviews {{ g.score.review if g.score.has_review else 'none' }}"><strong>{{ g.score.overall }}</strong></a>{% if not g.score.has_review %}<div class="muted small">no reviews</div>{% elif g.score.confidence %}<div class="muted small">{{ g.score.confidence }}</div>{% endif %}</td>
+        <td class="left small">{{ m.specs.hz or '?' }} Hz · {{ m.resolution_label }}{% if m.ppi %} · {{ m.ppi }} PPI{% endif %}<div class="muted">USB-C {{ (m.specs.usb_c_pd_w ~ ' W') if m.specs.usb_c_pd_w else ('?' if m.specs.usb_c_pd_w is none else 'none') }} · KVM {{ '✓' if m.specs.kvm else ('?' if m.specs.kvm is none else '✗') }}{% if m.specs.tuv_eye_comfort_stars %} · TÜV {{ m.specs.tuv_eye_comfort_stars }}★{% endif %}</div></td>
+        {% for s in shops %}
+          {% set c = g.cells[s] %}
+          <td class="{{ 'best' if c and g.best and c.id == g.best.id }}">
+            {% if c %}
+              <a href="{{ c.url }}" target="_blank" rel="noopener" title="{{ c.title }}">{{ c.price|price or '—' }}</a>
+              {% if c.list_price %}<div class="muted small strike">{{ c.list_price|price }}</div>{% endif %}
+              {% if c.in_stock == 0 %}<div class="tag bad">out of stock</div>{% elif c.in_stock is none %}<div class="tag">listed</div>{% else %}<div class="tag ok">in stock</div>{% endif %}
+            {% else %}<span class="muted">—</span>{% endif %}
+          </td>
+        {% endfor %}
+        <td>{% if g.best %}<strong>{{ g.best.price|price }}</strong><div class="muted small">{{ labels.get(g.best.shop, g.best.shop) }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+        <td>{% if g.lowest %}{{ g.lowest.price|price }}<div class="muted small">{{ labels.get(g.lowest.shop, g.lowest.shop) }} · {{ g.lowest.seen_at|dt }}</div>{% else %}<span class="muted">—</span>{% endif %}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="{{ 6 + shops|length }}" class="muted">The watchlist is empty. Add models on the Watchlist page.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="muted small">Rows are ordered by overall score ({{ (cfg.scoring.fit_weight*100)|round|int }}% fit to your criteria, {{ (cfg.scoring.review_weight*100)|round|int }}% reviews); see Ranking for the breakdown. Alert rules: a shop ≥{{ cfg.rules.cross_shop_pct }}% below the next-cheapest shop · ≥{{ cfg.rules.list_discount_pct }}% off a shop's own list price · back in stock. Checks every {{ cfg.schedule.interval_hours }} h.</p>
+</section>
+{% endblock %}

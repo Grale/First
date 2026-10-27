@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Monitor Deal Bot{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="{{ url_for('dashboard') }}">🖥️ Monitor Deal Bot</a>
+  <nav>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('ranking_page') }}">Ranking</a>
+    <a href="{{ url_for('alerts_page') }}">Alerts</a>
+    <a href="{{ url_for('watchlist_page') }}">Watchlist</a>
+    <a href="{{ url_for('discover_page') }}">Discover</a>
+    <a href="{{ url_for('settings_page') }}">Settings</a>
+  </nav>
+  <div class="status" id="status">
+    <span id="status-text">…</span>
+    <button id="btn-run" class="btn primary" type="button">Run check now</button>
+    <button id="btn-notify" class="btn" type="button">Test notification</button>
+  </div>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="foot">Local only · bound to 127.0.0.1 · <span id="foot-next"></span></footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,117 @@
+{
+  "_about": "Deductions from the fit score for findings in reviews that clash with the buyer's criteria (65-inch Mini LED with real local dimming, 120Hz+, VRR, HDMI 2.1, low lag). Points are negative. Shown in the fit breakdown on the Ranking and model pages.",
+  "65QNED83B": [
+    {
+      "reason": "likely edge-lit despite the Mini LED label (third-party spec listings, 2025 predecessor tier)",
+      "points": -8
+    }
+  ],
+  "65QNED87A": [
+    {
+      "reason": "edge-lit per John Lewis and the RTINGS-tested US sibling; heavy haloing",
+      "points": -8
+    }
+  ],
+  "65QNED87B": [
+    {
+      "reason": "backlight type unverified; the predecessor tier was edge-lit",
+      "points": -4
+    }
+  ],
+  "65QNED8M": [
+    {
+      "reason": "dimming tier unspecified; 2026 QNED85 sibling listed as edge-lit",
+      "points": -4
+    }
+  ],
+  "65M80H": [
+    {
+      "reason": "no local dimming at all (RTINGS)",
+      "points": -12
+    }
+  ],
+  "65QN70F": [
+    {
+      "reason": "local dimming largely ineffective (RTINGS)",
+      "points": -8
+    }
+  ],
+  "65LS03F": [
+    {
+      "reason": "edge-lit Mini LED and extra lag through the wireless One Connect box",
+      "points": -10
+    }
+  ],
+  "65LS03HW": [
+    {
+      "reason": "edge-lit with 24 zones and 32 ms+ lag through the wireless box",
+      "points": -8
+    }
+  ],
+  "65W95A": [
+    {
+      "reason": "local dimming switches off when VRR is on (RTINGS)",
+      "points": -8
+    }
+  ],
+  "65W95B": [
+    {
+      "reason": "local dimming switches off when VRR is on (choose.tv)",
+      "points": -8
+    }
+  ],
+  "65UR9S": [
+    {
+      "reason": "input lag above 30 ms with local dimming on in one lab test",
+      "points": -3
+    }
+  ],
+  "65P8L": [
+    {
+      "reason": "only ~60 to 72 dimming zones and ~330 to 450 nits: near-absent local dimming (What Hi-Fi, AVPasion)",
+      "points": -10
+    }
+  ],
+  "65RM7L": [
+    {
+      "reason": "some datasheets list a 100Hz native panel with 144Hz only in game mode; unverified",
+      "points": -4
+    }
+  ],
+  "65Q7D": [
+    {
+      "reason": "same set as the 65RM7L: possible 100Hz native panel; unverified",
+      "points": -4
+    }
+  ],
+  "XIAOMI TV S MINI LED 65": [
+    {
+      "reason": "owners report VRR resetting after power-off on PS5",
+      "points": -3
+    }
+  ],
+  "65QNED866RE": [
+    {
+      "reason": "IPS-type panel with ~180 zones: low contrast and haloing",
+      "points": -6
+    }
+  ],
+  "65QNED876QB": [
+    {
+      "reason": "IPS-type panel with 162 zones: blooming and grey blacks",
+      "points": -6
+    }
+  ],
+  "65U8HQ": [
+    {
+      "reason": "EU version uses an IPS panel with 160 to 180 zones (What Hi-Fi: poor backlighting)",
+      "points": -6
+    }
+  ],
+  "65C6K PRO": [
+    {
+      "reason": "65in may be 120Hz native rather than 144Hz (AVCesar); unverified",
+      "points": -2
+    }
+  ]
+}

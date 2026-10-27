@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Discover · Monitor Deal Bot{% endblock %}
+{% block content %}
+<section class="card">
+  <div class="row between">
+    <h1>Discover</h1>
+    <button id="btn-discover" class="btn primary" type="button" {{ 'disabled' if disc.running }}>Scan shops now</button>
+  </div>
+  <p class="muted small">Lists {{ crit.size_label }} {{ crit.panel_label }} titles the shops sell that match no watchlist model and are not in the rejected list. Check the specs online before adding one.</p>
+  <div id="disc-status" class="small muted">{% if disc.running %}Scanning… {{ disc.progress }}{% elif disc.ran_at %}Last scan {{ disc.ran_at|dt }}{% else %}Not scanned yet.{% endif %} {% if disc.error %}<span class="bad">{{ disc.error }}</span>{% endif %}</div>
+  {% for shop, items in disc.result.items() %}
+    <h2>{{ labels.get(shop, shop) }} <span class="muted small">{{ items|length }}</span></h2>
+    <table>
+      <thead><tr><th class="left">Title</th><th>Price</th><th></th></tr></thead>
+      <tbody>
+      {% for it in items %}
+        <tr><td class="left"><a href="{{ it.url }}" target="_blank" rel="noopener">{{ it.title }}</a></td><td>{{ it.price|price }}</td>
+          <td><a class="btn small" href="{{ url_for('watchlist_page', model_key='', aliases='', notes='from ' + shop + ': ' + it.title) }}#form">Add…</a></td></tr>
+      {% else %}<tr><td colspan="3" class="muted">Nothing new.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+document.getElementById('btn-discover').addEventListener('click', async () => {
+  await fetch('/api/discover', {method: 'POST'});
+  const el = document.getElementById('disc-status');
+  const t = setInterval(async () => {
+    const s = await (await fetch('/api/status')).json();
+    el.textContent = s.discover.running ? ('Scanning… ' + (s.discover.progress || '')) : 'Done, reloading…';
+    if (!s.discover.running) { clearInterval(t); location.reload(); }
+  }, 2000);
+});
+</script>
+{% endblock %}

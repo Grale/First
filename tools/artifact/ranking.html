@@ -1,0 +1,665 @@
+<title>34-Inch Monitor Ranking</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+/* Layout: a fixed instrument panel of weightings above a ranked list whose rows open to show their
+   own arithmetic. Accent follows the active profile, so the page's colour states which question is
+   being asked of the data. */
+:root {
+  --bg: #f1f4f7;
+  --surface: #ffffff;
+  --surface-2: #e8edf2;
+  --fg: #141a21;
+  --fg-2: #46525f;
+  --muted: #6b7885;
+  --line: #d4dce4;
+  --line-strong: #b9c5d0;
+  --accent: #15697f;
+  --accent-soft: #d6eaef;
+  --accent-fg: #ffffff;
+  --good: #2b6e46;
+  --warn: #8a6100;
+  --bad: #9a3324;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+:root[data-profile="gaming"] {
+  --accent: #a2452a;
+  --accent-soft: #f4ddd4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1319;
+    --surface: #161d25;
+    --surface-2: #1e2731;
+    --fg: #e6ecf2;
+    --fg-2: #b2bfcc;
+    --muted: #8c9aa8;
+    --line: #28323e;
+    --line-strong: #3a4653;
+    --accent: #52b6cf;
+    --accent-soft: #10303a;
+    --accent-fg: #06181e;
+    --good: #6cc38c;
+    --warn: #d6a62a;
+    --bad: #e0806e;
+    color-scheme: dark;
+  }
+  :root:not([data-theme="light"])[data-profile="gaming"] {
+    --accent: #e0896b;
+    --accent-soft: #3a1f16;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1319;
+  --surface: #161d25;
+  --surface-2: #1e2731;
+  --fg: #e6ecf2;
+  --fg-2: #b2bfcc;
+  --muted: #8c9aa8;
+  --line: #28323e;
+  --line-strong: #3a4653;
+  --accent: #52b6cf;
+  --accent-soft: #10303a;
+  --accent-fg: #06181e;
+  --good: #6cc38c;
+  --warn: #d6a62a;
+  --bad: #e0806e;
+  color-scheme: dark;
+}
+:root[data-theme="dark"][data-profile="gaming"] {
+  --accent: #e0896b;
+  --accent-soft: #3a1f16;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 56px;
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.75rem, 4.5vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: 0.95rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+
+.lede { color: var(--fg-2); max-width: 64ch; margin-top: 10px; }
+.crit {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px;
+}
+.chip {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.02em;
+  padding: 3px 8px; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--fg-2);
+  background: var(--surface);
+}
+.chip b { color: var(--fg); font-weight: 600; }
+
+.note {
+  margin-top: 22px; padding: 14px 16px; background: var(--surface);
+  border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  color: var(--fg-2); font-size: 0.88rem;
+}
+.note b { color: var(--fg); }
+
+/* ---- controls ---- */
+.panel {
+  margin-top: 28px; background: var(--surface); border: 1px solid var(--line);
+}
+.panel-head {
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid var(--line);
+}
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 2px; overflow: hidden; }
+.seg button {
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 500;
+  padding: 7px 14px; border: 0; background: transparent; color: var(--fg-2); cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-fg); }
+.panel-body { padding: 16px; display: grid; gap: 18px; }
+.mix { display: grid; gap: 10px; }
+.mix-row { display: grid; grid-template-columns: 1fr; gap: 4px; }
+.mix-row label { font-size: 0.82rem; color: var(--fg-2); display: flex; justify-content: space-between; gap: 10px; }
+.mix-row label span { font-family: var(--font-mono); color: var(--fg); font-variant-numeric: tabular-nums; }
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+.sliders { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px 20px; }
+.sl { display: grid; gap: 2px; min-width: 0; }
+.sl label {
+  font-size: 0.78rem; color: var(--fg-2); display: flex; justify-content: space-between; gap: 8px;
+}
+.sl label em { font-style: normal; color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; }
+.sl label b { font-family: var(--font-mono); font-weight: 500; color: var(--fg); font-variant-numeric: tabular-nums; }
+.sl.changed label b { color: var(--accent); font-weight: 600; }
+.btn {
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; cursor: pointer;
+  padding: 7px 12px; background: var(--surface-2); color: var(--fg); border: 1px solid var(--line-strong);
+  border-radius: 2px;
+}
+.btn:hover { border-color: var(--accent); }
+.flag {
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);
+  border: 1px dashed var(--accent); padding: 3px 8px; border-radius: 2px;
+}
+
+/* ---- ranking ---- */
+.list { margin-top: 26px; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.row { background: var(--surface); }
+.row-head {
+  display: grid; grid-template-columns: 2.1rem minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  width: 100%; text-align: left; padding: 13px 16px; background: transparent; border: 0;
+  cursor: pointer; color: inherit; font: inherit;
+}
+.row-head:hover { background: var(--surface-2); }
+.rank {
+  font-family: var(--font-mono); font-size: 1.05rem; font-weight: 600; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.row[data-top="1"] .rank { color: var(--accent); }
+.who { min-width: 0; }
+.who strong { font-weight: 600; font-size: 0.98rem; }
+.who .sub { color: var(--muted); font-size: 0.78rem; font-family: var(--font-mono); }
+.scores { display: flex; align-items: center; gap: 16px; }
+.pricecell { text-align: right; min-width: 92px; }
+.pricecell .amt { font-family: var(--font-mono); font-size: 0.98rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pricecell .where { font-size: 0.7rem; color: var(--muted); }
+.pricecell.none .amt { color: var(--muted); font-weight: 400; font-size: 0.78rem; }
+.spread {
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; padding: 1px 5px;
+  border-radius: 2px; background: var(--accent-soft); color: var(--accent); white-space: nowrap;
+}
+.spread.flat { background: var(--surface-2); color: var(--muted); }
+.asof {
+  margin-top: 22px; padding: 12px 16px; background: var(--surface-2); border: 1px solid var(--line);
+  font-size: 0.84rem; color: var(--fg-2); display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline;
+}
+.asof b { color: var(--fg); font-family: var(--font-mono); }
+.shoprices { display: grid; gap: 4px; font-size: 0.82rem; }
+.shoprices div { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: baseline; }
+.shoprices .p { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.shoprices .best .p { color: var(--accent); font-weight: 600; }
+.shoprices .oos { color: var(--muted); text-decoration: line-through; }
+.cmp { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin-top: 12px; }
+.cmp th { text-align: left; color: var(--muted); font-weight: 500; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.04em; border-bottom: 1px solid var(--line); padding: 6px 10px 6px 0; white-space: nowrap; }
+.cmp td { padding: 7px 10px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cmp td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cmp tr.multi td.num.lo { color: var(--accent); font-weight: 600; }
+.cmp .name { color: var(--fg); }
+.cmp .name small { display: block; color: var(--muted); font-size: 0.72rem; font-family: var(--font-mono); }
+.watched { font-family: var(--font-mono); font-size: 0.66rem; color: var(--accent);
+  border: 1px solid var(--accent); padding: 0 4px; border-radius: 2px; margin-left: 6px; }
+.big {
+  font-family: var(--font-mono); font-size: 1.3rem; font-weight: 600; color: var(--fg);
+  font-variant-numeric: tabular-nums; line-height: 1;
+}
+.small-split { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+.bar { height: 5px; background: var(--surface-2); overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); }
+.detail { padding: 4px 16px 20px; border-top: 1px solid var(--line); display: grid; gap: 18px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+.breakdown { display: grid; gap: 5px; min-width: 0; }
+.bd {
+  display: grid; grid-template-columns: minmax(0, 1fr) 2.6rem 64px; gap: 8px; align-items: center;
+  font-size: 0.8rem;
+}
+.bd span { color: var(--fg-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bd b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
+.bd .track { height: 6px; background: var(--surface-2); }
+.bd .track i { display: block; height: 100%; background: var(--accent); }
+.bd.zero b { color: var(--muted); }
+.bd.neg b { color: var(--bad); }
+.bd.neg .track i { background: var(--bad); }
+table.spec { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+table.spec th, table.spec td { text-align: left; padding: 3px 0; vertical-align: top; }
+table.spec th { color: var(--muted); font-weight: 400; padding-right: 12px; white-space: nowrap; }
+table.spec td { font-family: var(--font-mono); color: var(--fg-2); }
+.unk { color: var(--muted); font-style: italic; font-family: var(--font-body); }
+ul { margin: 0; padding-left: 1.1em; font-size: 0.82rem; color: var(--fg-2); }
+li { margin: 2px 0; }
+ul.pros li::marker { color: var(--good); }
+ul.cons li::marker { color: var(--bad); }
+.pen { font-size: 0.8rem; color: var(--bad); display: grid; gap: 3px; }
+.pen div::before { content: "−"; margin-right: 5px; }
+.srcs { display: grid; gap: 6px; font-size: 0.8rem; }
+.srcs a { display: inline-block; }
+.srcs p { color: var(--muted); }
+.conf {
+  font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 2px 6px; border: 1px solid var(--line-strong); color: var(--fg-2);
+}
+.conf[data-c="low"] { color: var(--warn); border-color: var(--warn); }
+.notes { font-size: 0.82rem; color: var(--muted); }
+.rejected { margin-top: 34px; }
+.rej-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 12px; }
+.rej-table th { text-align: left; color: var(--muted); font-weight: 500; font-size: 0.78rem;
+  border-bottom: 1px solid var(--line); padding: 6px 10px 6px 0; }
+.rej-table td { padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--fg-2); }
+.rej-table td:first-child { font-family: var(--font-mono); color: var(--fg); white-space: nowrap; }
+.foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8rem; display: grid; gap: 6px; }
+.tablewrap { overflow-x: auto; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+@media (max-width: 560px) {
+  .row-head { grid-template-columns: 1.8rem minmax(0, 1fr); }
+  .scores { grid-column: 1 / -1; justify-content: flex-start; gap: 12px; }
+  .bd { grid-template-columns: minmax(0, 1fr) 2.4rem 44px; }
+}
+</style>
+
+<script id="watchlist-data" type="application/json">{"criteria":{"sizes":[34],"panels":["miniled","ips"],"min_hz":100,"min_width":3440,"min_height":1440,"require_height_adjust":true,"require_usb_c_pd_w":65,"require_kvm":false,"require_vrr":false},"models":[{"brand":"AOC","model_key":"AG344UXM","family":"AGON PRO","year":2022,"panel":"Mini LED IPS","size_inch":34,"specs":{"hz":170,"width":3440,"height":1440,"response_ms":1,"usb_c_pd_w":90,"kvm":null,"height_adjust":true,"curvature":"flat","dp_version":"1.4","hdr":"DisplayHDR 1000","srgb_pct":null,"dci_p3_pct":99,"contrast":1000,"tuv_eye_comfort_stars":null,"vrr":true,"vrr_brand":"FreeSync Premium, G-Sync Compatible","burn_in_warranty_years":null},"source_url":"https://tftcentral.co.uk/news/aoc-agon-ag344uxm-with-34-flat-ultrawide-panel-170hz-and-1152-zone-mini-led-backlight","aliases":["AGON PRO AG344UXM"],"priority":false,"notes":"Checked at this exact model: 1,152-zone Mini LED backlight on an IPS panel, flat rather than curved, DisplayHDR 1000, 90 W USB-C. The only 34-inch Mini LED IPS on this list, which is why it is here - it is the one way to get real local dimming without OLED's text and burn-in trade-offs. Brightness is the figure to distrust: retailer tables print 1000 cd/m2 peak while TFTCentral lists 600 cd/m2, and the two are not reconciled by anything consulted, so a deduction is recorded in _fit_penalties rather than a number being picked here. The 1000:1 contrast is the native panel ratio before the backlight dims, not what the Mini LED array achieves. KVM not mentioned either way; height adjustment confirmed present by a review but with no travel figure.","enabled":true,"review":{"model_key":"AG344UXM","review_score":8.3,"confidence":"medium","critic":[{"source":"TFTCentral panel announcement","url":"https://tftcentral.co.uk/news/aoc-agon-ag344uxm-with-34-flat-ultrawide-panel-170hz-and-1152-zone-mini-led-backlight","score":"n/a","verdict":"1,152-zone Mini LED backlight, DisplayHDR 1000, 99% DCI-P3, 10-bit; lists 600 cd/m2 brightness"},{"source":"MonitorNerds review (AG344UXM)","url":"https://monitornerds.com/aoc-agon-pro-ag344uxm-review/","score":"n/a","verdict":"Solid heavy metal stand with tilt, swivel and height adjustment; no pivot; lists 1000 cd/m2 peak"}],"user_sentiment":{"score":null,"summary":"No owner-sentiment source consulted.","sources":[]},"pros":["1,152-zone Mini LED: real local dimming without OLED's text or burn-in trade-offs","DisplayHDR 1000 with 99% DCI-P3","Flat panel, 90 W USB-C, 170 Hz"],"cons":["Brightness claims conflict: 600 cd/m2 at TFTCentral against 1000 cd/m2 peak in retailer tables","1000:1 native panel contrast before the backlight dims","KVM not documented either way"],"specs_extra":{"measured_response_ms":null,"measured_contrast":null,"measured_dci_p3_pct":null,"peak_nits":null,"text_clarity":"IPS RGB stripe subpixels; no fringing"},"use_verdict":"The interesting compromise: OLED-like HDR punch on an IPS panel that renders text properly, and it docks at 90 W.","notes":"peak_nits is deliberately left null rather than set to either disputed figure; the disagreement is recorded as a deduction in _fit_penalties instead, which is the honest way to mark down a spec sheet that cannot be reconciled. No lab measurements were available for this model.","fit_penalties":[{"reason":"brightness claims cannot be reconciled: TFTCentral lists 600 cd/m2 where retailer tables claim 1000 cd/m2 peak, and DisplayHDR 1000 certification implies the higher figure","points":-3}]}},{"brand":"Asus","model_key":"PA348CGV","family":"ProArt Display","year":null,"panel":"IPS","size_inch":34.1,"specs":{"hz":120,"width":3440,"height":1440,"response_ms":2,"usb_c_pd_w":90,"kvm":null,"height_adjust":true,"curvature":"","dp_version":"","hdr":"HDR10","srgb_pct":100,"dci_p3_pct":98,"contrast":1000,"tuv_eye_comfort_stars":null,"vrr":true,"vrr_brand":"FreeSync Premium Pro","burn_in_warranty_years":null},"source_url":"https://www.asus.com/displays-desktops/monitors/proart/proart-display-pa348cgv/techspec/","aliases":["ProArt PA348CGV"],"priority":false,"notes":"Checked at this exact model against Asus's own technical specification page. 120 Hz over DisplayPort and USB-C, 100 Hz over HDMI; FreeSync Premium Pro to 120 Hz. Stand does height, tilt and swivel over 0-115 mm but does not pivot. Curvature is deliberately left empty: no source consulted stated a radius, and this range includes both flat and curved models, so guessing would be worse than the scoring's neutral unknown band. KVM is left unknown for the same reason - the spec page sections I saw did not mention one either way. Launch year not established.","enabled":true,"review":{"model_key":"PA348CGV","review_score":8.4,"confidence":"medium","critic":[{"source":"Asus technical specification page (PA348CGV)","url":"https://www.asus.com/displays-desktops/monitors/proart/proart-display-pa348cgv/techspec/","score":"n/a","verdict":"120 Hz maximum, 100% sRGB and 98% DCI-P3, 90 W USB-C, 0-115 mm height adjustment, no pivot"},{"source":"TechRadar review","url":"https://www.techradar.com/reviews/asus-proart-pa348cgv","score":"n/a","verdict":"Covers 98% of DCI-P3; lacks portrait rotation"}],"user_sentiment":{"score":null,"summary":"No owner-sentiment source consulted.","sources":[]},"pros":["98% DCI-P3 with a maker-stated colour accuracy focus","90 W USB-C power delivery at 120 Hz","Height, tilt and swivel over 115 mm"],"cons":["1000:1 native contrast, the weakest on this list","No pivot to portrait","Curvature radius not stated by any source consulted"],"specs_extra":{"measured_response_ms":null,"measured_contrast":null,"measured_dci_p3_pct":null,"peak_nits":null,"text_clarity":"IPS RGB stripe subpixels; no fringing"},"use_verdict":"A colour-work monitor that docks: strong gamut, 120 Hz, 90 W, but ordinary contrast and no KVM confirmed.","notes":"Sourced from Asus's own spec page plus one review. The TechRadar review was listed in search results but not opened, so its verdict here is limited to the two points the result summary stated. No measured figures."}},{"brand":"Dell","model_key":"U3425WE","family":"UltraSharp 34 Thunderbolt Hub","year":2024,"panel":"IPS Black","size_inch":34.14,"specs":{"hz":120,"width":3440,"height":1440,"response_ms":5,"usb_c_pd_w":90,"kvm":true,"height_adjust":true,"curvature":"1900R","dp_version":"","hdr":"","srgb_pct":100,"dci_p3_pct":98,"contrast":2000,"tuv_eye_comfort_stars":5,"vrr":null,"vrr_brand":"","burn_in_warranty_years":null},"source_url":"https://eu.shi.com/product/47821450/Dell-UltraSharp-U3425WE","aliases":["UltraSharp U3425WE"],"priority":false,"notes":"Checked at this exact model, but from a distributor spec table and Dell's own marketing copy quoted in retailer listings - Dell's product page could not be opened from the session this was researched in, so nothing here comes from dell.com directly. 120 Hz applies to DisplayPort and Thunderbolt 4; HDMI is 100 Hz. The five-star TUV Rheinland Eye Comfort rating is the one claim worth re-checking yourself, because it is the reason this model ranks first: Dell's copy states it was the first 34-inch monitor to earn five stars, and the five-star tier requires at least 120 Hz, which this panel has and the 60 Hz UltraSharp 34s do not. Contrast 2000:1 is the IPS Black figure and is a claim, not a measurement. No DisplayHDR tier was found in any listing, so the HDR field is left empty rather than guessed. VRR is not stated anywhere I saw; left unknown rather than assumed absent.","enabled":true,"review":{"model_key":"U3425WE","review_score":8.6,"confidence":"medium","critic":[{"source":"SHI distributor spec table (U3425WE)","url":"https://eu.shi.com/product/47821450/Dell-UltraSharp-U3425WE","score":"n/a","verdict":"120 Hz over DisplayPort and Thunderbolt 4, 100 Hz over HDMI; KVM, 90 W power delivery, RJ-45, 150 mm height adjustment"},{"source":"Dell Eye Comfort monitor page (programme and tiers)","url":"https://www.dell.com/en-uk/lp/dell-eye-comfort-monitors","score":"n/a","verdict":"Dell's Eye Comfort range page; the five-star tier requires at least 120 Hz, the four-star tier above 75 Hz and the three-star tier above 60 Hz"},{"source":"TUV Rheinland Eye Comfort certification brochure","url":"https://www.tuv.com/content-media-files/master-content/services/products/1553-tuv-rheinland-eye-comfort-certification/tuv-rheinland-eye-comfort-certification_brochure_2023v2.pdf","score":"n/a","verdict":"Explains the 1-5 star scale: 15 test categories across image quality, ambient light management and eye care; five stars overall requires five stars in every category"}],"user_sentiment":{"score":null,"summary":"No owner-sentiment source consulted.","sources":[]},"pros":["Documented as the first 34-inch monitor with a five-star TUV Rheinland Eye Comfort rating","IPS Black at a claimed 2000:1, roughly double a normal IPS","Thunderbolt 4 with 90 W delivery, KVM and Ethernet: one cable to a laptop"],"cons":["120 Hz only over DisplayPort and Thunderbolt; HDMI is 100 Hz","About 300 cd/m2 maximum brightness and no DisplayHDR tier found","Everything here is a claim; no lab measurement was available"],"specs_extra":{"measured_response_ms":null,"measured_contrast":null,"measured_dci_p3_pct":null,"peak_nits":null,"text_clarity":"IPS RGB stripe subpixels; no fringing, which is the point of choosing it over OLED for text"},"use_verdict":"The best fit for the stated requirements on this list: the only entry that satisfies the five-star eye-comfort ask, and it docks a laptop over one cable.","notes":"The five-star claim comes from Dell's own product copy as quoted in retailer listings, supported by TUV Rheinland's brochure for how the scale works and Dell's range page for the tier thresholds. It was not confirmed in TUV's Certipedia certificate database, which is the authoritative register and could not be reached from the session this was researched in. That single claim is worth two of the work profile's bands (eye comfort 11 points, and it is why this model leads), so it is the first thing to verify independently."}}],"rejected":[{"brand":"Asus","model_key":"PA34VCNV","reason":"60 Hz panel, floor is 100 Hz; height-adjustable stand unverified","source_url":"https://www.asus.com/us/displays-desktops/monitors/proart/proart-display-pa34vcnv/techspec/","aliases":[]},{"brand":"Dell","model_key":"AW3423DWF","reason":"panel is OLED, which is not one of the wanted families (Mini LED or IPS); USB-C power delivery unverified, floor is 65 W","source_url":"https://www.cclonline.com/game-aw3423dwf-dell-aw3423dwf-curved-gaming-monitor-34-inch-3440-x-1440-uwqhd-qd-oled-panel-amd-freesync-489785/","aliases":[]},{"brand":"Dell","model_key":"U3423WE","reason":"60 Hz panel, floor is 100 Hz","source_url":"https://www.multitronic.fi/en/products/3801246/dell-ultrasharp-u3423we-34--uwqhd--ips-black-curved-monitor-with-usb-c-hub","aliases":["UltraSharp U3423WE"]},{"brand":"Gigabyte","model_key":"M34WQ","reason":"USB-C PD 15 W, floor is 65 W","source_url":"https://monitornerds.com/gigabyte-m34wq-review/","aliases":[]},{"brand":"LG","model_key":"34GN850","reason":"no USB-C power delivery, floor is 65 W","source_url":"https://www.displayninja.com/lg-34gn850-review/","aliases":["34GN850-B"]},{"brand":"LG","model_key":"34GP83A","reason":"no USB-C power delivery, floor is 65 W","source_url":"https://www.displayninja.com/lg-34gp83a-review/","aliases":["34GP83A-B"]},{"brand":"LG","model_key":"34GS95QE","reason":"panel is OLED, which is not one of the wanted families (Mini LED or IPS); no USB-C power delivery, floor is 65 W","source_url":"https://monitornerds.com/lg-34gs95qe-b-review-premium-240hz-ultrawide-oled-gaming-monitor-editors-choice/","aliases":["34GS95QE-B","34GS95QE-W"]},{"brand":"Lenovo","model_key":"Y34WZ-30","reason":"panel is VA, which is not one of the wanted families (Mini LED or IPS)","source_url":"https://psref.lenovo.com/syspool/Sys/PDF/Lenovo_Monitors/Lenovo_Legion_Y34wz_30/Lenovo_Legion_Y34wz_30_Spec.pdf","aliases":["Y34WZ30","Legion Y34wz-30"]},{"brand":"MSI","model_key":"MPG341CQPX","reason":"panel is OLED, which is not one of the wanted families (Mini LED or IPS)","source_url":"https://storage-asset.msi.com/specSheet/sg/monitor/MPG%20341CQPX%20QD-OLED.pdf","aliases":["341CQPX","MAG341CQPXQDOLED"]},{"brand":"Philips","model_key":"34B1U5600CH","reason":"panel is VA, which is not one of the wanted families (Mini LED or IPS); height-adjustable stand unverified","source_url":"https://www.techradar.com/pro/philips-34b1u5600ch","aliases":["34B1U5600"]},{"brand":"Samsung","model_key":"LS34BG850","reason":"panel is OLED, which is not one of the wanted families (Mini LED or IPS); USB-C power delivery unverified, floor is 65 W","source_url":"https://www.rtings.com/monitor/tools/compare/samsung-odyssey-oled-g85sb-s34bg85-samsung-odyssey-oled-g80sd-s32dg80/34904/63127","aliases":["S34BG850","S34BG85","G85SB"]},{"brand":"Samsung","model_key":"LS34C650","reason":"panel is VA, which is not one of the wanted families (Mini LED or IPS); height-adjustable stand unverified","source_url":"https://www.proshop.nl/Scherm/34-Samsung-ViewFinity-S6-S34C650TAU-3440x1440-UWQHD-100Hz-VA-90W-USB-C-KVM-switch/3233991","aliases":["S34C650","S34C650TAU","S34C650UAN"]},{"brand":"Samsung","model_key":"LS34DG850","reason":"panel is OLED, which is not one of the wanted families (Mini LED or IPS); no USB-C power delivery, floor is 65 W","source_url":"https://www.geektopia.es/es/product/samsung/odyssey-oled-g8-g85sd/","aliases":["S34DG850","G85SD","LS34DG850SUXDU","LS34DG850SUXEN"]}],"parity":{"comparisons":465,"failures":0},"prices":{"as_of":"2026-10-27T07:56","source":"live scan","shops":{"electroline":"Electroline","scandia":"Scandia","megaelectric":"MegaElectric","stephanis":"Stephanis","public":"Public","kotsovolos":"Kotsovolos"},"failed_shops":[],"currency":"EUR","criteria_label":"34\" Mini LED or IPS","groups":[{"key":"LS34DG850","label":"LS34DG850SUXDU","confident":false,"model_key":null,"spread_pct":55.6,"offers":[{"shop":"electroline","price":899.0,"list_price":null,"in_stock":true,"url":"https://electroline.cy/en/products/computing/peripherals/pc-monitors/samsung-ls34dg850suxdu-curved-gaming-pc-monitor-34/","title":"SAMSUNG LS34DG850SUXDU Curved Gaming PC Monitor, 34\""},{"shop":"kotsovolos","price":1099.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=317677&storeId=10161","title":"Samsung LS34DG850SUXDU 34\" UWQHD OLED 175Hz"},{"shop":"stephanis","price":1399.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/401513","title":"PC Monitor 34\" SAMSUNG Curved Odyssey G8 G85SD LS34DG850SUXDU Ultra WQHD OLED"}]},{"key":"CU34G4","label":"CU34G4","confident":false,"model_key":null,"spread_pct":20.1,"offers":[{"shop":"stephanis","price":249.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/408916","title":"PC Monitor 34\" AOC Curved CU34G4 WLED Fast VA black"},{"shop":"electroline","price":299.0,"list_price":null,"in_stock":true,"url":"https://electroline.cy/en/products/computing/peripherals/pc-monitors/aoc-gaming-monitor-34-curved/","title":"AOC CU34G4 Curved Gaming PC Monitor, 34\""}]},{"key":"LS34C500G","label":"LS34C500GAUXEN","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":299.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/390230","title":"PC Monitor 34\" SAMSUNG ViewFinity S5 S50GC LS34C500GAUXEN Ultra WQHD LED VA black"}]},{"key":"XC34UWQHD","label":"XC34UWQHD","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":319.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/411702","title":"PC Monitor 34\" ARMAGGEDDON Curved Pixxel+ XTREME Series XC34UWQHD-S180GS-B WQHD IPS LED black"}]},{"key":"G34WQI","label":"G34WQI","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":329.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=339429&storeId=10161","title":"Xiaomi G34WQi 2026 Curved"}]},{"key":"34MP1W180","label":"34MP1W180C","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":339.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/407509","title":"PC Monitor 34\" LORGAR Curved 34MP1 VA Mini-LED UWQHD LRG-34MP1W180C-GY black/grey"}]},{"key":"ED340CURX","label":"ED340CURX0BMIIPX","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":349.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/410371","title":"PC Monitor 34\" ACER Curved Nitro ED340CURX0bmiipx UM.CE0EE.010 UWQHD VA black"}]},{"key":"LC34G55TW","label":"LC34G55TWWPXEN","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"electroline","price":369.0,"list_price":null,"in_stock":true,"url":"https://electroline.cy/en/products/computing/peripherals/pc-monitors/samsung-lc34g55twwpxen-g55t-odyssey-curved-gaming-pc-monitor-34/","title":"SAMSUNG LC34G55TWWPXEN G55T Odyssey Curved Gaming PC Monitor, 34\""}]},{"key":"CU34E4CV","label":"CU34E4CV","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":399.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/413253","title":"PC Monitor 34\" AOC Curved CU34E4CV UWQHD VA black"}]},{"key":"34WP500","label":"34WP500","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":399.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=276810&storeId=10161","title":"LG 34WP500 34\" IPS 2K UltraWide"}]},{"key":"34G630A","label":"34G630A","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":449.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=336010&storeId=10161","title":"LG UltraGear 34G630A-B 240H USBC 34\""}]},{"key":"S3422DWG","label":"S3422DWG","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":529.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=243626&storeId=10161","title":"Dell S3422DWG 34” Curved"}]},{"key":"S3423DWC","label":"S3423DWC","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":559.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=266619&storeId=10161","title":"Dell S3423DWC 34 Curved USB-C"}]},{"key":"34BQ77QC","label":"34BQ77QC","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":589.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=301205&storeId=10161","title":"LG 34BQ77QC-B 34\""}]},{"key":"LS34C652V","label":"LS34C652VAUXEN","confident":false,"model_key":null,"spread_pct":0.0,"offers":[{"shop":"stephanis","price":599.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/394499","title":"PC Monitor 34\" SAMSUNG Curved ViewFinity S6 S65VC LS34C652VAUXEN UWQHD VA LED black"},{"shop":"kotsovolos","price":599.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=307532&storeId=10161","title":"Samsung LS34C652VAUXEN VA 34\" Curved"}]},{"key":"P3421W","label":"P3421W","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":609.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=231663&storeId=10161","title":"Dell P3421W 34\" Curved  USB-C IPS"}]},{"key":"MAG342CQR","label":"MAG342CQR","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":699.0,"list_price":699.99,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=242299&storeId=10161","title":"MSI Optix MAG342CQR 34'' Curved"}]},{"key":"AG346UCD","label":"AG346UCD","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"electroline","price":749.0,"list_price":null,"in_stock":true,"url":"https://electroline.cy/en/products/gaming/gaming-pcs/gaming-monitors/aoc-agon-pro-oled-34/","title":"AOC AG346UCD Gaming PC Monitor, 34\""}]},{"key":"C3422WE","label":"C3422WE","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":999.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=226347&storeId=10161","title":"Dell C3422WE 34’’ ΙPS Curved"}]},{"key":"U3423WE","label":"U3423WE","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":1109.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=279668&storeId=10161","title":"Dell UltraSharp U3423WE 34\""}]},{"key":"LS34BG850","label":"LS34BG850SUXEN","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"stephanis","price":1199.0,"list_price":null,"in_stock":null,"url":"https://www.stephanis.com.cy/en/products/information-technology/peripherals/pc-monitors/386131","title":"PC Monitor 34\" SAMSUNG Curved dyssey G8 G85SB LS34BG850SUXEN Ultra WQHD OLED"}]},{"key":"34GS95QE","label":"34GS95QE","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":1199.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=304036&storeId=10161","title":"LG 34GS95QE-B.OLED 240Hz 34\""}]},{"key":"AW3423DWF","label":"AW3423DWF","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":1229.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=279470&storeId=10161","title":"Dell Alienware AW3423DWF QD-OLED 34\""}]},{"key":"341CQPX","label":"341CQPX","confident":false,"model_key":null,"spread_pct":null,"offers":[{"shop":"kotsovolos","price":1399.0,"list_price":null,"in_stock":null,"url":"https://www.kotsovolos.cy/SearchDisplay?q=334334&storeId=10161","title":"MSI MPG 341CQPX 34'' QD-OLED"}]}],"best_prices":{}}}</script>
+
+<div class="wrap">
+  <header>
+    <h1>34-Inch Monitor Ranking</h1>
+    <p class="lede">The watch list from the Cyprus monitor deal bot, with its scoring and its prices
+      exposed. Move the weights and the order changes; open a row for the arithmetic, the evidence and
+      what each shop charges. Prices are a dated snapshot taken by the bot, not a live feed: the
+      scrapers cannot run in a browser.</p>
+    <div class="crit" id="crit"></div>
+  </header>
+
+  <div class="note">
+    <b>These are claims, not measurements.</b> Every figure here came from a maker's spec sheet, a lab
+    review or a retailer spec table, and each entry says which. Fields no source stated are shown as
+    <span class="unk">unverified</span> rather than guessed, and the scoring gives them a deliberately
+    neutral band — a confident wrong number would move the ranking, an honest blank will not.
+  </div>
+
+  <div class="asof" id="asof"></div>
+
+  <section class="panel" aria-labelledby="mixer-h">
+    <div class="panel-head">
+      <h2 id="mixer-h">What are you buying it for?</h2>
+      <div class="seg" role="group" aria-label="Scoring profile">
+        <button type="button" data-profile="work" aria-pressed="true">Work</button>
+        <button type="button" data-profile="gaming" aria-pressed="false">Gaming</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="mix">
+        <div class="mix-row">
+          <label for="w-fit">Specs versus reviews
+            <span><b id="w-fit-out">50 / 50</b></span>
+          </label>
+          <input type="range" id="w-fit" min="0" max="100" step="5" value="50">
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:8px">Weight of each component</h3>
+        <div class="sliders" id="sliders"></div>
+      </div>
+      <div class="panel-head" style="padding:0;border:0;">
+        <button class="btn" type="button" id="reset">Reset to the bot's own weighting</button>
+        <span class="flag" id="flag" hidden>Weights changed — these are no longer the bot's scores</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="list" id="list"></div>
+
+  <section class="rejected" id="cmp-section">
+    <h2>Every 34-inch monitor the six shops carry</h2>
+    <p class="lede" style="margin-top:6px">The watch list above is what survives the criteria. This is
+      what the shops actually had in stock when the snapshot was taken — watched or not, researched or
+      not, and deliberately <em>not</em> filtered by panel family, because shops disagree about whether
+      a title mentions the panel at all and filtering on that would show the same monitor at one shop
+      and hide it at another. Where two shops sell the same panel, the gap between them is the whole
+      reason this bot exists.</p>
+    <div class="tablewrap">
+      <table class="cmp">
+        <thead><tr><th>Product</th><th>Cheapest</th><th>Spread</th><th>Every shop</th></tr></thead>
+        <tbody id="cmp"></tbody>
+      </table>
+    </div>
+    <p class="notes" style="margin-top:10px">A row marked <span class="watched">watched</span> was identified
+      by the bot's own matcher. The rest are grouped by model code, which is a heuristic: it joins
+      LS34DG850SUXDU to LS34DG850SUXEN while keeping LS34BG850 and LS34DG850 apart, but it can be wrong.</p>
+  </section>
+
+  <section class="rejected">
+    <h2>Checked and rejected</h2>
+    <p class="lede" style="margin-top:6px">These were researched and set aside. They stay on record so the
+      bot's Discover scan stops suggesting them — and so the reason stays visible, because several fail on
+      a single specification and would come straight back if the criteria moved.</p>
+    <div class="tablewrap">
+      <table class="rej-table">
+        <thead><tr><th>Model</th><th>Why</th><th>Source</th></tr></thead>
+        <tbody id="rej"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p id="parity-line"></p>
+    <p>Deductions are never scaled by the sliders: a flaw is a flaw at any weighting. A deduction may
+      apply to one profile only, which is why OLED text fringing is charged under Work and not Gaming.</p>
+  </footer>
+</div>
+
+<script type="module">
+import { COMPONENTS, fitScore, ppi, rankModels, round1 } from "./scoring.mjs";
+
+const DATA = JSON.parse(document.getElementById("watchlist-data").textContent);
+const root = document.documentElement;
+const listEl = document.getElementById("list");
+const slidersEl = document.getElementById("sliders");
+const flagEl = document.getElementById("flag");
+const fitSlider = document.getElementById("w-fit");
+const fitOut = document.getElementById("w-fit-out");
+
+const state = { profile: "work", fitWeight: 0.5, mult: { work: {}, gaming: {} }, open: new Set() };
+
+const PRICES = DATA.prices || {};
+const SHOP = PRICES.shops || {};
+const BEST = PRICES.best_prices || {};
+// every priced group, and the subset that belongs to a watch-list model
+const GROUPS = PRICES.groups || [];
+const BY_MODEL = new Map(GROUPS.filter((g) => g.model_key).map((g) => [g.model_key, g]));
+const euro = (v) => "\u20ac" + Number(v).toLocaleString("en-IE", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+const euro2 = (v) => "\u20ac" + Number(v).toLocaleString("en-IE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+function spreadBadge(pct) {
+  if (pct === null || pct === undefined) return "";
+  if (pct < 0.5) return '<span class="spread flat">same</span>';
+  return `<span class="spread">+${Math.round(pct)}%</span>`;
+}
+
+const fmt = (v) => (v === null || v === undefined || v === "" ? null : v);
+const pct = (v, max) => (max ? Math.max(0, Math.min(100, (v / max) * 100)) : 0);
+
+/* ---------- criteria chips ---------- */
+function renderCriteria() {
+  const c = DATA.criteria || {};
+  const panels = { oled: "OLED", miniled: "Mini LED", ips: "IPS", va: "VA", any: "any panel" };
+  const chips = [
+    ["size", `${(c.sizes || []).join("/")}″`],
+    ["panels", (c.panels || []).map((p) => panels[p] || p).join(" · ")],
+    ["resolution", `${c.min_width}×${c.min_height} or better`],
+    ["refresh", `${c.min_hz} Hz floor`],
+    ["stand", c.require_height_adjust ? "height-adjustable required" : "stand not required"],
+    ["USB-C", c.require_usb_c_pd_w ? `${c.require_usb_c_pd_w} W required` : "scored, not required"],
+    ["KVM", c.require_kvm ? "required" : "scored, not required"],
+  ];
+  document.getElementById("crit").innerHTML = chips
+    .map(([k, v]) => `<span class="chip">${k} <b>${v}</b></span>`).join("");
+}
+
+/* ---------- sliders ---------- */
+function renderAsOf() {
+  const el = document.getElementById("asof");
+  if (!PRICES.as_of) {
+    el.innerHTML = "<span>No price snapshot embedded. Prices come from the dashboard on the laptop.</span>";
+    return;
+  }
+  const when = new Date(PRICES.as_of).toLocaleString("en-GB",
+    { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
+  const n = GROUPS.length;
+  const multi = GROUPS.filter((g) => g.offers.length > 1).length;
+  el.innerHTML = `<span><b>Prices as of ${when}</b></span>
+    <span>${n} products across ${Object.keys(SHOP).length} shops, ${multi} sold by more than one</span>
+    <span>A frozen reading, not a live feed — the scrapers cannot run in a browser. The bot on the
+    laptop is the live answer.</span>`;
+}
+
+function renderSliders() {
+  const comps = COMPONENTS[state.profile];
+  slidersEl.innerHTML = comps.map(([key, label, max]) => {
+    const v = state.mult[state.profile][key] ?? 1;
+    return `<div class="sl${v === 1 ? "" : " changed"}" data-k="${key}">
+      <label for="sl-${key}">${label} <em>max ${max}</em> <b>×${v.toFixed(2)}</b></label>
+      <input type="range" id="sl-${key}" min="0" max="2" step="0.05" value="${v}" data-key="${key}">
+    </div>`;
+  }).join("");
+}
+
+function anyChanged() {
+  const m = state.mult[state.profile];
+  return Object.values(m).some((v) => v !== 1) || state.fitWeight !== 0.5;
+}
+
+/* ---------- rows ---------- */
+function specTable(m) {
+  const s = m.specs || {};
+  const u = '<span class="unk">unverified</span>';
+  const rows = [
+    ["Panel", m.panel || u],
+    ["Resolution", s.width && s.height ? `${s.width}×${s.height}` : u],
+    ["Density", ppi(m) ? `${ppi(m)} PPI` : u],
+    ["Refresh", s.hz ? `${s.hz} Hz native` : u],
+    ["Response", fmt(s.response_ms) !== null ? `${s.response_ms} ms quoted` : u],
+    ["USB-C", s.usb_c_pd_w ? `${s.usb_c_pd_w} W PD` : (s.usb_c_pd_w === 0 ? "none" : u)],
+    ["KVM", s.kvm === true ? "yes" : s.kvm === false ? "no" : u],
+    ["Stand", s.height_adjust === true ? "height-adjustable" : s.height_adjust === false ? "fixed" : u],
+    ["Curvature", s.curvature || u],
+    ["HDR", s.hdr || u],
+    ["Contrast", s.contrast ? `${s.contrast}:1` : (isOledish(m) ? "per-pixel" : u)],
+    ["Gamut", s.dci_p3_pct ? `${s.dci_p3_pct}% DCI-P3` : (s.srgb_pct ? `${s.srgb_pct}% sRGB` : u)],
+    ["DisplayPort", s.dp_version || u],
+    ["VRR", s.vrr_brand || (s.vrr === true ? "yes" : s.vrr === false ? "no" : u)],
+    ["TÜV Eye Comfort", s.tuv_eye_comfort_stars
+      ? `${s.tuv_eye_comfort_stars} ★` : (s.tuv_eye_comfort_stars === 0 ? "none documented" : u)],
+    ["Burn-in cover", s.burn_in_warranty_years
+      ? `${s.burn_in_warranty_years} years` : (isOledish(m) ? u : "not applicable")],
+  ];
+  return `<table class="spec">${rows.map(([k, v]) => `<tr><th>${k}</th><td>${v}</td></tr>`).join("")}</table>`;
+}
+
+function isOledish(m) {
+  return `${m.panel || ""} ${m.model_key || ""}`.toUpperCase().includes("OLED");
+}
+
+function breakdown(m, score) {
+  const comps = COMPONENTS[state.profile];
+  const labels = new Map(comps.map(([k, label, max]) => [k, [label, max]]));
+  const entries = Object.entries(score.parts)
+    .filter(([k, v]) => k !== "priority" || v)
+    .sort((a, b) => b[1] - a[1]);
+  return `<div class="breakdown">${entries.map(([k, v]) => {
+    const [label, max] = labels.get(k) || [k === "penalties" ? "Deductions" : k, 1];
+    const cls = v < 0 ? "neg" : v === 0 ? "zero" : "";
+    const width = v < 0 ? 100 : pct(v, max);
+    return `<div class="bd ${cls}"><span title="${label}">${label}</span><b>${round1(v)}</b>
+      <div class="track"><i style="width:${width}%"></i></div></div>`;
+  }).join("")}</div>`;
+}
+
+function shopPrices(m) {
+  const g = BY_MODEL.get(m.model_key);
+  if (!g || !g.offers.length) {
+    return '<p class="notes">Not stocked by any of the six shops when the snapshot was taken.</p>';
+  }
+  const rows = g.offers.map((o, i) => {
+    const name = SHOP[o.shop] || o.shop;
+    const oos = o.in_stock === false;
+    return `<div class="${i === 0 && !oos ? "best" : ""}">
+      <span>${o.url ? `<a href="${o.url}" target="_blank" rel="noopener">${name}</a>` : name}${oos ? " (out of stock)" : ""}</span>
+      <span class="p ${oos ? "oos" : ""}">${euro2(o.price)}</span></div>`;
+  }).join("");
+  const sp = g.spread_pct > 0.5
+    ? `<p class="notes">The dearest shop asks ${Math.round(g.spread_pct)}% more than the cheapest.</p>` : "";
+  return `<div class="shoprices">${rows}</div>${sp}`;
+}
+
+function evidence(m) {
+  const r = m.review || {};
+  const pen = (r.fit_penalties || []).filter((p) => !p.profiles || p.profiles.includes(state.profile));
+  const out = [];
+  if (r.use_verdict) out.push(`<p style="font-size:.86rem"><strong>${r.use_verdict}</strong></p>`);
+  if (pen.length) {
+    out.push(`<div class="pen">${pen.map((p) => `<div>${p.points} &nbsp;${p.reason}</div>`).join("")}</div>`);
+  }
+  if (r.pros) out.push(`<ul class="pros">${r.pros.map((x) => `<li>${x}</li>`).join("")}</ul>`);
+  if (r.cons) out.push(`<ul class="cons">${r.cons.map((x) => `<li>${x}</li>`).join("")}</ul>`);
+  if (r.critic) {
+    out.push(`<div class="srcs">${r.critic.map((c) =>
+      `<div><a href="${c.url}" target="_blank" rel="noopener">${c.source}</a>
+        <p>${c.verdict || ""}</p></div>`).join("")}</div>`);
+  }
+  if (r.notes) out.push(`<p class="notes">${r.notes}</p>`);
+  if (m.notes) out.push(`<p class="notes"><b>Verification:</b> ${m.notes}</p>`);
+  return out.join("");
+}
+
+function priceCell(m, score) {
+  const g = BY_MODEL.get(m.model_key);
+  if (!g || !g.offers.length) {
+    return '<span class="pricecell none"><span class="amt">not stocked</span></span>';
+  }
+  const lo = g.offers[0];
+  return `<span class="pricecell">
+    <span class="amt">${euro(lo.price)}</span>
+    <div class="where">${SHOP[lo.shop] || lo.shop}${g.offers.length > 1 ? " " + spreadBadge(g.spread_pct) : ""}</div>
+    ${score.value ? `<div class="where">${score.value} per \u20ac1,000</div>` : ""}
+  </span>`;
+}
+
+function renderComparison() {
+  const body = document.getElementById("cmp");
+  if (!GROUPS.length) {
+    document.getElementById("cmp-section").hidden = true;
+    return;
+  }
+  const rows = [...GROUPS].sort((a, b) =>
+    (b.offers.length - a.offers.length) || ((b.spread_pct || 0) - (a.spread_pct || 0))
+    || (a.offers[0].price - b.offers[0].price));
+  body.innerHTML = rows.map((g) => {
+    const lo = g.offers[0];
+    const all = g.offers.map((o) =>
+      `${SHOP[o.shop] || o.shop} ${euro(o.price)}${o.in_stock === false ? " (out)" : ""}`).join(" · ");
+    const name = g.confident
+      ? `${g.label}<span class="watched">watched</span>`
+      : `${g.label}<small>${(g.offers[0].title || "").slice(0, 58)}</small>`;
+    return `<tr class="${g.offers.length > 1 ? "multi" : ""}">
+      <td class="name">${name}</td>
+      <td class="num lo">${euro2(lo.price)}<small style="display:block;color:var(--muted);font-size:.72rem">${SHOP[lo.shop] || lo.shop}</small></td>
+      <td class="num">${g.offers.length > 1 ? spreadBadge(g.spread_pct) : ""}</td>
+      <td class="num" style="white-space:normal">${g.offers.length > 1 ? all : ""}</td>
+    </tr>`;
+  }).join("");
+}
+
+function render() {
+  root.dataset.profile = state.profile;
+  const cfg = { scoring: { fit_weight: state.fitWeight, review_weight: 1 - state.fitWeight, profile: state.profile } };
+  const ranked = rankModels(DATA.models, cfg, BEST, state.mult[state.profile]);
+  const top = ranked.length ? ranked[0][2].overall : 1;
+
+  listEl.innerHTML = ranked.map(([rank, m, score]) => {
+    const open = state.open.has(m.model_key);
+    const conf = score.confidence || "";
+    return `<div class="row" data-top="${rank === 1 ? 1 : 0}">
+      <button class="row-head" type="button" data-key="${m.model_key}" aria-expanded="${open}">
+        <span class="rank">${rank}</span>
+        <span class="who">
+          <strong>${m.brand} ${m.model_key}</strong>
+          <div class="sub">${m.panel || "panel unverified"}${m.specs.hz ? ` · ${m.specs.hz} Hz` : ""}${ppi(m) ? ` · ${ppi(m)} PPI` : ""}${m.specs.usb_c_pd_w ? ` · ${m.specs.usb_c_pd_w} W` : ""}${m.specs.tuv_eye_comfort_stars ? ` · TÜV ${m.specs.tuv_eye_comfort_stars}★` : ""}</div>
+        </span>
+        <span class="scores">
+          ${priceCell(m, score)}
+          <span class="small-split">fit ${score.fit}<br>${score.has_review ? `rev ${score.review}` : "no reviews"}</span>
+          <span class="big">${score.overall}</span>
+        </span>
+      </button>
+      <div class="bar"><i style="width:${pct(score.overall, Math.max(top, 1))}%"></i></div>
+      <div class="detail" ${open ? "" : "hidden"}>
+        <div class="cols">
+          <div>
+            <h3 style="margin-bottom:8px">Where the points come from</h3>
+            ${breakdown(m, score)}
+          </div>
+          <div>
+            <h3 style="margin-bottom:8px">Price in each shop</h3>
+            ${shopPrices(m)}
+            <h3 style="margin:16px 0 8px">Specifications</h3>
+            ${specTable(m)}
+          </div>
+          <div>
+            <h3 style="margin-bottom:8px">Evidence ${conf ? `<span class="conf" data-c="${conf}">${conf} confidence</span>` : ""}</h3>
+            ${evidence(m)}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+
+  flagEl.hidden = !anyChanged();
+  const f = Math.round(state.fitWeight * 100);
+  fitOut.textContent = `${f} / ${100 - f}`;
+}
+
+function renderRejected() {
+  document.getElementById("rej").innerHTML = (DATA.rejected || []).map((r) => {
+    const host = r.source_url ? new URL(r.source_url).hostname.replace(/^www\./, "") : "";
+    return `<tr><td>${r.brand} ${r.model_key}</td><td>${r.reason}</td>
+      <td>${r.source_url ? `<a href="${r.source_url}" target="_blank" rel="noopener">${host}</a>` : ""}</td></tr>`;
+  }).join("");
+}
+
+/* ---------- events ---------- */
+document.querySelectorAll(".seg button").forEach((b) => {
+  b.addEventListener("click", () => {
+    state.profile = b.dataset.profile;
+    document.querySelectorAll(".seg button").forEach((x) =>
+      x.setAttribute("aria-pressed", String(x === b)));
+    renderSliders();
+    render();
+  });
+});
+
+fitSlider.addEventListener("input", () => {
+  state.fitWeight = Number(fitSlider.value) / 100;
+  render();
+});
+
+slidersEl.addEventListener("input", (e) => {
+  const key = e.target.dataset.key;
+  if (!key) return;
+  state.mult[state.profile][key] = Number(e.target.value);
+  const box = e.target.closest(".sl");
+  box.classList.toggle("changed", Number(e.target.value) !== 1);
+  box.querySelector("b").textContent = `×${Number(e.target.value).toFixed(2)}`;
+  render();
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  state.mult[state.profile] = {};
+  state.fitWeight = 0.5;
+  fitSlider.value = 50;
+  renderSliders();
+  render();
+});
+
+listEl.addEventListener("click", (e) => {
+  const btn = e.target.closest(".row-head");
+  if (!btn) return;
+  const key = btn.dataset.key;
+  if (state.open.has(key)) state.open.delete(key); else state.open.add(key);
+  render();
+});
+
+document.getElementById("parity-line").textContent = DATA.parity && DATA.parity.comparisons
+  ? `This page runs a JavaScript port of the bot's Python scoring. The two were compared across every model, both profiles and a grid of weightings: ${DATA.parity.comparisons} comparisons, all matching.`
+  : "This page runs a JavaScript port of the bot's Python scoring.";
+
+renderCriteria();
+renderAsOf();
+renderSliders();
+renderComparison();
+renderRejected();
+render();
+</script>
