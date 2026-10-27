@@ -1,8 +1,9 @@
 # Soundbar Deal Bot
 
-Watches Cypriot and Greek shops for **wireless soundbars with real Dolby Atmos** and alerts you when one
-shop is clearly cheaper than the others, when a shop runs a big discount, or when a watched model comes
-back in stock. Same shape as the TV bot: starts with the laptop, serves a local dashboard, pushes to your
+Watches Cypriot and Greek shops for **complete wireless Dolby Atmos systems** - bar, wireless subwoofer
+and wireless rear speakers in one box, nothing to buy afterwards - and alerts you when one shop is
+clearly cheaper than the others, when a shop runs a big discount, or when a watched model comes back in
+stock. Same shape as the TV bot: starts with the laptop, serves a local dashboard, pushes to your
 phone.
 
 Shops: Electroline, Scandia, Stephanis (Cyprus) · Skroutz, Public, Kotsovolos (Greece).
@@ -32,16 +33,20 @@ The requirements live in one place: the `criteria` block of `config.json`, edita
 | `require_physical_height` | `true` | Height has to come from drivers that fire at the ceiling, or dedicated height drivers. A virtual processor does not count, whatever the box says |
 | `require_earc` | `true` | Plain ARC carries Atmos only inside lossy Dolby Digital+. Without eARC the bar cannot receive the lossless TrueHD Atmos track from a disc or a TV app |
 | `no_wired_speakers` | `true` | **The wireless rule.** A subwoofer or rear speaker that connects with a speaker cable disqualifies the system. Components may be in the box or sold separately, as long as they talk to the bar over the air |
-| `require_sub_included` | `false` | Stricter: the box must contain a wireless subwoofer |
-| `require_rears_included` | `false` | Stricter: the box must contain wireless rear speakers |
+| `require_sub_included` | `true` | The box must contain a wireless subwoofer |
+| `require_rears_included` | `true` | The box must contain wireless rear speakers |
 | `min_channels` | `3.0` | Lowest number of ear-level channels |
 
-The two strict switches are **off by default**, which is a judgement worth knowing about. With them off,
-a single bar whose sub and rears are wireless extras — Sonos Arc Ultra, Sony Bar 9, Marshall Heston 120 —
-stays on the list, because nothing in those systems is ever cabled; it simply scores below a four-piece
-set. Tick `require_sub_included` on Settings and the list drops from 36 models to 25, all of them complete
-wireless systems out of the box. That one checkbox is the difference between "no speaker cables" and
-"bar, wireless sub and wireless rears, in the box".
+The last two are the **complete system** rule, and they cut hard: a bar is only watched if the surround
+comes in the box with it. That takes out every Sony (the Bravia Theatre bars all sell their sub and
+rears separately), the Sonos Arc Ultra, the Bose Smart Ultra, the Marshall Heston 120, the Harman Kardon
+Enchant 1100, the Klipsch Flexus Core 200 and Samsung's own Q800, QS700, Q600, QS90H and S800 — all
+good bars, none of them a finished 5.1.2-or-better system at the price on the shelf.
+
+What survives is a small market: **8 models**, essentially Samsung's Q930 and Q990, JBL's Bar 1000MK2
+and Bar 1300MK2, and LG's S80TR and S95TR. If you would rather see the bars whose rears are an extra
+purchase and judge the total yourself, untick `require_rears_included` on Settings and rebuild — the
+list goes back to 24.
 
 Everything downstream follows from that block: which shop listings are matched, which titles the discovery
 scan suggests, and which watchlist models are checked. `python main.py validate` prints the active criteria
@@ -85,8 +90,8 @@ Rerun `python tools/build_watchlist.py` after editing either.
 
 ## The watch list
 
-`watchlist.json` is the only thing that decides which soundbars are watched: **24 models** across Samsung,
-Sony, LG, JBL, Sonos, Marshall, Harman Kardon and Klipsch, plus **23** checked and not watched. A model is
+`watchlist.json` is the only thing that decides which soundbars are watched: **8 models** across Samsung,
+JBL and LG, plus **39** checked and not watched. A model is
 watched only when its specs clear the criteria above *and* it survives two curation rules in
 `tools/build_watchlist.py`:
 

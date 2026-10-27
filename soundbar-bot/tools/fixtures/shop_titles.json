@@ -16,7 +16,7 @@
       },
       {
         "title": "HARMAN KARDON HKENCH1100BLKEP Enchant 1100 Soundbar, Black",
-        "expected": "ENCHANT 1100"
+        "expected": "rejected"
       },
       {
         "title": "HISENSE AX5100Q Soundbar 5.1 Channels",
@@ -36,7 +36,7 @@
       },
       {
         "title": "JBL Cinema SB595 Soundbar 3.1.2 Channels",
-        "expected": "CINEMA SB595"
+        "expected": "rejected"
       },
       {
         "title": "JBL JBLBAR1000M2BLKEP Bluetooth Soundbar 7.1.4, Black",
@@ -76,11 +76,11 @@
       },
       {
         "title": "KLIPSCH Flexus Core 200 Dolby Atmos Soundbar with Bluetooth 3.1.2 Channels, Black",
-        "expected": "FLEXUS CORE 200"
+        "expected": "rejected"
       },
       {
         "title": "KLIPSCH Flexus Core 200 Dolby Atmos Soundbar with Bluetooth 3.1.2 Channels, Walnut",
-        "expected": "FLEXUS CORE 200"
+        "expected": "rejected"
       },
       {
         "title": "LG S20A Soundbar 2.0 Channels, Black",
@@ -108,7 +108,7 @@
       },
       {
         "title": "MARSHALL 1006888 Heston 120 Soundbar 5.1.2 Channels, Black",
-        "expected": "HESTON 120"
+        "expected": "rejected"
       },
       {
         "title": "MARSHALL 1007985 Heston 60 Soundbar 5.1 Channels, Black",
@@ -128,11 +128,11 @@
       },
       {
         "title": "SAMSUNG HW-Q600H/EN Dolby Soundbar 3.1.2 Channels",
-        "expected": "HW-Q600H"
+        "expected": "rejected"
       },
       {
         "title": "SAMSUNG HW-Q800H/EN Dolby Soundbar 5.1.2 Channels",
-        "expected": "HW-Q800H"
+        "expected": "rejected"
       },
       {
         "title": "SAMSUNG HW-Q930F/EN Soundbar 9.1.4 Channels",
@@ -156,15 +156,15 @@
       },
       {
         "title": "SAMSUNG HW-QS700F/ZF Soundbar 3.1.2 Channels",
-        "expected": "HW-QS700F"
+        "expected": "rejected"
       },
       {
         "title": "SAMSUNG HW-QS90H/EN Dolby Soundbar 7.1.2 Channels",
-        "expected": "HW-QS90H"
+        "expected": "rejected"
       },
       {
         "title": "SONOS ARCG2EU1BLK Ultra Arc Soundbar, Black",
-        "expected": "ARC ULTRA"
+        "expected": "rejected"
       },
       {
         "title": "SONOS BEAMG2EU1 Beam Gen 2 Soundbar, White",
@@ -176,7 +176,7 @@
       },
       {
         "title": "SONY BRAVIA HTA7100KIT.CEL Theatre Bar 7 Soundbar 5.1.2 Channels with Wireless Subwoofer",
-        "expected": "HT-A7100"
+        "expected": "rejected"
       },
       {
         "title": "SONY HTA3000.CEL Soundbar 3.1 ch",
@@ -188,11 +188,11 @@
       },
       {
         "title": "SONY HTA8000.CEL Bravia Theatre Bar  8 Soundbar  5.0.2 Channels",
-        "expected": "HT-A8000"
+        "expected": "rejected"
       },
       {
         "title": "SONY HTA9000.CEL Bravia Theatre Bar 9 Soundbar 7.0.2 Channels",
-        "expected": "HT-A9000"
+        "expected": "rejected"
       },
       {
         "title": "SONY HTAX7.CEL Portable Home Theatre System, Grey",
@@ -200,7 +200,7 @@
       },
       {
         "title": "SONY HTB600.CEL Bravia Theatre Bar 6 Sounbar 3.1.2 Channels",
-        "expected": "HT-B600"
+        "expected": "rejected"
       },
       {
         "title": "SONY HTS400.CEL Soundbar 2.1 ch",
@@ -302,7 +302,7 @@
       },
       {
         "title": "Soundbar JBL Cinema SB595 3.1.2 JBLSB595BLKEP black",
-        "expected": "CINEMA SB595"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar JBL SB170 JBLSB170BLKEP 2.1 black",
@@ -330,7 +330,7 @@
       },
       {
         "title": "Soundbar MARSHALL Heston 120 1006888 5.1.2 black",
-        "expected": "HESTON 120"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar MARSHALL Heston 60 1007985 5.1 black",
@@ -370,7 +370,7 @@
       },
       {
         "title": "Soundbar SAMSUNG Premium Q-series HW-Q600F (2025) 3.1.2 black",
-        "expected": "HW-Q600F"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG Premium Q-series HW-Q930D/EN (2024) 9.1.4 black",
@@ -378,19 +378,19 @@
       },
       {
         "title": "Soundbar SAMSUNG Q-Series HW-QS90H/EN (2026) All-in-one Sound True 7.1.2 black",
-        "expected": "HW-QS90H"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG Q-series HW-Q600H/EN (2026) True Sound 3.1.2ch black",
-        "expected": "HW-Q600H"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG Q-series HW-Q800F (2025) 5.1.2 black",
-        "expected": "HW-Q800F"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG Q-series HW-Q800H/EN (2026) True Sound 5.1.2ch black",
-        "expected": "HW-Q800H"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG Q-series HW-Q930F (2025) 9.1.4 black",
@@ -410,7 +410,7 @@
       },
       {
         "title": "Soundbar SAMSUNG Q-series HW-QS700F (2025) 3.1.2 black",
-        "expected": "HW-QS700F"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SAMSUNG S-Series Ultra Slim HW-S700D (2024) 3.1 black",
@@ -418,7 +418,7 @@
       },
       {
         "title": "Soundbar SAMSUNG S-Series Ultra Slim HW-S800D (2024) 3.1.2 black",
-        "expected": "HW-S800D"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SENCOR SSB 4460BS 2.1 black",
@@ -454,15 +454,15 @@
       },
       {
         "title": "Soundbar SONY Bravia Theatre Bar 6 HTB600 3.1.2 black",
-        "expected": "HT-B600"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SONY Bravia Theatre Bar 7 + Subwoofer HTA7100KIT 5.1.2 black",
-        "expected": "HT-A7100"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SONY Bravia Theatre Bar 8 HTA8000 5.0.2 black",
-        "expected": "HT-A8000"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SONY Bravia Theatre System 6 HTS60 5.1 black",
@@ -482,7 +482,7 @@
       },
       {
         "title": "Soundbar SONY HTA9000 Bravia Theatre Bar 9 7.0.2 black",
-        "expected": "HT-A9000"
+        "expected": "rejected"
       },
       {
         "title": "Soundbar SONY HTS2000 3.1 black",
@@ -536,11 +536,11 @@
       },
       {
         "title": "Sony BRAVIA Theatre Bar 9 - Dolby Atmos Single 7.0.2 με Bluetooth",
-        "expected": "HT-A9000"
+        "expected": "rejected"
       },
       {
         "title": "Sonos Arc Ultra Ηχομπάρα 9.1.4 Μαύρο",
-        "expected": "ARC ULTRA"
+        "expected": "rejected"
       },
       {
         "title": "Υπογούφερ Marshall Heston Sub 200 για Ηχομπάρα",

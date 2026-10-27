@@ -26,9 +26,11 @@ DEFAULTS: dict[str, Any] = {
     "countries": {"CY": True, "GR": True},
     "fetch": {"timeout_s": 40, "pause_s": 1.0, "playwright": "auto"},
     # what counts as a soundbar worth watching; see soundbot/criteria.py
+    # A complete system in one box: bar, wireless subwoofer and wireless rears, nothing to buy after.
+    # Relax require_rears_included to also see bars whose rears are a separate purchase.
     "criteria": {"min_height_channels": 2, "require_physical_height": True, "require_earc": True,
-                 "no_wired_speakers": True, "require_sub_included": False,
-                 "require_rears_included": False, "min_channels": 3.0},
+                 "no_wired_speakers": True, "require_sub_included": True,
+                 "require_rears_included": True, "min_channels": 3.0},
     "price_range": {"min": 200, "max": 3500},
     "scoring": {"fit_weight": 0.5, "review_weight": 0.5, "profile": "cinema"},
 }
