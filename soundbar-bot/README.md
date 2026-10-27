@@ -15,6 +15,10 @@ ear-level channels, formats and connections as smaller bonuses.
 
 * Dashboard: <http://127.0.0.1:8766> (only reachable from this laptop). Prices are grouped by country, so
   the Cypriot and Greek columns sit side by side with the cheapest shop in each.
+* **A price that has moved** shows the old one struck through with the new one under it, green with a ▼
+  for a drop and red with a ▲ for a rise, and the percentage. It keeps showing until the price moves
+  again, so a drop three days ago is still visible; hovering gives the date it changed. A shop's own
+  strikethrough price (its RRP) is shown instead when the price itself has not moved.
 * Alerts arrive as a Windows toast and as a push on your phone through [ntfy](https://ntfy.sh): install the
   ntfy app and subscribe to the topic shown on the Settings page (it is private to you; keep it to yourself).
 * **Run check now** on the dashboard forces a check; **Test notification** sends a test toast and push.

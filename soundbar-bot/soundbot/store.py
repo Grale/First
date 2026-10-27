@@ -178,6 +178,30 @@ class Store:
                             "ORDER BY id DESC LIMIT 1", (rule, shop, model_key)).fetchone()
             return float(row[0]) if row and row[0] is not None else None
 
+    def recent_price_changes(self, days: int = 21) -> dict[tuple[str, str], dict]:
+        """The last price move per (shop, model): {'old', 'new', 'at'}.
+
+        Walks each pair's history and keeps the most recent point where the price differed from the
+        one before it, so a model whose price moved a week ago and has held since still shows the
+        move. A pair that has only ever been seen at one price is not in the result.
+        """
+        since = (datetime.now() - timedelta(days=days)).isoformat(timespec="seconds")
+        with self.conn() as c:
+            rows = c.execute(
+                "SELECT shop, model_key, price, seen_at FROM offers "
+                "WHERE price IS NOT NULL AND seen_at >= ? ORDER BY seen_at", (since,)).fetchall()
+        last: dict[tuple[str, str], float] = {}
+        out: dict[tuple[str, str], dict] = {}
+        for r in rows:
+            key = (r["shop"], r["model_key"])
+            price = float(r["price"])
+            was = last.get(key)
+            if was is not None and abs(was - price) >= 0.01:
+                out[key] = {"old": was, "new": price, "at": r["seen_at"]}
+            last[key] = price
+        # Only report a move the current price still agrees with: anything else is already history.
+        return {k: v for k, v in out.items() if abs(v["new"] - last[k]) < 0.01}
+
     # ---- per-shop state ---------------------------------------------------
     def shop_state(self, shop: str) -> Optional[sqlite3.Row]:
         with self.conn() as c:

@@ -55,8 +55,16 @@
           {% set cell = g.cells[s] %}
           <td class="{{ 'best' if cell and g.best and cell.id == g.best.id }}">
             {% if cell %}
-              <a href="{{ cell.url }}" target="_blank" rel="noopener" title="{{ cell.title }}">{{ cell.price|price or '—' }}</a>
-              {% if cell.list_price %}<div class="muted small strike">{{ cell.list_price|price }}</div>{% endif %}
+              {% set move = cell.get('change') %}
+              {% if move %}
+                <div class="small strike muted" title="was {{ move.old|price }} until {{ move.at|dt }}">{{ move.old|price }}</div>
+                {% set down = move.new < move.old %}
+                <a class="chg {{ 'down' if down else 'up' }}" href="{{ cell.url }}" target="_blank" rel="noopener" title="{{ cell.title }}">{{ cell.price|price }}</a>
+                <div class="chg small {{ 'down' if down else 'up' }}">{{ '▼' if down else '▲' }} {{ ((move.new - move.old) / move.old * 100)|abs|round(1) }}%</div>
+              {% else %}
+                <a href="{{ cell.url }}" target="_blank" rel="noopener" title="{{ cell.title }}">{{ cell.price|price or '—' }}</a>
+                {% if cell.list_price %}<div class="muted small strike">{{ cell.list_price|price }}</div>{% endif %}
+              {% endif %}
               {% if cell.in_stock == 0 %}<div class="tag bad">out of stock</div>{% elif cell.in_stock is none %}<div class="tag">listed</div>{% else %}<div class="tag ok">in stock</div>{% endif %}
             {% else %}<span class="muted">—</span>{% endif %}
           </td>
@@ -70,6 +78,6 @@
     </tbody>
   </table>
   </div>
-  <p class="muted small">Every model here has {{ cfg.criteria.min_height_channels }} or more height channels from drivers that fire at the ceiling, and no speaker cables. Rows are ordered by overall score ({{ (cfg.scoring.fit_weight*100)|round|int }}% fit, {{ (cfg.scoring.review_weight*100)|round|int }}% reviews); see Ranking for the breakdown. Alert rules: a shop ≥{{ cfg.rules.cross_shop_pct }}% below the next-cheapest shop{% if cfg.rules.cross_shop_scope == 'country' %} in the same country{% endif %} · ≥{{ cfg.rules.list_discount_pct }}% off a shop's own list price · back in stock. Checks every {{ cfg.schedule.interval_hours }} h.</p>
+  <p class="muted small">Every model here has {{ cfg.criteria.min_height_channels }} or more height channels from drivers that fire at the ceiling, and no speaker cables. Rows are ordered by overall score ({{ (cfg.scoring.fit_weight*100)|round|int }}% fit, {{ (cfg.scoring.review_weight*100)|round|int }}% reviews); see Ranking for the breakdown. A struck-through price is what a shop charged before its last change, with the new one under it: red for a rise, green for a drop. Alert rules: a shop ≥{{ cfg.rules.cross_shop_pct }}% below the next-cheapest shop{% if cfg.rules.cross_shop_scope == 'country' %} in the same country{% endif %} · ≥{{ cfg.rules.list_discount_pct }}% off a shop's own list price · back in stock. Checks every {{ cfg.schedule.interval_hours }} h.</p>
 </section>
 {% endblock %}

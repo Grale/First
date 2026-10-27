@@ -95,12 +95,19 @@ def create_app(store: Store, sched: Scheduler) -> Flask:
         wl = watchlist_mod.load()
         shops = enabled_shops(cfg)
         rows = store.current_offers()
+        moves = store.recent_price_changes()
         cell: dict[tuple[str, str], dict] = {}
         for r in rows:
             key = (r["model_key"], r["shop"])
             d = dict(r)
             if key not in cell or (d["price"] or 1e9) < (cell[key]["price"] or 1e9):
                 cell[key] = d
+        for (model_key, shop), d in cell.items():
+            move = moves.get((shop, model_key))
+            # Only show the move if it is the price on screen; a second listing of the same model in
+            # the same shop can be cheaper, and striking a price it never had would be a lie.
+            if move and d["price"] is not None and abs(move["new"] - d["price"]) < 0.01:
+                d["change"] = move
         best_prices: dict[str, float] = {}
         rows_by_model: dict[str, dict] = {}
         for m in wl.models:

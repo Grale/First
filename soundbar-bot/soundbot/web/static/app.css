@@ -48,3 +48,6 @@ footer.foot { text-align: center; color: var(--muted); font-size: 12px; padding:
 td.rank { font-weight: 700; color: var(--muted); }
 .bar { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; } .bar > i { display: block; height: 100%; background: var(--accent); }
 .pros { color: var(--ok); } .cons { color: var(--bad); }
+/* a price that moved since the last check: the old one struck through above it */
+.chg.up, a.chg.up { color: var(--bad); font-weight: 600; }
+.chg.down, a.chg.down { color: var(--ok); font-weight: 600; }

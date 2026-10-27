@@ -210,6 +210,36 @@ def check_stock_fields(failures: list[str]) -> None:
     print(f"  {len(cases)} stock states")
 
 
+def check_price_changes(failures: list[str]) -> None:
+    """The last move per shop and model, and nothing for a price that never moved."""
+    import tempfile
+    from soundbot.models import Offer
+    from soundbot.store import Store
+
+    store = Store(Path(tempfile.mkdtemp()) / "moves.db")
+    def seen(run, shop, model, price, when):
+        o = Offer(shop=shop, model_key=model, title=model, price=price, url="u")
+        o.seen_at = when
+        store.add_offers(run, [o])
+
+    #                                     drops, then holds at the new price
+    for i, p in enumerate([999.0, 999.0, 949.0, 949.0]):
+        seen(i + 1, "electroline", "HW-Q990F", p, f"2026-10-2{i + 1}T10:00:00")
+    for i, p in enumerate([519.0, 599.0]):                      # rises
+        seen(i + 1, "stephanis", "HW-Q930F", p, f"2026-10-2{i + 1}T10:00:00")
+    for i in range(3):                                          # never moves
+        seen(i + 1, "scandia", "S80TR", 429.0, f"2026-10-2{i + 1}T10:00:00")
+
+    moves = store.recent_price_changes(days=3650)
+    got = {k: (v["old"], v["new"]) for k, v in moves.items()}
+    want = {("electroline", "HW-Q990F"): (999.0, 949.0), ("stephanis", "HW-Q930F"): (519.0, 599.0)}
+    if got != want:
+        failures.append(f"price changes: got {got}, expected {want}")
+    if ("scandia", "S80TR") in moves:
+        failures.append("price changes: reported a move for a price that never changed")
+    print(f"  {len(moves)} moves found, a steady price reported none")
+
+
 def check_backoff(failures: list[str]) -> None:
     """A shop that turns us away is left alone, and a successful read clears it."""
     import tempfile
@@ -257,7 +287,7 @@ def main() -> int:
     failures: list[str] = []
     for name, fn in (("shop titles", check_titles), ("watchlist", check_watchlist),
                      ("price parsing", check_prices), ("skroutz robots rules", check_robots),
-                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields),
+                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields), ("price changes", check_price_changes),
                      ("backoff and intervals", check_backoff)):
         print(f"{name}:")
         fn(failures)
