@@ -86,9 +86,22 @@ Rerun `python tools/build_watchlist.py` after editing either.
 
 ## The watch list
 
-`watchlist.json` is the only thing that decides which soundbars are watched: **36 models** across Samsung,
-Sony, LG, JBL, Sonos, Bose, Marshall, Harman Kardon, Klipsch and Bowers & Wilkins, plus **11** checked and
-rejected. A model is watched only when its specs clear the criteria above.
+`watchlist.json` is the only thing that decides which soundbars are watched: **24 models** across Samsung,
+Sony, LG, JBL, Sonos, Marshall, Harman Kardon and Klipsch, plus **23** checked and not watched. A model is
+watched only when its specs clear the criteria above *and* it survives two curation rules in
+`tools/build_watchlist.py`:
+
+* `MIN_YEAR = 2024` — nothing older, however good. A line's older generations are usually still on the
+  shelf and usually the cheapest thing on it, so this is a deliberate trade: it drops the Bose Smart
+  Ultra, the JBL Bar 800 and the LG SC9S, which were among the better value in the shops. Set it to 0
+  to watch everything still on sale.
+* `KEEP_GENERATIONS = 2` — the newest two of each product line, so the list holds the Q990H and Q990F
+  and not the Q990D. Each research entry carries a `line` ("Samsung Q990", "JBL Bar 1300"), and when a
+  2027 model is added the oldest drops out by itself rather than by hand.
+
+Both send the model to the rejected list with the reason, so the discovery scan does not keep offering
+it back; a model that fails on its *merits* is recorded that way whatever its age, because "virtual
+Atmos" says something about the hardware that "2021 model" does not.
 
 Every entry carries a `source_url` and opens its `notes` with how far it was verified, because the two are
 not the same thing:

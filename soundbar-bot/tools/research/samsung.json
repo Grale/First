@@ -17,8 +17,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/uk/audio-devices/soundbar/q990h-black-hw-q990h-xu/",
-    "aliases": ["HW-Q990H", "Q990H", "HWQ990H", "HW-Q990H/EN", "HWQ990HEN"],
-    "notes": "Samsung UK spec sheet for the 2026 flagship: 11.1.4 over 23 speakers, 'Up-firing Speaker: Yes', 'Wireless Subwoofer Included: Yes', 'Wireless Rear Speaker Included: Yes', 'HDMI ARC: Yes (eARC)', 2 HDMI inputs. The four-piece set is the reference for this list: bar, wireless sub, two wireless rears, and height drivers in both the bar and the rears."
+    "aliases": [
+      "HW-Q990H",
+      "Q990H",
+      "HWQ990H",
+      "HW-Q990H/EN",
+      "HWQ990HEN"
+    ],
+    "notes": "Samsung UK spec sheet for the 2026 flagship: 11.1.4 over 23 speakers, 'Up-firing Speaker: Yes', 'Wireless Subwoofer Included: Yes', 'Wireless Rear Speaker Included: Yes', 'HDMI ARC: Yes (eARC)', 2 HDMI inputs. The four-piece set is the reference for this list: bar, wireless sub, two wireless rears, and height drivers in both the bar and the rears.",
+    "line": "Samsung Q990"
   },
   {
     "brand": "Samsung",
@@ -38,8 +45,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q990f-black-hw-q990f-en/",
-    "aliases": ["HW-Q990F", "Q990F", "HWQ990F", "HW-Q990F/EN", "HWQ990FEN"],
-    "notes": "Samsung Greece spec sheet: 11.1.4 over 23 speakers, four up-firing channels, 8-inch dual-driver wireless subwoofer and two wireless rears in the box, eARC, 2 HDMI inputs. The 2025 set the 2026 Q990H barely changed from, so it is the value pick whenever it is discounted below the H."
+    "aliases": [
+      "HW-Q990F",
+      "Q990F",
+      "HWQ990F",
+      "HW-Q990F/EN",
+      "HWQ990FEN"
+    ],
+    "notes": "Samsung Greece spec sheet: 11.1.4 over 23 speakers, four up-firing channels, 8-inch dual-driver wireless subwoofer and two wireless rears in the box, eARC, 2 HDMI inputs. The 2025 set the 2026 Q990H barely changed from, so it is the value pick whenever it is discounted below the H.",
+    "line": "Samsung Q990"
   },
   {
     "brand": "Samsung",
@@ -59,8 +73,15 @@
     "qualifies": true,
     "verified": "series page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q990f-black-hw-q990f-en/",
-    "aliases": ["HW-Q990D", "Q990D", "HWQ990D", "HW-Q990D/EN", "HWQ990DEN"],
-    "notes": "Specs carried over from the Q990F spec page: the 2024 set has the same 11.1.4 four-piece layout, wireless sub and wireless rears. Not re-verified on a 2024 spec page in this round, because Samsung has retired it; the Cypriot listings print '11.1.4' and 'Wireless Dolby Atmos', which agrees. Worth watching because it is the cheapest way into 11.1.4 while shops clear it."
+    "aliases": [
+      "HW-Q990D",
+      "Q990D",
+      "HWQ990D",
+      "HW-Q990D/EN",
+      "HWQ990DEN"
+    ],
+    "notes": "Specs carried over from the Q990F spec page: the 2024 set has the same 11.1.4 four-piece layout, wireless sub and wireless rears. Not re-verified on a 2024 spec page in this round, because Samsung has retired it; the Cypriot listings print '11.1.4' and 'Wireless Dolby Atmos', which agrees. Worth watching because it is the cheapest way into 11.1.4 while shops clear it.",
+    "line": "Samsung Q990"
   },
   {
     "brand": "Samsung",
@@ -80,8 +101,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/uk/audio-devices/soundbar/q930h-black-hw-q930h-xu/",
-    "aliases": ["HW-Q930H", "Q930H", "HWQ930H", "HW-Q930H/EN", "HWQ930HEN"],
-    "notes": "Samsung UK spec sheet: 9.1.4 over 17 speakers, up-firing yes, wireless sub and wireless rears both in the box, eARC, 1 HDMI input. Same four-piece idea as the Q990 with two fewer ear-level channels and one HDMI input instead of two."
+    "aliases": [
+      "HW-Q930H",
+      "Q930H",
+      "HWQ930H",
+      "HW-Q930H/EN",
+      "HWQ930HEN"
+    ],
+    "notes": "Samsung UK spec sheet: 9.1.4 over 17 speakers, up-firing yes, wireless sub and wireless rears both in the box, eARC, 1 HDMI input. Same four-piece idea as the Q990 with two fewer ear-level channels and one HDMI input instead of two.",
+    "line": "Samsung Q930"
   },
   {
     "brand": "Samsung",
@@ -101,8 +129,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q930f-black-hw-q930f-en/",
-    "aliases": ["HW-Q930F", "Q930F", "HWQ930F", "HW-Q930F/EN", "HWQ930FEN"],
-    "notes": "Samsung Greece spec sheet: 9.1.4 over 17 speakers, up-firing yes, wireless sub and wireless rears in the box, eARC, 1 HDMI input."
+    "aliases": [
+      "HW-Q930F",
+      "Q930F",
+      "HWQ930F",
+      "HW-Q930F/EN",
+      "HWQ930FEN"
+    ],
+    "notes": "Samsung Greece spec sheet: 9.1.4 over 17 speakers, up-firing yes, wireless sub and wireless rears in the box, eARC, 1 HDMI input.",
+    "line": "Samsung Q930"
   },
   {
     "brand": "Samsung",
@@ -122,8 +157,15 @@
     "qualifies": true,
     "verified": "series page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q930f-black-hw-q930f-en/",
-    "aliases": ["HW-Q930D", "Q930D", "HWQ930D", "HW-Q930D/EN", "HWQ930DEN"],
-    "notes": "Specs carried over from the Q930F spec page; the Cypriot listings print '9.1.4' for the 2024 set, which agrees. Not re-verified on a 2024 spec page."
+    "aliases": [
+      "HW-Q930D",
+      "Q930D",
+      "HWQ930D",
+      "HW-Q930D/EN",
+      "HWQ930DEN"
+    ],
+    "notes": "Specs carried over from the Q930F spec page; the Cypriot listings print '9.1.4' for the 2024 set, which agrees. Not re-verified on a 2024 spec page.",
+    "line": "Samsung Q930"
   },
   {
     "brand": "Samsung",
@@ -143,8 +185,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/uk/audio-devices/soundbar/qs90h-black-hw-qs90h-xu/",
-    "aliases": ["HW-QS90H", "QS90H", "HWQS90H", "HW-QS90H/EN", "HWQS90HEN"],
-    "notes": "Samsung UK spec sheet: 7.1.2 over 13 speakers with two up-firing channels and the bass in four built-in woofers, so there is no separate subwoofer and no rear speakers at all. It qualifies on the wireless rule because nothing in the system is wired, but it scores below the four-piece sets, which is the right order for a room where rears are an option."
+    "aliases": [
+      "HW-QS90H",
+      "QS90H",
+      "HWQS90H",
+      "HW-QS90H/EN",
+      "HWQS90HEN"
+    ],
+    "notes": "Samsung UK spec sheet: 7.1.2 over 13 speakers with two up-firing channels and the bass in four built-in woofers, so there is no separate subwoofer and no rear speakers at all. It qualifies on the wireless rule because nothing in the system is wired, but it scores below the four-piece sets, which is the right order for a room where rears are an option.",
+    "line": "Samsung QS90"
   },
   {
     "brand": "Samsung",
@@ -164,8 +213,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/uk/audio-devices/soundbar/q800h-black-hw-q800h-xu/",
-    "aliases": ["HW-Q800H", "Q800H", "HWQ800H", "HW-Q800H/EN", "HWQ800HEN"],
-    "notes": "Samsung UK spec sheet: 5.1.2 over 11 built-in speakers, up-firing yes, wireless subwoofer in the box, 'Wireless Rear Speaker Included: No', eARC, 1 HDMI input. Samsung's SWA wireless rear kits pair with this tier, which is why rears are recorded as available rather than absent."
+    "aliases": [
+      "HW-Q800H",
+      "Q800H",
+      "HWQ800H",
+      "HW-Q800H/EN",
+      "HWQ800HEN"
+    ],
+    "notes": "Samsung UK spec sheet: 5.1.2 over 11 built-in speakers, up-firing yes, wireless subwoofer in the box, 'Wireless Rear Speaker Included: No', eARC, 1 HDMI input. Samsung's SWA wireless rear kits pair with this tier, which is why rears are recorded as available rather than absent.",
+    "line": "Samsung Q800"
   },
   {
     "brand": "Samsung",
@@ -185,8 +241,15 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q800f-black-hw-q800f-en/",
-    "aliases": ["HW-Q800F", "Q800F", "HWQ800F", "HW-Q800F/EN", "HWQ800FEN"],
-    "notes": "Samsung Greece spec sheet: 5.1.2 over 11 speakers, up-firing yes, wireless sub in the box, no rears in the box, eARC, 1 HDMI input."
+    "aliases": [
+      "HW-Q800F",
+      "Q800F",
+      "HWQ800F",
+      "HW-Q800F/EN",
+      "HWQ800FEN"
+    ],
+    "notes": "Samsung Greece spec sheet: 5.1.2 over 11 speakers, up-firing yes, wireless sub in the box, no rears in the box, eARC, 1 HDMI input.",
+    "line": "Samsung Q800"
   },
   {
     "brand": "Samsung",
@@ -206,8 +269,16 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/qs700f-black-hw-qs700f-en/",
-    "aliases": ["HW-QS700F", "QS700F", "HWQS700F", "HW-QS700F/EN", "HW-QS700F/ZF", "HWQS700FEN"],
-    "notes": "Samsung Greece spec sheet: 3.1.2 over 8 speakers, up-firing yes, 8-inch wireless subwoofer in the box, eARC, and the SWA-9500S wireless rear kit sold separately. The entry-level way into real height channels with a wireless sub."
+    "aliases": [
+      "HW-QS700F",
+      "QS700F",
+      "HWQS700F",
+      "HW-QS700F/EN",
+      "HW-QS700F/ZF",
+      "HWQS700FEN"
+    ],
+    "notes": "Samsung Greece spec sheet: 3.1.2 over 8 speakers, up-firing yes, 8-inch wireless subwoofer in the box, eARC, and the SWA-9500S wireless rear kit sold separately. The entry-level way into real height channels with a wireless sub.",
+    "line": "Samsung QS700"
   },
   {
     "brand": "Samsung",
@@ -227,7 +298,14 @@
     "qualifies": true,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["HW-Q600H", "Q600H", "HWQ600H", "HW-Q600H/EN", "HWQ600HEN"],
-    "notes": "Listed by Stephanis as 'Q-series HW-Q600H/EN (2026) True Sound 3.1.2ch' and by e-shop.gr as 3.1.2 with Dolby Atmos and DTS:X. The 3.1.2 layout and the wireless subwoofer match the Q600 tier's long-standing shape, but this entry was not confirmed on a Samsung spec page in this round - do that before buying."
+    "aliases": [
+      "HW-Q600H",
+      "Q600H",
+      "HWQ600H",
+      "HW-Q600H/EN",
+      "HWQ600HEN"
+    ],
+    "notes": "Listed by Stephanis as 'Q-series HW-Q600H/EN (2026) True Sound 3.1.2ch' and by e-shop.gr as 3.1.2 with Dolby Atmos and DTS:X. The 3.1.2 layout and the wireless subwoofer match the Q600 tier's long-standing shape, but this entry was not confirmed on a Samsung spec page in this round - do that before buying.",
+    "line": "Samsung Q600"
   }
 ]

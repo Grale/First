@@ -22,6 +22,12 @@ from soundbot.models import Specs                      # noqa: E402
 # Models the buyer named: they earn a fit bonus and sort first. Star a model on the Watchlist page to
 # add one without touching this file.
 PRIORITY: set[str] = set()
+# How much of each product line to watch. A line is the family a model belongs to ("Samsung Q990"),
+# named by the "line" field in the research files; KEEP_GENERATIONS counts back from its newest member,
+# so when a 2027 Q990 is researched the 2025 one drops out on its own rather than by hand.
+KEEP_GENERATIONS = 2
+# Nothing older than this model year. Set it to 0 to watch every generation that is still on sale.
+MIN_YEAR = 2024
 # Aliases dropped because they name a range or a tier rather than one model. "BAR 8" would be claimed by
 # any "JBL Bar 800" listing once the spaces come out, and "Q-SERIES" covers eleven Samsungs.
 GENERIC_ALIASES = {"BAR 8", "BAR 9", "BAR 6", "BAR 7", "BAR8", "BAR9", "BAR6", "BAR7", "Q SERIES",
@@ -65,6 +71,30 @@ def load_reviews(reviews_dir: Path) -> dict[str, dict]:
     return out
 
 
+def older_than_floor(entries: dict[str, dict]) -> dict[str, str]:
+    """Which models are out on age rather than on merit, and in one sentence why.
+
+    Two cuts, both about keeping the list to what is worth watching rather than about the hardware:
+    a model year floor, and only the newest few generations of each line. A model that falls to either
+    is still recorded as rejected, so the discovery scan does not keep offering it back.
+    """
+    out: dict[str, str] = {}
+    by_line: dict[str, list[dict]] = {}
+    for e in entries.values():
+        by_line.setdefault(e.get("line") or e["model_key"], []).append(e)
+    for line, members in by_line.items():
+        members.sort(key=lambda m: (m.get("year") or 0), reverse=True)
+        for rank, e in enumerate(members):
+            year = e.get("year") or 0
+            if MIN_YEAR and year and year < MIN_YEAR:
+                out[e["model_key"]] = f"{year} model, and the list stops at {MIN_YEAR}"
+            elif KEEP_GENERATIONS and rank >= KEEP_GENERATIONS:
+                newer = ", ".join(m["model_key"] for m in members[:KEEP_GENERATIONS])
+                out[e["model_key"]] = (f"superseded in the {line} line: only the newest "
+                                       f"{KEEP_GENERATIONS} are watched ({newer})")
+    return out
+
+
 def main(research_dir: Path) -> None:
     crit = criteria_mod.active()
     reviews = load_reviews(research_dir.parent / "reviews")
@@ -79,6 +109,8 @@ def main(research_dir: Path) -> None:
             e["model_key"] = key
             entries[key] = e
 
+    superseded = older_than_floor(entries)
+
     models, rejected = [], []
     for key, e in entries.items():
         aliases = []
@@ -91,7 +123,10 @@ def main(research_dir: Path) -> None:
             if a.upper() != key:
                 aliases.append(a)
         specs = specs_from(e)
-        qualifies = crit.specs_qualify(specs) and e.get("qualifies", True) is not False
+        # Why it is out matters: "virtual Atmos" tells you something about the hardware that "2021
+        # model" does not, so a model that fails on merit is recorded that way whatever its age.
+        on_merit = crit.specs_qualify(specs) and e.get("qualifies", True) is not False
+        qualifies = on_merit and key not in superseded
         verified = e.get("verified") or "unstated"
         notes = e.get("notes") or ""
         if verified and verified not in notes:
@@ -109,7 +144,8 @@ def main(research_dir: Path) -> None:
                 "review": reviews.get(key, {}),
             })
         else:
-            rejected.append({"brand": e["brand"], "model_key": key, "reason": reason_for(e, crit),
+            rejected.append({"brand": e["brand"], "model_key": key,
+                             "reason": reason_for(e, crit) if not on_merit else superseded[key],
                              "source_url": e.get("source_url") or "", "aliases": aliases})
 
     models.sort(key=lambda m: (not m["priority"], m["brand"], m["model_key"]))
@@ -118,6 +154,7 @@ def main(research_dir: Path) -> None:
     out.write_text(json.dumps({"models": models, "rejected": rejected}, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
     print(f"criteria: {crit.label}")
+    print(f"curation: newest {KEEP_GENERATIONS} generations of each line, nothing before {MIN_YEAR}")
     print(f"{len(models)} models ({sum(1 for m in models if m['review'])} with reviews), "
           f"{len(rejected)} rejected -> {out}")
     for m in models:

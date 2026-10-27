@@ -23,7 +23,8 @@
       "HWQ600F",
       "HW-Q600F/EN"
     ],
-    "notes": "The 2025 Q600, printed as 3.1.2 by Stephanis. Layout from the retailer listing, not a Samsung spec page."
+    "notes": "The 2025 Q600, printed as 3.1.2 by Stephanis. Layout from the retailer listing, not a Samsung spec page.",
+    "line": "Samsung Q600"
   },
   {
     "brand": "Samsung",
@@ -49,7 +50,8 @@
       "HWS800D",
       "HW-S800D/EN"
     ],
-    "notes": "The ultra-slim 3.1.2 with a wireless subwoofer, for a TV on a narrow stand. eARC only, no HDMI input. Layout from the retailer listing."
+    "notes": "The ultra-slim 3.1.2 with a wireless subwoofer, for a TV on a narrow stand. eARC only, no HDMI input. Layout from the retailer listing.",
+    "line": "Samsung S800 slim"
   },
   {
     "brand": "LG",
@@ -73,7 +75,8 @@
       "S80QY",
       "US80QY"
     ],
-    "notes": "Printed as 3.1.3 by Stephanis: the older sibling of the S80TR, with the same three height channels and a wireless subwoofer, and LG's wireless rear kit as an option. Still stocked and usually the cheapest three-height-channel bar in Cyprus. Layout from the retailer listing."
+    "notes": "Printed as 3.1.3 by Stephanis: the older sibling of the S80TR, with the same three height channels and a wireless subwoofer, and LG's wireless rear kit as an option. Still stocked and usually the cheapest three-height-channel bar in Cyprus. Layout from the retailer listing.",
+    "line": "LG S80"
   },
   {
     "brand": "Bowers & Wilkins",
@@ -98,7 +101,8 @@
       "PANORAMA3",
       "FP42277"
     ],
-    "notes": "Printed as 3.1.2 by Stephanis: one bar with up-firing drivers and its own bass drivers, no subwoofer in the box. Bowers & Wilkins sells wireless Formation components to expand it. Both the layout and the up-firing drivers come from the retailer listing - confirm on the manufacturer's page before buying."
+    "notes": "Printed as 3.1.2 by Stephanis: one bar with up-firing drivers and its own bass drivers, no subwoofer in the box. Bowers & Wilkins sells wireless Formation components to expand it. Both the layout and the up-firing drivers come from the retailer listing - confirm on the manufacturer's page before buying.",
+    "line": "B&W Panorama"
   },
   {
     "brand": "Samsung",
@@ -124,7 +128,8 @@
       "HWQ600C",
       "HW-Q600C/EN"
     ],
-    "notes": "The 2023 Q600, printed as 3.1.2 by Stephanis and still on the shelf below the newer ones. A separate entry rather than an alias of the Q600F, so a price for one is never compared against a price for the other. Layout from the retailer listing."
+    "notes": "The 2023 Q600, printed as 3.1.2 by Stephanis and still on the shelf below the newer ones. A separate entry rather than an alias of the Q600F, so a price for one is never compared against a price for the other. Layout from the retailer listing.",
+    "line": "Samsung Q600"
   },
   {
     "brand": "Samsung",
@@ -150,6 +155,7 @@
       "HWS800B",
       "HW-S800B/EN"
     ],
-    "notes": "The 2022 ultra-slim 3.1.2, same reason for a separate entry as the Q600C. Layout from the retailer listing."
+    "notes": "The 2022 ultra-slim 3.1.2, same reason for a separate entry as the Q600C. Layout from the retailer listing.",
+    "line": "Samsung S800 slim"
   }
 ]

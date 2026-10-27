@@ -1,119 +1,6 @@
 {
   "models": [
     {
-      "brand": "Bose",
-      "model_key": "SMART ULTRA SOUNDBAR",
-      "family": "Smart Ultra",
-      "year": 2023,
-      "specs": {
-        "channels": 5,
-        "sub_channels": 0,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_optional",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": false,
-        "earc": true,
-        "hdmi_in": 0
-      },
-      "source_url": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review",
-      "aliases": [
-        "SMART ULTRA",
-        "882963-5140",
-        "8829635140"
-      ],
-      "priority": false,
-      "notes": "[review + comparison specs] Nine drivers including two that fire upward as dipoles for the height channels, with Bose's TrueSpace upmixing everything else. The Bass Module 500/700 and the wireless surround speakers are optional and wireless. Reviewers put its height effects below the Sonos Arc Ultra's; it is the smaller box of the two.",
-      "enabled": true,
-      "review": {
-        "model_key": "SMART ULTRA SOUNDBAR",
-        "review_score": 8.0,
-        "confidence": "low",
-        "critic": [
-          {
-            "source": "TechRadar",
-            "url": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review",
-            "score": "n/a",
-            "verdict": "A more compact Sonos Arc alternative; two upward-firing drivers among nine speakers"
-          },
-          {
-            "source": "What Hi-Fi? comparison",
-            "url": "https://www.whathifi.com/advice/bose-smart-ultra-soundbar-vs-sonos-arc",
-            "score": "n/a",
-            "verdict": "TrueSpace upmixing is the draw; the Arc is the better Atmos performer"
-          }
-        ],
-        "user_sentiment": {
-          "score": null,
-          "summary": "Liked for dialogue clarity and for fitting under smaller TVs; owners who want bass end up buying a Bass Module.",
-          "sources": []
-        },
-        "pros": [
-          "Two real up-firing dipole drivers in a small cabinet",
-          "TrueSpace upmixes non-Atmos content convincingly",
-          "Bass Module and surrounds are wireless when added"
-        ],
-        "cons": [
-          "Height effects rated below the Sonos Arc Ultra's",
-          "No DTS:X",
-          "No HDMI input"
-        ],
-        "specs_extra": {
-          "drivers": 9,
-          "room_calibration": true,
-          "streaming": [
-            "AirPlay 2",
-            "Spotify Connect",
-            "Chromecast"
-          ],
-          "analogue_in": false,
-          "music_score": 7.5
-        },
-        "cinema_verdict": "The compact true-Atmos bar: right for a small room, expensive once the Bass Module is added.",
-        "notes": "Sources disagree on the channel count (3.0.2 in one comparison, nine speakers including two up-firing in another); recorded here as 5.0.2 on the driver count. Confidence low.",
-        "fit_penalties": [
-          {
-            "points": -3,
-            "reason": "no HDMI input, and no DTS:X decoding",
-            "source": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review"
-          },
-          {
-            "points": -2,
-            "reason": "height effects rated below the Sonos Arc Ultra's by reviewers comparing them directly",
-            "source": "https://www.whathifi.com/advice/bose-smart-ultra-soundbar-vs-sonos-arc"
-          }
-        ]
-      }
-    },
-    {
-      "brand": "Bowers & Wilkins",
-      "model_key": "PANORAMA 3",
-      "family": "Panorama",
-      "year": 2022,
-      "specs": {
-        "channels": 3,
-        "sub_channels": 1,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "built_in",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": false,
-        "earc": true,
-        "hdmi_in": 0
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "PANORAMA3",
-        "FP42277"
-      ],
-      "priority": false,
-      "notes": "Printed as 3.1.2 by Stephanis: one bar with up-firing drivers and its own bass drivers, no subwoofer in the box. Bowers & Wilkins sells wireless Formation components to expand it. Both the layout and the up-firing drivers come from the retailer listing - confirm on the manufacturer's page before buying.",
-      "enabled": true,
-      "review": {}
-    },
-    {
       "brand": "Harman Kardon",
       "model_key": "ENCHANT 1100",
       "family": "Enchant",
@@ -189,34 +76,6 @@
     },
     {
       "brand": "JBL",
-      "model_key": "BAR 1000",
-      "family": "Bar (first generation)",
-      "year": 2023,
-      "specs": {
-        "channels": 7,
-        "sub_channels": 1,
-        "height_channels": 4,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_included",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "BAR1000",
-        "JBLBAR1000",
-        "JBLBAR1000PROBLKEP"
-      ],
-      "priority": false,
-      "notes": "MK1, printed as 7.1.4 with detachable wireless rears and a 10-inch wireless subwoofer. Same caveat as the Bar 1300: retailer listing, not a current spec page.",
-      "enabled": true,
-      "review": {}
-    },
-    {
-      "brand": "JBL",
       "model_key": "BAR 1000MK2",
       "family": "Bar MK2",
       "year": 2025,
@@ -240,34 +99,6 @@
       ],
       "priority": false,
       "notes": "[review + retailer spec] 7.1.4 with up-firing drivers, detachable battery-powered wireless rears and a 10-inch wireless subwoofer. The step below the 1300MK2: same trick, fewer ear-level channels.",
-      "enabled": true,
-      "review": {}
-    },
-    {
-      "brand": "JBL",
-      "model_key": "BAR 1300",
-      "family": "Bar (first generation)",
-      "year": 2023,
-      "specs": {
-        "channels": 11,
-        "sub_channels": 1,
-        "height_channels": 4,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_included",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 3
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "BAR1300",
-        "JBLBAR1300",
-        "JBLBAR1300BLKEP"
-      ],
-      "priority": false,
-      "notes": "The MK1 of the detachable-rears flagship, printed as 11.1.4 by Stephanis and still stocked alongside the MK2. Watched so the bot can tell you when the old one is cleared out cheaply; specs follow the retailer listing and JBL's MK1 marketing rather than a current spec page.",
       "enabled": true,
       "review": {}
     },
@@ -345,34 +176,6 @@
         "cinema_verdict": "The only four-piece set whose rears need nothing at all behind the sofa, and the only one with three HDMI inputs.",
         "notes": "No full lab review was available for the MK2 at the time of writing; the score is a synthesis of launch coverage and the MK1's reception."
       }
-    },
-    {
-      "brand": "JBL",
-      "model_key": "BAR 800",
-      "family": "Bar (first generation)",
-      "year": 2023,
-      "specs": {
-        "channels": 5,
-        "sub_channels": 1,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_included",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
-      "aliases": [
-        "BAR800",
-        "JBLBAR800",
-        "JBLBAR800PROBLKEP"
-      ],
-      "priority": false,
-      "notes": "[retailer listing] 5.1.2 with detachable wireless rears and a wireless subwoofer, printed that way by Electroline. Note the trap in this family: the newer Bar 800MK2 dropped the up-firing drivers and is on the rejected list, so the MK1 and the MK2 are not interchangeable despite the names.",
-      "enabled": true,
-      "review": {}
     },
     {
       "brand": "JBL",
@@ -470,32 +273,6 @@
         "cinema_verdict": "The cheapest route to drivers that actually fire at the ceiling, as long as you are willing to add the sub later.",
         "notes": "Street prices quoted between GBP 449 and USD 575 depending on the outlet."
       }
-    },
-    {
-      "brand": "LG",
-      "model_key": "S80QY",
-      "family": "S80",
-      "year": 2022,
-      "specs": {
-        "channels": 3,
-        "sub_channels": 1,
-        "height_channels": 3,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "US80QY"
-      ],
-      "priority": false,
-      "notes": "Printed as 3.1.3 by Stephanis: the older sibling of the S80TR, with the same three height channels and a wireless subwoofer, and LG's wireless rear kit as an option. Still stocked and usually the cheapest three-height-channel bar in Cyprus. Layout from the retailer listing.",
-      "enabled": true,
-      "review": {}
     },
     {
       "brand": "LG",
@@ -604,32 +381,6 @@
       }
     },
     {
-      "brand": "LG",
-      "model_key": "SC9S",
-      "family": "SC9S",
-      "year": 2023,
-      "specs": {
-        "channels": 3,
-        "sub_channels": 1,
-        "height_channels": 3,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "none",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "USC9S"
-      ],
-      "priority": false,
-      "notes": "Printed as 3.1.3 by both Electroline and Stephanis: up-firing and side-firing drivers plus a wireless subwoofer, designed to sit under an LG C-series TV on its own matching stand. Three height channels in a bar this small is unusual; the layout follows the retailer listings, not an LG spec page, so confirm before buying.",
-      "enabled": true,
-      "review": {}
-    },
-    {
       "brand": "Marshall",
       "model_key": "HESTON 120",
       "family": "Heston",
@@ -708,34 +459,6 @@
         "cinema_verdict": "The one to pick if the bar has to double as the hi-fi: real height channels, a phono-friendly input and no subwoofer needed to sound full.",
         "notes": "Scores well on the music profile because of the analogue input and streaming breadth; on the cinema profile it loses to four-piece sets for lack of rears."
       }
-    },
-    {
-      "brand": "Samsung",
-      "model_key": "HW-Q600C",
-      "family": "Q-series (2023)",
-      "year": 2023,
-      "specs": {
-        "channels": 3,
-        "sub_channels": 1,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "Q600C",
-        "HWQ600C",
-        "HW-Q600C/EN"
-      ],
-      "priority": false,
-      "notes": "The 2023 Q600, printed as 3.1.2 by Stephanis and still on the shelf below the newer ones. A separate entry rather than an alias of the Q600F, so a price for one is never compared against a price for the other. Layout from the retailer listing.",
-      "enabled": true,
-      "review": {}
     },
     {
       "brand": "Samsung",
@@ -854,35 +577,6 @@
     },
     {
       "brand": "Samsung",
-      "model_key": "HW-Q930D",
-      "family": "Q-series (2024)",
-      "year": 2024,
-      "specs": {
-        "channels": 9,
-        "sub_channels": 1,
-        "height_channels": 4,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_included",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 1
-      },
-      "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q930f-black-hw-q930f-en/",
-      "aliases": [
-        "Q930D",
-        "HWQ930D",
-        "HW-Q930D/EN",
-        "HWQ930DEN"
-      ],
-      "priority": false,
-      "notes": "[series page] Specs carried over from the Q930F spec page; the Cypriot listings print '9.1.4' for the 2024 set, which agrees. Not re-verified on a 2024 spec page.",
-      "enabled": true,
-      "review": {}
-    },
-    {
-      "brand": "Samsung",
       "model_key": "HW-Q930F",
       "family": "Q-series (2025)",
       "year": 2025,
@@ -936,35 +630,6 @@
       ],
       "priority": false,
       "notes": "[spec page] Samsung UK spec sheet: 9.1.4 over 17 speakers, up-firing yes, wireless sub and wireless rears both in the box, eARC, 1 HDMI input. Same four-piece idea as the Q990 with two fewer ear-level channels and one HDMI input instead of two.",
-      "enabled": true,
-      "review": {}
-    },
-    {
-      "brand": "Samsung",
-      "model_key": "HW-Q990D",
-      "family": "Q-series (2024)",
-      "year": 2024,
-      "specs": {
-        "channels": 11,
-        "sub_channels": 1,
-        "height_channels": 4,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_included",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 2
-      },
-      "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q990f-black-hw-q990f-en/",
-      "aliases": [
-        "Q990D",
-        "HWQ990D",
-        "HW-Q990D/EN",
-        "HWQ990DEN"
-      ],
-      "priority": false,
-      "notes": "[series page] Specs carried over from the Q990F spec page: the 2024 set has the same 11.1.4 four-piece layout, wireless sub and wireless rears. Not re-verified on a 2024 spec page in this round, because Samsung has retired it; the Cypriot listings print '11.1.4' and 'Wireless Dolby Atmos', which agrees. Worth watching because it is the cheapest way into 11.1.4 while shops clear it.",
       "enabled": true,
       "review": {}
     },
@@ -1252,34 +917,6 @@
     },
     {
       "brand": "Samsung",
-      "model_key": "HW-S800B",
-      "family": "S-series slim (2022)",
-      "year": 2022,
-      "specs": {
-        "channels": 3,
-        "sub_channels": 1,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_included",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 0
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "S800B",
-        "HWS800B",
-        "HW-S800B/EN"
-      ],
-      "priority": false,
-      "notes": "The 2022 ultra-slim 3.1.2, same reason for a separate entry as the Q600C. Layout from the retailer listing.",
-      "enabled": true,
-      "review": {}
-    },
-    {
-      "brand": "Samsung",
       "model_key": "HW-S800D",
       "family": "S-series slim",
       "year": 2024,
@@ -1387,33 +1024,6 @@
           }
         ]
       }
-    },
-    {
-      "brand": "Sony",
-      "model_key": "HT-A7000",
-      "family": "HT-A7000",
-      "year": 2021,
-      "specs": {
-        "channels": 7,
-        "sub_channels": 0,
-        "height_channels": 2,
-        "height_type": "upfiring",
-        "subwoofer": "wireless_optional",
-        "rears": "wireless_optional",
-        "atmos": true,
-        "dtsx": true,
-        "earc": true,
-        "hdmi_in": 2
-      },
-      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-      "aliases": [
-        "HTA7000",
-        "HTA7000.CEL"
-      ],
-      "priority": false,
-      "notes": "The 2021 flagship, still stocked in Cyprus and Greece and printed as 7.1.2 by the shops: two up-firing drivers, two beam tweeters, optional SA-SW3/SW5 wireless subwoofer and SA-RS3S/RS5 wireless rears. Kept on the list because it is routinely discounted below the Bar 8 that replaced it; the layout here follows the retailer listings rather than a current Sony spec page.",
-      "enabled": true,
-      "review": {}
     },
     {
       "brand": "Sony",
@@ -1593,6 +1203,49 @@
   ],
   "rejected": [
     {
+      "brand": "Bose",
+      "model_key": "SMART ULTRA SOUNDBAR",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.techradar.com/televisions/soundbars/bose-smart-ultra-soundbar-review",
+      "aliases": [
+        "SMART ULTRA",
+        "882963-5140",
+        "8829635140"
+      ]
+    },
+    {
+      "brand": "Bowers & Wilkins",
+      "model_key": "PANORAMA 3",
+      "reason": "2022 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "PANORAMA3",
+        "FP42277"
+      ]
+    },
+    {
+      "brand": "JBL",
+      "model_key": "BAR 1000",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "BAR1000",
+        "JBLBAR1000",
+        "JBLBAR1000PROBLKEP"
+      ]
+    },
+    {
+      "brand": "JBL",
+      "model_key": "BAR 1300",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "BAR1300",
+        "JBLBAR1300",
+        "JBLBAR1300BLKEP"
+      ]
+    },
+    {
       "brand": "JBL",
       "model_key": "BAR 300MK2",
       "reason": "Dolby Atmos is virtual only: no drivers fire at the ceiling",
@@ -1614,6 +1267,17 @@
         "JBLBAR500M2BLKEP",
         "BAR 500",
         "JBLBAR500PROBLKEP"
+      ]
+    },
+    {
+      "brand": "JBL",
+      "model_key": "BAR 800",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
+      "aliases": [
+        "BAR800",
+        "JBLBAR800",
+        "JBLBAR800PROBLKEP"
       ]
     },
     {
@@ -1647,6 +1311,24 @@
       ]
     },
     {
+      "brand": "LG",
+      "model_key": "S80QY",
+      "reason": "2022 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "US80QY"
+      ]
+    },
+    {
+      "brand": "LG",
+      "model_key": "SC9S",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "USC9S"
+      ]
+    },
+    {
       "brand": "Marshall",
       "model_key": "HESTON 60",
       "reason": "Dolby Atmos is virtual only: no drivers fire at the ceiling",
@@ -1673,6 +1355,41 @@
     },
     {
       "brand": "Samsung",
+      "model_key": "HW-Q600C",
+      "reason": "2023 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "Q600C",
+        "HWQ600C",
+        "HW-Q600C/EN"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "HW-Q930D",
+      "reason": "superseded in the Samsung Q930 line: only the newest 2 are watched (HW-Q930H, HW-Q930F)",
+      "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q930f-black-hw-q930f-en/",
+      "aliases": [
+        "Q930D",
+        "HWQ930D",
+        "HW-Q930D/EN",
+        "HWQ930DEN"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "HW-Q990D",
+      "reason": "superseded in the Samsung Q990 line: only the newest 2 are watched (HW-Q990H, HW-Q990F)",
+      "source_url": "https://www.samsung.com/gr/audio-devices/soundbar/q990f-black-hw-q990f-en/",
+      "aliases": [
+        "Q990D",
+        "HWQ990D",
+        "HW-Q990D/EN",
+        "HWQ990DEN"
+      ]
+    },
+    {
+      "brand": "Samsung",
       "model_key": "HW-S700D",
       "reason": "Dolby Atmos is virtual only: no drivers fire at the ceiling",
       "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
@@ -1680,6 +1397,17 @@
         "S700D",
         "HWS700D",
         "HW-S700D/EN"
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "model_key": "HW-S800B",
+      "reason": "2022 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "S800B",
+        "HWS800B",
+        "HW-S800B/EN"
       ]
     },
     {
@@ -1701,6 +1429,16 @@
       "aliases": [
         "HTA3000",
         "HTA3000.CEL"
+      ]
+    },
+    {
+      "brand": "Sony",
+      "model_key": "HT-A7000",
+      "reason": "2021 model, and the list stops at 2024",
+      "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
+      "aliases": [
+        "HTA7000",
+        "HTA7000.CEL"
       ]
     },
     {

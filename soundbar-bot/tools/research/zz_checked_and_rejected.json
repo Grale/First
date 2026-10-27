@@ -17,8 +17,14 @@
     "qualifies": false,
     "verified": "review",
     "source_url": "https://www.techradar.com/televisions/soundbars/jbl-bar-800mk2-review",
-    "aliases": ["BAR 800MK2", "BAR800MK2", "JBLBAR800M2", "JBLBAR800M2BLKEP"],
-    "notes": "The MK2 of the Bar 800 is 7.1 and, as TechRadar's review puts it, lacks dedicated up-firing speakers, so it has to rely on virtual processing for Dolby Atmos. It is the trap this list exists to catch: a 900-euro soundbar sold on Atmos with no height drivers, while the older Bar 800 it replaced is 5.1.2 and does have them."
+    "aliases": [
+      "BAR 800MK2",
+      "BAR800MK2",
+      "JBLBAR800M2",
+      "JBLBAR800M2BLKEP"
+    ],
+    "notes": "The MK2 of the Bar 800 is 7.1 and, as TechRadar's review puts it, lacks dedicated up-firing speakers, so it has to rely on virtual processing for Dolby Atmos. It is the trap this list exists to catch: a 900-euro soundbar sold on Atmos with no height drivers, while the older Bar 800 it replaced is 5.1.2 and does have them.",
+    "line": "JBL Bar 800"
   },
   {
     "brand": "JBL",
@@ -38,8 +44,16 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["BAR 500MK2", "BAR500MK2", "JBLBAR500M2", "JBLBAR500M2BLKEP", "BAR 500", "JBLBAR500PROBLKEP"],
-    "notes": "5.1 with a wireless subwoofer and no height channels; Atmos is virtual. Listed so the discovery scan stops offering it."
+    "aliases": [
+      "BAR 500MK2",
+      "BAR500MK2",
+      "JBLBAR500M2",
+      "JBLBAR500M2BLKEP",
+      "BAR 500",
+      "JBLBAR500PROBLKEP"
+    ],
+    "notes": "5.1 with a wireless subwoofer and no height channels; Atmos is virtual. Listed so the discovery scan stops offering it.",
+    "line": "JBL Bar 500"
   },
   {
     "brand": "JBL",
@@ -59,8 +73,14 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["BAR 300MK2", "BAR300MK2", "JBLBAR300M2", "JBLBAR300M2BLKEP"],
-    "notes": "One bar, 5.0, no subwoofer and no height drivers."
+    "aliases": [
+      "BAR 300MK2",
+      "BAR300MK2",
+      "JBLBAR300M2",
+      "JBLBAR300M2BLKEP"
+    ],
+    "notes": "One bar, 5.0, no subwoofer and no height drivers.",
+    "line": "JBL Bar 300"
   },
   {
     "brand": "LG",
@@ -80,8 +100,12 @@
     "qualifies": false,
     "verified": "spec page",
     "source_url": "https://www.lg.com/gr/soundbars",
-    "aliases": ["S70TR", "US70TR"],
-    "notes": "LG Greece prints 5.1.1: one up-firing channel. Real driver, but a single height channel cannot place a sound to your left or right overhead, which is the whole point of Atmos, so it falls below the two-channel floor. The S80TR one tier up is 5.1.3."
+    "aliases": [
+      "S70TR",
+      "US70TR"
+    ],
+    "notes": "LG Greece prints 5.1.1: one up-firing channel. Real driver, but a single height channel cannot place a sound to your left or right overhead, which is the whole point of Atmos, so it falls below the two-channel floor. The S80TR one tier up is 5.1.3.",
+    "line": "LG S70"
   },
   {
     "brand": "Sonos",
@@ -101,8 +125,14 @@
     "qualifies": false,
     "verified": "manufacturer spec",
     "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
-    "aliases": ["BEAM GEN 2", "BEAMGEN2", "BEAMG2EU1", "BEAMG2EU1BLK"],
-    "notes": "Decodes Dolby Atmos but has no up-firing drivers: the height effects are rendered by processing through the front-firing array. Everything about it is wireless, so it fails only the Atmos half of the requirement."
+    "aliases": [
+      "BEAM GEN 2",
+      "BEAMGEN2",
+      "BEAMG2EU1",
+      "BEAMG2EU1BLK"
+    ],
+    "notes": "Decodes Dolby Atmos but has no up-firing drivers: the height effects are rendered by processing through the front-firing array. Everything about it is wireless, so it fails only the Atmos half of the requirement.",
+    "line": "Sonos Beam"
   },
   {
     "brand": "Samsung",
@@ -122,8 +152,14 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["HW-S700D", "S700D", "HWS700D", "HW-S700D/EN"],
-    "notes": "3.1 slim bar with a wireless subwoofer and no height channels. Its sibling the S800D is 3.1.2 and does have them."
+    "aliases": [
+      "HW-S700D",
+      "S700D",
+      "HWS700D",
+      "HW-S700D/EN"
+    ],
+    "notes": "3.1 slim bar with a wireless subwoofer and no height channels. Its sibling the S800D is 3.1.2 and does have them.",
+    "line": "Samsung S700 slim"
   },
   {
     "brand": "Sony",
@@ -143,8 +179,15 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["HT-S60", "HTS60", "HTS60.CEL", "THEATRE SYSTEM 6", "THEATER SYSTEM 6"],
-    "notes": "A full 5.1 wireless set - bar, wireless sub, wireless rears - with no up-firing drivers anywhere, so Atmos is processed into the five channels. A good illustration of why 'wireless' and 'Atmos' have to be checked separately."
+    "aliases": [
+      "HT-S60",
+      "HTS60",
+      "HTS60.CEL",
+      "THEATRE SYSTEM 6",
+      "THEATER SYSTEM 6"
+    ],
+    "notes": "A full 5.1 wireless set - bar, wireless sub, wireless rears - with no up-firing drivers anywhere, so Atmos is processed into the five channels. A good illustration of why 'wireless' and 'Atmos' have to be checked separately.",
+    "line": "Sony Theatre System 6"
   },
   {
     "brand": "Sony",
@@ -164,8 +207,13 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
-    "aliases": ["HT-A3000", "HTA3000", "HTA3000.CEL"],
-    "notes": "3.1 with built-in woofers and Sony's Vertical Surround Engine doing the height virtually; no up-firing drivers."
+    "aliases": [
+      "HT-A3000",
+      "HTA3000",
+      "HTA3000.CEL"
+    ],
+    "notes": "3.1 with built-in woofers and Sony's Vertical Surround Engine doing the height virtually; no up-firing drivers.",
+    "line": "Sony HT-A3000"
   },
   {
     "brand": "Klipsch",
@@ -185,8 +233,13 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
-    "aliases": ["FLEXUS CORE 100", "FLEXUSCORE100", "CORE 100"],
-    "notes": "Sold as a 'Dolby Atmos Soundbar' at 2.1 with no height channels. The Core 200 above it is the one with up-firing drivers."
+    "aliases": [
+      "FLEXUS CORE 100",
+      "FLEXUSCORE100",
+      "CORE 100"
+    ],
+    "notes": "Sold as a 'Dolby Atmos Soundbar' at 2.1 with no height channels. The Core 200 above it is the one with up-firing drivers.",
+    "line": "Klipsch Flexus Core 100"
   },
   {
     "brand": "Marshall",
@@ -206,8 +259,14 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["HESTON 60", "HESTON60", "1007985", "1007988"],
-    "notes": "Electroline and Stephanis both print 5.1 with no third number, where they print 5.1.2 for the Heston 120, so the smaller Heston appears to have no height drivers. This was not confirmed on Marshall's own page: if you find that it does have them, move it to the watched list."
+    "aliases": [
+      "HESTON 60",
+      "HESTON60",
+      "1007985",
+      "1007988"
+    ],
+    "notes": "Electroline and Stephanis both print 5.1 with no third number, where they print 5.1.2 for the Heston 120, so the smaller Heston appears to have no height drivers. This was not confirmed on Marshall's own page: if you find that it does have them, move it to the watched list.",
+    "line": "Marshall Heston 60"
   },
   {
     "brand": "Samsung",
@@ -227,7 +286,16 @@
     "qualifies": false,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["HW-B650F", "B650F", "HWB650F", "HW-B650F/EN", "HW-B450F", "B450F", "HWB450F"],
-    "notes": "The budget B-series: 3.1 and 2.1 bars with a wireless subwoofer, no height channels and no Atmos. Covers the B450F too."
+    "aliases": [
+      "HW-B650F",
+      "B650F",
+      "HWB650F",
+      "HW-B650F/EN",
+      "HW-B450F",
+      "B450F",
+      "HWB450F"
+    ],
+    "notes": "The budget B-series: 3.1 and 2.1 bars with a wireless subwoofer, no height channels and no Atmos. Covers the B450F too.",
+    "line": "Samsung B-series"
   }
 ]

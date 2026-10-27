@@ -17,8 +17,13 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.lg.com/gr/soundbars",
-    "aliases": ["S95TR", "US95TR", "S95TR.DGBRLLK"],
-    "notes": "LG Greece lists the S95TR at 9.1.5 with rear speakers included; LG Canada's page and the US listings describe the same four-piece set - nine ear-level channels, five up-firing channels, a wireless subwoofer and two wireless rears. More height channels than anything else here (the centre-up channel is the fifth). The rears carry sound wirelessly but still need a mains socket. Reviewers rate its height effects below Samsung's and Sonos', which the review score reflects."
+    "aliases": [
+      "S95TR",
+      "US95TR",
+      "S95TR.DGBRLLK"
+    ],
+    "notes": "LG Greece lists the S95TR at 9.1.5 with rear speakers included; LG Canada's page and the US listings describe the same four-piece set - nine ear-level channels, five up-firing channels, a wireless subwoofer and two wireless rears. More height channels than anything else here (the centre-up channel is the fifth). The rears carry sound wirelessly but still need a mains socket. Reviewers rate its height effects below Samsung's and Sonos', which the review score reflects.",
+    "line": "LG S95"
   },
   {
     "brand": "LG",
@@ -38,8 +43,13 @@
     "qualifies": true,
     "verified": "spec page",
     "source_url": "https://www.lg.com/gr/soundbars",
-    "aliases": ["S80TR", "US80TR", "S80TR.DGBRLLK"],
-    "notes": "LG Greece prints 5.1.3 with rear speakers included: three height channels (two up-firing plus the centre-up channel), a wireless subwoofer and wireless rears in the box. The Cypriot listings call it 'Home Theater Soundbar with Dolby Atmos 5.1.3 Channels', which agrees."
+    "aliases": [
+      "S80TR",
+      "US80TR",
+      "S80TR.DGBRLLK"
+    ],
+    "notes": "LG Greece prints 5.1.3 with rear speakers included: three height channels (two up-firing plus the centre-up channel), a wireless subwoofer and wireless rears in the box. The Cypriot listings call it 'Home Theater Soundbar with Dolby Atmos 5.1.3 Channels', which agrees.",
+    "line": "LG S80"
   },
   {
     "brand": "LG",
@@ -59,8 +69,12 @@
     "qualifies": true,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["SC9S", "USC9S"],
-    "notes": "Printed as 3.1.3 by both Electroline and Stephanis: up-firing and side-firing drivers plus a wireless subwoofer, designed to sit under an LG C-series TV on its own matching stand. Three height channels in a bar this small is unusual; the layout follows the retailer listings, not an LG spec page, so confirm before buying."
+    "aliases": [
+      "SC9S",
+      "USC9S"
+    ],
+    "notes": "Printed as 3.1.3 by both Electroline and Stephanis: up-firing and side-firing drivers plus a wireless subwoofer, designed to sit under an LG C-series TV on its own matching stand. Three height channels in a bar this small is unusual; the layout follows the retailer listings, not an LG spec page, so confirm before buying.",
+    "line": "LG SC9"
   },
   {
     "brand": "JBL",
@@ -80,8 +94,14 @@
     "qualifies": true,
     "verified": "manufacturer page + review",
     "source_url": "https://mm.jbl.com/soundbars/BAR-1300MK2.html",
-    "aliases": ["BAR 1300MK2", "BAR1300MK2", "JBLBAR1300M2", "JBLBAR1300M2BLKEP"],
-    "notes": "11.1.4 with six up-firing drivers, a wireless subwoofer with two 8-inch drivers, and rear speakers that detach from the ends of the bar, charge in place and then run on battery - the only system here whose rears need no mains socket. JBL's own page quotes 2470 W peak; Notebookcheck quotes 2370 W, so treat the power figure as marketing either way."
+    "aliases": [
+      "BAR 1300MK2",
+      "BAR1300MK2",
+      "JBLBAR1300M2",
+      "JBLBAR1300M2BLKEP"
+    ],
+    "notes": "11.1.4 with six up-firing drivers, a wireless subwoofer with two 8-inch drivers, and rear speakers that detach from the ends of the bar, charge in place and then run on battery - the only system here whose rears need no mains socket. JBL's own page quotes 2470 W peak; Notebookcheck quotes 2370 W, so treat the power figure as marketing either way.",
+    "line": "JBL Bar 1300"
   },
   {
     "brand": "JBL",
@@ -101,8 +121,14 @@
     "qualifies": true,
     "verified": "review + retailer spec",
     "source_url": "https://www.notebookcheck.net/JBL-reveals-new-Dolby-Atmos-soundbars-including-11-1-4-channel-flagship-with-wireless-rear-speakers.1034040.0.html",
-    "aliases": ["BAR 1000MK2", "BAR1000MK2", "JBLBAR1000M2", "JBLBAR1000M2BLKEP"],
-    "notes": "7.1.4 with up-firing drivers, detachable battery-powered wireless rears and a 10-inch wireless subwoofer. The step below the 1300MK2: same trick, fewer ear-level channels."
+    "aliases": [
+      "BAR 1000MK2",
+      "BAR1000MK2",
+      "JBLBAR1000M2",
+      "JBLBAR1000M2BLKEP"
+    ],
+    "notes": "7.1.4 with up-firing drivers, detachable battery-powered wireless rears and a 10-inch wireless subwoofer. The step below the 1300MK2: same trick, fewer ear-level channels.",
+    "line": "JBL Bar 1000"
   },
   {
     "brand": "JBL",
@@ -122,8 +148,14 @@
     "qualifies": true,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["BAR 1300", "BAR1300", "JBLBAR1300", "JBLBAR1300BLKEP"],
-    "notes": "The MK1 of the detachable-rears flagship, printed as 11.1.4 by Stephanis and still stocked alongside the MK2. Watched so the bot can tell you when the old one is cleared out cheaply; specs follow the retailer listing and JBL's MK1 marketing rather than a current spec page."
+    "aliases": [
+      "BAR 1300",
+      "BAR1300",
+      "JBLBAR1300",
+      "JBLBAR1300BLKEP"
+    ],
+    "notes": "The MK1 of the detachable-rears flagship, printed as 11.1.4 by Stephanis and still stocked alongside the MK2. Watched so the bot can tell you when the old one is cleared out cheaply; specs follow the retailer listing and JBL's MK1 marketing rather than a current spec page.",
+    "line": "JBL Bar 1300"
   },
   {
     "brand": "JBL",
@@ -143,8 +175,14 @@
     "qualifies": true,
     "verified": "retailer listing",
     "source_url": "https://www.stephanis.com.cy/en/products/sound-and-vision/home-cinema-and-sound/sound-bars",
-    "aliases": ["BAR 1000", "BAR1000", "JBLBAR1000", "JBLBAR1000PROBLKEP"],
-    "notes": "MK1, printed as 7.1.4 with detachable wireless rears and a 10-inch wireless subwoofer. Same caveat as the Bar 1300: retailer listing, not a current spec page."
+    "aliases": [
+      "BAR 1000",
+      "BAR1000",
+      "JBLBAR1000",
+      "JBLBAR1000PROBLKEP"
+    ],
+    "notes": "MK1, printed as 7.1.4 with detachable wireless rears and a 10-inch wireless subwoofer. Same caveat as the Bar 1300: retailer listing, not a current spec page.",
+    "line": "JBL Bar 1000"
   },
   {
     "brand": "JBL",
@@ -164,7 +202,13 @@
     "qualifies": true,
     "verified": "retailer listing",
     "source_url": "https://www.electroline.cy/en/product-category/sound-vision/sound/soundbars/",
-    "aliases": ["BAR 800", "BAR800", "JBLBAR800", "JBLBAR800PROBLKEP"],
-    "notes": "5.1.2 with detachable wireless rears and a wireless subwoofer, printed that way by Electroline. Note the trap in this family: the newer Bar 800MK2 dropped the up-firing drivers and is on the rejected list, so the MK1 and the MK2 are not interchangeable despite the names."
+    "aliases": [
+      "BAR 800",
+      "BAR800",
+      "JBLBAR800",
+      "JBLBAR800PROBLKEP"
+    ],
+    "notes": "5.1.2 with detachable wireless rears and a wireless subwoofer, printed that way by Electroline. Note the trap in this family: the newer Bar 800MK2 dropped the up-firing drivers and is on the rejected list, so the MK1 and the MK2 are not interchangeable despite the names.",
+    "line": "JBL Bar 800"
   }
 ]
