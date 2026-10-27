@@ -185,7 +185,7 @@ open at once.
 | Shop | Country | Method | State |
 |---|---|---|---|
 | Electroline | CY | Both soundbar category pages embed a JSON blob of every product (`var pageProducts`) | **Tested against the live shop**: 54 products, 25 matched |
-| Stephanis | CY | Server-rendered soundbar category, 100 per page | **Tested against the live shop**: 75 products, 23 matched |
+| Stephanis | CY | Server-rendered soundbar category, 100 per page; stock is read from each watched model's product page, where the shop embeds `QUANTITYAVAILABLE` and `ISAVAILABLEONLINE` as data | **Tested against the live shop**: 75 products, 23 matched |
 | Scandia | CY | Server-rendered catalog, category 202 (Sound Bars) | **Tested against the live shop**: 11 products, almost all below this list's floor |
 | Public | GR | Its search provider's JSON API (findbar.io). The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
 | Kotsovolos | GR | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs, with the store id read from the storefront and cached; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |

@@ -185,6 +185,31 @@ def check_offline_parsers(failures: list[str]) -> None:
           f"requests, {len(hits)} Public token found")
 
 
+STEPHANIS_PRODUCT = ('... "ISINVENTORYTRACKINGENABLED":%s,"ISAVAILABLEONLINE":%s,'
+                     '"QUANTITYAVAILABLE":%s,"ONLINEAVAILABILITYMESSAGE":"" ...')
+
+
+def check_stock_fields(failures: list[str]) -> None:
+    """Stephanis says whether a product can be bought in its product-page data, not on the card."""
+    from soundbot.shops.stephanis import Stephanis, _field
+
+    cases = [("true", "1", "10.0", True),      # tracked, on hand
+             ("true", "1", "0", False),        # tracked, sold out - the case the card never showed
+             ("true", "0", "4.0", False),      # not orderable online whatever the shelf says
+             ("false", "1", "0", True)]        # sold to order, no inventory tracking
+    shop = Stephanis.__new__(Stephanis)        # no fetcher needed: _in_stock is given the page
+    for tracking, online, qty, want in cases:
+        page = STEPHANIS_PRODUCT % (tracking, online, qty)
+        shop.f = type("F", (), {"get": staticmethod(lambda *a, **k: page)})()
+        got = shop._in_stock("https://example.invalid/p")
+        if got is not want:
+            failures.append(f"stephanis stock: tracking={tracking} online={online} qty={qty} "
+                            f"read as {got}, expected {want}")
+    if _field(STEPHANIS_PRODUCT % ("true", "1", "7.0"), "QUANTITYAVAILABLE") != "7.0":
+        failures.append("stephanis: _field did not read QUANTITYAVAILABLE")
+    print(f"  {len(cases)} stock states")
+
+
 def check_backoff(failures: list[str]) -> None:
     """A shop that turns us away is left alone, and a successful read clears it."""
     import tempfile
@@ -232,7 +257,8 @@ def main() -> int:
     failures: list[str] = []
     for name, fn in (("shop titles", check_titles), ("watchlist", check_watchlist),
                      ("price parsing", check_prices), ("skroutz robots rules", check_robots),
-                     ("offline parsers", check_offline_parsers), ("backoff and intervals", check_backoff)):
+                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields),
+                     ("backoff and intervals", check_backoff)):
         print(f"{name}:")
         fn(failures)
     if failures:
