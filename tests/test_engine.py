@@ -134,6 +134,68 @@ def test_salary_floor():
     check(j.eligible and j.salary_confidence == "High", "published salary above the floor kept")
 
 
+def test_statutory_minimum_salary():
+    """Austrian ads must publish the collective-agreement MINIMUM. Treating it
+    as the real salary would wrongly exclude good roles on a legal formality."""
+    print("\n[Austrian statutory minimum]")
+    base = ("data warehouse dbt airflow power bi business intelligence data platform "
+            "architecture data governance lead a team of 6 stakeholder budget roadmap "
+            "mentor hiring data strategy")
+    j = job("Data Platform Manager", "Wien, Wien, AT", base, company="Firma",
+            salary_published_min=35490, salary_published_max=35490,
+            salary_is_floor=True, company_size_bucket="enterprise",
+            industry="technology_saas")
+    check(j.eligible, "KV-minimum role is NOT excluded on salary")
+    check(j.salary_confidence == "Medium", "KV minimum downgrades confidence to Medium")
+    check(j.salary_est_max > 35490, f"benchmark used above the floor ({j.salary_est_max:,.0f})")
+    check("MINIMUM" in j.salary_basis, "basis explains the statutory minimum")
+
+    k = job("BI Manager", "Wien, Wien, AT", base, company="Firma",
+            salary_published_min=45000, salary_published_max=52000,
+            salary_is_floor=False, company_size_bucket="enterprise",
+            industry="technology_saas")
+    check(not k.eligible, "a genuine published range below the floor IS excluded")
+
+
+def test_jsonld_parser():
+    print("\n[schema.org JobPosting parser]")
+    from jobradar.sources import jsonld                      # noqa: PLC0415
+    html = ('<script type="application/ld+json">'
+            '{"@context":"https://schema.org","@type":"JobPosting",'
+            '"title":"Head of Data","datePosted":"2026-11-02",'
+            '"hiringOrganization":{"@type":"Organization","name":"ACME AG"},'
+            '"jobLocation":[{"@type":"Place","address":{"@type":"PostalAddress",'
+            '"addressLocality":"Wien","addressRegion":"Wien","addressCountry":"AT"}}],'
+            '"baseSalary":{"@type":"MonetaryAmount","currency":"EUR","value":'
+            '{"@type":"QuantitativeValue","unitText":"MONTH","value":2535}}}'
+            '</script>')
+    post = jsonld.extract(html)
+    check(post is not None and post["title"] == "Head of Data", "JobPosting extracted")
+    check(jsonld.company(post) == "ACME AG", "hiringOrganization read")
+    check(jsonld.location_string(post) == "Wien, Wien, AT", "jobLocation flattened")
+    lo, hi, cur = jsonld.salary(post, months_per_year=14)
+    check((lo, cur) == (35490.0, "EUR"),
+          f"monthly salary annualised at 14 instalments (got {lo}, {cur})")
+    check(jsonld.extract("<html>no ld+json here</html>") is None, "absent JSON-LD -> None")
+
+
+def test_linkedin_alert_parser():
+    print("\n[LinkedIn alert email parser]")
+    from jobradar.sources.linkedin_alerts import parse_alert  # noqa: PLC0415
+    html = ("<html><body><table>"
+            "<tr><td><a href='https://www.linkedin.com/comm/jobs/view/4123456789/?trk=eml'>"
+            "Head of Data Platform</a><div>Acme SaaS · Athens, Greece (Remote)</div></td></tr>"
+            "<tr><td><a href='https://www.linkedin.com/comm/jobs/view/4111111111/?trk=eml'>"
+            "Warehouse Associate</a><div>Gamma · Berlin</div></td></tr>"
+            "</table></body></html>")
+    jobs = parse_alert(html, "2026-11-07")
+    check(len(jobs) == 1, f"one candidate extracted, noise dropped (got {len(jobs)})")
+    check(jobs[0].title == "Head of Data Platform", "title parsed")
+    check(jobs[0].company == "Acme SaaS", "company parsed")
+    check(not jobs[0].assessment_complete,
+          "email-sourced jobs are flagged as incomplete assessments")
+
+
 def test_net_income():
     print("\n[net income model]")
     for country, lo, hi in (("GR", 6300, 6600), ("CY", 7100, 7400), ("AT", 5100, 5400)):

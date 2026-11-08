@@ -253,3 +253,103 @@ behaviour you asked for.
 - Salary parser: 10-case suite covering European `75.000` notation, `90k–110k`,
   monthly-to-annual, 14-salary schemes, hourly rejection and currency
   conversion.
+
+
+---
+
+# Addendum — run 2, after expanding source access
+
+**Run:** `run-20261108-192256` · 38 seconds · 15 sources (was 11)
+
+After the first run concluded that *source coverage*, not scoring, was the
+binding constraint, each blocked site was re-examined against its actual
+`robots.txt` rather than assumed terms. That changed the picture materially.
+Full findings in `docs/SOURCES.md`.
+
+## What opened up
+
+| Site | Finding | Result |
+|---|---|---|
+| **karriere.at** | `Disallow:` is *empty* — everything allowed; sitemaps published | **Austria coverage solved.** 30 postings/run with schema.org JSON-LD and published salaries |
+| **carierista.com** | `Disallow:` empty — everything allowed | **Cyprus coverage solved.** Declares its own `industry` field, which flags Forex employers directly |
+| **Workable** | `search=yes, ai-input=yes`; only `/j/` disallowed | Adapter written; blocked by IP, not policy (below) |
+| **LinkedIn** | Automated access prohibited | Not crawled. Adapter parses LinkedIn's **own job-alert emails** from your mailbox instead |
+
+## What stays closed, and why
+
+**kariera.gr and skywalker.gr name `ClaudeBot`, `anthropic-ai` and
+`Claude-Web` with `Disallow: /`.** Those operators have told this client
+specifically not to crawl them. The block is respected and deliberately not
+worked around — a spoofed user-agent or a proxy would be evasion of an access
+control aimed at us, and the fact that it would be trivial does not make it
+legitimate. This costs real Greek coverage; `docs/SOURCES.md` lists the honest
+mitigations (Workable, ATS boards, and subscribing to those boards' own email
+alerts, which you are entitled to read).
+
+## Results
+
+| | Run 1 | Run 2 |
+|---|---:|---:|
+| Sources | 11 | 15 |
+| Fetched | 297 | 342 |
+| Unique | 223 | 262 |
+| **Eligible** | **3** | **8** |
+| Vienna roles surfaced | 0 | 11 |
+| Greece / Cyprus roles surfaced | 0 | 2 |
+| Above the 62 bar | 0 | 0 |
+
+**Vienna appeared for the first time.** Five of the top eight are Austrian, led
+by *Lead ETL Developer / Technical Architect – Big Data* at Erste Bank (56.3).
+That posting was **excluded entirely in run 1** — see the salary bug below.
+
+## The Austrian salary bug this surfaced
+
+Austrian law obliges employers to publish the collective-agreement minimum.
+Red Bull's *Data & AI Platform Architect* publishes **EUR 2,535/month** — and
+the same posting says real packages *"liegen deutlich über"* it. Volksbank
+publishes **EUR 43,465.52** alongside *"das tatsächliche Gehalt bereden wir in
+einem persönlichen Gespräch"*.
+
+Read literally, those figures hard-excluded good Vienna roles on the EUR 80,000
+floor. The engine now distinguishes:
+
+- **Single-point value** → collective-agreement minimum. Used as a lower bound
+  only; the range becomes the benchmark floored at that value, confidence drops
+  to Medium, and the below-floor exclusion does not apply.
+- **A stated range** → the employer's real band, kept as published at High
+  confidence with the exclusion applying normally.
+
+Of 30 karriere.at postings, 24 were statutory minimums and 5 were genuine
+ranges. Monthly Austrian figures are now annualised at 14 instalments, not 12.
+
+## Why nothing still clears 62
+
+This is now a *calibration* question rather than a coverage one, and it is
+worth your decision:
+
+1. **Austria is ranked last in your own priority order** (geography score 40 of
+   100). Even a perfect Vienna role caps at about 85, and after realistic
+   skills and compensation scores it lands in the 50s. Erste Bank at 56.3 is
+   close to the practical ceiling for Vienna.
+2. **Austrian net income is the real blocker.** EUR 100,000 gross in Austria
+   nets about EUR 5,222/month against your current EUR 7,000 — a 25% cut, and
+   there is no Austrian equivalent of the 50% relief. The compensation
+   dimension correctly scores these near zero.
+
+So the engine is not failing on Austria; it is telling you, consistently, that
+Austria does not work financially unless the gross is near EUR 140,000. That
+matches your own description of Austria as a last resort.
+
+## Revised next steps
+
+1. **Run the app from your own machine.** This single change switches on Greek
+   coverage via Workable — the largest remaining gap — because the block is an
+   IP rate limit, not a policy.
+2. **Create the LinkedIn job alerts** and set `LINKEDIN_IMAP_*`. A mailbox check
+   found none configured, so that source currently yields nothing.
+3. **Decide the Vienna question.** If Austrian roles should be able to clear the
+   bar, either raise the on-site Vienna tier score above 40 or lower the
+   threshold — but note that the compensation maths, not the geography score,
+   is what actually holds them down.
+4. Items 2–5 from the original evaluation (tax verification, the skills-scoring
+   bias, remote-scope verification, threshold re-tuning) all still stand.

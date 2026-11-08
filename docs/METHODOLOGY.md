@@ -89,6 +89,33 @@ none is a proper salary survey, and the `EU_REMOTE` p75 of €135,000 is the lea
 evidenced figure in the table. Treat every "Medium"/"Low" confidence estimate as
 a hypothesis to verify, not a number to negotiate against.
 
+### Austrian collective-agreement minimums — an important special case
+
+Austrian law obliges employers to publish the **collective-agreement minimum**
+("kollektivvertragliches Mindestgehalt") for a role. That number is routinely
+far below the real offer, and ads then add *"Überzahlung"* or *"das
+tatsächliche Gehalt bereden wir in einem persönlichen Gespräch"*.
+
+Red Bull's *Data & AI Platform Architect* publishes EUR 2,535/month. Taken at
+face value that is EUR 35,490/year, which would hard-exclude the role on the
+EUR 80,000 floor. The posting itself says packages *"liegen deutlich über"*
+that figure.
+
+The engine therefore distinguishes:
+
+| Shape of the published figure | Interpretation |
+|---|---|
+| **Single point** (e.g. EUR 43,465.52) | Collective-agreement minimum. Used as a *lower bound* only: the range shown is the benchmark floored at that value, confidence drops to Medium, and the below-floor exclusion does **not** apply |
+| **A range** (e.g. EUR 90,000–100,000) | The employer's real band. Kept as published at High confidence, and the below-floor exclusion applies normally |
+
+The single-point test is the reliable signal: real offers are quoted as
+ranges, while collective-agreement table values are exact, often to the cent.
+In the live run, 24 of 30 karriere.at postings were statutory minimums and 5
+were genuine employer ranges.
+
+Austrian monthly figures are annualised at **14** instalments, not 12, because
+the 13th and 14th salaries are standard there.
+
 ### Confidence levels
 
 | Level | Meaning |

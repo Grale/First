@@ -110,21 +110,64 @@ Reference documents used to calibrate the engine:
 
 ---
 
-## Sources and terms of service
+## Sources and access policy
 
-Only official public APIs and published feeds are used.
+Every site was checked against its live `robots.txt` and Content-Signal
+declarations. Full findings and reasoning: **`docs/SOURCES.md`**.
 
-**Included:** Remotive, Remote OK, Himalayas, Jobicy, Working Nomads, We Work
-Remotely (RSS), Arbeitnow, and 149 company career pages via the Greenhouse,
-Lever, Ashby and Recruitee job-board APIs.
+**Included (15 sources):**
 
-**Deliberately excluded:** LinkedIn, Indeed, Glassdoor, StepStone and Xing all
-prohibit automated access in their terms. Adding them requires an official
-partner API or a manual export — see `docs/POC_EVALUATION.md`.
+| Source | Covers | Access |
+|---|---|---|
+| karriere.at | **Austria / Vienna** | robots.txt allows all; schema.org JSON-LD |
+| carierista.com | **Cyprus** | robots.txt allows all; schema.org JSON-LD |
+| Workable | **Greece** (most Greek tech employers) | Documented public account API |
+| Greenhouse / Lever / Ashby / Recruitee | 149 company career pages | Official job-board APIs |
+| Arbeitnow | DACH + Europe | Official API |
+| Himalayas, Jobicy, Remotive, Remote OK, Working Nomads | Remote-first | Official APIs |
+| We Work Remotely | Remote-first | Official RSS |
+| LinkedIn (job-alert emails) | Everything LinkedIn lists | Your own mailbox over IMAP |
+
+**Excluded, deliberately:**
+
+- **kariera.gr and skywalker.gr** name `ClaudeBot`, `anthropic-ai` and
+  `Claude-Web` with `Disallow: /` in their robots.txt. They have told this
+  client not to crawl them, so it does not — and the block is not worked
+  around with a spoofed user-agent or a proxy. See `docs/SOURCES.md` for the
+  mitigations.
+- **LinkedIn** prohibits automated access, so the site is never crawled. The
+  `linkedin_alerts` adapter instead parses LinkedIn's **own job-alert emails**
+  from your mailbox, which is your mail to read.
+- **Indeed, Glassdoor, StepStone, Xing** — terms prohibit automated access.
 
 Remote OK and Jobicy require attribution when their data is displayed.
 
----
+### Two things to set up for full coverage
+
+**1. Greek coverage — run it locally.** `apply.workable.com` returns HTTP 429
+to every request from this project's cloud egress IP (shared datacenter
+address), including `robots.txt`. The adapter is written and works; it just
+needs a residential IP. Run the app from your own machine and Greek coverage
+switches on.
+
+**2. LinkedIn — create the job alerts.** On LinkedIn, run your searches and
+turn the alert ON for each (Daily). Then:
+
+```bash
+export LINKEDIN_IMAP_HOST=imap.gmail.com
+export LINKEDIN_IMAP_USER=you@gmail.com
+export LINKEDIN_IMAP_PASSWORD=your-16-char-google-app-password
+export LINKEDIN_IMAP_FOLDER="Job Alerts"
+```
+
+Use a Google **app password**, never your account password, and filter the
+alerts into their own label so the app only ever reads job mail. Offline
+alternative: save the alert emails to a folder and set `LINKEDIN_ALERT_DIR`
+instead — no credentials needed.
+
+Jobs found this way carry title, company, location and link but **not** the
+full description, so they are flagged as incomplete assessments and penalised
+accordingly. They are leads to open, not fully scored matches.
 
 ## Configuration
 

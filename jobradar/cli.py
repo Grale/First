@@ -70,6 +70,10 @@ def discover(cfg, only: list[str] | None, store, run_id: str):
 
 
 def run(args) -> int:
+    try:                       # progress should stream, not sit in a buffer
+        sys.stdout.reconfigure(line_buffering=True)
+    except AttributeError:
+        pass
     logging.basicConfig(level=logging.INFO, format="%(message)s", stream=sys.stdout)
     cfg = load_profile(args.profile)
     cfg["_cv_text"] = load_text(cfg["candidate"]["cv_file"])

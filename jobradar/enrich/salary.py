@@ -24,17 +24,32 @@ def _bench_country(job) -> str:
 
 def estimate(job, cfg) -> None:
     comp = cfg["compensation"]
+    key, country = _bench_key(job), _bench_country(job)
+    p25, med, p75 = comp["benchmarks"][country][key]
+    cm = comp["company_multipliers"].get(job.company_size_bucket, 1.0)
+    im = comp["industry_multipliers"].get(job.industry, 1.0)
+
     # ---------------- published ------------------------------------------
-    if job.salary_published_min and job.salary_published_max:
+    if job.salary_published_min and job.salary_published_max and job.salary_is_floor:
+        # Austrian collective-agreement minimum: a legal lower bound only.
+        # Use the benchmark for the real range, floored at the stated minimum.
+        floor = job.salary_published_min
+        job.salary_est_min = max(round(p25 * cm * im / 500) * 500, floor)
+        job.salary_est_max = max(round(p75 * cm * im / 500) * 500, round(floor * 1.4))
+        job.salary_confidence = "Medium"
+        job.salary_basis = (
+            f"Posting states a collective-agreement MINIMUM of "
+            f"EUR{floor:,.0f}; real offers sit well above it, so the range "
+            f"shown is the {country} {key} benchmark floored at that minimum")
+        job.missing_info.append(
+            "Only the statutory minimum salary is published - the actual offer "
+            "must be established in conversation")
+    elif job.salary_published_min and job.salary_published_max:
         job.salary_est_min = job.salary_published_min
         job.salary_est_max = job.salary_published_max
         job.salary_confidence = "High"
         job.salary_basis = f"Published in the posting ({job.published_salary_raw or 'explicit range'})"
     else:
-        key, country = _bench_key(job), _bench_country(job)
-        p25, med, p75 = comp["benchmarks"][country][key]
-        cm = comp["company_multipliers"].get(job.company_size_bucket, 1.0)
-        im = comp["industry_multipliers"].get(job.industry, 1.0)
         mult = cm * im
         job.salary_est_min = round(p25 * mult / 500) * 500
         job.salary_est_max = round(p75 * mult / 500) * 500
@@ -52,7 +67,6 @@ def estimate(job, cfg) -> None:
     job.total_comp_est = _total_comp(job, mid)
 
     # ---------------- 80k test -------------------------------------------
-    country = _bench_country(job)
     if country in ("GR", "AT"):
         floor = comp["floor_gr_at_eur"]
         if job.salary_est_max < floor:

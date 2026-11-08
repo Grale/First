@@ -1,0 +1,46 @@
+# Greek, Cypriot and European employers that host their career page on
+# Workable. Workable is a Greek company and dominates the Greek tech market,
+# so this is the highest-value list for Greece coverage.
+#
+# NOTE: apply.workable.com rate-limits this project's cloud egress IP (HTTP
+# 429 on every request, robots.txt included). Run from a residential IP.
+
+workable:
+  # --- Greece ---
+  - {token: persado,          name: "Persado",            industry: technology_saas,  size: scaleup_funded, employees: 300,  gr_entity: true}
+  - {token: blueground,       name: "Blueground",         industry: ecommerce_retail, size: scaleup_funded, employees: 700,  gr_entity: true}
+  - {token: skroutz,          name: "Skroutz",            industry: ecommerce_retail, size: scaleup_funded, employees: 800,  gr_entity: true}
+  - {token: workable,         name: "Workable",           industry: technology_saas,  size: saas_product,   employees: 300,  gr_entity: true}
+  - {token: viva-wallet,      name: "Viva.com",           industry: fintech_banking,  size: scaleup_funded, employees: 1200, gr_entity: true}
+  - {token: hellas-direct,    name: "Hellas Direct",      industry: fintech_banking,  size: scaleup_funded, employees: 300,  gr_entity: true, cy_entity: true}
+  - {token: e-food,           name: "efood",              industry: ecommerce_retail, size: enterprise,     employees: 1500, gr_entity: true}
+  - {token: orfium,           name: "Orfium",             industry: technology_saas,  size: scaleup_funded, employees: 400,  gr_entity: true}
+  - {token: netdata,          name: "Netdata",            industry: technology_saas,  size: saas_product,   employees: 120,  gr_entity: true}
+  - {token: pollfish,         name: "Pollfish",           industry: technology_saas,  size: saas_product,   employees: 120,  gr_entity: true}
+  - {token: upstream,         name: "Upstream",           industry: telecom,          size: scaleup_funded, employees: 350,  gr_entity: true}
+  - {token: epignosis,        name: "Epignosis",          industry: technology_saas,  size: saas_product,   employees: 350,  gr_entity: true}
+  - {token: welcome-pickups,  name: "Welcome Pickups",    industry: ecommerce_retail, size: scaleup_funded, employees: 200,  gr_entity: true}
+  - {token: yodeck,           name: "Yodeck",             industry: technology_saas,  size: saas_product,   employees: 150,  gr_entity: true}
+  - {token: plum-fintech,     name: "Plum",               industry: fintech_banking,  size: scaleup_funded, employees: 250,  gr_entity: true}
+  - {token: spotawheel,       name: "Spotawheel",         industry: ecommerce_retail, size: scaleup_funded, employees: 400,  gr_entity: true}
+  - {token: convert-group,    name: "Convert Group",      industry: consulting,       size: agency_smb,     employees: 120,  gr_entity: true}
+  - {token: natech,           name: "Natech",             industry: fintech_banking,  size: scaleup_funded, employees: 250,  gr_entity: true}
+  - {token: flexcar,          name: "Flexcar",            industry: logistics,        size: scaleup_funded, employees: 300,  gr_entity: true}
+  - {token: instashop,        name: "InstaShop",          industry: ecommerce_retail, size: scaleup_funded, employees: 300,  gr_entity: true}
+  - {token: causaly,          name: "Causaly",            industry: healthcare,       size: scaleup_funded, employees: 150,  gr_entity: true}
+  - {token: beat,             name: "Beat / FREENOW",     industry: logistics,        size: enterprise,     employees: 1200, gr_entity: true}
+  - {token: moosend,          name: "Moosend",            industry: technology_saas,  size: saas_product,   employees: 100,  gr_entity: true}
+  - {token: bryq,             name: "Bryq",               industry: technology_saas,  size: startup_seed,   employees: 60,   gr_entity: true}
+  - {token: tbi-bank,         name: "TBI Bank",           industry: fintech_banking,  size: enterprise,     employees: 1500, gr_entity: true}
+  # --- Cyprus (non-forex preferred; forex entries are scored down by the engine) ---
+  - {token: wargaming,        name: "Wargaming",          industry: gaming_igaming,   size: enterprise,     employees: 4000, cy_entity: true}
+  - {token: nexters,          name: "Nexters",            industry: gaming_igaming,   size: scaleup_funded, employees: 1000, cy_entity: true}
+  - {token: 3cx,              name: "3CX",                industry: technology_saas,  size: saas_product,   employees: 350,  cy_entity: true}
+  - {token: nexo,             name: "Nexo",               industry: fintech_banking,  size: scaleup_funded, employees: 800,  cy_entity: true}
+  - {token: primetel,         name: "PrimeTel",           industry: telecom,          size: enterprise,     employees: 500,  cy_entity: true}
+  # --- Austria ---
+  - {token: adverity,         name: "Adverity",           industry: technology_saas,  size: scaleup_funded, employees: 400}
+  - {token: prewave,          name: "Prewave",            industry: technology_saas,  size: scaleup_funded, employees: 300}
+  - {token: anyline,          name: "Anyline",            industry: technology_saas,  size: saas_product,   employees: 150}
+  - {token: blockpit,         name: "Blockpit",           industry: fintech_banking,  size: saas_product,   employees: 120}
+  - {token: tractive,         name: "Tractive",           industry: technology_saas,  size: scaleup_funded, employees: 300}

@@ -46,6 +46,7 @@ class Job:
     salary_published_min: float | None = None
     salary_published_max: float | None = None
     salary_currency: str = ""
+    salary_is_floor: bool = False   # e.g. Austrian KV statutory minimum
     salary_est_min: float | None = None
     salary_est_max: float | None = None
     salary_confidence: str = "low"

@@ -68,6 +68,7 @@ def evaluate(job, cfg) -> None:
 
     # ---- published salary below floor = hard exclusion -------------------
     if (job.eligible and job.salary_confidence == "High"
+            and not job.salary_is_floor
             and cfg["exclusions"]["below_salary_floor"]["enabled"]
             and job.geo_tier in ("onsite_athens", "remote_greece",
                                  "onsite_vienna", "remote_austria")

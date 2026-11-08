@@ -269,7 +269,8 @@ industry:
 # ---------------------------------------------------------------------------
 sources:
   enabled: [remotive, remoteok, himalayas, arbeitnow, jobicy, workingnomads,
-            weworkremotely, greenhouse, lever, ashby, recruitee]
+            weworkremotely, greenhouse, lever, ashby, recruitee,
+            karriere_at, carierista, workable, linkedin_alerts]
   max_age_days: 45
   request_timeout: 30
   ats_companies_file: "profile/ats_companies.yaml"
