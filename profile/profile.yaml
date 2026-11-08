@@ -1,0 +1,283 @@
+# ============================================================================
+# Job Discovery & Career Matching - Candidate Profile & Tuning Configuration
+# ----------------------------------------------------------------------------
+# EVERYTHING the matching engine uses is in this file. Change values here to
+# recalibrate the engine; no Python edits required.
+# ============================================================================
+
+candidate:
+  name: "Grigoris Moumtzis"
+  current_role: "Head of Data & Analytics"
+  current_industry: "forex_cfd"           # Ingot Brokers Ltd (CFD brokerage), Limassol
+  current_residence: "CY"
+  current_net_monthly_eur: 7000
+  years_experience: 12
+  cv_file: "profile/cv.md"
+  ideal_job_file: "profile/ideal_job.md"
+  avoid_job_file: "profile/avoid_job.md"
+
+# ---------------------------------------------------------------------------
+# SCORING WEIGHTS (must total 100)
+# ---------------------------------------------------------------------------
+weights:
+  geography: 25
+  skills: 25
+  compensation: 20
+  seniority: 15
+  industry: 10
+  career: 5
+
+# ---------------------------------------------------------------------------
+# GEOGRAPHY - priority tiers. Higher tier_score = better.
+# ---------------------------------------------------------------------------
+geography:
+  tiers:
+    - id: remote_europe
+      label: "Fully remote - Europe-wide"
+      score: 100
+      rank: 1
+    - id: remote_greece
+      label: "Fully remote - Greece"
+      score: 88
+      rank: 2
+    - id: remote_austria
+      label: "Fully remote - Austria"
+      score: 76
+      rank: 3
+    - id: remote_cyprus
+      label: "Fully remote - Cyprus"
+      score: 66
+      rank: 4
+    - id: onsite_athens
+      label: "On-site / hybrid - Athens"
+      score: 54
+      rank: 5
+    - id: onsite_vienna
+      label: "On-site / hybrid - Vienna"
+      score: 40
+      rank: 6
+  # Remote scope that is Europe-wide but NOT confirmed to include GR/CY/AT:
+  # eligible but discounted, because hiring-country restrictions are common.
+  unverified_scope_multiplier: 0.82
+  # Worldwide-remote roles are treated as Europe-wide but checked for US-only
+  # timezone/payroll constraints.
+  permitted_countries: ["GR", "CY", "AT"]
+  permitted_onsite_cities: ["athens", "attica", "vienna", "wien"]
+
+# ---------------------------------------------------------------------------
+# HARD EXCLUSIONS - these can never be overridden by a high score.
+# ---------------------------------------------------------------------------
+exclusions:
+  usa:
+    enabled: true
+    reason: "US-based, US-only remote, or US work authorisation required"
+  country_restricted:
+    enabled: true
+    reason: "Remote restricted to a country outside GR/CY/AT"
+  onsite_outside_permitted:
+    enabled: true
+    reason: "On-site/hybrid outside Athens or Vienna"
+  cdo:
+    enabled: true
+    reason: "Chief Data Officer level - out of scope"
+  director_large_company:
+    enabled: true
+    employee_threshold: 1000
+    reason: "Director of Data & Analytics in a company with >1000 employees"
+  data_science_primary:
+    enabled: true
+    reason: "Primarily Data Science / ML research / quantitative modelling"
+  ai_transformation_primary:
+    enabled: true
+    reason: "Primarily enterprise-wide AI transformation leadership"
+  forex_cyprus_onsite:
+    enabled: true
+    reason: "Forex/CFD brokerage in Cyprus, on-site or hybrid"
+  below_salary_floor:
+    enabled: true
+    reason: "Published salary below the Greece/Austria floor"
+  not_leadership:
+    enabled: true
+    reason: "Not a data leadership / senior ownership role"
+
+# ---------------------------------------------------------------------------
+# COMPENSATION
+# ---------------------------------------------------------------------------
+compensation:
+  floor_gr_at_eur: 80000          # hard-ish floor for Greece & Austria
+  stretch_target_eur: 100000      # "exceptional" shortlist flag
+  current_net_monthly_eur: 7000
+  # Penalty applied when an *estimated* (not published) salary midpoint is
+  # below the floor. Published-below-floor is a hard exclusion instead.
+  estimated_below_floor_penalty: 12
+
+  # Benchmark table: gross annual EUR base for a Head/Manager-level data role.
+  # [p25, median, p75]. Sources listed in docs/METHODOLOGY.md.
+  benchmarks:
+    GR:
+      head:        [70000, 85000, 105000]
+      director:    [85000, 105000, 130000]
+      manager:     [55000, 70000, 85000]
+      lead:        [50000, 62000, 78000]
+      principal:   [58000, 72000, 90000]
+    CY:
+      head:        [65000, 82000, 105000]
+      director:    [80000, 100000, 125000]
+      manager:     [55000, 68000, 85000]
+      lead:        [48000, 60000, 75000]
+      principal:   [55000, 70000, 88000]
+    AT:
+      head:        [95000, 115000, 140000]
+      director:    [110000, 135000, 165000]
+      manager:     [80000, 95000, 115000]
+      lead:        [72000, 88000, 105000]
+      principal:   [80000, 95000, 112000]
+    EU_REMOTE:
+      head:        [85000, 105000, 135000]
+      director:    [100000, 125000, 155000]
+      manager:     [70000, 88000, 110000]
+      lead:        [65000, 80000, 100000]
+      principal:   [75000, 92000, 115000]
+
+  # Multipliers applied to the benchmark midpoint.
+  company_multipliers:
+    bigtech: 1.45
+    scaleup_funded: 1.15
+    saas_product: 1.10
+    enterprise: 1.00
+    consultancy: 0.92
+    agency_smb: 0.82
+    nonprofit: 0.78
+    startup_seed: 0.85
+  industry_multipliers:
+    forex_cfd: 1.18         # pays well, but industry score is penalised
+    fintech_banking: 1.12
+    technology_saas: 1.08
+    telecom: 1.00
+    energy: 1.00
+    healthcare: 0.98
+    ecommerce_retail: 0.95
+    logistics: 0.95
+    manufacturing: 0.95
+    consulting: 0.95
+    gaming_igaming: 1.10
+    public_nonprofit: 0.82
+    other: 1.00
+
+# ---------------------------------------------------------------------------
+# TAX MODEL - indicative only. Not tax advice. See docs/METHODOLOGY.md.
+# ---------------------------------------------------------------------------
+tax:
+  disclaimer: "Indicative calculation only - not verified tax advice."
+  GR:
+    # Greek PIT brackets (employment income). Tunable.
+    # 2026 scale: 2pp cut across most bands + new 39% band for 40k-60k.
+    brackets: [[10000, 0.09], [10000, 0.20], [10000, 0.26], [10000, 0.34], [20000, 0.39], [null, 0.44]]
+    social_employee_rate: 0.1337
+    social_monthly_ceiling_eur: 7761.94     # 2026 e-EFKA ceiling
+    exemption_50pct:
+      available: true
+      note: "Art.5C L.4172/2013 - 50% of Greek employment income exempt for 7 years.
+             Requires transfer of tax residency to Greece, no Greek tax residency in
+             5 of the previous 6 years, employment with a Greek entity/PE, and a
+             2-year commitment. Candidate is currently CY-resident, so the
+             non-residency test looks satisfiable - MUST be confirmed with AADE."
+  CY:
+    # Cyprus PIT brackets as enacted from 1 Jan 2026.
+    brackets: [[22000, 0.00], [10000, 0.20], [10000, 0.25], [30000, 0.30], [null, 0.35]]
+    social_employee_rate: 0.088
+    social_annual_ceiling_eur: 66612
+    ghs_rate: 0.0265
+    ghs_annual_ceiling_eur: 180000
+    exemption_50pct:
+      available: true
+      note: "50% exemption on employment income >EUR55k, 17 years, once in a lifetime,
+             requires no Cyprus tax residency for 15 consecutive years before FIRST
+             Cyprus employment. Candidate is ALREADY employed in Cyprus - so this is a
+             question of whether an existing claim CONTINUES across an employer change,
+             NOT a fresh claim. MUST be verified with the Cyprus Tax Department."
+  AT:
+    brackets: [[13308, 0.00], [8862, 0.20], [10281, 0.30], [27222, 0.40], [36333, 0.48], [904994, 0.50], [null, 0.55]]
+    social_employee_rate: 0.1807
+    social_monthly_ceiling_eur: 6450
+    salaries_per_year: 14          # 13th/14th taxed at 6%
+    exemption_50pct:
+      available: false
+      note: "No equivalent 50% regime. Austria is the candidate's last-resort location."
+
+# ---------------------------------------------------------------------------
+# ROLE CATEGORIES - first/second/third priority from the brief.
+# ---------------------------------------------------------------------------
+categories:
+  tier1:
+    score: 100
+    label: "Core expertise (BI / DWH / Analytics Eng / Data Platform)"
+    titles: ["head of business intelligence", "head of bi", "head of data warehouse",
+             "head of data warehousing", "head of analytics engineering",
+             "head of data platform", "bi director", "director of business intelligence",
+             "data warehouse director", "analytics engineering manager",
+             "data platform manager", "data platform lead", "bi manager",
+             "business intelligence manager", "head of data architecture",
+             "data architecture lead", "principal data architect", "head of data",
+             "data architect", "lead data architect", "enterprise data architect",
+             "business intelligence architect", "analytics architect"]
+  tier2:
+    score: 84
+    label: "Data Engineering leadership"
+    titles: ["head of data engineering", "data engineering director",
+             "director of data engineering", "data engineering manager",
+             "principal data engineer", "technical data lead", "staff data engineer",
+             "lead data engineer", "data engineering lead", "engineering manager data"]
+  tier3:
+    score: 70
+    label: "Analytics / Reporting leadership"
+    titles: ["head of analytics", "analytics director", "director of analytics",
+             "reporting director", "head of reporting", "head of product analytics",
+             "senior analytics manager", "analytics manager",
+             "head of business analytics", "head of insights", "data manager",
+             "head of data & analytics", "head of data and analytics"]
+
+seniority:
+  ladder: {director: 100, head: 95, manager: 80, lead: 70, principal: 68, senior_ic: 45, ic: 20}
+  # Preferred: strategic ownership over pure hands-on.
+  management_signal_bonus: 12
+  pure_handson_penalty: 10
+
+# ---------------------------------------------------------------------------
+# INDUSTRY
+# ---------------------------------------------------------------------------
+industry:
+  scores:
+    technology_saas: 100
+    telecom: 92
+    ecommerce_retail: 90
+    energy: 88
+    healthcare: 88
+    manufacturing: 85
+    logistics: 85
+    consulting: 75
+    fintech_banking: 85
+    gaming_igaming: 60
+    public_nonprofit: 55
+    other: 70
+    forex_cfd: 5
+  forex_remote_penalty: 18        # extra penalty on final score, remote forex
+  current_industry_change_bonus: 4
+
+# ---------------------------------------------------------------------------
+# SOURCES
+# ---------------------------------------------------------------------------
+sources:
+  enabled: [remotive, remoteok, himalayas, arbeitnow, jobicy, workingnomads,
+            weworkremotely, greenhouse, lever, ashby, recruitee]
+  max_age_days: 45
+  request_timeout: 30
+  ats_companies_file: "profile/ats_companies.yaml"
+
+# ---------------------------------------------------------------------------
+# OUTPUT / NOTIFICATIONS
+# ---------------------------------------------------------------------------
+output:
+  shortlist_min_score: 62
+  notify_min_score: 62
+  max_rows_artifact: 400

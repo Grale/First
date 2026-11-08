@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+data/*.db
+out/*.xlsx
+out/*.json
+out/*.txt
+.DS_Store
