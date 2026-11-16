@@ -210,6 +210,26 @@ def check_stock_fields(failures: list[str]) -> None:
     print(f"  {len(cases)} stock states")
 
 
+def check_card_prices(failures: list[str]) -> None:
+    """Reading a price off a Skroutz card, around model codes and instalment offers."""
+    from soundbot.shops.skroutz import price_in
+
+    cases = [
+        ("Samsung HW-Q990F Soundbar 11.1.4 776,00 € από 43,11 € / μήνα σε 18 άτοκες δόσεις", 776.0),
+        ("Samsung HW-Q990F από 43,11 € / μήνα σε 18 άτοκες δόσεις 776,00 €", 776.0),
+        ("JBL Bar 1300MK2 €1.389,00 σε 12 άτοκες δόσεις", 1389.0),   # not "2 €" from the model code
+        ("Sony Bar 9 €825,62 από 45,87 €/μήνα", 825.62),             # not "9 €" from the model name
+        ("Samsung HW-Q930H 9.1.4 1.449,00 €", 1449.0),               # not "4 €" from the layout
+        ("LG S95TR 949,00 €", 949.0),
+        ("No price here at all", None),
+    ]
+    for text, want in cases:
+        got = price_in(text)
+        if got != want:
+            failures.append(f"skroutz price: {text[:48]!r} read as {got}, expected {want}")
+    print(f"  {len(cases)} card texts")
+
+
 def check_price_changes(failures: list[str]) -> None:
     """The last move per shop and model, and nothing for a price that never moved."""
     import tempfile
@@ -287,7 +307,7 @@ def main() -> int:
     failures: list[str] = []
     for name, fn in (("shop titles", check_titles), ("watchlist", check_watchlist),
                      ("price parsing", check_prices), ("skroutz robots rules", check_robots),
-                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields), ("price changes", check_price_changes),
+                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields), ("skroutz card prices", check_card_prices), ("price changes", check_price_changes),
                      ("backoff and intervals", check_backoff)):
         print(f"{name}:")
         fn(failures)

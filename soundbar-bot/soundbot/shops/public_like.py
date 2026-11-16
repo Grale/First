@@ -44,6 +44,7 @@ def _payload(jwt_body: str) -> dict:
 
 class PublicLike(Shop):
     start_tier = 1
+    _warned_no_price = False
     uses_search = True
     domain = ""             # the domain the front-end token is issued to
     default_token = ""      # a token that was valid when this adapter was written
@@ -129,6 +130,12 @@ class PublicLike(Shop):
             return None
         price = s.get("finalPrice")
         lp = s.get("listPrice")
+        if price in (None, "") and not self._warned_no_price:
+            # The search index renaming a field is the one way this adapter goes quiet without
+            # failing, so when it happens, record what the fields are actually called now.
+            self._warned_no_price = True
+            self.log.warning("%s: hit %r has no finalPrice. Fields present: %s", self.name,
+                             (s.get("displayName") or "")[:60], ", ".join(sorted(s)))
         price = float(price) if price not in (None, "") else None
         lp = float(lp) if lp not in (None, "") else None
         list_price = lp if (lp and price and lp > price) else None

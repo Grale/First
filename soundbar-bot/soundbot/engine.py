@@ -30,6 +30,7 @@ class ShopResult:
     error: str = ""
     seconds: float = 0.0
     blocked: bool = False
+    n_no_price: int = 0
 
 
 @dataclass
@@ -172,6 +173,11 @@ def run_check(store: Store, dry_run: bool = False, only_shops: Optional[list[str
                 items = shop.fetch_items(models)
                 offers, unmatched = match_items(items, models, cfg.get("price_range", {}), crit, wl.rejected)
                 sr.ok, sr.n_items, sr.n_offers = True, len(items), len(offers)
+                sr.n_no_price = sum(1 for o in offers if o.price is None)
+                if sr.n_no_price:
+                    log.warning("%s: %d of %d matched products came back without a price - the shop "
+                                "is answering but the price is no longer being read",
+                                name, sr.n_no_price, len(offers))
                 store.add_offers(run_id, offers)   # persist per shop, so an interrupted run keeps what it got
                 result.offers.extend(offers)
                 result.unmatched.extend(unmatched)

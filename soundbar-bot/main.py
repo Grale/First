@@ -162,7 +162,11 @@ def cmd_probe(args) -> int:
     def verdict(it) -> str:
         m = best_match(it.title, models, crit, wl.rejected)
         if m is not None:
-            if it.price is not None and not (lo <= it.price <= hi):
+            if it.price is None:
+                # The product was found and the price was not: the shop looks healthy and the
+                # dashboard shows a dash. This is the state that reads as "stopped showing prices".
+                return f"NO PRICE    {m.model_key} found, but no price could be read from the card"
+            if not (lo <= it.price <= hi):
                 return f"PRICED OUT  would match {m.model_key}, €{it.price:,.2f} outside €{lo:,.0f}-€{hi:,.0f}"
             return f"MATCH       {m.model_key}"
         if matches_rejected(it.title, wl.rejected, crit):
@@ -183,7 +187,8 @@ def cmd_probe(args) -> int:
     for it in items[:args.limit]:
         v = verdict(it)
         counts[v.split()[0]] = counts.get(v.split()[0], 0) + 1
-        _print(f"  {v[:58]:<58} €{(it.price or 0):>8,.2f}  {it.title[:70]}")
+        shown = f"€{it.price:>8,.2f}" if it.price is not None else "       —"
+        _print(f"  {v[:58]:<58} {shown}  {it.title[:70]}")
     if len(items) > args.limit:
         for it in items[args.limit:]:
             v = verdict(it)

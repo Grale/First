@@ -43,7 +43,18 @@ CATEGORY_PATH = "/c/1735/soundbar.html"
 CATEGORY_PAGES = 18
 SEARCH_PATH = "/search?keyphrase={q}"
 SKU_HREF = re.compile(r"^/s/(\d+)/")
-PRICE_TEXT = re.compile(r"\d[\d.,]*\s*€")
+# A price with the symbol on either side: "1.389,00 €" and "€1.389,00" are both written in Greece,
+# and which one a site uses is a styling decision that can change without warning.
+# The number must start on its own and the symbol must not be the next number's, or a model
+# code is read as a price: "JBL Bar 1300MK2 €1.389,00" would match "2 €" and call it two
+# euros, and "Sony Bar 9 €825,62" would match "9 €" and call it nine.
+PRICE_TEXT = re.compile(r"€\s*\d[\d.,]*|(?<![^\s(>])\d[\d.,]*\s*€(?!\s*\d)")
+# What marks a number as a monthly instalment rather than the price of the thing. Skroutz prints
+# "από 43,11 € / μήνα σε 18 άτοκες δόσεις" beside the price, and that figure is both wrong and small
+# enough to fall through the price range, which loses the product altogether.
+# Only "per month" counts: "€1.389,00 σε 12 άτοκες δόσεις" is the full price with the instalment
+# terms noted after it, so the word for instalments on its own would reject the real price.
+INSTALMENT = ("μήνα", "/month", "per month", "monthly")
 # robots.txt, User-agent: * - the prefixes this adapter must never request
 FORBIDDEN_PREFIXES = ("/api/", "/apiv2/", "/products/show", "/products/compare_selected_products",
                       "/suggest", "/autocomplete/", "/personalization/", "/comparelists/", "/cart",
@@ -52,6 +63,26 @@ FORBIDDEN_SUFFIXES = ("/shops_list", "/price_graph", "/recommendations")
 # A search page leads with sponsored and related strips before the results proper, and a category page
 # lists dozens of products, so the cap has to be well clear of both or the real rows get cut off.
 MAX_CARDS_PER_PAGE = 150
+
+
+def price_in(text: str):
+    """The first price in this text that is a price and not a monthly instalment.
+
+    A marker is read as belonging to the number right before it, so the search for it stops at the
+    next price in the text: in "776,00 € από 43,11 € / μήνα" the "per month" is the 43,11's, and the
+    776,00 in front of it is what the product costs.
+    """
+    text = text or ""
+    matches = list(PRICE_TEXT.finditer(text))
+    for i, m in enumerate(matches):
+        stop = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        span = text[m.end():min(stop, m.end() + 30)].lower()
+        if any(k in span for k in INSTALMENT):
+            continue
+        value = parse_price(m.group(0))
+        if value is not None:
+            return value
+    return None
 
 
 class SkroutzLike(Shop):
@@ -107,14 +138,15 @@ class SkroutzLike(Shop):
                 title = (img.get("alt") or "").strip() if img else ""
             card = a
             price: Optional[float] = None
-            for _ in range(5):          # walk out of the link until the card's price comes into view
+            for _ in range(7):          # walk out of the link until the card's price comes into view
                 if card is None:
                     break
-                found = PRICE_TEXT.search(card.get_text(" ", strip=True))
-                if found:
-                    price = parse_price(found.group(0))
+                card_text = card.get_text(" ", strip=True)
+                found = price_in(card_text)
+                if found is not None:
+                    price = found
                     if not title:
-                        title = card.get_text(" ", strip=True)[:160]
+                        title = card_text[:160]
                     break
                 card = card.parent
             if not title:
