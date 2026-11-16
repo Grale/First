@@ -143,9 +143,15 @@ class Criteria:
         main, _sub, height = layout
         return height >= self.min_height_channels and main >= self.min_channels
 
-    def looks_like_candidate(self, title: str) -> bool:
-        """Loose filter for the discovery scan: a soundbar whose title does not rule it out."""
-        if not looks_like_soundbar(title):
+    def looks_like_candidate(self, title: str, from_category: bool = False) -> bool:
+        """Loose filter for the discovery scan: a soundbar whose title does not rule it out.
+
+        `from_category` says the shop took this out of its soundbar category, which answers the
+        question better than the title can: plenty of shops name the category and not the product.
+        """
+        if is_component_or_accessory(title):
+            return False
+        if not from_category and not looks_like_soundbar(title):
             return False
         ok = self.title_layout_ok(title)
         if ok is not None:

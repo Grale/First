@@ -52,7 +52,7 @@ class ScandiaLike(Shop):
                 sku = m.group(1)
             if title:
                 items.append(Item(shop=self.name, title=title, price=price, url=url, list_price=list_price,
-                                  in_stock=in_stock, shop_sku=sku))
+                                  in_stock=in_stock, shop_sku=sku, from_category=True))
         return items
 
     def fetch_items(self, models: list[Model]) -> list[Item]:

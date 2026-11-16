@@ -69,7 +69,7 @@ class Stephanis(Shop):
             sku = code_el.get_text(strip=True) if code_el else (name_el.get("data-productid") or "")
             # Stock comes from the product page; the card cannot answer it.
             items.append(Item(shop=self.name, title=title, price=price, url=url, list_price=list_price,
-                              in_stock=None, shop_sku=sku))
+                              in_stock=None, shop_sku=sku, from_category=True))
         return items
 
     def _in_stock(self, url: str):

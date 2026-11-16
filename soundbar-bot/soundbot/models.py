@@ -49,6 +49,10 @@ class Item:
     list_price: Optional[float] = None
     in_stock: Optional[bool] = True
     shop_sku: str = ""
+    # True when the shop handed this over from its soundbar category, so the listing is a soundbar
+    # whatever the title says. Skroutz names the category and not the product: "Sony HT-S40R 5.1 με
+    # Bluetooth" is a soundbar with no word in it that says so.
+    from_category: bool = False
 
 
 @dataclass

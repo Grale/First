@@ -230,6 +230,26 @@ def check_card_prices(failures: list[str]) -> None:
     print(f"  {len(cases)} card texts")
 
 
+def check_card_boundary(failures: list[str]) -> None:
+    """A card without a price of its own must not borrow its neighbour's."""
+    grid = """<ul>
+      <li><a href="/s/1/a.html">Samsung HW-Q990F 11.1.4</a><div>849,00 €</div></li>
+      <li><a href="/s/2/b.html">Sharp HT-SBW110 2.1</a></li>
+      <li><a href="/s/3/c.html">RED5 B300</a><div>129,00 €</div></li>
+    </ul>"""
+    got = {i.shop_sku: i.price for i in Skroutz.__new__(Skroutz)._cards(grid)}
+    if got != {"1": 849.0, "2": None, "3": 129.0}:
+        failures.append(f"skroutz card boundary: prices {got}, expected the Sharp to have none")
+    from soundbot import criteria as crit_mod
+    crit = crit_mod.active()
+    title = "Hisense AX5125H 5.1.2 με Bluetooth & HDMI"      # a Skroutz title with no soundbar word
+    if crit.looks_like_candidate(title):
+        failures.append("discovery: a title with no soundbar word passed without its category")
+    if not crit.looks_like_candidate(title, from_category=True):
+        failures.append("discovery: a 5.1.2 from the soundbar category was not offered")
+    print("  a priceless card stays priceless; a category vouches for its titles")
+
+
 def check_price_changes(failures: list[str]) -> None:
     """The last move per shop and model, and nothing for a price that never moved."""
     import tempfile
@@ -307,7 +327,7 @@ def main() -> int:
     failures: list[str] = []
     for name, fn in (("shop titles", check_titles), ("watchlist", check_watchlist),
                      ("price parsing", check_prices), ("skroutz robots rules", check_robots),
-                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields), ("skroutz card prices", check_card_prices), ("price changes", check_price_changes),
+                     ("offline parsers", check_offline_parsers), ("stephanis stock", check_stock_fields), ("skroutz card prices", check_card_prices), ("card boundary", check_card_boundary), ("price changes", check_price_changes),
                      ("backoff and intervals", check_backoff)):
         print(f"{name}:")
         fn(failures)

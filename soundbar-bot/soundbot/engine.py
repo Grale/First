@@ -78,7 +78,8 @@ def match_items(items: list[Item], models, price_range: dict, crit: Criteria,
     for it in items:
         m = best_match(it.title, models, crit, rejected)
         if m is None:
-            if (looks_like_candidate(it.title, crit) and (it.price is None or lo <= it.price <= hi)
+            if (looks_like_candidate(it.title, crit, it.from_category)
+                    and (it.price is None or lo <= it.price <= hi)
                     and not matches_rejected(it.title, rejected, crit)):
                 unmatched.append(it)
             continue
@@ -257,7 +258,7 @@ def discover(only_shops: Optional[list[str]] = None, progress=None, force: bool 
                 continue
             found: list[Item] = []
             for it in items:
-                if not looks_like_candidate(it.title, crit):
+                if not looks_like_candidate(it.title, crit, it.from_category):
                     continue
                 if best_match(it.title, models, crit, wl.rejected) is not None:
                     continue

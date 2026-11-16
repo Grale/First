@@ -120,7 +120,7 @@ class SkroutzLike(Shop):
         return self.f.get(url, start_tier=self.start_tier)
 
     # ---- parsing -----------------------------------------------------------
-    def _cards(self, html: str) -> list[Item]:
+    def _cards(self, html: str, from_category: bool = False) -> list[Item]:
         """One item per product link, with the title and price taken from the card around it."""
         soup = BeautifulSoup(html, "lxml")
         items: dict[str, Item] = {}
@@ -136,10 +136,18 @@ class SkroutzLike(Shop):
             if not title:
                 img = a.select_one("img[alt]")
                 title = (img.get("alt") or "").strip() if img else ""
+            # Walk out of the link until the price comes into view, but never past the card: an
+            # ancestor holding a second product is the grid, and the first price in the grid
+            # belongs to whichever product sits first in it, not to this one. Three unrelated bars
+            # priced identically is what that looks like from outside.
             card = a
             price: Optional[float] = None
-            for _ in range(7):          # walk out of the link until the card's price comes into view
-                if card is None:
+            for _ in range(7):
+                # Count products, not links: a card links to its own product from the image, the
+                # title and the price, and only a second product means we have left the card.
+                if card is None or len({SKU_HREF.match(x.get("href") or "").group(1)
+                                        for x in card.select('a[href^="/s/"]')
+                                        if SKU_HREF.match(x.get("href") or "")}) > 1:
                     break
                 card_text = card.get_text(" ", strip=True)
                 found = price_in(card_text)
@@ -153,7 +161,8 @@ class SkroutzLike(Shop):
                 continue
             items[sku] = Item(shop=self.name, title=title, price=price,
                               url=urljoin(self.base_url, href.split("?")[0]),
-                              list_price=None, in_stock=None, shop_sku=sku)
+                              list_price=None, in_stock=None, shop_sku=sku,
+                              from_category=from_category)
             if len(items) >= MAX_CARDS_PER_PAGE:
                 break
         return list(items.values())
@@ -165,7 +174,7 @@ class SkroutzLike(Shop):
         or a search that found nothing - so raising there would turn the end of a listing into a failed
         shop. It is only evidence of a wrong path or a bot check when it is the first page asked for.
         """
-        items = self._cards(html)
+        items = self._cards(html, from_category=True)
         if not items and 'href="/s/' not in html:
             raise RuntimeError(f"{self.name}: no product links on {what} (wrong path, changed layout, "
                                f"or the page was served as a bot check)")
@@ -257,7 +266,7 @@ class SkroutzLike(Shop):
             sep = "&" if "?" in path else "?"
             html = self._get(path if page == 1 else f"{path}{sep}page={page}")
             page_items = (self._parse_or_raise(html, "the category listing") if page == 1
-                          else self._cards(html))
+                          else self._cards(html, from_category=True))
             new = [i for i in page_items if i.shop_sku not in items]
             for it in new:
                 items[it.shop_sku] = it

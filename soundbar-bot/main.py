@@ -118,7 +118,7 @@ def cmd_probe(args) -> int:
     height channels, returning the right product under a title the aliases do not cover, or pricing
     it outside the range.
     """
-    from soundbot.criteria import looks_like_soundbar, parse_layout
+    from soundbot.criteria import is_component_or_accessory, looks_like_soundbar, parse_layout
     from soundbot.engine import due_shops
     from soundbot.fetch import Fetcher
     from soundbot.match import best_match, matches_rejected
@@ -171,8 +171,10 @@ def cmd_probe(args) -> int:
             return f"MATCH       {m.model_key}"
         if matches_rejected(it.title, wl.rejected, crit):
             return "rejected    a checked-and-rejected model"
-        if not looks_like_soundbar(it.title):
-            return "not a bar   no soundbar word in the title, or it reads as a component"
+        if is_component_or_accessory(it.title):
+            return "component   a subwoofer, rear kit or accessory sold on its own"
+        if not it.from_category and not looks_like_soundbar(it.title):
+            return "not a bar   no soundbar word in the title, and not from a soundbar category"
         layout = parse_layout(it.title)
         if layout is None:
             if "ATMOS" in it.title.upper():

@@ -125,6 +125,6 @@ def matches_rejected(title: str, negatives: Iterable[Rejected], crit: Criteria) 
     return any(match_aliases(title, [r.model_key, *r.aliases], crit) is not None for r in negatives)
 
 
-def looks_like_candidate(title: str, crit: Criteria) -> bool:
+def looks_like_candidate(title: str, crit: Criteria, from_category: bool = False) -> bool:
     """Loose filter used by the discovery scan."""
-    return crit.looks_like_candidate(title)
+    return crit.looks_like_candidate(title, from_category=from_category)

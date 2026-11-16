@@ -43,7 +43,7 @@ class Electroline(Shop):
             in_stock = bool(p.get("isAvailableOnline") or p.get("isAvailableInStores") or meta.get("instock"))
             items.append(Item(shop=self.name, title=title, price=float(price) if price else None,
                               url=p.get("permalink") or url, list_price=list_price,
-                              in_stock=in_stock, shop_sku=str(sku)))
+                              in_stock=in_stock, shop_sku=str(sku), from_category=True))
         return items
 
     def fetch_items(self, models: list[Model]) -> list[Item]:
