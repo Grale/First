@@ -9,8 +9,8 @@
 2. Validates watchlist.json against the active criteria.
 3. Checks the price parser on the formats the shops actually print.
 4. Checks that the Skroutz adapter refuses the paths Skroutz's robots.txt disallows.
-5. Runs the Skroutz card parser and the Public token reader over small made-up pages, because those two
-   shops turn away anything but a browser and cannot be exercised from a test.
+5. Runs the Skroutz card parser over small made-up pages, because Skroutz turns away anything but
+   a browser and cannot be exercised from a test.
 """
 from __future__ import annotations
 import json
@@ -113,16 +113,10 @@ SKROUTZ_PAGE = """
   </li>
 </ul>
 """
-PUBLIC_PAGE = """
-<html><body><script>
-window.__CFG = {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7IndlYnNpdGVJZCI6OTksImRvbWFpbiI6InB1YmxpYy5nciIsInNjb3BlcyI6WyJzZWFyY2giXSwibmFtZSI6IkZyb250ZW5kIn19.c2lnbmF0dXJlLXBsYWNlaG9sZGVy"};
-</script></body></html>
-"""
 
 
 def check_offline_parsers(failures: list[str]) -> None:
     from soundbot.fetch import Fetcher
-    from soundbot.shops.public_like import PublicGr, _JWT_RE, _payload
 
     f = Fetcher()
     try:
@@ -176,13 +170,7 @@ def check_offline_parsers(failures: list[str]) -> None:
     if len(got) != 2:
         failures.append(f"skroutz category flow returned {len(got)} items, expected 2")
 
-    hits = [b for b in _JWT_RE.findall(PUBLIC_PAGE)
-            if (_payload(b).get("data") or {}).get("domain") == PublicGr.domain
-            and "search" in ((_payload(b).get("data") or {}).get("scopes") or [])]
-    if len(hits) != 1:
-        failures.append(f"public token reader found {len(hits)} tokens in a page with one")
-    print(f"  {len(items)} Skroutz cards parsed, category-first flow in {len(stub.asked)} "
-          f"requests, {len(hits)} Public token found")
+    print(f"  {len(items)} Skroutz cards parsed, category-first flow in {len(stub.asked)} requests")
 
 
 STEPHANIS_PRODUCT = ('... "ISINVENTORYTRACKINGENABLED":%s,"ISAVAILABLEONLINE":%s,'

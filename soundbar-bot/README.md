@@ -6,7 +6,7 @@ clearly cheaper than the others, when a shop runs a big discount, or when a watc
 stock. Same shape as the TV bot: starts with the laptop, serves a local dashboard, pushes to your
 phone.
 
-Shops: Electroline, Scandia, Stephanis (Cyprus) · Skroutz, Public, Kotsovolos (Greece).
+Shops: Electroline, Scandia, Stephanis (Cyprus) · Skroutz, Kotsovolos (Greece).
 
 Ranking is **immersion first**: height channels and wireless rears carry the most weight, with bass,
 ear-level channels, formats and connections as smaller bonuses.
@@ -191,7 +191,6 @@ open at once.
 | Electroline | CY | Both soundbar category pages embed a JSON blob of every product (`var pageProducts`) | **Tested against the live shop**: 54 products, 25 matched |
 | Stephanis | CY | Server-rendered soundbar category, 100 per page; stock is read from each watched model's product page, where the shop embeds `QUANTITYAVAILABLE` and `ISAVAILABLEONLINE` as data | **Tested against the live shop**: 75 products, 23 matched |
 | Scandia | CY | Server-rendered catalog, category 202 (Sound Bars) | **Tested against the live shop**: 11 products, almost all below this list's floor |
-| Public | GR | Its search provider's JSON API (findbar.io). The token is issued per website, so the adapter reads it out of public.gr's own front end and caches it in `.cache/` | **Written but never run.** Verify with `run-once --shop public_gr` |
 | Kotsovolos | GR | Search page `__NEXT_DATA__` for part numbers, then the shop's product and availability JSON APIs, with the store id read from the storefront and cached; needs the Chrome-TLS tier (`curl_cffi`) because of Akamai | **Reaches the shop; store id not found automatically.** Put it in `config.json` (below) or send the error text |
 | Skroutz | GR | The soundbar category listing (`/c/1735/soundbar.html`, 358 products) first, then one `/search?keyphrase=<brand> <model>` for each model the listing did not cover; cards are read by following the product links rather than by class name | **Reads the live shop**: titles and prices parse correctly |
 
@@ -214,31 +213,28 @@ category in one request, so it gets a 3-second pause between requests instead of
 If it was working and starts returning 403, that is rate limiting rather than a broken adapter: leave
 it a few hours, and let the scheduled 3-hour checks do the asking rather than repeated manual runs.
 
-The three Greek adapters were written against the shops' documented behaviour and the structures their
-Cypriot twins use, but could not be exercised from the machine this was built on, which Akamai and Skroutz
+The Greek adapters could not be exercised from the machine this was built on, which Akamai and Skroutz
 both refuse. Run each once with `--shop` before trusting the dashboard, and read the error if one fails:
-the adapters raise with the reason (a rejected token, a missing store id, a Skroutz page that parsed to
-nothing) rather than quietly reporting an empty shop.
+the adapters raise with the reason (a missing store id, a Skroutz page that parsed to nothing) rather
+than quietly reporting an empty shop.
 
-### If a Greek shop cannot find its own id or token
+### If Kotsovolos cannot find its store id
 
-Kotsovolos GR and Public GR each need one value that belongs to that storefront: an HCL store id and a
-findbar search token. The adapters look for it on the shop's own pages and cache it in `.cache/`, and the
-error says which pages they read and what they found. When the lookup comes up empty, give it the value
-by hand — open the shop in a browser, view source (Ctrl+U), search for `storeId` or for a long string
-starting `eyJ`, and put it in `config.json`:
+Kotsovolos needs one value that belongs to the storefront: its HCL store id. The adapter looks for it on
+the shop's own pages and caches it in `.cache/`, and the error says which pages it read and what it
+found. When the lookup comes up empty, give it the value by hand — open the shop in a browser, view
+source (Ctrl+U), search for `storeId`, and put it in `config.json`:
 
 ```json
 {
   "shops_config": {
     "kotsovolos_gr": {"store_id": "10151"},
-    "public_gr": {"findbar_token": "eyJhbGciOi…"},
-    "skroutz": {"category_path": "/c/907/soundbars.html"}
+    "skroutz": {"category_path": "/c/1735/soundbar.html"}
   }
 }
 ```
 
-Skroutz's soundbar category is the third of these, and the confirmed value is already the default, so
+Skroutz's soundbar category is the second of these, and the confirmed value is already the default, so
 it is only there if Skroutz ever renumbers. Getting it right matters for speed rather than coverage:
 with the category listing the whole shop is a handful of requests, and without it the adapter falls back
 to one search per watched model, which still works but takes about 40 seconds.
@@ -262,8 +258,8 @@ The Skroutz **Partner API** would be the cleaner source, but it needs OAuth cred
 to merchants by email, so it is not an option for a personal watcher.
 
 Skroutz also has its own price alerts — the bell on any product page. For the Greek side it is worth using
-both: Skroutz's alert is authoritative for Skroutz, and this bot is what compares Skroutz against Public GR,
-Kotsovolos GR and the Cypriot shops in one table.
+both: Skroutz's alert is authoritative for Skroutz, and this bot is what compares Skroutz against Kotsovolos
+and the Cypriot shops in one table.
 
 ### Being asked to go away, and not arguing
 
@@ -287,6 +283,9 @@ scheduled rhythm is gentle, and the bot now notices when it has outstayed its we
 ### Shops that were considered and left out
 
 * **Plaisio, you.gr, MediaMarkt GR** — no adapter yet; most of their stock is also quoted through Skroutz.
+* **Public (GR)** — removed. Its search runs through a third-party service that only answers with a
+  token issued to Public's own website, and reading that token out of Public's scripts is not
+  something this bot should do. Most of the Greek market is covered through Skroutz.
 * **MegaElectric, Public CY, Kotsovolos CY, Skroutz CY** — adapters existed and worked, and were removed
   on request. The code is in the history if they are ever wanted back.
 * **e-shop.gr** — reachable without any bot check, but its `robots.txt` disallows `*offset=*`, which is the

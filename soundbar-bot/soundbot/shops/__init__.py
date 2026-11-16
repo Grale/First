@@ -5,7 +5,6 @@ from .base import Shop
 from .electroline import Electroline
 from .scandia_like import Scandia
 from .stephanis import Stephanis
-from .public_like import PublicGr
 from .kotsovolos_like import KotsovolosGr
 from .skroutz import Skroutz
 
@@ -16,7 +15,6 @@ SHOPS: dict[str, Type[Shop]] = {
     Stephanis.name: Stephanis,
     # Greece
     Skroutz.name: Skroutz,
-    PublicGr.name: PublicGr,
     KotsovolosGr.name: KotsovolosGr,
 }
 
