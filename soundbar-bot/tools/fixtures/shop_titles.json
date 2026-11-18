@@ -581,6 +581,22 @@
       {
         "title": "Καλώδιο HDMI 2.1 για Soundbar Samsung HW-Q990F",
         "expected": "ignore"
+      },
+      {
+        "title": "Samsung SWA-W700 Ασύρματο Subwoofer για HW-Q990F",
+        "expected": "ignore"
+      },
+      {
+        "title": "Samsung Wireless Subwoofer για Soundbar HW-Q990F",
+        "expected": "ignore"
+      },
+      {
+        "title": "Samsung Wireless Rear Speaker Kit SWA-9500S for HW-Q990F",
+        "expected": "ignore"
+      },
+      {
+        "title": "Samsung HW-Q930F Soundbar 9.1.4 Subwoofer Μαύρο",
+        "expected": "HW-Q930F"
       }
     ]
   }

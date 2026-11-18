@@ -53,6 +53,8 @@ class Item:
     # whatever the title says. Skroutz names the category and not the product: "Sony HT-S40R 5.1 με
     # Bluetooth" is a soundbar with no word in it that says so.
     from_category: bool = False
+    # The text the price was read from, for `probe --show-card`. Not stored anywhere.
+    card_text: str = ""
 
 
 @dataclass

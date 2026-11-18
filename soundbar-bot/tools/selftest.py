@@ -210,6 +210,10 @@ def check_card_prices(failures: list[str]) -> None:
         ("Samsung HW-Q930H 9.1.4 1.449,00 €", 1449.0),               # not "4 €" from the layout
         ("LG S95TR 949,00 €", 949.0),
         ("No price here at all", None),
+        ("Samsung HW-Q990F 11.1.4 Μεταχειρισμένο από 348,92 € 880,00 €", 880.0),   # used offer first
+        ("Samsung HW-Q990F 11.1.4 880,00 € Μεταχειρισμένο από 348,92 €", 880.0),   # used offer after
+        ("Samsung HW-Q990F με κουπόνι 792,00 € 880,00 €", 880.0),                  # coupon price
+        ("Samsung HW-Q990F 4,90 € μεταφορικά 880,00 €", 880.0),                    # shipping
     ]
     for text, want in cases:
         got = price_in(text)

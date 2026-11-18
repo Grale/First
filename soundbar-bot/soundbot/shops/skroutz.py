@@ -32,6 +32,7 @@ from urllib.parse import quote, urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 from .base import Shop, parse_price
+from ..criteria import fold
 from ..fetch import Blocked, FetchError
 from ..models import Item
 from ..watchlist import Model
@@ -47,14 +48,23 @@ SKU_HREF = re.compile(r"^/s/(\d+)/")
 # and which one a site uses is a styling decision that can change without warning.
 # The number must start on its own and the symbol must not be the next number's, or a model
 # code is read as a price: "JBL Bar 1300MK2 €1.389,00" would match "2 €" and call it two
-# euros, and "Sony Bar 9 €825,62" would match "9 €" and call it nine.
-PRICE_TEXT = re.compile(r"€\s*\d[\d.,]*|(?<![^\s(>])\d[\d.,]*\s*€(?!\s*\d)")
+# euros, and "Sony Bar 9 €825,62" would match "9 €" and call it nine. A symbol touching the digits
+# after it is their prefix; a symbol followed by a space closes the number before it, which is how
+# "348,92 € 880,00 €" reads as two prices rather than one stray symbol and "€ 880,00".
+PRICE_TEXT = re.compile(r"€\s*\d[\d.,]*|(?<![^\s(>])\d[\d.,]*\s*€(?!\d)")
 # What marks a number as a monthly instalment rather than the price of the thing. Skroutz prints
 # "από 43,11 € / μήνα σε 18 άτοκες δόσεις" beside the price, and that figure is both wrong and small
 # enough to fall through the price range, which loses the product altogether.
 # Only "per month" counts: "€1.389,00 σε 12 άτοκες δόσεις" is the full price with the instalment
 # terms noted after it, so the word for instalments on its own would reject the real price.
 INSTALMENT = ("μήνα", "/month", "per month", "monthly")
+# Other figures a card can carry next to the price. A word before the number makes it a used,
+# refurbished or coupon price ("Μεταχειρισμένο από 348,92 €"); a word after makes it shipping
+# ("4,90 € μεταφορικά"). None of them is what the product costs new, and a used price is low
+# enough to pass for a spectacular deal.
+NOT_THE_PRICE_BEFORE = ("ΜΕΤΑΧΕΙΡΙΣΜ", "USED", "REFURB", "ΑΝΑΚΑΤΑΣΚΕΥ", "ΑΝΟΙΓΜΕΝ", "OPEN BOX",
+                        "ΚΟΥΠΟΝ", "COUPON")
+NOT_THE_PRICE_AFTER = ("ΜΕΤΑΦΟΡΙΚ", "SHIPPING")
 # robots.txt, User-agent: * - the prefixes this adapter must never request
 FORBIDDEN_PREFIXES = ("/api/", "/apiv2/", "/products/show", "/products/compare_selected_products",
                       "/suggest", "/autocomplete/", "/personalization/", "/comparelists/", "/cart",
@@ -66,7 +76,7 @@ MAX_CARDS_PER_PAGE = 150
 
 
 def price_in(text: str):
-    """The first price in this text that is a price and not a monthly instalment.
+    """The first price in this text that is what the product costs new.
 
     A marker is read as belonging to the number right before it, so the search for it stops at the
     next price in the text: in "776,00 € από 43,11 € / μήνα" the "per month" is the 43,11's, and the
@@ -78,6 +88,13 @@ def price_in(text: str):
         stop = matches[i + 1].start() if i + 1 < len(matches) else len(text)
         span = text[m.end():min(stop, m.end() + 30)].lower()
         if any(k in span for k in INSTALMENT):
+            continue
+        if any(k in fold(span) for k in NOT_THE_PRICE_AFTER):
+            continue
+        # The words in front of a number belong to it, back as far as the previous price.
+        start = matches[i - 1].end() if i else 0
+        before = fold(text[max(start, m.start() - 35):m.start()])
+        if any(k in before for k in NOT_THE_PRICE_BEFORE):
             continue
         value = parse_price(m.group(0))
         if value is not None:
@@ -142,6 +159,7 @@ class SkroutzLike(Shop):
             # priced identically is what that looks like from outside.
             card = a
             price: Optional[float] = None
+            read_from = ""
             for _ in range(7):
                 # Count products, not links: a card links to its own product from the image, the
                 # title and the price, and only a second product means we have left the card.
@@ -153,6 +171,7 @@ class SkroutzLike(Shop):
                 found = price_in(card_text)
                 if found is not None:
                     price = found
+                    read_from = card_text
                     if not title:
                         title = card_text[:160]
                     break
@@ -162,7 +181,7 @@ class SkroutzLike(Shop):
             items[sku] = Item(shop=self.name, title=title, price=price,
                               url=urljoin(self.base_url, href.split("?")[0]),
                               list_price=None, in_stock=None, shop_sku=sku,
-                              from_category=from_category)
+                              from_category=from_category, card_text=read_from)
             if len(items) >= MAX_CARDS_PER_PAGE:
                 break
         return list(items.values())

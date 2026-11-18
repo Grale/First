@@ -64,6 +64,11 @@ _BAR_WORDS = ("SOUNDBAR", "SOUND BAR", "SOUNDBARS", "ΣΟΥΝΤΜΠΑΡ", "ΗΧ�
 _COMPONENT_LEAD = re.compile(
     r"^(SUBWOOFER|SUB\b|WIRELESS SUBWOOFER|REAR SPEAKER|REAR SPEAKERS|WIRELESS SURROUND|SURROUND SPEAKER|"
     r"SURROUND SPEAKERS|SPEAKER KIT|ΥΠΟΓΟΥΦΕΡ|ΗΧΕΙΑ SURROUND)")
+# Nouns that name a component when they come before anything naming a soundbar. "Samsung SWA-W700
+# Ασύρματο Subwoofer για HW-Q990F" is a subwoofer that mentions the bar it suits, and it carries the
+# bar's model code, so without this it would be read as the bar - at a subwoofer's price.
+_COMPONENT_WORDS = ("SUBWOOFER", "ΥΠΟΓΟΥΦΕΡ", "REAR SPEAKER", "ΠΙΣΩ ΗΧΕΙ", "SURROUND SPEAKER",
+                    "SURROUND KIT", "SPEAKER KIT", "SWA-")
 # What follows one of these in a title is what comes in the box, not what the listing is selling.
 _INCLUDES = re.compile(r"\s(?:ΜΕ|ΚΑΙ|WITH|AND|PLUS|INCL|INCLUDING)\s|[,+&]")
 # Accessories that are never a soundbar, when the title leads with one of them.
@@ -109,7 +114,15 @@ def is_component_or_accessory(title: str) -> bool:
     head = _INCLUDES.split(up, 1)[0] + " "
     if any(k in head for k in _ACCESSORY):
         return True
-    return bool(_COMPONENT_LEAD.match(up))
+    if _COMPONENT_LEAD.match(up):
+        return True
+    # A component noun in the head names the product unless a soundbar word comes before it:
+    # "Samsung HW-Q800H Soundbar 5.1.2 Subwoofer" is a bar, "Samsung Subwoofer για Soundbar" is not.
+    first_component = min((head.find(w) for w in _COMPONENT_WORDS if w in head), default=-1)
+    if first_component < 0:
+        return False
+    first_bar = min((head.find(w) for w in _BAR_WORDS if w in head), default=-1)
+    return first_bar < 0 or first_component < first_bar
 
 
 def looks_like_soundbar(title: str) -> bool:

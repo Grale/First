@@ -184,17 +184,22 @@ def cmd_probe(args) -> int:
             return f"no height   title prints {layout[0]}.{layout[1]}.{layout[2]}"
         return f"CANDIDATE   {layout[0]}.{layout[1]}.{layout[2]}, not on the watchlist"
 
+    # Matches first: those are what the dashboard shows, and when two listings match the same model
+    # the cell takes the cheaper one, so seeing both side by side is usually the whole answer.
+    first = ("MATCH", "NO", "PRICED", "CANDIDATE")
+    judged = [(verdict(it), it) for it in items]
+    judged.sort(key=lambda vi: next((i for i, k in enumerate(first) if vi[0].startswith(k)), len(first)))
     counts: dict[str, int] = {}
     _print(f"\n{len(items)} items returned\n")
-    for it in items[:args.limit]:
-        v = verdict(it)
+    for n, (v, it) in enumerate(judged):
         counts[v.split()[0]] = counts.get(v.split()[0], 0) + 1
+        if n >= args.limit:
+            continue
         shown = f"€{it.price:>8,.2f}" if it.price is not None else "       —"
         _print(f"  {v[:58]:<58} {shown}  {it.title[:70]}")
+        if args.show_card and v.startswith(first[:3]) and it.card_text:
+            _print(f"      read from: {it.card_text[:240]}")
     if len(items) > args.limit:
-        for it in items[args.limit:]:
-            v = verdict(it)
-            counts[v.split()[0]] = counts.get(v.split()[0], 0) + 1
         _print(f"  … {len(items) - args.limit} more not printed")
     _print("\nsummary: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
     return 0
@@ -295,6 +300,8 @@ def main(argv=None) -> int:
     s.add_argument("--model", help="query for this model only (substring of a model key)")
     s.add_argument("--limit", type=int, default=40, help="how many items to print (default 40)")
     s.add_argument("--force", action="store_true", help="probe even a shop that is in backoff")
+    s.add_argument("--show-card", action="store_true",
+                   help="under each match, print the card text its price was read from")
     s.set_defaults(fn=cmd_probe)
 
     s = sub.add_parser("test-notify", help="send a test toast and ntfy push")
